@@ -27,7 +27,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false, unique: true|
-|mailaddress|string|null: false, unique: true|
+|mailaddress|string|null: false|
 |password|string|null: false|
 |firstname|string|null: false|
 |secondname|string|null: false|
@@ -40,8 +40,14 @@ Things you may want to cover:
 |prefectures|string|null: false|
 |municipalities|string|null: false|
 |housenumber|string|null: false|
-|roomnumber|string|null: false|
-|phonenumber|integer|null: false|
+|roomnumber|string||
+|phonenumber|integer||
+
+### Association
+- has_many :items
+
+
+
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -56,35 +62,51 @@ Things you may want to cover:
 |days|string|null: false|
 |price|integer|null: false|
 
+### Association
+- belongs_to :user
+- has_many :images
+- has_many :item_categories
+- has_many :categories,through::item_categories
+
+
+
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image1|string|null: false|
-|image2|string|null: false|
-|image3|string|null: false|
-|image4|string|null: false|
-|image5|string|null: false|
-|image6|string|null: false|
-|image7|string|null: false|
-|image8|string|null: false|
-|image9|string|null: false|
-|image10|string|null: false|
+|image2|string||
+|image3|string||
+|image4|string||
+|image5|string||
+|image6|string||
+|image7|string||
+|image8|string||
+|image9|string||
+|image10|string||
 |item_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :items
+
 
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|category1|string|null: false|
-|category2|string|null: false|
-|category3|string|null: false|
-|category4|string|null: false|
-|category5|string|null: false|
-|category6|string|null: false|
-|category7|string|null: false|
-|category8|string|null: false|
-|category9|string|null: false|
-|category10|string|null: false|
+|category1|string||
+|category2|string||
+|category3|string||
+|category4|string||
+|category5|string||
+|category6|string||
+|category7|string||
+|category8|string||
+|category9|string||
+|category10|string||
+
+### Association
+- has_many :item_categories
+- has_many :items,through::item_categories
 
 
 ## item_categoriesテーブル
@@ -92,3 +114,7 @@ Things you may want to cover:
 |------|----|-------|
 |item_id|integer|null: false,foreign_key: true|
 |categories_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :items
+- belongs_to :categories
