@@ -40,7 +40,6 @@ Things you may want to cover:
 - has_many :items
 
 
-
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
