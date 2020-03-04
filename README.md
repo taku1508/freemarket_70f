@@ -31,8 +31,8 @@ Things you may want to cover:
 |password|string|null: false|
 |firstname|string|null: false|
 |secondname|string|null: false|
-|huriganaf|string|null: false|
-|huriganas|string|null: false|
+|hurigana_first|string|null: false|
+|hurigana_second|string|null: false|
 |Birthday|integer|null: false|
 |addressname|string|null: false|
 |addresshurigana|string|null: false|
@@ -45,7 +45,6 @@ Things you may want to cover:
 
 ### Association
 - has_many :items
-
 
 
 
@@ -73,36 +72,19 @@ Things you may want to cover:
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image1|string|null: false|
-|image2|string||
-|image3|string||
-|image4|string||
-|image5|string||
-|image6|string||
-|image7|string||
-|image8|string||
-|image9|string||
-|image10|string||
+|image|string|null: false|
 |item_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :items
+- belongs_to :item
 
 
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|category1|string||
-|category2|string||
-|category3|string||
-|category4|string||
-|category5|string||
-|category6|string||
-|category7|string||
-|category8|string||
-|category9|string||
-|category10|string||
+|category|string||
+
 
 ### Association
 - has_many :item_categories
@@ -116,5 +98,5 @@ Things you may want to cover:
 |categories_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :items
-- belongs_to :categories
+- belongs_to :item
+- belongs_to :categorie
