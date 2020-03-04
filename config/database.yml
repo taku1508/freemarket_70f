@@ -47,8 +47,10 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
 production:
   <<: *default
-  database: freemarket_70f_production
-  username: freemarket_70f
-  password: <%= ENV['FREEMARKET_70F_DATABASE_PASSWORD'] %>
+  database: freemarket_70f_production #そのまま
+  username: root            #rootに変更
+  password: <%= ENV['DATABASE_PASSWORD'] %> #chat-spadeで使った変数
+  socket: /var/lib/mysql/mysql.sock #必須の指定
