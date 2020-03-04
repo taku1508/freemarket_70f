@@ -3,10 +3,10 @@
 lock '3.12.0'
 
 # Capistranoのログの表示に利用する
-set :application, 'freeemarket_70f'
+set :application, 'freemarket_70f'
 
 # どのリポジトリからアプリをpullするかを指定する
-set :repo_url,  'git@github.com:taku1508/freeemarket_70f.git'
+set :repo_url,  'git@github.com:taku1508/freemarket_70f.git'
 
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
