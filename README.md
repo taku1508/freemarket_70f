@@ -38,7 +38,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :items
-- has_many :addresses
+- has_one :addresses
 
 
 ## addressesテーブル
@@ -63,7 +63,6 @@ Things you may want to cover:
 |name|string|null: false|
 |description|string|null: false|
 |category|string|null: false|
-|brand|string|null: false|
 |status|string|null: false|
 |shipping_charges|string|null: false|
 |area|string|null: false|
@@ -111,3 +110,12 @@ Things you may want to cover:
 - belongs_to :item
 - belongs_to :categorie
 
+
+
+## brandテーブル
+|Column|Type|Options|
+|------|----|-------|
+|brand|string|null: false|
+
+### Association
+- has_many : items
