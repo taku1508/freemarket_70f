@@ -34,6 +34,16 @@ Things you may want to cover:
 |hurigana_first|string|null: false|
 |hurigana_second|string|null: false|
 |Birthday|integer|null: false|
+|phonenumber|integer||
+
+### Association
+- has_many :items
+
+
+
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |addressname|string|null: false|
 |addresshurigana|string|null: false|
 |postalcode|integer|null: false|
@@ -41,10 +51,9 @@ Things you may want to cover:
 |municipalities|string|null: false|
 |housenumber|string|null: false|
 |roomnumber|string||
-|phonenumber|integer||
 
 ### Association
-- has_many :items
+- has_many :users
 
 
 
@@ -100,3 +109,4 @@ Things you may want to cover:
 ### Association
 - belongs_to :item
 - belongs_to :categorie
+
