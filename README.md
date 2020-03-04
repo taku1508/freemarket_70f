@@ -27,14 +27,14 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false, unique: true|
-|mailaddress|string|null: false|
+|mail_address|string|null: false|
 |password|string|null: false|
-|firstname|string|null: false|
-|secondname|string|null: false|
+|first_name|string|null: false|
+|second_name|string|null: false|
 |hurigana_first|string|null: false|
 |hurigana_second|string|null: false|
 |Birthday|integer|null: false|
-|phonenumber|integer||
+|phone_number|integer||
 
 ### Association
 - has_many :items
@@ -44,13 +44,13 @@ Things you may want to cover:
 ## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|addressname|string|null: false|
-|addresshurigana|string|null: false|
-|postalcode|integer|null: false|
+|address_name|string|null: false|
+|address_hurigana|string|null: false|
+|postal_code|integer|null: false|
 |prefectures|string|null: false|
 |municipalities|string|null: false|
-|housenumber|string|null: false|
-|roomnumber|string||
+|house_number|string|null: false|
+|room_number|string||
 
 ### Association
 - belongs_to :user
@@ -65,7 +65,7 @@ Things you may want to cover:
 |category|string|null: false|
 |brand|string|null: false|
 |status|string|null: false|
-|shippingcharges|string|null: false|
+|shipping_charges|string|null: false|
 |area|string|null: false|
 |days|string|null: false|
 |price|integer|null: false|
