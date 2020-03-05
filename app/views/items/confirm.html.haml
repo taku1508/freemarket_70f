@@ -1,6 +1,5 @@
 .h_all
-  .h_header
-    = link_to image_tag("/assets/logo.png", class: "h_header__logo"), "#"
+  = render "items_header"
   .h_main
     .h_container
       .h_head
@@ -47,13 +46,4 @@
             %form{action: "#"}
               %input{type: "submit", value: "購入する", class: "h_foot__inner__btn__submit"}
 
-  .h_footer
-    %ul
-      .h_footer__clearfix
-        %li
-          = link_to "プライバシーポリシー", "#", class: "h_footer__clearfix__link"
-        %li
-          = link_to "利用規約", "#", class: "h_footer__clearfix__link"
-        %li
-          = link_to "特定商取引に関する表記", "#", class: "h_footer__clearfix__link"
-    = link_to image_tag("/assets/logo-white.png", class: "h_footer__logo"), "#"
+  = render "items_footer"
