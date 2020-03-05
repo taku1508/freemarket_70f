@@ -1,0 +1,59 @@
+.h_all
+  .h_header
+    = link_to image_tag("/assets/logo.png", class: "h_header__logo"), "#"
+  .h_main
+    .h_container
+      .h_head
+        購入内容の確認
+      .h_middle
+        .h_middle__box
+          .h_middle__box__img
+            = image_tag("/assets/pict-reason-01.jpg", class: "h_middle__box__img")
+          .h_middle__box__text
+            .h_middle__box__text__goods
+              プニュズ ワンピース
+            .h_middle__box__text__detail
+              .h_middle__box__text__detail__price
+                ¥2,000（税込)　
+              .h_middle__box__text__detail__shipping
+                送料込み
+      .h_foot
+        .h_foot__inner
+          .h_foot__inner__table
+            .h_foot__inner__table__text
+              支払金額
+            .h_foot__inner__table__price
+              ¥2000
+          .h_foot__inner__point
+            %input{type: "checkbox", name: "point", value: "送信", class: "h_foot__inner__point__btn"}
+            ポイントを使用 (所持ポイント: P0)
+          .h_foot__inner__method 
+            支払方法
+            .h_foot__inner__method__form
+              = link_to "+登録してください", "#", class: "h_foot__inner__method__form__link"
+            .h_foot__inner__method__pay
+              クレジットカード情報表示
+          .h_foot__inner__method 
+            配送先
+            .h_foot__inner__method__form
+              = link_to "+登録してください", "#", class: "h_foot__inner__method__form__link"
+            .h_foot__inner__method__pay
+              〒583-0861
+              %br  
+              大阪府羽曳野市西浦４−２−20
+              %br  
+              羽岡 諒
+          .h_foot__inner__btn
+            %form{action: "#"}
+              %input{type: "submit", value: "購入する", class: "h_foot__inner__btn__submit"}
+
+  .h_footer
+    %ul
+      .h_footer__clearfix
+        %li
+          = link_to "プライバシーポリシー", "#", class: "h_footer__clearfix__link"
+        %li
+          = link_to "利用規約", "#", class: "h_footer__clearfix__link"
+        %li
+          = link_to "特定商取引に関する表記", "#", class: "h_footer__clearfix__link"
+    = link_to image_tag("/assets/logo-white.png", class: "h_footer__logo"), "#"
