@@ -12,8 +12,8 @@
           最大10枚までアップロードできます
         .t_sell_uploader
           .t_sell_uploader__form
+            = image_tag("icon_camera.png",class: "t_icon_camera")
             .t_icon_camera
-              a
             .t_text_drag_drop
               %p ドラッグアンドドロップ
               %p またはクリックしてファイルをアップロード
@@ -181,24 +181,19 @@
           = form_tag('/items/new',method: :post) do
             %input{type: "number",class: "t_number_form",style:"text-align: right"}
       .t_form_error_number
-      .t_tesuuryou
-        .t_tesuuryou__ten
-          販売手数料 (10%)
-        .t_tesuuryou__count
-          a
-      .t_rieki
-        .t_rieki__sum
-          販売利益
-        .t_rieki__count
-          a
+      -# .t_tesuuryou
+      -#   .t_tesuuryou__ten
+      -#     販売手数料 (10%)
+      -#   .t_tesuuryou__count
+      -#     a
+      -# .t_rieki
+      -#   .t_rieki__sum
+      -#     販売利益
+      -#   .t_rieki__count
+      -#     a
       .t_bottun_form
-        -# .t_bottun_form__display
-        -#   出品する
-        -# %bottun{type: "submit" class: "t_bottun_form__display"}
-          出品する
         = form_tag('/items/new',method: :post) do
           %input{type: "submit", value: "出品する",class: "t_bottun_form__display" }
-        -# .t_bottun_form__back
         = form_tag('/items/new',method: :post) do
           %input{type: "submit", value: "もどる",class: "t_bottun_form__back" }
 = render "items_footer"

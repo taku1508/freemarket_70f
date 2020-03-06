@@ -1,17 +1,17 @@
 .t_all{         
-  height: 2201px; 
+  height: 2000px;
   background-color: rgb(245, 245, 245);
   display: flex;
   justify-content: center;
   .t_form_action{       //全ての要素の親要素
-    height: 2201px;
+    height: 2000px;
     width: 700px;
     .t_display{           // 出品画像の投稿フォーム全体
       margin-bottom: 1px;             
       padding: 40px;
       display: flex;
       justify-content: center;
-      height: 255px;
+      height: 300px;
       background-color: white;
       &__formgroup{
         height: 255px;
@@ -46,7 +46,8 @@
             background-color: rgb(245, 245, 245);
             cursor: pointer;
             display: flex;
-            height: 100%;
+            width: 620px;
+            height: 150px;
             flex-wrap: wrap;
             -webkit-box-pack: center;
             justify-content: center;
@@ -77,7 +78,7 @@
   }  
     .t_items{               //商品名の投稿フォーム全体
       margin-bottom: 1px;
-      height: 336px;
+      height: 416ps;
       padding: 40px;
       background-color: white;
       &__name{        //商品名登録フォーム
@@ -142,7 +143,7 @@
     }
     .t_three{   //商品詳細フォームの全体
       margin-bottom: 1px;
-      height: 364px;
+      height: 444px;
       padding: 40px;
       background-color: white;
       &__details{   //商品詳細表記
@@ -252,7 +253,7 @@
     }
   .t_four{    //配送入力フォームの全体
     margin-bottom: 1px;
-    height: 364px;
+    height: 444px;
     padding: 40px;
     background-color: white;
     &__delivery{
@@ -316,7 +317,6 @@
     }
   }
   .t_five{    //価格入力フォームの全体
-    height: 478px;
     padding: 40px;
     background-color: white;
     &__price{
@@ -388,7 +388,7 @@
       margin: 40px auto 24px;
       height: 120px;
       width: 360px;
-      &__display{   //mixinでまとめる
+      &__display{  
         font-size: 17px;
         padding: 0 24px;
         margin-bottom: 24px;
