@@ -1,0 +1,46 @@
+@mixin hissu {
+  border-radius: 2px;
+  background-color: #ff0211;
+  color: #fff;
+  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  margin-left: 8px;
+  font-size: 12px;
+  padding: 0 4px;
+}
+
+@mixin font_style {
+  color: #333333;
+  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4em;
+}
+
+@mixin font_grey {
+  color: rgb(136, 136, 136);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4em;
+  margin-bottom: 24px;
+  font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+}
+
+@mixin select_font_form{
+  margin: 0;
+  padding: 0 56px 0 16px;
+  height: 48px;
+  width: 620px;
+  color: #222;
+  background-color: #ffffff;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+@mixin count_group{
+  align-items: center;
+  box-sizing: content-box;
+  display: flex;
+  height: 46px;
+}
