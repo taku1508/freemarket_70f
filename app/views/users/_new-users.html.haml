@@ -1,18 +1,21 @@
-.m_contents
-  .m_header
-    
-  .m_main
-    .m_heder__login
-      %p アカウントをお持ちでない方はこちら
-      %input{:style => "color:#ffff;background-color:#0099E8;font-size:15;width:328px;height:50px", :type => "button", :value => "新規会員登録"}/
-    .m_heder__login-account
+.single-container
+  .single-header
+  -# 羽岡さん↑
+  .single-main
+    .login-panel
+      .login-no-account
+     
+      %a{:href => "https://www.mercari.com/jp/signup/"} 新規会員登録
+
+      %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
+        %i.icon-facebook Facebookでログイン
+      -# %button#google-login.btn-default.btn-sns.btn-sns-google
+      -#   Googleでログイン
       .m_heder__login-account__form1
-      %input{:style => "color:#ffff;background-color:#385184;font-size:15;width:328px;height:50px", :type => "button", :value => "Facebookでログイン"}/
+        %input{:style => "color:#ffff;background-color:#385184;font-size:15;width:328px;height:50px", :type => "button", :value => "Facebookでログイン"}/
 
       .m_heder__login-account__form2
       %input{:style => "color:文字色;background-color:#F9F9F9;font-size:15;width:328px;height:50px", :type => "button", :value => "googleでログイン"}/
-
-      
     .m_heder__login-account__lower
       %form{:action => "confirm.php", :method => "post"}
 
@@ -20,20 +23,57 @@
 
         %input.login-input-text.input-default{:name => "email", :placeholder => "メールアドレス", :type => "email", :value => "", }/
        
-
-
         -# .m_heder__login-account__lower__mail-passsword
         -# %input{:style => "color:文字色;background-color:#FFFFFF;font-size:15;width:328px;height:50px", :type => "button", :value => "パスワード"}/
 
         %input.login-input-text.input-default{:name => "txet", :placeholder => "パスワード", :type => "email", :value => ""}/
 
-        .m_heder__login-account__lower__lobot
-        %input{:style => "color:文字色;background-color:#F9F9F9;font-size:15;width:300px;height:50px", :type => "button", :value => "私はロボっではありません"}/
+        %input.heder__login-account__lower__lobot{:style => "color:文字色;background-color:#F9F9F9;font-size:15;width:300px;height:50px", :type => "button", :value => "私はロボっではありません"}/
+
         .m_heder__login-account__lower__login
         %input#google-login.btn-default.btn-sns.btn-sns-google{:style => "color:#ffff;background-color:#E9352D;font-size:15;width:328px;height:50px", :type => "button", :value => "ログイン"}/
 
-      %a{:href => "https://www.mercari.com/jp/password/reset/start/"} パスワードをお忘れの方
+        
+
 
         
 
   .m_footer
+
+
+  
+  .single-container
+    .login-no-account
+      .p  アカウントをお持ちでない方はこちら
+      %a{:href => "https://www.mercari.com/jp/signup/"} 新規会員登録
+    
+    .login-form-inner
+      .m_heder__login-account__form1
+        %input{:style => "color:#ffff;background-color:#385184;font-size:15;width:328px;height:50px", :type => "button", :value => "Facebookでログイン"}/
+      
+      .m_heder__login-account__form2
+      %input{:style => "color:文字色;background-color:#F9F9F9;font-size:15;width:328px;height:50px", :type => "button", :value => "googleでログイン"}/
+
+    .login-form-inner2
+      %input.login-input-text.input-default{:name => "email", :placeholder => "メールアドレス", :type => "email", :value => "", }/
+
+      %input.login-input-text.input-default{:name => "txet", :placeholder => "パスワード", :type => "email", :value => ""}/
+      
+      .form-group
+      %iframe{:frameborder => "0", :height => "78", :name => "a-roi58y47yv0h", :role => "presentation", :sandbox => "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", :scrolling => "no", :src => "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=v1QHzzN92WdopzN_oD7bUO2P&size=normal&cb=fcl0ye5zkdlc", :width => "304"}
+
+
+      %input#google-login.btn-default{:style => "color:#ffff;background-color:#E9352D;font-size:15;width:328px;height:50px; margin:24px 0 0;", :type => "button", :value => "ログイン"}/
+
+      %link_to 'パスワードをお忘れの方', 'https://www.mercari.com/jp/password/reset/start/' %
+
+
+
+
+
+    
+
+
+
+      
+     
