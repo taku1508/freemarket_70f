@@ -1,4 +1,5 @@
-class ItemsController < ApplicationController
+class UsersController < ApplicationController
+
   def index
   end
 
@@ -19,8 +20,6 @@ class ItemsController < ApplicationController
 
   def destroy
   end
-
-  def confirm
-  end
   
+
 end
