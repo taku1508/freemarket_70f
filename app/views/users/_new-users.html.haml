@@ -1,18 +1,24 @@
-.m_contents
-  .m_header
-    
-  .m_main
-    .m_heder__login
-      %p アカウントをお持ちでない方はこちら
-      %input{:style => "color:#ffff;background-color:#0099E8;font-size:15;width:328px;height:50px", :type => "button", :value => "新規会員登録"}/
-    .m_heder__login-account
-      .m_heder__login-account__form1
-      %input{:style => "color:#ffff;background-color:#385184;font-size:15;width:328px;height:50px", :type => "button", :value => "Facebookでログイン"}/
+.single-container
+  .single-header
+  -# 羽岡さん↑
+  .single-main
+    .login-panel
+      .login-no-account
+        .p アカウントをお持ちでない方はこちら
+      %a{:href => "https://www.mercari.com/jp/signup/"} 新規会員登録
 
-      .m_heder__login-account__form2
-      %input{:style => "color:文字色;background-color:#F9F9F9;font-size:15;width:328px;height:50px", :type => "button", :value => "googleでログイン"}/
+      -# %input{:style => "color:#ffff;background-color:#0099E8;font-size:15;width:328px;height:50px", :type => "button", :value => "新規会員登録"}/
+    .login-form-inner
+      %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
+        %i.icon-facebook Facebookでログイン
+        %button#google-login.btn-default.btn-sns.btn-sns-google
+        Googleでログイン
 
-      
+      -# .m_heder__login-account__form1
+      -# %input{:style => "color:#ffff;background-color:#385184;font-size:15;width:328px;height:50px", :type => "button", :value => "Facebookでログイン"}/
+
+      -# .m_heder__login-account__form2
+      -# %input{:style => "color:文字色;background-color:#F9F9F9;font-size:15;width:328px;height:50px", :type => "button", :value => "googleでログイン"}/
     .m_heder__login-account__lower
       %form{:action => "confirm.php", :method => "post"}
 

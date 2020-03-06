@@ -1,4 +1,4 @@
-.m_contents{
+.single-container{
   background:lightcyan;
   height:100vh;
   width: 100vw;
@@ -8,7 +8,7 @@
     width: 100%;
     text-align:center;
   }
-  .m_main{
+  .single-main{
     background:#ffff;
     // height: 128px;
     // width: %;
@@ -25,19 +25,12 @@
     }
   }
 }
-.m_heder__login-account{
+.login-form-inner{
   width:100%;
   height:181px;
   margin:0px;
   background: #ffff;
   display: flex;
-}
-.m_heder__login-account__form1{
-  margin-top:14px;
-}
-
-.m_heder__login-account__form2{
-  margin-top:14px;
 }
 
 .m_heder__login-account__lower{
@@ -51,13 +44,47 @@
   margin:0;
 
 }
-
 .google-login.btn-default.btn-sns.btn-sns-google{
   margin-top:15px;
 }
-
-
 .m_footer{
   background:lightyellow;
   height:200px ;
+}
+
+
+
+
+a{
+  display: block;
+  width:328px;
+  margin: 8px 0 0;
+  border: 1px solid #0099e8;
+  background: #0099e8;
+  color: #fff;
+  line-height: 40px;
+  background-color:#0099E8;
+  text-align:center;
+}
+
+.login-form-inner {
+  padding: 32px 64px;
+  border-top: 1px solid #eee;
+
+}
+.icon-facebook{
+  margin-top:14px;
+  color:#ffff;
+  background-color:#0099E8;
+  font-size:15;
+  width:328px;
+  height:50px;
+
+}
+
+.google-login.btn-default.btn-sns.btn-sns-google {
+  margin: 16px 0 0;
+  background: #fff url(/jp/assets/img/common/common/google.svg) no-repeat 3px top;
+  border: #979797 solid 1px;
+  color: #333;
 }
