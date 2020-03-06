@@ -1,19 +1,10 @@
+-# マイページの実装
 .all
-  .h_header
-    %ul
-      %li
-        = link_to "メルカリ", "#", class:"h_header--color"
-      %li
-        = image_tag '矢印アイコン　右4.png', class: 'h_header__icon'
-      %li
-        マイページ
+  = render "users_header2" 
+
   .h_main
-    .h_left
-      %ul
-        %li
-          = link_to "ログアウト", "#", class: "h_left__link"
-        %li
-          = link_to "クレジットカード", "#", class: "h_left__link"
+    = render "leftbar"
+
     .h_right
       .h_top
         = image_tag 'orange0024.png', class: 'h_top--size'
