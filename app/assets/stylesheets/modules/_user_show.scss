@@ -1,12 +1,18 @@
 .all{
   background-color: #f8f8f8;
-  .h_header{
+  .h_head{
     border-top: 1px solid #eee;
     height: 50px;
     background-color: white;
     box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    line-height: 50px;
     ul{
       display: flex;
+      width: 1020px;
+      margin: 0 auto;
+      li{
+        padding-right: 10px;
+      }
     }
     &--color{
       text-decoration: none;
@@ -23,20 +29,31 @@
   
   
     .h_left{
-      height: 100vh;
-      background-color: green;
-      background-color: white;
-      width: 280px;
-      margin: 0 40px 0 0;
-      &__link{
-        min-height: 48px;
-        line-height: 40px;
-        border-bottom: solid 1px #f5f5f5;;
-        display: block;
-        text-decoration: none;
-        color: #333;
-        font-size: 14px;
+      &__contents{
+        background-color: white;
+        width: 280px;
+        margin: 0 40px 0 0;
+        margin-bottom: 30px;
+        li{
+          line-height: 40px;
+          border-bottom: solid 1px #f5f5f5;
+        }
+        &__link{
+          padding-left: 16px;
+          min-height: 48px;
+          display: block;
+          text-decoration: none;
+          color: #333;
+          font-size: 14px;
+          font-weight: bold;
+        }
+        &__link:hover{
+          background-color:lightgray;
+        }
+      }
+      &__text{
         font-weight: bold;
+        padding-bottom: 5px;
       }
     }
   
@@ -44,7 +61,7 @@
     .h_right{
       width: 700px;
       height: 100vh;
-      background-color: red;
+      background-color: white;
       .h_top{
         position: relative;
         &--size{
