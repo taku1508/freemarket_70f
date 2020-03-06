@@ -1,0 +1,34 @@
+.all
+  .h_header
+    %ul
+      %li
+        = link_to "メルカリ", "#", class:"h_header--color"
+      %li
+        = image_tag '矢印アイコン　右4.png', class: 'h_header__icon'
+      %li
+        マイページ
+  .h_main
+    .h_left
+      %ul
+        %li
+          = link_to "ログアウト", "#", class: "h_left__link"
+        %li
+          = link_to "クレジットカード", "#", class: "h_left__link"
+    .h_right
+      .h_top
+        = image_tag 'orange0024.png', class: 'h_top--size'
+        .h_top__icon
+          = image_tag 'member_photo_noimage_thumb.png', class: 'h_top__icon--size'
+          .h_top__icon__name
+            羽岡諒
+          .h_top__icon__list
+            %p
+              評価
+            .h_top__icon__list__quantity
+              ０
+            %p
+              出品数
+            .h_top__icon__list__quantity
+              ０
+
+  
