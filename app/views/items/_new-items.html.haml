@@ -1,3 +1,5 @@
+.wrapper 
+  = render "items_header"
 .t_all
   .t_form_action    
     .t_display
@@ -200,3 +202,5 @@
         -# .t_bottun_form__back
         = form_tag('/items/new',method: :post) do
           %input{type: "submit", value: "もどる",class: "t_bottun_form__back" }
+
+          
