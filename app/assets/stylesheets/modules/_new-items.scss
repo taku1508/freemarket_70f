@@ -48,7 +48,6 @@
             display: flex;
             width: 620px;
             height: 150px;
-            // height: 100%;
             flex-wrap: wrap;
             -webkit-box-pack: center;
             justify-content: center;
@@ -79,7 +78,6 @@
   }  
     .t_items{               //商品名の投稿フォーム全体
       margin-bottom: 1px;
-      // height: 336px;
       height: 416ps;
       padding: 40px;
       background-color: white;
@@ -145,7 +143,6 @@
     }
     .t_three{   //商品詳細フォームの全体
       margin-bottom: 1px;
-      // height: 364px;
       height: 444px;
       padding: 40px;
       background-color: white;
@@ -256,7 +253,6 @@
     }
   .t_four{    //配送入力フォームの全体
     margin-bottom: 1px;
-    // height: 364px;
     height: 444px;
     padding: 40px;
     background-color: white;
@@ -321,7 +317,6 @@
     }
   }
   .t_five{    //価格入力フォームの全体
-    // height: 558px; 一旦消去
     padding: 40px;
     background-color: white;
     &__price{
@@ -393,7 +388,7 @@
       margin: 40px auto 24px;
       height: 120px;
       width: 360px;
-      &__display{   //mixinでまとめる
+      &__display{  
         font-size: 17px;
         padding: 0 24px;
         margin-bottom: 24px;
