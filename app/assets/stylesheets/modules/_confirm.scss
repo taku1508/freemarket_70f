@@ -1,0 +1,129 @@
+.h_all{
+  background-color: #f8f8f8;
+}
+.h_header{
+  width: 100vw;
+  height: 128px;
+  text-align: center;
+  line-height: 128px;
+  &__logo{
+    width: 150px;
+  }
+}
+.h_main{
+  width: 100vw;
+  .h_container{
+    width: 700px;
+    background-color:white;
+    margin: 0 auto;
+    .h_head{
+      height: 97px;
+      font-size: 22px;
+      padding: 32px;
+      font-weight: bold;
+      text-align: center;
+      border-bottom: solid 1px #f5f5f5;
+    }
+    .h_middle{
+      height: 145px;
+      padding: 32px 16px;
+      border-bottom: solid 1px #f5f5f5;
+      &__box{
+        height: 80px;
+        width: 343px;
+        margin: 0 auto;
+        display: flex;
+        &__img{
+          height: 80px;
+          width: 80px;
+        }
+        &__text{
+          height: 80px;
+          margin-left: 16px;
+          &__goods{
+            height: 29px;
+            font-size: 14px;
+          }
+          &__detail{
+            display: flex;
+            font-weight: bold;
+            &__price{
+              font-size: 15px;
+            }
+            &__shipping{
+              font-size: 12px;
+              padding-top: 4px;
+            }
+          }
+        }
+      }
+    }
+    .h_foot{
+      padding: 32px 16px 48px;
+      &__inner{
+        width: 350px;
+        margin: 0 auto;
+        &__table{
+          display: flex;
+          justify-content: space-between;
+          &__text{
+            font-size: 18px;
+            height: 30px;
+            padding-top: 10px;
+          }
+          &__price{
+            font-size: 30px;
+          }
+        }
+        &__point{
+          border-bottom: solid 1px #f5f5f5;
+          padding-bottom: 32px;
+          color: #888;
+          &__btn{
+            background-color: #888;
+          }
+        }
+        &__method{
+          border-bottom: solid 1px #f5f5f5;
+          padding: 32px 0;
+          &__form{
+            &__link{
+              text-decoration: none;
+              color: royalblue;
+            }
+          }
+        }
+        &__btn{
+          padding-top: 32px;
+          &__submit{
+            width: 100%;
+            line-height: 48px;
+            background-color: #888;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+.h_footer{
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+  &__clearfix{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 40px;
+    &__link{
+      text-decoration: none;
+      color: black;
+    }
+  }
+  &__logo{
+    width: 150px;
+  }
+}
