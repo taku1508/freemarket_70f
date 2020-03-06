@@ -21,5 +21,16 @@ class UsersController < ApplicationController
   def destroy
   end
   
+  def logout
+  end
+
+  def deliber_address
+  end
+
+  def email_password
+  end
+
+  def identify
+  end
 
 end
