@@ -1,0 +1,39 @@
+.m_contents
+  .m_header
+    
+  .m_main
+    .m_heder__login
+      %p アカウントをお持ちでない方はこちら
+      %input{:style => "color:#ffff;background-color:#0099E8;font-size:15;width:328px;height:50px", :type => "button", :value => "新規会員登録"}/
+    .m_heder__login-account
+      .m_heder__login-account__form1
+      %input{:style => "color:#ffff;background-color:#385184;font-size:15;width:328px;height:50px", :type => "button", :value => "Facebookでログイン"}/
+
+      .m_heder__login-account__form2
+      %input{:style => "color:文字色;background-color:#F9F9F9;font-size:15;width:328px;height:50px", :type => "button", :value => "googleでログイン"}/
+
+      
+    .m_heder__login-account__lower
+      %form{:action => "confirm.php", :method => "post"}
+
+        -# %input.login-input-text.input-default{:style => "color:文字色;background-color:#FFFFFF;font-size:15;width:328px;height:50px", :type => "button", :value => "メールアドレス"}/
+
+        %input.login-input-text.input-default{:name => "email", :placeholder => "メールアドレス", :type => "email", :value => "", }/
+       
+
+
+        -# .m_heder__login-account__lower__mail-passsword
+        -# %input{:style => "color:文字色;background-color:#FFFFFF;font-size:15;width:328px;height:50px", :type => "button", :value => "パスワード"}/
+
+        %input.login-input-text.input-default{:name => "txet", :placeholder => "パスワード", :type => "email", :value => ""}/
+
+        .m_heder__login-account__lower__lobot
+        %input{:style => "color:文字色;background-color:#F9F9F9;font-size:15;width:300px;height:50px", :type => "button", :value => "私はロボっではありません"}/
+        .m_heder__login-account__lower__login
+        %input#google-login.btn-default.btn-sns.btn-sns-google{:style => "color:#ffff;background-color:#E9352D;font-size:15;width:328px;height:50px", :type => "button", :value => "ログイン"}/
+
+      %a{:href => "https://www.mercari.com/jp/password/reset/start/"} パスワードをお忘れの方
+
+        
+
+  .m_footer
