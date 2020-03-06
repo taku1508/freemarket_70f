@@ -2,35 +2,25 @@
   background:lightcyan;
   height:100vh;
   width: 100vw;
-  .m_header{
+}
+  .single_header{
     background: rgb(209, 190, 155);
-    height: 150px;
+    height: 250px;
     width: 100%;
-    text-align:center;
+
   }
   .single-main{
     background:#ffff;
-    // height: 128px;
+    height: 128px;
     // width: %;
     text-align:center;
     // display:block;
-
-    .m_heder__login{
-      height: 150px;
-      padding: 0;
-      background: #FFFF;
-      .button{
-      background-color:lightslategray;
-     }
     }
-  }
-}
 .login-form-inner{
   width:100%;
   height:181px;
   margin:0px;
   background: #ffff;
-  display: flex;
 }
 
 .m_heder__login-account__lower{
@@ -49,16 +39,22 @@
 }
 .m_footer{
   background:lightyellow;
-  height:200px ;
+  height:500px ;
 }
 
+.login-panel{
+  max-width: none;
+  width: 456px;
+  margin:auto;
+}
 
 
 
 a{
   display: block;
   width:328px;
-  margin: 8px 0 0;
+  margin:auto;
+
   border: 1px solid #0099e8;
   background: #0099e8;
   color: #fff;
@@ -70,7 +66,6 @@ a{
 .login-form-inner {
   padding: 32px 64px;
   border-top: 1px solid #eee;
-
 }
 .icon-facebook{
   margin-top:14px;
@@ -79,7 +74,6 @@ a{
   font-size:15;
   width:328px;
   height:50px;
-
 }
 
 .google-login.btn-default.btn-sns.btn-sns-google {
@@ -88,3 +82,54 @@ a{
   border: #979797 solid 1px;
   color: #333;
 }
+
+
+.login-no-account{
+  width:456px;
+  height:144px;
+  background:#ffff;
+  margin:auto;
+  padding:40px 64px;
+  .p{
+    font-size:14px;
+    
+  }
+}
+.login-form-inner{
+  width:456px;
+  height:181px;
+  background: #ffff;
+  margin:auto;
+  padding: 32px 64px;
+}
+
+.m_heder__login-account__form2{
+  margin:16px 0 0;
+}
+
+
+.login-form-inner2{
+  width:456px;
+  height:406px;
+  background: #ffff;
+  margin:auto;
+  padding: 32px 64px;
+}
+
+// パスワード入力箇所
+.login-input-text.input-default{
+  margin:24px 0 0;
+  width:328px;
+  height:48px;
+}
+// ロボットではありません
+.heder__login-account__lower__lobot{
+  width: 304px; 
+  height: 78px;
+}
+
+.form-group{
+  margin:24px 0 0 ;
+}
+
+
