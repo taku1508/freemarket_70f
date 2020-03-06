@@ -1,19 +1,12 @@
--# .i_header
--#   .i_header__inner
--#     .i_header__mainheader
--#       .i_icon
--#       .i_searchbox
--#     .i_menu
--# %nav.i_nav
-
 .i_main
-  .i_main__mainscreen
-    .i_main__mainscreen__content
-      .i_main__mainscreen__content__top
-        .i_main__mainscreen__content__top__item
-          .i_main__mainscreen__content__top__item__name
-            product2
-          .i_main__mainscreen__content__top__item__body
+  .i_mainscreen
+    .i_content
+      .i_content__top
+        -# 以下から商品の詳細
+        .i_item
+          .i_item__name
+            カルボナーラ
+          .i_item__body
             %ul.gazou
               %li.gazou_1
                 = image_tag str="/assets/food_spaghetti_carbonara.png" 
@@ -24,42 +17,50 @@
                     = image_tag str="/assets/food_spaghetti_carbonara.png" ,size:"75x75"
                   %li.gazou_mini3
                     = image_tag str="/assets/food_spaghetti_carbonara.png" ,size:"75x75"
-
-          .i_main__mainscreen__content__top__item__price
+          .i_item__price
             %span ¥2000
-            .i_main__mainscreen__content__top__item__price-detail
+            .i_item__price-detail
               %span (税込)
               %span 送料込み
           .i_itemDetail
-            product2
+            親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
           -# 以下から表の作成
           .i_table
-            %table{:border => "1", :height => "375px", :width => "100%"}
+            %table
               %tr
                 %th 出品者
-                %th hhh
+                %td hage
               %tr
-                %td カテゴリー
-                %td koko
+                %th カテゴリー
+                %td 
+                  = link_to items_path do
+                    メンズ
+                  %br
+                  = link_to items_path do
+                    ジャケット/アウター
+                  %br
+                  = link_to items_path do
+                    ノーカラージャケット
               %tr
                 %th ブランド
-                %td aaaa
+                %td 
               %tr
                 %th 商品のサイズ
-                %td ssss
+                %td 
               %tr
                 %th 商品の状態
-                %td b
+                %td 新品/未使用
               %tr
                 %th 配送料の負担
-                %td ko
+                %td 着払い（購入者負担）
               %tr
                 %th 配送元の地域
-                %td shiga
+                %td 
+                  = link_to items_path do
+                    大阪府
               %tr
                 %th 発送日の目安
-                %td 2~3日
-
+                %td 2~3日で発送
           -# 以下からオプションボタン
           .i_option
             %ul
@@ -68,11 +69,11 @@
                 お気に入り０
             %ul.i_option__fav
               %li.i_option__fav__btn
-                %a.i_option__fav__btn__link(href="#")
+                = link_to items_path do
                   %i.fa.fa-flag
                     不適切な商品の通報
           -# 以下からコメントフォーム
-        .i_main__mainscreen__content__top__commentBox
+        .i_commentBox
           %ul.i_commentContents
             = form_tag('/items/show',method: :post)do
               %textarea(name="commentarea" rows="5" class="i_input_comment_area")
@@ -83,34 +84,29 @@
               %button(name="button" type="submit" class="i_commentBtn")
                 %i.fas.fa-comment 
                 コメントする
+          -# 以下からリンク
       %ul.i_main__links
         %li
-          %a.i_link_left(href="#")
+          = link_to items_path do
             %i.fa.fa-angle-left
             %span
             前の商品
         %li
-          %a.i_link_right(href="#")
+          = link_to items_path do
             %span
               後の商品
             %i.fa.fa-angle-right
       .i_main__relateditem
-        %a.relateditemName(href="#")メンズをもっと見る
-
-
-%asside.i_app_box
-  .i_app_inner
-    .i_app_inner__title
-    %p.i_app_inner__text
-    .i_app_inner__icon
-
+        = link_to items_path do
+          メンズをもっと見る
+    -# 以下からフッター
 .i_footer
   %ul.i_contents
     .i_content
       %h.i_content_head
-      
-
-%a{ :href => '#'}
+    .i_footer_logo
+      = link_to items_path do
+        = image_tag str="/assets/logo-white.png" ,size:"160x46"
 
 
 
