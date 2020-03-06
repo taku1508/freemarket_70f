@@ -1,0 +1,420 @@
+.t_all{         
+  height: 2201px; 
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  justify-content: center;
+  .t_form_action{       //全ての要素の親要素
+    height: 2201px;
+    width: 700px;
+    .t_display{           // 出品画像の投稿フォーム全体
+      margin-bottom: 1px;             
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      height: 255px;
+      background-color: white;
+      &__formgroup{
+        height: 255px;
+        width: 620px;
+        .t_display_name{  // 出品名
+          height: 19px;
+          display: flex;
+          align-items: center;
+            &__junle{
+              @include font_style
+            }
+            &__hissu{
+              @include hissu;
+            }
+        }
+        .t_display_names{   // 複数の出品名
+          color: #000000;
+          margin-top: 16px;
+          font-size: 14px;
+          line-height: 1.4em;            
+          font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        }
+        .t_sell_uploader{ // 出品画像の投稿フォーム
+          height: 158px;
+          width: 620px;
+          margin-top: 8px;
+          padding: 0px 4px;
+          &__form{              
+            align-content: center;
+            -webkit-box-align: center;
+            align-items: center;
+            background-color: rgb(245, 245, 245);
+            cursor: pointer;
+            display: flex;
+            height: 100%;
+            flex-wrap: wrap;
+            -webkit-box-pack: center;
+            justify-content: center;
+            position: relative;
+            border-width: 1px;
+            border-style: dashed;
+            border-color: rgb(204, 204, 204);
+            border-image: initial;
+            transition: all 0.5s ease-out 0s;
+            .t_icon_camera{ //カメラiconの表示 未実装
+              height: 24px;
+              width: 24px;
+              fill: rgb(34, 34, 34);
+              margin-bottom: 8px;
+            }
+            .t_text_drag_drop{  //フォーム内表記情報
+              color: #333333;
+              font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+              font-size: 12px;
+              line-height: 1.4em;
+              text-align: center;
+              width: 100%;
+            }
+          }
+        }    
+      } 
+    }
+  }  
+    .t_items{               //商品名の投稿フォーム全体
+      margin-bottom: 1px;
+      height: 336px;
+      padding: 40px;
+      background-color: white;
+      &__name{        //商品名登録フォーム
+        height: 83px;
+        font-size: 16px;
+        .t_items_names{   
+          height: 19px;
+          display: flex;
+          &__items{    
+            @include font_style
+          } 
+          &__hissu{   
+            @include hissu;
+          }
+        }
+        .t_form_style{    
+          align-items: center;
+          display: inline-flex;
+          margin-top: 16px;
+          width: 100%;
+          font-size: 16px;
+          font-family: $font-style;
+          .t_input_text_field{    //商品名入力フォーム
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: inherit;
+            width: 620px;
+            height: 48px;
+            margin: 0;
+            outline: none;
+            padding: 0 16px;
+          }
+        }
+      }
+      .t_items_explanation{   //商品説明入力フォームの全体
+        height: 221px;
+        margin-top: 32px;
+        &__form{      
+          display: flex;
+          .t_explanation_items{ 
+            @include font_style
+          }
+          .t_explanation_hissu{ 
+            @include hissu;
+          }
+        }
+        .t_input_text_field2{   //商品説明記入フォーム
+          margin-top: 16px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          font-family: inherit;
+          font-size: inherit;
+          width: 620px;
+          height: 150px;
+          outline: none;
+          padding: 0 16px;          
+        }
+      }
+    }
+    .t_three{   //商品詳細フォームの全体
+      margin-bottom: 1px;
+      height: 364px;
+      padding: 40px;
+      background-color: white;
+      &__details{   //商品詳細表記
+        @include font_grey;
+      }
+      .t_category{
+        .t_category_group{    //カテゴリーフォームの全体
+          height: 83px;
+          margin-top: 32px;
+            .t_category_name_group{ //カテゴリーフォーム入力親要素
+              display: flex;
+              &__category{
+                color: #333333;
+                font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 1.4em;
+              }
+              &__hissu{
+                @include hissu;
+              }
+            }
+          .t_items_name__items{
+            margin-top: 16px;
+            font-family: $font-style;
+            .t_form_style2{
+              margin-top: 16px;
+              font-family: $font-style;
+              .t_category_form{
+                margin: 0;
+                padding: 0 56px 0 16px;
+                height: 48px;
+                width: 620px;
+                color: #222;
+                background-color: #ffffff;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                line-height: 1;
+              }
+            }
+          }
+        }
+        .t_brand{       //ブランド入力フォーム
+          margin-top: 32px;
+          height: 83px;
+          .t_brand_group{
+            display: flex;
+            height: 19px;
+            &__brand{
+              @include font_style;
+            }
+            &__ninni{
+              border-radius: 2px;
+              margin-left: 8px;
+              padding: 0 4px;
+              font-size: 12px;
+              font-family: $font-style;
+              background-color: #bfbfbf;
+              color:white;
+            } 
+          }
+          .t_brand_style{
+            align-items: center;
+            display: inline-flex;
+            margin-top: 16px;
+            width: 100%;
+            font-size: 16px;
+            font-family: $font-style;
+            .t_input_field{
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              font-family: inherit;
+              font-size: inherit;           
+              width: 620px;
+              height: 48px;
+              margin: 0;
+              outline: none;
+              padding: 0 16px;
+            }
+          }
+        }
+        .t_status{      //商品の詳細入力フォーム
+          height: 83px;
+          margin-top: 32px;
+          .t_status_group{
+            height: 19px;
+            display: flex;
+            &__status{
+              @include font_style;
+            }
+            &__hissu{
+              @include hissu;
+            }
+          }
+          .t_status_style{
+            margin-top: 16px;
+            font-family: $font-style;
+              .t_status_select_form{
+                @include select_font_form;
+              }
+          }
+        }
+
+      } 
+    }
+  .t_four{    //配送入力フォームの全体
+    margin-bottom: 1px;
+    height: 364px;
+    padding: 40px;
+    background-color: white;
+    &__delivery{
+      @include font_grey;
+    }
+    .t_delivery_group{  //配送料の負担入力フォーム
+      height: 17px;
+      display: flex;
+      &__delivery{
+        @include font_style;
+      }
+      &__hissu{
+        @include hissu;
+      }
+    }
+    .t_form_style_delivery{
+      margin-top: 16px;
+      font-family: $font-style;
+
+        .t_delivery_form{
+          @include select_font_form;
+        }
+    }
+    .t_area_group{      //配送地域入力フォーム
+      margin-top: 32px;
+      height: 17px;
+      display: flex;
+      &__area{
+        @include font_style;
+      }
+      &__hissu{
+        @include hissu;
+      }
+    }
+    .t_form_style_delivery{
+      margin-top: 16px;
+      font-family: $font-style;
+
+        .t_delivery_form{
+          @include select_font_form;
+        }
+    }
+    .t_days_group{    //配送日数入力フォーム
+      margin-top: 32px;
+      height: 17px;
+      display: flex;
+      &__days{
+        @include font_style;
+      }
+      &__hissu{
+        @include hissu;
+      }
+    }
+    .t_form_style_delivery{
+      margin-top: 16px;
+      font-family: $font-style;
+
+        .t_delivery_form{
+          @include select_font_form;
+        }
+    }
+  }
+  .t_five{    //価格入力フォームの全体
+    height: 478px;
+    padding: 40px;
+    background-color: white;
+    &__price{
+      @include font_grey;
+    }
+    &__selling_price{ //販売価格入力フォーム
+      background-color: white;
+      padding: 0 0 12px;
+      height: 46px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .t_selling_price_group{   //金額入力フォーム
+        height: 19px;
+        margin-right: auto;
+        display: flex;
+        &__price{
+          @include font_style;
+        }
+        &__hissu{
+          @include hissu;
+        }
+      }
+      .t_yen{
+        float: left;
+        font-size: 14px;
+        margin-right: 8px;
+      }
+      .t_number_form{
+        height: 48px;
+        width: 285px;
+        @include font_style;
+      }
+    }
+    .t_form_error_number{
+      color: #ff0211;
+      font-size: 14px;
+      line-height: 1.4em;
+      margin: 4px 0 0;
+      height: 19px;
+    }
+    .t_tesuuryou{
+      @include count_group;
+      &__ten{
+        color: #333333;
+        font-size: 14px;
+        font-family: $font-style;
+        margin-right: auto;
+      }
+      &__count{
+        font-size: 14px;
+        font-family: $font-style;
+      }
+    }
+    .t_rieki{
+      @include count_group;
+      &__sum{
+        color: #333333;
+        font-size: 14px;
+        font-family: $font-style;
+        margin-right: auto;
+      }
+      &__count{
+        font-size: 14px;
+        font-family: $font-style;
+      }
+    }
+    .t_bottun_form{
+      margin: 40px auto 24px;
+      height: 120px;
+      width: 360px;
+      &__display{   //mixinでまとめる
+        font-size: 17px;
+        padding: 0 24px;
+        margin-bottom: 24px;
+        text-align: center;
+        font-family: $font-style;
+        line-height: 48px;
+        background-color: #ea352d;
+        color: #fff;
+        border-radius: 4px;
+        width: 360px;
+        height: 48px;
+      }
+      &__back{
+        font-size: 17px;
+        padding: 0 24px;
+        margin-bottom: 24px;
+        text-align: center;
+        font-family: $font-style;
+        line-height: 48px;
+        background-color: #ccc;
+        border-color: transparent;
+        color: #222;
+        border-radius: 4px;
+        width: 360px;
+        height: 48px;
+      }
+    }
+  }
+}
