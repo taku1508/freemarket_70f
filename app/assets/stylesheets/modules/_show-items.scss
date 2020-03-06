@@ -97,7 +97,7 @@
                 padding: 15px 15px;
                 border: 1px solid #dedede;
                 font-size: 14px;
-                .i_tableCategory{
+                a{
                   text-decoration: none;
                   color: #3CCACE;
                 }
@@ -123,7 +123,7 @@
               display: flex;
               .i_option__fav__btn{
                 font-size: 14px;
-                .i_option__fav__btn__link{
+                a{
                   padding: 6px 10px;
                   display: inline-block;
                   border-radius: 4px;
@@ -173,17 +173,17 @@
         list-style: none;
         display: flex;
         justify-content: space-between;
-        .i_link_left{
+        a{
           text-decoration: none;
           color: #3CCACE;
         }
-        .i_link_right{
+        a{
           text-decoration: none;
           color: #3CCACE;
         }
       }
       .i_main__relateditem{
-        .relateditemName{
+        a{
           display: block;
           margin: 24px 0 8px;
           color: #3CCACE;

@@ -33,13 +33,13 @@
               %tr
                 %th カテゴリー
                 %td 
-                  %a.i_tableCategory(href="#")
+                  = link_to items_path do
                     メンズ
                   %br
-                  %a.i_tableCategory(href="#")
+                  = link_to items_path do
                     ジャケット/アウター
                   %br
-                  %a.i_tableCategory(href="#")
+                  = link_to items_path do
                     ノーカラージャケット
               %tr
                 %th ブランド
@@ -56,7 +56,7 @@
               %tr
                 %th 配送元の地域
                 %td 
-                  %a.i_tableCategory(href="#")
+                  = link_to items_path do
                     大阪府
               %tr
                 %th 発送日の目安
@@ -69,7 +69,7 @@
                 お気に入り０
             %ul.i_option__fav
               %li.i_option__fav__btn
-                %a.i_option__fav__btn__link(href="#")
+                = link_to items_path do
                   %i.fa.fa-flag
                     不適切な商品の通報
           -# 以下からコメントフォーム
@@ -87,24 +87,25 @@
           -# 以下からリンク
       %ul.i_main__links
         %li
-          %a.i_link_left(href="#")
+          = link_to items_path do
             %i.fa.fa-angle-left
             %span
             前の商品
         %li
-          %a.i_link_right(href="#")
+          = link_to items_path do
             %span
               後の商品
             %i.fa.fa-angle-right
       .i_main__relateditem
-        %a.relateditemName(href="#")メンズをもっと見る
+        = link_to items_path do
+          メンズをもっと見る
     -# 以下からフッター
 .i_footer
   %ul.i_contents
     .i_content
       %h.i_content_head
     .i_footer_logo
-      %a(href="/")
+      = link_to items_path do
         = image_tag str="/assets/logo-white.png" ,size:"160x46"
 
 
