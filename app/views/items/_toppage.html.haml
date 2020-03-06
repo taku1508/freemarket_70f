@@ -1,0 +1,40 @@
+.head
+  .head__inner
+    .head__inner__top
+      =image_tag src="/assets/logo.png",class:"head__inner__top__logo"
+      %input{type: "text-area",placeholder:"キーワードから探す",class: "head__inner__top__searchbox"}
+      %form{action: "#"}
+        %input{type: "submit", name: "submit", value: "", class: "head__inner__top__submit"}
+      =image_tag src= "/assets/icon-search 1.png",class: "head__inner__top__submit__logo"
+    .head__bottom
+      .head__bottom__left
+        = icon('fas', 'user-cog')
+        = link_to "カテゴリー","#"
+        = link_to "ブランド","#"
+      .head__bottom__right
+        = link_to "ログイン","#"
+        = link_to "新規会員登録","#"
+
+.main
+  .main__mainVisual
+    =image_tag("/assets/bg-mainVisual-pict_pc.jpg", class: "main__mainVisual__content")
+    .main__mainVisual__subtitle
+      人生を変えるフリマアプリ
+    %p
+      .main__mainVisual__subtitle__text
+        FURIMAはだれでもカンタに出品・購入できる
+        %br
+        フリマアプリです
+        .main__mainVisual__subtitle__btn
+          =image_tag("/assets/app-store.svg", class: "main__mainVisual__subtitle__btn__a")
+          =image_tag("/assets/google-play.svg", class: "main__mainVisual__subtitle__btn__b")
+  .topIntroduction
+    .topIntroduction__subtitle
+      %h1
+        FURIMAが選ばれる3つの理由
+
+      .topIntroduction__subtitle__
+  .topMiddleDL
+  .topKeyFeatures
+  .pickupContainer
+  .pickupContainer

@@ -1,0 +1,215 @@
+.i_main{
+  background-color: #f8f8f8;
+  height: 100%;
+  .i_mainscreen{
+    width: 1015px;
+    padding: 40px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .i_content{
+      height: 1768px;
+      width: 700px;
+      margin: 0 auto;
+      &__top{
+        // 以下から商品の詳細
+        .i_item{
+          background-color: #fff;
+          width: 700px;
+          padding: 24px 40px 40px;
+          &__name{
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;;
+          }
+          &__body{
+            margin: 16px 0 0;
+            .gazou{
+              display: flex;
+              position: relative;
+            }
+            .gazou_1{
+              display: flex;
+              flex-direction: column;
+              width: 560px;
+              align-items: center;
+              margin: 0 auto;
+              .gazou_mini{
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+                .gazou_mini1{
+                  width: 25%;
+                  margin: 0 15px 0 0;
+                }
+                .gazou_mini2{
+                  width: 25%;
+                  margin: 0 15px 0 0;
+                }
+                .gazou_mini3{
+                  width: 25%;
+                  margin: 0 15px 0 0;
+                }
+              }
+            }
+          }
+          &__price{
+            margin: 24px 0 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-weight: bold;
+            font-size: 46px;
+            font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+          }
+          &__price-detail{
+            font-size:16px;
+            color: #000;
+            font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+          }
+          .i_itemDetail{
+            line-height: 1.5;
+            font-size: 18px;
+            margin-bottom: 30px;
+          }
+          // 以下から表の作成
+          .i_table{
+            margin-bottom: 20px;
+            table{
+              width: 100%;
+              height: 375px;
+              border-collapse: collapse;
+              border: 1px solid #f8f8f8;
+              th{
+                width: 20%;
+                background-color: #eee;
+                font-weight: 400;
+                padding: 8px;
+                border: 1px solid #dedede;
+                font-size: 14px;
+                text-align: center;
+              }
+              td{
+                width: 61%;
+                padding: 15px 15px;
+                border: 1px solid #dedede;
+                font-size: 14px;
+                a{
+                  text-decoration: none;
+                  color: #3CCACE;
+                }
+              }
+            }
+          }
+          // 以下からオプションボタン
+          .i_option{
+            display: flex;
+            justify-content: space-between;
+            ul{
+              margin: 10px 0 0;
+              display: flex;
+              .i_option__btn{
+                padding: 6px 10px;
+                border-radius: 40px;
+                color: #3CCACE;
+                border: 1px solid #ffb340;
+              }
+            }
+            &__fav{
+              margin: 10px 0 0;
+              display: flex;
+              .i_option__fav__btn{
+                font-size: 14px;
+                a{
+                  padding: 6px 10px;
+                  display: inline-block;
+                  border-radius: 4px;
+                  color: #333;
+                  border: 1px solid #333;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
+        // 以下からコメントフォーム
+        .i_commentBox{
+          padding: 24px;
+          background-color:#fff;
+          margin: 10px 0;
+          text-align: center;
+          .i_commentContents{
+            list-style: none;
+            .i_input_comment_area{
+              width: 100%;
+              min-height: 104px;
+              padding: 10px;
+            }
+            .i_noticeMsg{
+              padding: 8px;
+              font-size: 14px;
+              background-color: #f8f8f8;
+              margin: 10px 0;
+              text-align: left;
+            }
+            .i_commentBtn{
+              font-size: 18px;
+              line-height: 48px;
+              background: #3CCACE;
+              border: 1px solid #3CCACE;
+              color: #fff;
+              width: 60%;
+              font-size: 18px;
+              border-radius: 100px;
+            }
+          }
+        }
+      }
+      // 以下からリンク
+      .i_main__links{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        a{
+          text-decoration: none;
+          color: #3CCACE;
+        }
+        a{
+          text-decoration: none;
+          color: #3CCACE;
+        }
+      }
+      .i_main__relateditem{
+        a{
+          display: block;
+          margin: 24px 0 8px;
+          color: #3CCACE;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 22px;
+          position: relative;
+        }
+      }
+    }
+  }
+}
+// 以下からフッター
+.i_footer{
+  padding: 60px 0;
+  color: #fff;
+  background-color: #272727;
+  text-align: center;
+  .i_contents{
+    max-width: 840px;
+    margin: 0 auto;
+    display: flex;
+  }
+  .i_footer_logo{
+    max-width: 160px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
