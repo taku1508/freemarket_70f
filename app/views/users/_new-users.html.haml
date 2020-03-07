@@ -1,3 +1,5 @@
+= render "items/items_header"
+
 .m_single-container
   .m_login-no-account
     .p  アカウントをお持ちでない方はこちら
@@ -22,11 +24,8 @@
 
     =link_to 'パスワードをお忘れの方', 'https://www.mercari.com/jp/password/reset/start/',class: "m_forgot-password"
 
-.m_footer    
-
-
-
-
+.m_footer
+=render "items/items_footer"
 
     
 
