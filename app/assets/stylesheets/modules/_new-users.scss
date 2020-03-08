@@ -1,135 +1,103 @@
 .m_single-container{
-  background: #ffffff;;
-  height:100vh;
   width: 100vw;
+  height:100vh;
+  background: #f5f5f5;
 }
-
-.m_login-no-account{
-  .m_login{
-    text-decoration: none;
-  }
-}
-  .m_single-main{
-    background:#ffff;
-    height: 128px;
-    // width: %;
-    text-align:center;
-    // display:block;
-    }
-.m_login-form-inner{
-  width:100%;
-  height:181px;
-  margin:0px;
-  background: #ffff;
-}
-
-.m_heder__login-account__lower{
-  width:406px;
-  height:456px;
-  margin:auto;
-
-}
-.m_login-input-text.input-default{
-  padding:10px 16px 8px ;
-  margin:0;
-
-}
-.m_google-login.btn-default.btn-sns.btn-sns-google{
-  margin-top:15px;
-}
-
-.m_login-panel{
-  max-width: none;
-  width: 456px;
-  margin:auto;
-}
-.m_login-no-account{
-
-  a{
-    display: block;
-    width:328px;
-    margin:auto;
-  
-    border: 1px solid #0099e8;
-    background: #0099e8;
-    color: #fff;
-    line-height: 40px;
-    background-color:#0099E8;
-    text-align:center;
-}
-}
-
-.m_login-form-inner {
-  padding: 32px 64px;
-  border-top: 1px solid #eee;
-}
-.m_icon-facebook{
-  margin-top:14px;
-  color:#ffff;
-  background-color:#0099E8;
-  font-size:15;
-  width:328px;
-  height:50px;
-}
-
-.m_google-login.btn-default.btn-sns.btn-sns-google {
-  margin: 16px 0 0;
-  background: #fff url(/jp/assets/img/common/common/google.svg) no-repeat 3px top;
-  border: #979797 solid 1px;
-  color: #333;
-}
-
 .m_login-no-account{
   width:456px;
   height:144px;
-  background:#ffff;
   margin:auto;
   padding:40px 64px;
-  .p{
-    font-size:14px;
+  background:#ffff;
+  .m_login-no-account__p{
+    font-size: 14px;
+    text-align:center;
+    color:#333333;
   }
+  // 新規会員登録
+  .m_login{
+    display: block;
+    width:328px;
+    margin:auto;
+    border: 1px solid #0099e8;
+    background: #0099e8;
+    line-height: 40px;
+    color: #fff;
+    text-align:center;
+    font-size:14px;
+    text-decoration: none;
+  }
+  
+ 
 }
+// FacebookとGoogleでログイン
 .m_login-form-inner{
   width:456px;
-  height:181px;
-  background: #ffff;
   margin:auto;
-  padding: 32px 64px;
-}
-
-.m_heder__login-account__form2{
-  margin:16px 0 0;
-}
-.m_login-form-inner2{
-  width:456px;
-  height:406px;
+  padding: 24px 64px;
+  border-top: 1px solid #eee;
   background: #ffff;
-  margin:auto;
-  padding: 32px 64px;
 }
-
-// パスワード入力箇所
-.m_login-input-text.input-default{
-  margin:24px 0 0;
+// Facebookでログイン
+.m_login-btn__facebook{
   width:328px;
-  height:48px;
+  height:50px;
+  margin-top:14px;
+  background:#385184;
+  color:#ffff;
+  font-size:14px;
 }
-// ロボットではありません
-.m_heder__login-account__lower__lobot{
-  width: 304px; 
-  height: 78px;
+// Googleでログイン
+.m_login-btn__google{
+width:328px;
+height:50px;
+margin-top:14px;
+background:#F9F9F9;
+font-size:14px;
+border: #979797 solid 1px;
+
 }
 
-.m_form-group{
-  margin:24px 0 0 ;
-}
-
+// FacebookとGoogle以外でログイン
 .m_login-form-inner2{
-
-  m_forgot-password{
-    text-decoration:none;
+  width: 456px;
+  height: 406px;
+  margin: auto;
+  padding: 24px 64px;
+  background: #ffff;
+  // メールアドレス入力箇所
+  .m_login-input-text__mail{
+    width: 328px;
+    height: 48px;
+    margin: 0;
+    padding: 10px 16px 8px ;
   }
-
+  // パスワード入力箇所
+  .m_login-input-text__passward{
+    width: 328px;
+    height: 48px;
+    margin: 24px 0 0;
+    padding: 10px 16px 8px ;
+  }
+  // ロボットではありません
+  .m_form-group{
+    margin: 24px 0 0 ;
+  }
+  // ログイン
+  .m_google-btn{
+    width: 328px;
+    height: 50px;
+    margin: 24px 0 0;
+    background: #E9352D ;
+    color: #ffff;
+    font-size: 14px;
+  }
+  // パスワードお忘れの方
+  .m_forgot-password{
+    display: block;
+    margin: 40px 0 0 0;
+    color: #0099e8;
+    text-decoration: none;
+    font-size: 14px;
+  }
 }
-
-
