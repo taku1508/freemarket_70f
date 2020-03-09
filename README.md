@@ -33,7 +33,7 @@ Things you may want to cover:
 |second_name|string|null: false|
 |hurigana_first|string|null: false|
 |hurigana_second|string|null: false|
-|Birthday|integer|null: false|
+|birthday|integer|null: false|
 |phone_number|integer||
 
 ### Association
@@ -62,7 +62,6 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 |description|string|null: false|
-|category|string|null: false|
 |status|string|null: false|
 |shipping_charges|string|null: false|
 |area|string|null: false|
@@ -100,6 +99,8 @@ Things you may want to cover:
 - has_many :items,through::item_categories
 
 
+
+
 ## item_categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -119,3 +120,16 @@ Things you may want to cover:
 
 ### Association
 - has_many : items
+
+
+## cardテーブル
+|Column|Type|Options|
+|------|----|-------|
+|number|integer|null: false|
+|limit|integer|null: false|
+|cord|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+
+
+### Association
+- belong_to :user
