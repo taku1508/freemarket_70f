@@ -1,20 +1,4 @@
-.head
-  .head__inner
-    .head__inner__top
-      .head__inner__top__logo
-        =image_tag "logo.png",class:"head__inner__top__logo--size"
-      %input{type: "text-area",placeholder:"キーワードから探す",class: "head__inner__top__searchbox"}
-      %form{action: "#"}
-        %input{type: "submit", name: "submit", value: "", class: "head__inner__top__submit"}
-      =image_tag "icon-search 1.png",class: "head__inner__top__logo2"
-    .head__inner__bottom
-      .head__inner__bottom__links
-        = link_to "カテゴリー","#", class: "head__inner__bottom__links__catBtn"
-        = link_to "ブランド","#"
-      .head__inner__bottom__links
-        = link_to "ログイン","#"
-        = link_to "新規会員登録","#", class: "head__inner__bottom__links__newBtn"
-
+= render 'items_toppage_header'
 .main
   .main__mainVisual
     .main__mainVisual__content
@@ -194,3 +178,4 @@
     = link_to "出品する", "/items/new", class: "main__btn__text"
     .main__btn__icon
       = image_tag "icon_camera.png",size:"54x54"
+= render 'items_toppage_footer'
