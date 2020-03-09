@@ -191,7 +191,6 @@
           =image_tag "app.svg", class: "main__appBanner__title__text__btn__a"
           =image_tag "google.svg", class: "main__appBanner__title__text__btn__b"
   .main__btn
-    .main__btn__text
-      出品する
+    = link_to "出品する", "/items/new", class: "main__btn__text"
     .main__btn__icon
       = image_tag "icon_camera.png",size:"54x54"
