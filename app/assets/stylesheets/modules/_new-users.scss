@@ -108,13 +108,13 @@ border: #979797 solid 1px;
 // -----------------------------------
 
 // ヘッダーとメイン画面の背景
-.single-container{
+.m_single-container{
   width: 100vw;
   height:100vh;
   background: #f5f5f5;
 
   // メイン画面の背景
-  .single-main{
+  .m_single-main{
     width:938px;
     height:344px;
     margin:auto;
@@ -122,12 +122,12 @@ border: #979797 solid 1px;
     background:#ffff;
 
     // メイン画面（左右マージンauto)
-    .l-single-container{
+    .m_l-single-container{
       width: 700px;
       margin: 0 auto;
       
       // 新規会員登録
-      .l-single-head__registration{
+      .m_l-single-head__registration{
         display: block;
         margin:0 ;
         font-size: 22px;
@@ -137,12 +137,12 @@ border: #979797 solid 1px;
       }
     }
     //フォーム全体
-    .l-single-inne__registration-form{
+    .m_l-single-inne__registration-form{
       border-top: 1px solid #f5f5f5;
       padding: 24px 16px 40px;
       
       // メールアドレスで登録
-      .l-single-content{
+      .m_l-single-content{
         max-width:343px;
         margin:0 auto;
         .m_registration{

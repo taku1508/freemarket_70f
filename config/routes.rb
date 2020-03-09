@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get 'deliber_address'
       get 'email_password'
       get 'identify'
+      get 'signup'
     end
   end
   resources :cards, only: [:new, :create, :edit, :update, :destroy]
