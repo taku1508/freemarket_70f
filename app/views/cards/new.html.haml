@@ -72,3 +72,5 @@
             .t_cards_form__group4
               = form_tag('/items/new',method: :post) do
                 %input{type: "submit", value: "追加する",class: "t_add_bottun" }
+
+  = render "items/items_toppage_footer"

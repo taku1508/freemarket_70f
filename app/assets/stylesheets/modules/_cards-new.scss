@@ -1,6 +1,5 @@
 .all
   .h_main{
-    height: 100vh;
     .t_left{
       .t_credit{
         font-weight: 700;
@@ -15,11 +14,9 @@
       }
       .t_credit_area{
         margin-top: 2px;
-        height: 512px;
         width: 700px;
         background-color: #fff;
         .t_cards{
-          height: 512px;
           width: 700px;
           background-color: #fff;
           padding: 40px 40px 64px;
