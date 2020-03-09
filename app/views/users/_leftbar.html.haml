@@ -3,18 +3,18 @@
   .h_left__contents
     %ul
       %li
-        = link_to "マイページ", "#", class: "h_left__contents__link"
+        = link_to "マイページ", "/users/show", class: "h_left__contents__link"
       %li
         = link_to "いいね！一覧", "#", class: "h_left__contents__link"
       %li
-        = link_to "出品する", "#", class: "h_left__contents__link"
+        = link_to "出品する", "/items/new", class: "h_left__contents__link"
     
   .h_left__text
     設定
   .h_left__contents
     %ul
       %li
-        = link_to "支払い方法", "#", class: "h_left__contents__link"
+        = link_to "支払い方法", "/cards/new", class: "h_left__contents__link"
       %li
         = link_to "発送元・お届け先住所変更", "#", class: "h_left__contents__link"
       %li
@@ -22,4 +22,4 @@
       %li
         = link_to "本人情報", "#", class: "h_left__contents__link"
       %li
-        = link_to "ログアウト", "#", class: "h_left__contents__link"
+        = link_to "ログアウト", "/users/logout", class: "h_left__contents__link"

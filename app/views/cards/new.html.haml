@@ -1,0 +1,74 @@
+.all
+  = render "users/users_header2" 
+  .h_main
+    = render "users/leftbar"
+    .t_left
+      .t_credit
+        クレジットカード情報入力
+      .t_credit_area
+        .t_cards
+          .t_cards_form
+            .t_cards_form__group1
+              .t_cards_member
+                .t_cards_number
+                  カード番号
+                .t_cards_hissu
+                  必須
+              -# = form_for()
+              = form_tag('/items/new',method: :post) do
+                %input{type: "input",class: "t_cards_input",placeholder: "半角数字のみ"}
+              = image_tag("card-1.gif",class: "t_icon_card")
+              -# .t_cards_input_error
+              -#   必須項目です。
+            .t_cards_form__group2
+              .t_cards_member
+                .t_cards_limit
+                  有効期限
+                .t_cards_hissu
+                  必須
+              .t_pulldown
+                .t_pulldown_group
+                  = form_tag('/items/new',method: :post) do
+                    %select(name="example" class="t_pulldown_group__menu")
+                      %option 01
+                      %option 02
+                      %option 03
+                      %option 04
+                      %option 05
+                      %option 06
+                      %option 07
+                      %option 08
+                      %option 09
+                      %option 10
+                      %option 11
+                      %option 12
+                  %span(class = "t_span1")  月
+                .t_30years_group
+                  = form_tag('/items/new',method: :post) do
+                    %select(name="example" class="t_pulldown_group__menu")
+                      %option 20
+                      %option 21
+                      %option 22
+                      %option 23
+                      %option 24
+                      %option 25
+                      %option 26
+                      %option 27
+                      %option 28
+                      %option 29
+                      %option 30
+                      %option 31     
+                  %span(class = "t_span2")  年
+            .t_cards_form__group3
+              .t_cards_member
+                .t_cards_security
+                  セキュリティコード
+                .t_cards_hissu
+                  必須
+              = form_tag('/items/new',method: :post) do
+                %input{type: "input",class:"t_cards_member_form",placeholder: "カード背面4桁もしくは3桁の番号"}
+              -# .t_cards_input_error
+              -#   必須項目です。
+            .t_cards_form__group4
+              = form_tag('/items/new',method: :post) do
+                %input{type: "submit", value: "追加する",class: "t_add_bottun" }

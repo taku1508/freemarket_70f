@@ -1,0 +1,21 @@
+.all
+  .h_main{
+    .t_left{
+      .t_deliver{
+        font-weight: 700;
+        color: #333;
+        height: 50px;
+        width: 700px;
+        background: #fff;
+        font-size: 24px;
+        padding: 8px 24px;
+        font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+        text-align: center;
+      }
+      .t_deliver_area{
+        height: 979px;
+        width: 700px;
+        background-color: red;
+      }
+   }
+  }
