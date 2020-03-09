@@ -100,13 +100,7 @@
         = link_to items_path do
           メンズをもっと見る
     -# 以下からフッター
-.i_footer
-  %ul.i_contents
-    .i_content
-      %h.i_content_head
-    .i_footer_logo
-      = link_to items_path do
-        = image_tag str="/assets/logo-white.png" ,size:"160x46"
+= render "items/items_toppage_footer"
 
 
 
