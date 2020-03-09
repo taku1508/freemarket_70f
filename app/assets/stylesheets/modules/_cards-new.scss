@@ -1,0 +1,150 @@
+.all
+  .h_main{
+    height: 100vh;
+    .t_left{
+      .t_credit{
+        font-weight: 700;
+        color: #333;
+        height: 50px;
+        width: 700px;
+        background: #fff;
+        font-size: 24px;
+        padding: 8px 24px;
+        font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+        text-align: center;
+      }
+      .t_credit_area{
+        margin-top: 2px;
+        height: 512px;
+        width: 700px;
+        background-color: #fff;
+        .t_cards{
+          height: 512px;
+          width: 700px;
+          background-color: #fff;
+          padding: 40px 40px 64px;
+          .t_cards_form{
+            margin: 0 auto;
+            height: 407px;
+            width: 343px;
+            &__group1{
+              height: 98px;
+              width: 343px;
+              .t_cards_member{
+              display: flex;
+              height: 19px;              
+                .t_cards_number{
+                  width: 70px;
+                  height: 14px;
+                  @include font_style
+                }
+                .t_cards_hissu{
+                  margin-left: 8px;
+                  width: 32px;
+                  height: 19px;
+                  @include hissu;
+                }
+              }
+              .t_cards_input{
+                padding-left: 12px;
+                margin-top: 8px;
+                width: 343px;
+                height: 48px;
+              }
+              .t_icon_card{
+                margin-top: 7px;
+                height: 29px;
+              }
+              .t_cards_input_error{
+                color: red;
+                font-size: 16px;
+                margin-top: 8px;
+                font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+              }
+
+            }
+            &__group2{
+              margin-top: 32px;
+              height: 70px;
+              width: 343px;
+              .t_cards_member{
+                display: flex;
+                height: 19px;
+                margin-bottom: 5px;
+                .t_cards_limit{
+                  @include font_style;
+                }
+                .t_cards_hissu{
+                  margin-left: 8px;
+                  @include hissu;
+                }
+              }
+              .t_pulldown{
+                display: flex;
+                .t_pulldown_group{
+                  width: 169.5px;
+                  height: 48px;
+                  display: flex;
+                  &__menu{
+                    width: 131.5px;
+                    height: 48px;
+                  }
+                  .t_span1{
+                    line-height: 48px;
+                    margin-left: 8px;
+                  }
+                }
+                .t_30years_group{
+                  display: flex;
+                  .t_span2{
+                    line-height: 48px;
+                    margin-left: 8px;
+                  }
+                }
+              }
+            }
+            &__group3{
+              margin-top: 32px;
+              height: 93px;
+              width: 343px;
+              .t_cards_member{
+                display: flex;
+                height: 19px;
+                .t_cards_security{
+                  @include font_style;
+                }
+                .t_cards_hissu{
+                  @include hissu;
+                }
+              }
+              .t_cards_member_form{
+                padding-left: 12px;
+                margin-top: 8px;
+                width: 343px;
+                height: 48px;
+              }
+              .t_cards_input_error{
+                color: red;
+                font-size: 16px;
+                margin-top: 8px;
+                font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+              }
+            }
+            &__group4{
+              margin-top: 32px;
+              height: 50px;
+              width: 343px;
+              background-color: purple;
+              .t_add_bottun{
+                width: 343px;
+                height: 50px;
+                background: #ea352d;
+                border: 1px solid #ea352d;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,22 +1,23 @@
 .head
   .head__inner
     .head__inner__top
-      =image_tag src="/assets/logo.png",class:"head__inner__top__logo"
+      .head__inner__top__logo
+        =image_tag "logo.png",class:"head__inner__top__logo--size"
       %input{type: "text-area",placeholder:"キーワードから探す",class: "head__inner__top__searchbox"}
       %form{action: "#"}
         %input{type: "submit", name: "submit", value: "", class: "head__inner__top__submit"}
-      =image_tag src= "/assets/icon-search 1.png",class: "head__inner__top__submit__logo"
-    .head__bottom
-      .head__bottom__left
-        = link_to "カテゴリー","#"
+      =image_tag "icon-search 1.png",class: "head__inner__top__logo2"
+    .head__inner__bottom
+      .head__inner__bottom__links
+        = link_to "カテゴリー","#", class: "head__inner__bottom__links__catBtn"
         = link_to "ブランド","#"
-      .head__bottom__right
+      .head__inner__bottom__links
         = link_to "ログイン","#"
-        = link_to "新規会員登録","#"
+        = link_to "新規会員登録","#", class: "head__inner__bottom__links__newBtn"
 
 .main
   .main__mainVisual
-    =image_tag("/assets/bg-mainVisual-pict_pc.jpg", class: "main__mainVisual__content")
+    .main__mainVisual__content
     .main__mainVisual__subtitle
       人生を変えるフリマアプリ
     %p
@@ -25,17 +26,19 @@
         %br
         フリマアプリです
         .main__mainVisual__subtitle__btn
-          =image_tag("/assets/app.svg", class: "main__mainVisual__subtitle__btn__a")
-          =image_tag("/assets/google.svg", class: "main__mainVisual__subtitle__btn__b")
+          =image_tag "app.svg", class: "main__mainVisual__subtitle__btn__a"
+          =image_tag "google.svg", class: "main__mainVisual__subtitle__btn__b"
 
   .main__topIntroduction
     .main__topIntroduction__subtitle
       FURIMAが選ばれる3つの理由
-    %ul 
-      .main__topIntroduction__lists
-      %li 
+      
+    .mian__topIntroduction__border
+
+    %ul.main__topIntroduction__lists
+      %li
         .main__topIntroduction__lists__pict
-          =image_tag("/assets/pict-reason-01.jpg", class: "main__topIntroduction__lists__pict--size")
+          =image_tag "pict-reason-01.jpg", class: "main__topIntroduction__lists__pict--size"
           .main__topIntroduction__lists__pict__num
             1
         .main__topIntroduction__lists__text
@@ -45,7 +48,7 @@
           スマホで入力するだけで簡単に出品できる！
       %li
         .main__topIntroduction__lists__pict
-          =image_tag("/assets/pict-reason-02.jpg", class: "main__topIntroduction__lists__pict--size")
+          =image_tag "pict-reason-02.jpg", class: "main__topIntroduction__lists__pict--size"
           .main__topIntroduction__lists__pict__num
             2
         .main__topIntroduction__lists__text
@@ -55,17 +58,17 @@
           めんどくさい入力は必要なく、検索も購入もスムーズ！
       %li
         .main__topIntroduction__lists__pict
-          =image_tag("/assets/pict-reason-03.jpg", class: "main__topIntroduction__lists__pict--size")
+          =image_tag "pict-reason-03.jpg", class: "main__topIntroduction__lists__pict--size"
           .main__topIntroduction__lists__pict__num
             3
         .main__topIntroduction__lists__text
-          %span 手数料 
-          業界最安
+          手数料 
+          %span 業界最安
         .main__topIntroduction__lists__list
           最大3%でお得に出品&購入！
     
   .main__topMiddleDL
-    =image_tag("/assets/bg-topMiddleDl-pict.jpg", class: "main__topMiddleDL__content")
+    .main__topMiddleDL__content
     .main__topMiddleDL__subtitle
       会員数日本一位
     %p
@@ -76,103 +79,118 @@
         %br
         ほしかったあの商品に出会えるかもしれません。
         .main__topMiddleDL__subtitle__btn
-          =image_tag("/assets/app.svg", class: "main__topMiddleDL__subtitle__btn__a")
-          =image_tag("/assets/google.svg", class: "main__topMiddleDL__subtitle__btn__b")
+          =image_tag "app.svg", class: "main__topMiddleDL__subtitle__btn__a"
+          =image_tag "google.svg", class: "main__topMiddleDL__subtitle__btn__b"
 
   .main__topKeyFeatures
     .main__topKeyFeatures__head
       %h1
         FURIMAの特徴
+      %h2
       .main__topKeyFeatures__head__items
-        %ul
-          .main__topKeyFeatures__head__items__item
+        %ul.main__topKeyFeatures__head__items__item
           %li
-            =image_tag("/assets/icon-01.png", class: "main__topKeyFeatures__head__items__item__pict")
-            .main__topKeyFeatures__head__items__item__text
+            =image_tag "icon-01.png", class: "main__topKeyFeatures__head__items__item__pict"
+            .main__topKeyFeatures__head__items__item__pict__text
               簡単に売り買いできる
-              %p
-                .main__topKeyFeatures__head__items__item__detail
-                  スマホひとつで、いつでもどこでも簡単
-                  %br
-                  に出品・購入が可能！
+            .main__topKeyFeatures__head__items__item__pict__detail
+              スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
           %li
-            =image_tag("/assets/icon-03.png", class: "main__topKeyFeatures__head__items__item__pict")
-            .main__topKeyFeatures__head__items__item__text
+            =image_tag "icon-03.png", class: "main__topKeyFeatures__head__items__item__pict"
+            .main__topKeyFeatures__head__items__item__pict__text
               売上金は即日振込みに対応
-              %p
-                .main__topKeyFeatures__head__items__item__detail
-                  午前9時までに振込を依頼いただけれ
-                  %br
-                  ば、翌日に指定の口座に入金いたします!
+            .main__topKeyFeatures__head__items__item__pict__detail
+              午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
           %li
-            =image_tag("/assets/icon-04.png", class: "main__topKeyFeatures__head__items__item__pict")
-            .main__topKeyFeatures__head__items__item__text
+            =image_tag "icon-04.png", class: "main__topKeyFeatures__head__items__item__pict"
+            .main__topKeyFeatures__head__items__item__pict__text
               様々な支払いに対応
-              %p
-                .main__topKeyFeatures__head__items__item__detail
-                  お支払いは、クレジットカードだけでな
-                  %br
-                  く、ポイントや売上金など多彩な方法が
-                  %br
-                  あります。
-
-
+            .main__topKeyFeatures__head__items__item__pict__detail
+              お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります
   .main__pickupContainer
     .main__pickupContainer__title
       ピックアップカテゴリー
     .main__pickupContainer__head
       新規投稿商品
     .main__pickupContainer__pict
-      %ul
-        %li
-          =image_tag("/assets/food_spaghetti_carbonara.png", class: "main__pickupContainer__pict__img")
-        %li
-          aproduct3
-        %li
-          3000円
-        %li
-          (税込)
-      %ul
-        %li
-          =image_tag("/assets/food_spaghetti_neapolitan.png", class: "main__pickupContainer__pict__img")
-        %li
-          aproduct2
-        %li
-          2000円
-        %li
-          (税込)
-      %ul
-        %li
-          =image_tag("/assets/food_spaghetti_tarako.png", class: "main__pickupContainer__pict__img")
-        %li
-          aproduct1
-        %li
-          1000円
-        %li
-          (税込)
-
+      .main__pickupContainer__pict__img
+        =image_tag "food_spaghetti_carbonara.png", class: "main__pickupContainer__pict__img--size"
+        .main__pickupContainer__pict__img__texts
+          %p
+            product3
+          %p
+            3000円
+          %p
+            .main__pickupContainer__pict__img__texts--size
+              (税込)
+      .main__pickupContainer__pict__img
+        =image_tag "food_spaghetti_neapolitan.png", class: "main__pickupContainer__pict__img--size"
+        .main__pickupContainer__pict__img__texts
+          %p
+            product2
+          %p
+            2000円
+          %p
+            .main__pickupContainer__pict__img__texts--size
+              (税込)
+      .main__pickupContainer__pict__img
+        =image_tag "food_spaghetti_tarako.png", class: "main__pickupContainer__pict__img--size"
+        .main__pickupContainer__pict__img__texts
+          %p
+            product1
+          %p
+            1000円
+          %p
+            .main__pickupContainer__pict__img__texts--size
+              (税込)
+  .main__pickupContainer
+    .main__pickupContainer__title
+      ピックアップブランド
+    .main__pickupContainer__head
+      アーカイバ
+    .main__pickupContainer__pict
+      .main__pickupContainer__pict__img
+        =image_tag "food_spaghetti_carbonara.png", class: "main__pickupContainer__pict__img--size"
+        .main__pickupContainer__pict__img__texts
+          %p
+            product3
+          %p
+            3000円
+          %p
+            .main__pickupContainer__pict__img__texts--size
+              (税込)
+      .main__pickupContainer__pict__img
+        =image_tag "food_spaghetti_neapolitan.png", class: "main__pickupContainer__pict__img--size"
+        .main__pickupContainer__pict__img__texts
+          %p
+            product2
+          %p
+            2000円
+          %p
+            .main__pickupContainer__pict__img__texts--size
+              (税込)
+      .main__pickupContainer__pict__img
+        =image_tag "food_spaghetti_tarako.png", class: "main__pickupContainer__pict__img--size"
+        .main__pickupContainer__pict__img__texts
+          %p
+            product1
+          %p
+            1000円
+          %p
+            .main__pickupContainer__pict__img__texts--size
+              (税込)
+    .main__pickupContainer--padding
 
   .main__appBanner
-    =image_tag("/assets/bg-appBanner-pict.jpg", class: "main__topMiddleDL__content")
+    .main__appBanner__content
     .main__appBanner__title
-      誰でもかんたん人生を変えるフリマアプリ
+      だれでもかんたん人生を変えるフリマアプリ
       .main__appBanner__title__text
-        今すぐダウンロード！
+        今すぐダウンロード!
         .main__appBanner__title__text__btn
-          =image_tag("/assets/app.svg", class: "main__appBanner__title__text__btn__a")
-          =image_tag("/assets/google.svg", class: "main__appBanner__title__text__btn__b")
-
-
-
-
-
-
-
-
-
-
-
-
-
-  .main__pickupContainer
-  .main__pickupContainer
+          =image_tag "app.svg", class: "main__appBanner__title__text__btn__a"
+          =image_tag "google.svg", class: "main__appBanner__title__text__btn__b"
+  .main__btn
+    = link_to "出品する", "/items/new", class: "main__btn__text"
+    .main__btn__icon
+      = image_tag "icon_camera.png",size:"54x54"
