@@ -33,7 +33,32 @@
 .m_footer
 =render "items/items_footer"
 
-    
+-# ----------------------------------------------
+
+= render "items/items_header"
+-# 上記ヘッダー箇所
+
+.single-container
+  .single-main
+    .l-single-container
+      %h2.l-single-head__registration 新規会員登録
+    .l-single-inne__registration-form
+      .l-single-content
+        =link_to "メールアドレスで登録する", "https://www.mercari.com/jp/signup/registration/",class: "m_registration"
+        %i.icon-mail
+        .m_heder__login-accout__facebook
+          %input.m_login-btn__facebook{:style => "", :type => "button", :value => "Facebookで登録する"}/
+        .m_heder__login-account__google
+          %input.m_login-btn__google{:style => "", :type => "button", :value => "Googleで登録する"}/
+.m_footer
+=render "items/items_footer"
+      
+
+
+
+
+
+
 
 
 
