@@ -1,0 +1,10 @@
+.all
+  = render "users_header2" 
+  .h_main
+    = render "leftbar"
+    .i_right
+      .i_logoutMenu
+        %form{:action => "/users/show", :method => "post", :novalidate => "novalidate", :class => "i_logoutInner"}
+          .i_single-content
+            %button{:type => "submit",:class =>"i_logoutBtn"}
+              ログアウト

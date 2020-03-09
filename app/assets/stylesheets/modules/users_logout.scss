@@ -1,0 +1,28 @@
+.all{
+  .h_main{
+    .i_right{
+      float: none;
+      width: 700px;
+      .i_logoutMenu{
+        background-color: #fff;
+        margin: 0;
+        .i_logoutInner{
+          padding: 64px;
+          .i_single-content{
+            max-width: 320px;
+            margin: 0 auto;
+            .i_logoutBtn{
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
