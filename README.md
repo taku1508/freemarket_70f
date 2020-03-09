@@ -120,3 +120,16 @@ Things you may want to cover:
 
 ### Association
 - has_many : items
+
+
+## cardテーブル
+|Column|Type|Options|
+|------|----|-------|
+|number|integer|null: false|
+|limit|integer|null: false|
+|cord|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+
+
+### Association
+- belong_to :user
