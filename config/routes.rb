@@ -17,4 +17,7 @@ Rails.application.routes.draw do
     end
   end
   resources :cards, only: [:new, :create, :edit, :update, :destroy]
+  resources :categories, only: [:new, :create]
+  resources :brands, only: [:new, :create]
+  resources :images, only: [:new, :create]
 end
