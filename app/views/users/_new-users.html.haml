@@ -4,21 +4,29 @@
 .m_single-container
   .m_login-no-account
     .m_login-no-account__p  アカウントをお持ちでない方はこちら
+
     =link_to "新規会員登録", "users_registration",class: "m_login"
-   
+
+ 
   -#  FacebookとGoogleでログイン
   .m_login-form-inner
     .m_heder__login-accout__facebook
+      -# link_toで再実装必要になりそう
       %input.m_login-btn__facebook{style: "", type: "button", value: "Facebookでログイン"}/
     .m_heder__login-account__google
+      -# link_toで再実装必要になりそう
       %input.m_login-btn__google{style: "", type: "button", value: "Googleでログイン"}/
+
 
   // FacebookとGoogle以外でログイン
   .m_login-form-inner2
     -# メールアドレス入力箇所
-    %input.m_login-input-text__mail{name: "email", placeholder: "メールアドレス", type: "email", value: "" }/
-    -# パスワード入力箇所
-    %input.m_login-input-text__passward{name: "txet", placeholder: "パスワード", type: "email", value: ""}/
+    = form_with model: User.new do |f|
+      = f.text_field :email,class: "m_login-input-text__mail",placeholder: "メールアドレス"
+    
+    -# -# パスワード入力箇所
+    = form_with model: User.new do |f|
+      = f.text_field :encrypted_password,class: "m_login-input-text__passward",placeholder: "パスワード"
     
     -# ロボットではありません
     .m_form-group
@@ -26,9 +34,15 @@
 
     -# ログイン
     %input.m_google-btn{style: "", type: "button", value: "ログイン"}/
+    - if user_signed_in?
+      = link_to "新規投稿", new_post_path, class: "m_google-btn"
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "m_google-btn"
+    - else
+      = link_to "ログイン", new_user_session_path, class: "m_google-btn"
+      = link_to "新規登録", new_user_registration_path, class: "m_google-btn"
     
     // パスワードお忘れの方
     =link_to 'パスワードをお忘れの方', 'https://www.mercari.com/jp/password/reset/start/',class: "m_forgot-password"
-
+    
 .m_footer
 =render "items/items_footer"
