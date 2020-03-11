@@ -12,7 +12,6 @@ class ItemsController < ApplicationController
     #   render new
     # end
     @item = Item.create(items_params)
-    # binding.pry
     redirect_to root_path
   end
 

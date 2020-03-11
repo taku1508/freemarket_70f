@@ -1,0 +1,192 @@
+.t_main{
+  background-color:rgb(245, 245, 245);;
+  .t_credit{
+    margin: 0 auto;
+    line-height: 97px;
+    font-weight: 700;
+    color: #333;
+    height: 97px;
+    width: 700px;
+    background: #fff;
+    font-size: 24px;
+    padding: 8px 24px;
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    text-align: center;
+  }
+  .t_credit_area{
+    margin-top: 2px;
+    margin: 2px auto 0;
+    padding: 30px 40px 64px;
+    width: 700px;
+    height: 1243px;
+    background-color: #fff;
+      .t_single_content{
+        width: 343px;
+        margin: 0 auto;
+        .t_names_form__group{
+          @include user_registration
+        }
+        .t_names_form_password{
+          @include user_password;
+          .t_password_error{
+            font-size: 14px;
+            margin-top: 8px;
+            height: 21px;
+            color: red;
+          }
+          .t_password_view{
+            font-size: 14px;
+            margin-top: 8px;
+            height: 21px;
+            color: #888888;
+          }
+          .t_password_check{
+            margin-top: 16px;
+          }
+          .t_pass{
+            font-size: 14px;
+          }
+        }
+        .t_user{
+          font-size: 16px;
+          font-weight: bold;
+          color: #333333;
+        }
+        .t_confirm_user{
+          height: 63px;
+          margin-top: 8px;
+          font-size: 14px;
+          color: #333333;
+        }
+      }
+      .t_names_form__group1{
+        margin-top: 24px;
+        height: 130px;
+        width: 343px;
+        .t_names_member{
+        display: flex;
+        height: 19px;              
+          .t_names_number{
+            width: 70px;
+            height: 14px;
+            @include font_style
+          }
+          .t_names_hissu{
+            margin-left: 8px;
+            width: 32px;
+            height: 19px;
+            @include hissu;
+          }
+        }
+        .t_names_input{
+          padding-left: 12px;
+          margin-top: 8px;
+          width: 343px;
+          height: 48px;
+        }
+        .t_names_input_error{
+          color: red;
+          font-size: 16px;
+          margin-top: 8px;
+          font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        }
+      } 
+      .t_names_form__group2{
+      height: 130px;
+      width: 343px;
+      margin-top: 32px;
+      .t_names_member{
+      display: flex;
+      height: 19px;              
+        .t_names_number{
+          width: 70px;
+          height: 14px;
+          @include font_style
+        }
+        .t_names_hissu{
+          margin-left: 8px;
+          width: 32px;
+          height: 19px;
+          @include hissu;
+        }
+      }
+      .t_names_input{
+        padding-left: 12px;
+        margin-top: 8px;
+        width: 343px;
+        height: 48px;
+      }
+      .t_names_input_error{
+        color: red;
+        font-size: 16px;
+        margin-top: 8px;
+        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+      }
+    }
+    .t_cards_form__group2{
+      margin-top: 32px;
+      height: 70px;
+      width: 343px;
+      .t_cards_member{
+        display: flex;
+        height: 19px;
+        margin-bottom: 5px;
+        .t_cards_limit{
+          @include font_style;
+        }
+        .t_cards_hissu{
+          margin-left: 8px;
+          @include hissu;
+        }
+      }
+      .t_pulldown{
+        height: 56px;
+        display: flex;
+        .t_pulldown_group{
+          height: 48px;
+          display: flex;
+          padding: 0 10px;
+          &__menu{
+            width: 76px;
+            height: 48px;
+          }
+          .t_span1{
+            line-height: 48px;
+            margin-left: 8px;
+          }
+        }
+        .t_30years_group{
+          padding: 0 10px;
+          display: flex;
+          .t_span2{
+            line-height: 48px;
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+    .t_users_identify{
+      font-size: 14px;
+      height:  42px;
+      color: #888888;
+      margin-top: 8px;
+    }
+    .t_next{
+      font-size: 14px;
+      height:  42px;
+      color: #333333;
+      margin-top: 12px;
+      .t_kiyaku{
+        color: rgb(108, 199, 202);
+      }
+    }
+    .t_btn{
+      margin-top: 24px;
+      height: 50px;
+      width: 343px;
+      color: white;
+      background-color: red;
+      border-radius: 2px;
+    }
+  }
+}

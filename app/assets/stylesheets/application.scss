@@ -1,6 +1,7 @@
 @import "reset";
 @import "mixins/new-items";
 @import "mixins/deliber_address";
+@import "mixins/users_registration";
 @import "variables/colors";
 @import "modules/confirm";
 @import "modules/show-items";
@@ -8,6 +9,7 @@
 @import "modules/new-users";
 @import "modules/user_show";
 @import "modules/new-items";
+@import "modules/users_registration";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "modules/user-create"; 
