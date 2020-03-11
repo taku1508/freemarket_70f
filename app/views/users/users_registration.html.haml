@@ -1,0 +1,123 @@
+= render "items/items_header"
+.t_main
+  .t_credit
+    会員情報入力
+  .t_credit_area
+    .t_single_content
+      .t_names_form__group
+        .t_names_member
+          .t_names_number
+            ニックネーム
+          .t_names_hissu
+            必須
+        = form_tag('/items/new',method: :post) do
+          %input{type: "input",class: "t_names_input",placeholder: "例)メルカリ太郎"}
+      .t_names_form__group
+        .t_names_member
+          .t_names_number
+            メールアドレス
+          .t_names_hissu
+            必須
+        = form_tag('/items/new',method: :post) do
+          %input{type: "input",class: "t_names_input",placeholder: "例)PC・携帯どちらでも可"}
+      .t_names_form_password
+        .t_names_member
+          .t_names_number
+            パスワード
+          .t_names_hissu
+            必須
+        = form_tag('/items/new',method: :post) do
+          %input{type: "input",class: "t_names_input",placeholder: "7文字以上の半角英数字"}
+          -# .t_password_error エラーメッセージ
+          -#   パスワードを入力して下さい 
+          .t_password_view
+            ※ 英字と数字の両方を含めて設定してください
+          %input{type: "checkbox",class:"t_password_check"}
+            %label{class: "t_pass"} パスワードを表示する
+      .t_user
+        本人確認
+      .t_confirm_user
+        安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+      .t_names_form__group1
+        .t_names_member
+          .t_names_number
+            お名前
+          .t_names_hissu
+            必須
+        = form_tag('/items/new',method: :post) do
+          %input{type: "input",class: "t_names_input",placeholder: "例)山田"}
+        = form_tag('/items/new',method: :post) do
+          %input{type: "input",class: "t_names_input",placeholder: "例)彩"}  
+      .t_names_form__group2
+        .t_names_member
+          .t_names_number
+            お名前カナ
+          .t_names_hissu
+            必須
+        = form_tag('/items/new',method: :post) do
+          %input{type: "input",class: "t_names_input",placeholder: "例)ヤマダ"}
+        = form_tag('/items/new',method: :post) do
+          %input{type: "input",class: "t_names_input",placeholder: "例)アヤ"}
+      .t_cards_form__group2
+        .t_cards_member
+          .t_cards_limit
+            生年月日
+          .t_cards_hissu
+            必須
+        .t_pulldown
+          .t_pulldown_group
+            = form_tag('/items/new',method: :post) do
+              %select(name="example" class="t_pulldown_group__menu")
+                %option 1999
+                %option 2000
+                %option 2003
+                %option 2004
+                %option 2005
+                %option 2006
+                %option 2007
+                %option 2008
+                %option 2009
+                %option 2010
+                %option 2011
+                %option 2012
+            %span(class = "t_span1")  年
+          .t_30years_group
+            = form_tag('/items/new',method: :post) do
+              %select(name="example" class="t_pulldown_group__menu")
+                %option 1
+                %option 2
+                %option 3
+                %option 4
+                %option 5
+                %option 6
+                %option 7
+                %option 8
+                %option 9
+                %option 10
+                %option 11
+                %option 12     
+            %span(class = "t_span2")  月
+          .t_30years_group
+            = form_tag('/items/new',method: :post) do
+              %select(name="day" class="t_pulldown_group__menu")
+                %option 20
+                %option 21
+                %option 22
+                %option 23
+                %option 24
+                %option 25
+                %option 26
+                %option 27
+                %option 28
+                %option 29
+                %option 30
+                %option 31     
+            %span(class = "t_span2")  日
+      .t_users_identify
+        ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+      .t_next
+        「次へ進む」のボタンを押すことにより,
+        %span(class = "t_kiyaku") 利用規約
+        に同意したものとみなします。
+      %input{type:"button",class: "t_btn",value: "次へ進む"}
+=render "items/items_footer"
