@@ -4,8 +4,9 @@ class BrandsController < ApplicationController
   end
 
   def create
-    @brand = Brand.new(brands_params)
-    @brand.save
+    @brand = Brand.create(brands_params)
+    binding.pry
+    redirect_to root_path
     # if @hoge.save
     #   redirect_to :action => "index"
     # else

@@ -1,0 +1,53 @@
+%h2 Sign upTEST
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  .field
+    = f.label :nickname
+    %br/
+    = f.text_field :nickname, autocomplete: "nickname"
+  = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email"
+
+  .field
+    = f.label :password
+    - if @minimum_password_length
+      %em
+        (#{@minimum_password_length} characters minimum)
+    %br/
+    = f.password_field :password, autocomplete: "new-password"
+    
+  .field
+    = f.label :password_confirmation
+    %br/
+    = f.password_field :password_confirmation, autocomplete: "new-password"
+
+    /ここから検証
+  .field
+    = f.label :first_name
+    %br/
+    = f.text_field :first_name, autocomplete: "first_name"
+
+  .field
+    = f.label :second_name
+    %br/
+    = f.text_field :second_name, autocomplete: "second_name"
+
+  .field
+    = f.label :hurigana_first
+    %br/
+    = f.text_field :hurigana_first, autocomplete: "hurigana_first"
+
+  .field
+    = f.label :hurigana_second
+    %br/
+    = f.text_field :hurigana_second, autocomplete: "hurigana_second"
+  
+  .field
+    = f.label :birthday
+    %br/
+    = f.text_field :birthday, autocomplete: "birthday"
+  .actions
+    = f.submit "Sign up"
+= render "devise/shared/links"
