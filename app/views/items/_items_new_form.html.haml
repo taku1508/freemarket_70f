@@ -9,8 +9,7 @@
       .t_display_names
         最大10枚までアップロードできます
       .t_sell_uploader
-        = form_with model: @image do |f|
-          = f.file_field :image,class: "t_icon_camera"
+        = f.file_field :image,class: "t_icon_camera"
         -# .t_sell_uploader__form
         -#   = image_tag "icon_camera.png", class: "t_icon_camera"
         -#   .t_icon_camera
@@ -93,15 +92,15 @@
               .t_status_group__hissu
                 必須
             .t_status_style
-              = form_with model: @item do |f|
-                =f.select :status,
-                  [["選択してください","0"],
-                  ["新品,未使用","1"],
-                  ["未使用に近い","2"],
-                  ["目立った汚れなし","3"],
-                  ["傷や汚れあり","5"],
-                  ["未使用に近い","6"],
-                  ["全体的に状態が悪い","7"]],{},{class: "t_status_select_form"}
+              -# = form_with model: @item do |f|
+              =f.select :status,
+                [["選択してください","0"],
+                ["新品,未使用","1"],
+                ["未使用に近い","2"],
+                ["目立った汚れなし","3"],
+                ["傷や汚れあり","5"],
+                ["未使用に近い","6"],
+                ["全体的に状態が悪い","7"]],{},{class: "t_status_select_form"}
 
               -# = form_tag('/items/new',method: :post) do
               -#   %select(name="example" class="t_status_select_form")
@@ -122,11 +121,11 @@
         必須
     .t_items_name__items
       .t_form_style_delivery
-        = form_with model: @item do |f|
-          = f.select :shipping_charges,
-            [["選択してください","0"],
-            ["送料込み(出品者負担)","1"],
-            ["着払い(購入者負担)","2"]],{},{class: "t_delivery_form"}
+        -# = form_with model: @item do |f|
+        = f.select :shipping_charges,
+          [["選択してください","0"],
+          ["送料込み(出品者負担)","1"],
+          ["着払い(購入者負担)","2"]],{},{class: "t_delivery_form"}
         
         -# = form_tag('/items/new',method: :post) do  
         -#   %select(name="example" class="t_delivery_form")
@@ -140,58 +139,58 @@
         必須
     .t_items_name__items
       .t_form_style_delivery
-        = form_with model: @item do |f|
-          = f.select :shipping_charges,
-            [["選択してください","0"],
-            ["北海道","1"],
-            ["青森県","2"],
-            ["岩手県","3"],
-            ["宮城県","4"],
-            ["秋田県","5"],
-            ["秋田県","6"],
-            ["山形県","7"],
-            ["福島県","8"],
-            ["茨城県","9"],
-            ["栃木県","10"],
-            ["群馬県","11"],
-            ["埼玉県","12"],
-            ["千葉県","13"],
-            ["神奈川県","14"], 
-            ["新潟県","15"],
-            ["富山県","16"],
-            ["石川県","17"],
-            ["福井県","18"],
-            ["長野県","19"],
-            ["山梨県","20"],
-            ["岐阜県","21"],
-            ["静岡県","22"],
-            ["愛知県","23"],
-            ["三重県","24"],
-            ["滋賀県","25"],
-            ["京都府","26"],
-            ["大阪府","27"],
-            ["兵庫県","28"],
-            ["奈良県","29"],
-            ["和歌山県","30"], 
-            ["鳥取県","31"],
-            ["島根県","32"],
-            ["岡山県","33"],
-            ["広島県","34"],
-            ["山口県","35"],
-            ["徳島県","36"],
-            ["香川県","37"],
-            ["愛媛県","38"],
-            ["高知県","39"],
-            ["福岡県","40"],
-            ["佐賀県","41"],
-            ["長崎県","42"],
-            ["熊本県","43"],
-            ["大分県","44"],
-            ["宮崎","45"],
-            ["宮崎県","46"],
-            ["鹿児島県","47"],
-            ["沖縄県","50"],
-            ["未定","51"]],{},{class: "t_delivery_form"}
+        -# = form_with model: @item do |f|
+        = f.select :shipping_charges,
+          [["選択してください","0"],
+          ["北海道","1"],
+          ["青森県","2"],
+          ["岩手県","3"],
+          ["宮城県","4"],
+          ["秋田県","5"],
+          ["秋田県","6"],
+          ["山形県","7"],
+          ["福島県","8"],
+          ["茨城県","9"],
+          ["栃木県","10"],
+          ["群馬県","11"],
+          ["埼玉県","12"],
+          ["千葉県","13"],
+          ["神奈川県","14"], 
+          ["新潟県","15"],
+          ["富山県","16"],
+          ["石川県","17"],
+          ["福井県","18"],
+          ["長野県","19"],
+          ["山梨県","20"],
+          ["岐阜県","21"],
+          ["静岡県","22"],
+          ["愛知県","23"],
+          ["三重県","24"],
+          ["滋賀県","25"],
+          ["京都府","26"],
+          ["大阪府","27"],
+          ["兵庫県","28"],
+          ["奈良県","29"],
+          ["和歌山県","30"], 
+          ["鳥取県","31"],
+          ["島根県","32"],
+          ["岡山県","33"],
+          ["広島県","34"],
+          ["山口県","35"],
+          ["徳島県","36"],
+          ["香川県","37"],
+          ["愛媛県","38"],
+          ["高知県","39"],
+          ["福岡県","40"],
+          ["佐賀県","41"],
+          ["長崎県","42"],
+          ["熊本県","43"],
+          ["大分県","44"],
+          ["宮崎","45"],
+          ["宮崎県","46"],
+          ["鹿児島県","47"],
+          ["沖縄県","50"],
+          ["未定","51"]],{},{class: "t_delivery_form"}
         -# = form_tag('/items/new',method: :post) do
         -#   %select(name="example" class="t_delivery_form")
         -#     %option 選択して下さい
@@ -250,12 +249,12 @@
         必須
     .t_items_name__items
       .t_form_style_delivery
-        = form_with model: @item do |f|
-          = f.select :days,
-            [["選択してください","0"],
-            ["1〜2日で発送","1"],
-            ["2〜3日で発送","2"],
-            ["4〜7日で発送","3"]],{},{class: "t_delivery_form"}                            
+        -# = form_with model: @item do |f|
+        = f.select :days,
+          [["選択してください","0"],
+          ["1〜2日で発送","1"],
+          ["2〜3日で発送","2"],
+          ["4〜7日で発送","3"]],{},{class: "t_delivery_form"}                            
         -# = form_tag('/items/new',method: :post) do
         -#   %select(name="example" class="t_delivery_form")
         -#     %option 選択してください
@@ -274,9 +273,9 @@
       .t_yen
         ¥
       .t_number_form
-        = form_with model: @brand do |f|
-          = f.number_field :price ,class: "t_number_form", style: "text-align: right"
-          = f.submit
+        -# = form_with model: @brand do |f|
+        = f.number_field :price ,class: "t_number_form", style: "text-align: right"
+        = f.submit
         -# = form_tag('/items/new',method: :post) do
         -#   %input{type: "number",class: "t_number_form",style:"text-align: right"}
     .t_form_error_number
@@ -291,10 +290,10 @@
     -#   .t_rieki__count
     -#     a
     .t_bottun_form
-      = form_with model: @item do |f|
-        = f.submit class: "t_bottun_form__display", style: "t_bottun_form__display",value: "出品する"
-      = form_with model: @item do |f|
-        = f.submit class: "t_bottun_form__back",value: "もどる"
+      -# = form_with model: @item do |f|
+      = f.submit class: "t_bottun_form__display", style: "t_bottun_form__display"
+      -# = form_with model: @item do |f|
+      = f.submit class: "t_bottun_form__back",value: "もどる"
 
       -# = form_tag('/items/new',method: :post) do
       -#   %input{type: "submit", value: "出品する",class: "t_bottun_form__display" }
