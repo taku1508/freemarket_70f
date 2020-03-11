@@ -16,5 +16,14 @@ Rails.application.routes.draw do
       get 'signup'
     end
   end
-  resources :cards, only: [:new, :create, :edit, :update, :destroy]
+  resources :cards, only: [:new, :create, :edit, :update, :destroy] do
+    collection do
+      post 'delete', to: 'credit_card#delete'
+      post 'show'
+    end
+    member do
+      get 'confirmation'
+    end
+  end 
+
 end
