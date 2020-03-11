@@ -6,7 +6,6 @@
       .i_logoutMenu
         %form{:action => "/users/show", :method => "post", :novalidate => "novalidate", :class => "i_logoutInner"}
           .i_single-content
-            %button{:type => "submit",:class =>"i_logoutBtn"}
-              ログアウト
-            
+            %button{:type => "submit",class:"i_logoutBtn",method: "delete"}
+              = link_to "ログアウト",destroy_user_session_path,class: "i_logoutBtn", method: "delete"
   = render "items/items_toppage_footer"
