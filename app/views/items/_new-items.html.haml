@@ -39,7 +39,7 @@
           = f.text_area :description,class: "t_input_text_field2",placeholder:"商品の説明（必須 1,000文字以内)"
           -# = form_tag('/items/new',method: :post) do
           -#   %textarea(name="description" rows="7" class="t_input_text_field2" placeholder = "商品の説明（必須 1,000文字以内）")
-      .t_three
+      .t_three 
         .t_three__details
           商品の詳細
         .t_category
@@ -51,12 +51,12 @@
                 必須
             .t_items_name__items
               .t_form_style2
-                = f.select :category,
+                = f.select :name,
                   [["選択してください","0"],
                   ["レディース","1"],
-                  ["メンズ","2"],
-                  ["インテリア","3"],
-                  ["本・音楽・ゲーム","4"]],{},{class: "t_category_form"}
+                  ["トップス","2"],
+                  ["ジャケット/アウター","3"],
+                  ["パンツ","4"]],{},{class: "t_category_form"}
             .t_brand
               .t_brand_group
                 .t_brand_group__brand
@@ -64,10 +64,7 @@
                 .t_brand_group__ninni
                   任意
               .t_brand_style
-                = f.text_field :brand,class: "t_input_field",placeholder:"例)　シャネル"
-                = f.submit
-                -# = form_tag('/items/new',method: :post) do
-                -#   %input{type:"input",class:"t_input_field",placeholder: "例) シャネル"}
+                = f.text_field :brand,class: "t_input_field",placeholder:"例) シャネル"
               .t_status
                 .t_status_group
                   .t_status_group__status
@@ -81,9 +78,9 @@
                     ["新品,未使用","1"],
                     ["未使用に近い","2"],
                     ["目立った汚れなし","3"],
-                    ["傷や汚れあり","5"],
-                    ["未使用に近い","6"],
-                    ["全体的に状態が悪い","7"]],{},{class: "t_status_select_form"}
+                    ["傷や汚れあり","4"],
+                    ["未使用に近い","5"],
+                    ["全体的に状態が悪い","6"]],{},{class: "t_status_select_form"}
 
                   -# = form_tag('/items/new',method: :post) do
                   -#   %select(name="example" class="t_status_select_form")
