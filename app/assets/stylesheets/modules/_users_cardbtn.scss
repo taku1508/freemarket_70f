@@ -3,7 +3,8 @@
     .h_right{
       width: 700px;
       &__contents{
-        height: 250px;
+        //作成、削除ボタン共通
+        height: 300px;
         background-color: #fff;
         &__head{
           font-size: 24px;
@@ -15,6 +16,9 @@
         &__main{
           padding: 64px;
           text-align: center;
+          display: flex;
+          justify-content: space-around;
+          //クレジットカード作成ボタン
           &__card{
             margin: 0 auto;
             background: #ea352d;
@@ -28,6 +32,33 @@
               text-decoration: none;
               color: #fff;
             }
+          }
+          //詳細削除フォーム
+          &__info{
+            text-align: left;
+            &__title{
+              font-weight: bold;
+              font-size: 18px;
+              padding-bottom: 8px;
+            }
+            &__img{
+              &--size{
+                width: 70px;
+              }
+            }
+            &__number{
+              font-size: 15px;
+            }
+            &__date{
+              font-size: 15px;
+            }
+          }
+          &__btn{
+            font-size: 20px;
+            border-radius: 10px;
+            border:solid 1px red;
+            color: red;
+            cursor: pointer;
           }
         }
       }
