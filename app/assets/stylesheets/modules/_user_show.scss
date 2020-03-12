@@ -61,12 +61,12 @@
     .h_right{
       width: 700px;
       height: 100vh;
-      background-color: white;
+      background-color: #f8f8f8;;
       .h_top{
         position: relative;
         &--size{
           width: 700px;
-          height: 200px;
+          max-height: 200px;
         }
         &__icon{
           position: absolute;

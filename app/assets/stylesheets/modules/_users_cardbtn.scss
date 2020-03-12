@@ -1,25 +1,32 @@
 .all{
   .h_main{
     .h_right{
-      float: none;
       width: 700px;
-      .h_CardMenu{
+      &__contents{
+        height: 250px;
         background-color: #fff;
-        margin: 0;
-        .h_CardInner{
+        &__head{
+          font-size: 24px;
+          padding: 8px 24px;
+          border-bottom: 1px solid #eee;
+          text-align: center;
+          font-weight: bold;
+        }
+        &__main{
           padding: 64px;
-          .h_single-content{
-            max-width: 320px;
+          text-align: center;
+          &__card{
             margin: 0 auto;
-            .h_CardBtn{
-              text-decoration: none;
-              background: #ea352d;
-              border: 1px solid #ea352d;
-              color: #fff;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            width: 320px;
+            line-height: 48px;
+            font-size: 14px;
+            &__btn{
               display: block;
-              width: 100%;
-              line-height: 48px;
-              font-size: 14px;
+              text-decoration: none;
+              color: #fff;
             }
           }
         }
