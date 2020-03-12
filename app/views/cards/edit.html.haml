@@ -63,5 +63,6 @@
                   %span.require__form 必須
                 = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
               .single__code
-                = submit_tag "追加する", id: "token_submit", class: "top__margin"
+                #card_token
+                  = submit_tag "追加する", id: "token_submit", class: "top__margin"
   = render "items/items_toppage_footer"
