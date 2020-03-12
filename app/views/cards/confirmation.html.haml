@@ -7,8 +7,7 @@
           %h3.sub__head クレジットカード一覧
       .add__card
         .payment__list__content
-          = link_to edit_card_path(@user), class: "red__btn", data: {"turbolinks" => false} do
-            -# @userをcurrent_userに変更すること
+          = link_to edit_card_path(current_user), class: "red__btn", data: {"turbolinks" => false} do
             %i
             = icon('fas', 'credit-card', class: "card__icon")
             クレジットカードを追加する

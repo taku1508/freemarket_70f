@@ -10,15 +10,15 @@ class CardsController < ApplicationController
       redirect_to action: "edit", id: current_user.id
     else
       customer = Payjp::Customer.create(
-      email: "haoka@gmail.com", #@userをcurrent_userに
+      email: current_user.email, 
       card: params['payjp-token'],
-      metadata: {user_id: @user} #@userをcurrent_user.isに
+      metadata: {user_id: current_user.id} 
       )
-      @card = Card.new(user_id: 1, customer_id: customer.id, card_id: customer.default_card) #@userをcurrent_user.idに
+      @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card) 
       if @card.save
         redirect_to action: "show"
       else
-        redirect_to action: "edit", id: 1
+        redirect_to action: "edit", id: current_user.id
       end
     end
   end
@@ -44,7 +44,7 @@ class CardsController < ApplicationController
   end
 
   def confirmation
-    card = @user.cards #@userをcurrent_userに変更すること
+    card = current_user.cards #@userをcurrent_userに変更すること
     redirect_to action: "show" if card.exists?
   end
 
