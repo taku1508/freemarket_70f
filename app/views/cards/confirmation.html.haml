@@ -1,16 +1,21 @@
-.main__content
-  %section.chapter__container
-    %h2.chapter__head 支払い方法
-    .payment__main
-      .payment__list
-        .payment__list__content
-          %h3.sub__head クレジットカード一覧
-      .add__card
-        .payment__list__content
-          = link_to edit_card_path(@user), class: "red__btn", data: {"turbolinks" => false} do
-            -# @userをcurrent_userに変更すること
-            %i
-            = icon('fas', 'credit-card', class: "card__icon")
-            クレジットカードを追加する
-      .not__regist
-        %span 支払い方法について
+.all
+  = render "users/users_header2"
+  .h_main
+    = render "users/leftbar"
+    .h_right
+      %section.chapter__container
+        %h2.chapter__head 支払い方法
+        .payment__main
+          .payment__list
+            .payment__list__content
+              %h3.sub__head クレジットカード一覧
+          .add__card
+            .payment__list__content
+              = link_to edit_card_path(current_user), class: "red__btn", data: {"turbolinks" => false} do
+                %i
+                = icon('fas', 'credit-card', class: "card__icon")
+                クレジットカードを追加する
+          .not__regist
+            %span 支払い方法について
+
+  = render "items/items_toppage_footer"

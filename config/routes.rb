@@ -19,10 +19,9 @@ Rails.application.routes.draw do
       get 'users_registration'
     end
   end
-  resources :cards, only: [:new, :create, :edit, :update, :destroy] do
+  resources :cards, only: [:new, :create, :edit, :update, :show] do
     collection do
-      post 'delete', to: 'credit_card#delete'
-      post 'show'
+      post 'delete', to: 'cards#delete'
     end
     member do
       get 'confirmation'
