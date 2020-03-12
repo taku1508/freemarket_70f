@@ -8,6 +8,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     @user = User.new(users_params)
     @user.save
+    redirect_to root_path
     # unless @user.valid?
     #   flash.now[:alert] = @user.errors.full_messages
     #   render :new and return
@@ -21,6 +22,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def users_params
-    params.require(:user).permit(:nickname,:first_name,:second_name,:email,:password,:hurigana_first,:hurigana_second,:birthday,:phone_number)
+    params.require(:user).permit(:nickname,:first_name,:second_name,:email,:password,:hurigana_first,:hurigana_second,:phone_number,:birthday_year,:birthday_month,:birthday_day)
   end
 end

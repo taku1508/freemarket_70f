@@ -14,7 +14,8 @@
   .h_left__contents
     %ul
       %li
-        = link_to "支払い方法", "/cards/new", class: "h_left__contents__link"
+        = link_to "支払い方法", confirmation_card_path(1), class: "h_left__contents__link"
+        -# confirmation_card_path(1)をconfirmation_card_path(current_user)にすること
       %li
         = link_to "発送元・お届け先住所変更", "/users/deliber_address", class: "h_left__contents__link"
       %li
