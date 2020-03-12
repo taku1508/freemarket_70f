@@ -1,0 +1,168 @@
+.main__content{
+  .chapter__container{
+    .chapter__head{
+      font-weight: 700;
+      color: #333;
+      height: 50px;
+      width: 700px;
+      background: #fff;
+      font-size: 24px;
+      padding: 8px 24px;
+      font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+      text-align: center;
+    }
+    .chapter__container__inner{
+      margin-top: 2px;
+      width: 700px;
+      background-color: #fff;
+      .form__main__container{
+        width: 700px;
+        background-color: #fff;
+        padding: 40px 40px 64px;
+        .form__content{
+          margin: 0 auto;
+          height: 407px;
+          width: 343px;
+          .form__contentgroup{
+            height: 98px;
+            width: 343px;
+            .form_cards_member{
+              display: flex;
+              height: 19px;
+            }
+            .payment__card {
+              width: 70px;
+              height: 14px;
+              color: #333333;
+              font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4em;
+            }
+            .require__form {
+              width: 32px;
+              height: 19px;
+              border-radius: 2px;
+              background-color: #ff0211;
+              color: #fff;
+              font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+              margin-left: 8px;
+              font-size: 12px;
+              padding: 0 4px;              
+            }
+            .number_input__deafult{
+              padding-left: 12px;
+              margin-top: 8px;
+              width: 343px;
+              height: 48px;
+            }
+            .icon_card{
+              margin-top: 7px;
+              height: 29px;
+            }
+          }
+          .card__list{
+            margin-top: 32px;
+            height: 70px;
+            width: 343px;
+            .card__list__picture{
+              display: flex;
+              height: 19px;
+              margin-bottom: 5px;
+              .payment__card{
+                color: #333333;
+                font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 1.4em;
+              }
+              .require__form{
+                margin-left: 8px;
+                border-radius: 2px;
+                background-color: #ff0211;
+                color: #fff;
+                font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+                margin-left: 8px;
+                font-size: 12px;
+                padding: 0 4px;
+              }
+            }
+            .select__box.top__margin{
+              display: flex;
+              .select__box__half{
+                width: 169.5px;
+                height: 48px;
+                display: flex;
+                .select__default#exp_month{
+                  width: 131.5px;
+                  height: 48px;
+                }
+                .span_month{
+                  line-height: 48px;
+                  margin-left: 8px;
+                }
+              }
+              .select__box__half{
+                width: 169.5px;
+                height: 48px;
+                display: flex;
+                .select__default#exp_year{
+                  width: 131.5px;
+                  height: 48px;
+                }
+                .span_month{
+                  line-height: 48px;
+                  margin-left: 8px;
+                }
+              }
+            }
+          }
+          .form__content.top__margin{
+            margin-top: 32px;
+            height: 93px;
+            width: 343px;
+            .cards_member{
+              display: flex;
+              height: 19px;
+              .code{
+                color: #333333;
+                font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 1.4em;
+              }
+              .require__form{
+                border-radius: 2px;
+                background-color: #ff0211;
+                color: #fff;
+                font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+                margin-left: 8px;
+                font-size: 12px;
+                padding: 0 4px;
+              }
+            }
+            .cvc{
+              padding-left: 12px;
+              margin-top: 8px;
+              width: 343px;
+              height: 48px;
+            }
+          }
+          .single__code{
+            margin-top: 32px;
+            height: 50px;
+            width: 343px;
+            .top__margin{
+              width: 343px;
+              height: 50px;
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
