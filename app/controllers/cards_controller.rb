@@ -1,5 +1,4 @@
 class CardsController < ApplicationController
-  before_action :get_user_params, only: [:edit, :confirmation, :show]
   before_action :get_payjp_info, only: [:new_create, :create, :delete, :show]
 
   def edit
@@ -16,7 +15,7 @@ class CardsController < ApplicationController
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card) 
       if @card.save
-        redirect_to action: "show"
+        redirect_to card_path(current_user)
       else
         redirect_to action: "edit", id: current_user.id
       end
@@ -30,29 +29,25 @@ class CardsController < ApplicationController
       customer.delete
       card.delete
     end
-      redirect_to action: "users", id: current_user.id
+      redirect_to user_path(current_user)
   end
 
   def show
-    card = current_user.credit_cards.first
+    card = current_user.cards.first
     if card.present?
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     else
-      redirect_to action: "users", id: current_user.id
+      redirect_to controller: :user, action: "users", id: current_user.id
     end
   end
 
   def confirmation
-    card = current_user.cards #@userをcurrent_userに変更すること
+    card = current_user.cards 
     redirect_to action: "show" if card.exists?
   end
 
   private
-
-  def get_user_params
-    @user = User.find(params[:id])
-  end
 
   def get_payjp_info
     if Rails.env == 'development'
