@@ -8,6 +8,16 @@
   padding: 0 4px;
 }
 
+@mixin ninni{
+  border-radius: 2px;
+  margin-left: 8px;
+  padding: 0 4px;
+  font-size: 12px;
+  font-family: $font-style;
+  background-color: #bfbfbf;
+  color:white;
+}
+
 @mixin font_style {
   color: #333333;
   font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;

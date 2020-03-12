@@ -1,0 +1,65 @@
+@mixin deliber-group{
+  height: 70px;
+  width: 343px;
+  margin-top: 32px;
+  .t_names_member{
+  display: flex;
+  height: 19px;              
+    .t_names_number{
+      width: 70px;
+      height: 14px;
+      @include font_style
+    }
+    .t_names_hissu{
+      margin-left: 8px;
+      width: 32px;
+      height: 19px;
+      @include hissu;
+    }
+  }
+  .t_names_input{
+    padding-left: 12px;
+    margin-top: 8px;
+    width: 343px;
+    height: 48px;
+  }
+  .t_names_input_error{
+    color: red;
+    font-size: 16px;
+    margin-top: 8px;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  }
+}
+
+@mixin deliber-group2{
+  height: 70px;
+  width: 343px;
+  margin-top: 32px;
+  .t_names_member{
+  display: flex;
+  height: 19px;              
+    .t_names_number{
+      width: 70px;
+      height: 14px;
+      @include font_style
+    }
+    .t_names_hissu{
+      margin-left: 8px;
+      width: 32px;
+      height: 19px;
+      @include ninni
+    }
+  }
+  .t_names_input{
+    padding-left: 12px;
+    margin-top: 8px;
+    width: 343px;
+    height: 48px;
+  }
+  .t_names_input_error{
+    color: red;
+    font-size: 16px;
+    margin-top: 8px;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  }
+}

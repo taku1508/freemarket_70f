@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+  }
   get 'users/index'
   root 'items#index'
   resources :items do
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
       get 'email_password'
       get 'identify'
       get 'signup'
+      get 'users_registration'
     end
   end
   resources :cards, only: [:new, :create, :edit, :update, :destroy] do
@@ -26,4 +29,7 @@ Rails.application.routes.draw do
     end
   end 
 
+  resources :categories, only: [:new, :create]
+  resources :brands, only: [:new, :create]
+  resources :images, only: [:new, :create]
 end

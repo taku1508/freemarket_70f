@@ -1,12 +1,17 @@
 class UsersController < ApplicationController
 
   def index
+    @users = User.all
+  end
+
+  
+  def new
+    @user = User.new
   end
 
   def create
-  end
-
-  def new
+    @user = User.create(users_params)
+    redirect_to root_path
   end
 
   def show
@@ -31,6 +36,12 @@ class UsersController < ApplicationController
   end
 
   def identify
+  end
+
+  private
+
+  def users_params
+    params.require(:user).permit(:nickname,:first_name,:second_name,:email,:password,:hurigana_first,:hurigana_second,:birthday,:phone_number)
   end
 
 end
