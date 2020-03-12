@@ -6,6 +6,7 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable
   has_many :cards 
   has_many :items
-  belongs_to :address, optional: true
+  # belongs_to :address, optional: true
+  has_one :address
 
 end

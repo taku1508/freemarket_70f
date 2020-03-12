@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     end
   end 
 
+  resources :addresses, only: [:new, :create]
   resources :categories, only: [:new, :create]
   resources :brands, only: [:new, :create]
   resources :images, only: [:new, :create]
