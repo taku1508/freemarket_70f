@@ -12,7 +12,7 @@
                 .form_cards_member
                   %label.payment__card カード番号
                   %span.require__form 必須
-                = text_field_tag "number", "", class: "number_input__deafult", placeholder: "半角数字のみ" , type: "text", id: "card_number"
+                = text_field_tag "number", "", class: "number_input__deafult", placeholder: "半角数字のみ" ,maxlength:"16", type: "text", id: "card_number"
                 = image_tag("card-1.gif",class: "icon_card")
               .card__list
                 .card__list__picture
