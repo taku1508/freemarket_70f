@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
     # category_id = Category.find_by(params[:item][:category_id]).id
     # Category.create(items_params.merge(category_id: category_id))
     @item = Item.new(items_params)
+    @item.category_id = @item.name
     binding.pry
     @item.save
     # binding.pry
@@ -47,6 +48,7 @@ class ItemsController < ApplicationController
   # def set_category
   #   @category = Category.find(params[:category_id])
   # end
+
 
   # def set_item
   #   @item = Category.find(params[:id])
