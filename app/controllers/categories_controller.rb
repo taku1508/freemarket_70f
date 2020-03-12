@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(categories_params)
+    @category.save
     # if @hoge.save
     #   redirect_to :action => "index"
     # else
@@ -12,7 +13,11 @@ class CategoriesController < ApplicationController
     # end
   end
 
+  private
+  
   def categories_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name,:ancestry)
   end
+
+  def set
 end

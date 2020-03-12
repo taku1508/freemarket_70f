@@ -12,13 +12,15 @@
           .t_display_names
             最大10枚までアップロードできます
           .t_sell_uploader
-            = f.file_field :image,class: "t_icon_camera"
-            -# .t_sell_uploader__form
-            -#   = image_tag "icon_camera.png", class: "t_icon_camera"
-            -#   .t_icon_camera
-            -#   .t_text_drag_drop
-            -#     %p ドラッグアンドドロップ
-            -#     %p またはクリックしてファイルをアップロード
+            -# = f.file_field :image,class: "t_icon_camera"
+            .t_sell_uploader__form
+              = f.label :image do
+                = image_tag "icon_camera.png", class: "t_icon_camera"
+                = f.file_field :image,class: "t_icon_camera2"
+              .t_icon_camera
+              .t_text_drag_drop
+                %p ドラッグアンドドロップ
+                %p またはクリックしてファイルをアップロード
       .t_items
         .t_items__name
           .t_items_names
@@ -52,11 +54,11 @@
             .t_items_name__items
               .t_form_style2
                 = f.select :name,
-                  [["選択してください","0"],
-                  ["レディース","1"],
-                  ["トップス","2"],
-                  ["ジャケット/アウター","3"],
-                  ["パンツ","4"]],{},{class: "t_category_form"}
+                  [["レディース","1"],
+                  ["レディース","2"],
+                  ["トップス","3"],
+                  ["ジャケット/アウター","4"],
+                  ["パンツ","5"]],{},{class: "t_category_form"}
             .t_brand
               .t_brand_group
                 .t_brand_group__brand
