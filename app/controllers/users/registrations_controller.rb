@@ -8,6 +8,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     @user = User.new(users_params)
     @user.save
+    redirect_to root_path
     # unless @user.valid?
     #   flash.now[:alert] = @user.errors.full_messages
     #   render :new and return
