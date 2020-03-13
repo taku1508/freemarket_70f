@@ -4,4 +4,5 @@ class Item < ApplicationRecord
   belongs_to :category, optional: true
   has_many :images
   has_many :item_categories
+  accepts_nested_attributes_for :images
 end
