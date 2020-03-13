@@ -48,14 +48,20 @@ class CardsController < ApplicationController
   end
 
   def buy
-    item = Item.find(params[:id])
-    card = current_user.cards.first
-    charge = Payjp::Charge.create(
-      amount: item.price,
-      customer: card.customer_id,
-      currency: 'jpy',
-    )
-    redirect_to controller: "users", action: 'show', id:current_user.id
+    card = current_user.cards 
+    if card.blank?
+      redirect_to action: "edit", id: current_user.id
+      flash[:alert] = '購入にはクレジットカード登録が必要です'
+    else
+      item = Item.find(params[:id])
+      card = current_user.cards.first
+      charge = Payjp::Charge.create(
+        amount: item.price,
+        customer: card.customer_id,
+        currency: 'jpy',
+      )
+      redirect_to controller: "users", action: 'show', id:current_user.id
+    end
   end
 
   private
