@@ -55,15 +55,6 @@ ActiveRecord::Schema.define(version: 2020_03_11_123041) do
     t.index ["item_id"], name: "index_images_on_item_id"
   end
 
-  create_table "item_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id"
-    t.bigint "category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_item_categories_on_category_id"
-    t.index ["item_id"], name: "index_item_categories_on_item_id"
-  end
-
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
@@ -88,21 +79,21 @@ ActiveRecord::Schema.define(version: 2020_03_11_123041) do
     t.string "second_name", null: false
     t.string "hurigana_first", null: false
     t.string "hurigana_second", null: false
-    t.integer "birthday", null: false
     t.integer "phone_number"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "birthday_year", null: false
+    t.integer "birthday_month", null: false
+    t.integer "birthday_day", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "cards", "users"
   add_foreign_key "images", "items"
-  add_foreign_key "item_categories", "categories"
-  add_foreign_key "item_categories", "items"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
 end

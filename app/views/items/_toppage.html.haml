@@ -95,10 +95,14 @@
     .k_main__pickupContainer__title
       ピックアップカテゴリー
     .k_main__pickupContainer__head
-      新規投稿商品
+      =link_to "#" do
+        新規投稿商品
     .k_main__pickupContainer__pict
-      .k_main__pickupContainer__pict__img
-        =image_tag "food_spaghetti_carbonara.png", class: "k_main__pickupContainer__pict__img--size"
+      - @items.each do |item|
+        .k_main__pickupContainer__pict
+          =link_to item_path(item.id) do
+            .k_main__pickupContainer__pict__img
+              =image_tag "food_spaghetti_carbonara.png", class: "k_main__pickupContainer__pict__img--size"
         .k_main__pickupContainer__pict__img__texts
           %p
             product3
@@ -131,7 +135,8 @@
     .k_main__pickupContainer__title
       ピックアップブランド
     .k_main__pickupContainer__head
-      アーカイバ
+      =link_to "#" do
+        アーカイバ
     .k_main__pickupContainer__pict
       .k_main__pickupContainer__pict__img
         =image_tag "food_spaghetti_carbonara.png", class: "k_main__pickupContainer__pict__img--size"

@@ -27,6 +27,7 @@
     -# -# パスワード入力箇所
     = form_with model: User.new do |f|
       = f.text_field :encrypted_password,class: "m_login-input-text__passward",placeholder: "パスワード"
+      
     
     -# ロボットではありません
     .m_form-group
@@ -43,6 +44,8 @@
     
     // パスワードお忘れの方
     =link_to 'パスワードをお忘れの方', 'https://www.mercari.com/jp/password/reset/start/',class: "m_forgot-password"
-    
+
 .m_footer
 =render "items/items_footer"
+
+

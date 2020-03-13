@@ -1,25 +1,28 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.all
+    @item = Item.all
+    @items = Item.order("created_at DESC")
+  end
+  
+  def new
+    # @item.brands.new
+    @item = Item.new
+    @item.images.new
   end
 
   def create
-    # @item = Item.new(items_params)
-    # binding.pry
-    # if @item.save
-    #   redirect_to root_path
-    # else
-    #   render new
-    # end
-    @item = Item.create(items_params)
+    @item = Item.new(items_params)
+    # @item.brand_id = @item.brand
+    @item.category_id = @item.name
     binding.pry
-    redirect_to root_path
+    if @item.save
+      redirect_to root_path, notice: 'アイテムを作成しました。'
+    else
+      render :index
+    end
   end
 
-  def new
-    @item = Item.new
-  end
 
   def show
   end
@@ -40,7 +43,8 @@ class ItemsController < ApplicationController
   private
 
   def items_params
-    params.require(:item).permit(:name,:description,:status,:shipping_charges,:area,:days,:price)
+    params.require(:item).permit(:name,:description,:status,:shipping_charges,:area,:days,:price,images_attributes: [:image, :id]).merge(user_id: current_user.id)
   end
-  
+
+
 end

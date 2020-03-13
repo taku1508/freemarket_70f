@@ -4,8 +4,8 @@ class BrandsController < ApplicationController
   end
 
   def create
-    @brand = Brand.create(brands_params)
-    binding.pry
+    @brand = Brand.new(brands_params)
+    # binding.pry
     redirect_to root_path
     # if @hoge.save
     #   redirect_to :action => "index"
@@ -15,6 +15,6 @@ class BrandsController < ApplicationController
   end
 
   def brands_params
-    params.require(:brand).permit(:id,:brand)
+    params.require(:brand).permit(:brand,:id)
   end
 end

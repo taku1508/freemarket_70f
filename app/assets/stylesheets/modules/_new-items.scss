@@ -63,6 +63,10 @@
               width: 24px;
               fill: rgb(34, 34, 34);
               margin-bottom: 8px;
+              cursor: copy;
+            }
+            .t_icon_camera2{
+              display: none;
             }
             .t_text_drag_drop{  //フォーム内表記情報
               color: #333333;
@@ -410,6 +414,9 @@
         width: 360px;
         height: 48px;
       }
+    }
+    .t_image{
+      height: 100px;
     }
   }
 }
