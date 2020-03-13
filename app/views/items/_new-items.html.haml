@@ -13,10 +13,18 @@
             最大10枚までアップロードできます
           .t_sell_uploader
             -# = f.file_field :image,class: "t_icon_camera"
+
+            -# .t_sell_uploader__form
+            -#   = f.label :image do
+            -#     = image_tag "icon_camera.png", class: "t_icon_camera"
+            -#     = f.file_field :image,class: "t_icon_camera2"
+
             .t_sell_uploader__form
-              = f.label :image do
-                = image_tag "icon_camera.png", class: "t_icon_camera"
-                = f.file_field :image,class: "t_icon_camera2"
+              -# = f.label :image do
+              -#   = image_tag "icon_camera.png", class: "t_icon_camera"
+              -#   = f.file_field :image,class: "t_icon_camera2"
+              = f.fields_for :images do |image|
+                = image.file_field :image
               .t_icon_camera
               .t_text_drag_drop
                 %p ドラッグアンドドロップ
@@ -67,6 +75,8 @@
                 .t_brand_group__ninni
                   任意
               .t_brand_style
+                -# = f.fields_for :brands do |brand|
+                -# = f.fields_for :brands do |brand|
                 = f.text_field :brand,class: "t_input_field",placeholder:"例) シャネル"
               .t_status
                 .t_status_group
@@ -282,7 +292,7 @@
           -# = form_tag('/items/new',method: :post) do
           -#   %input{type: "submit", value: "もどる",class: "t_bottun_form__back" }
         .t_image
-          = f.fields_for :image do |image|
+          = f.fields_for :images do |image|
             -# %data-index{image.index}
             -# = image_tag "icon_camera.png", class: "t_icon_camera"
             = image.file_field :image
