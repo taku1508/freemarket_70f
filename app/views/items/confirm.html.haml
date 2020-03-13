@@ -10,10 +10,11 @@
             = image_tag 'pict-reason-01.jpg', class: 'h_middle__box__img'
           .h_middle__box__text
             .h_middle__box__text__goods
-              プニュズ ワンピース
+              = @item.name
             .h_middle__box__text__detail
               .h_middle__box__text__detail__price
-                ¥2,000（税込)　
+              = @item.price
+              (税込)　
               .h_middle__box__text__detail__shipping
                 送料込み
       .h_foot
@@ -22,7 +23,8 @@
             .h_foot__inner__table__text
               支払金額
             .h_foot__inner__table__price
-              ¥2000
+              ¥
+              = @item.price
           .h_foot__inner__point
             %input{type: "checkbox", name: "point", value: "送信", class: "h_foot__inner__point__btn"}
             ポイントを使用 (所持ポイント: P0)
@@ -43,7 +45,7 @@
               %br  
               羽岡 諒
           .h_foot__inner__btn
-            %form{action: "#"}
+            %form{action: buy_card_path(@item.id)}
               %input{type: "submit", value: "購入する", class: "h_foot__inner__btn__submit"}
 
   = render "items_footer"
