@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     end
     member do
       get 'confirmation'
+      get 'buy'
     end
   end 
 

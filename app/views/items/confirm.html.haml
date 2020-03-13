@@ -43,7 +43,7 @@
               %br  
               羽岡 諒
           .h_foot__inner__btn
-            %form{action: "#"}
+            %form{action: buy_card_path(@item.id)}
               %input{type: "submit", value: "購入する", class: "h_foot__inner__btn__submit"}
 
   = render "items_footer"

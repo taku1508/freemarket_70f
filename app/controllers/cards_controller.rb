@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_action :get_payjp_info, only: [:new_create, :create, :delete, :show]
+  before_action :get_payjp_info, only: [:new_create, :create, :delete, :show, :buy]
 
   def edit
   end
@@ -45,6 +45,17 @@ class CardsController < ApplicationController
   def confirmation
     card = current_user.cards 
     redirect_to action: "show" if card.exists?
+  end
+
+  def buy
+    item = Item.find(params[:id])
+    card = current_user.cards.first
+    charge = Payjp::Charge.create(
+      amount: item.price,
+      customer: card.customer_id,
+      currency: 'jpy',
+    )
+    redirect_to controller: "users", action: 'show', id:current_user.id
   end
 
   private
