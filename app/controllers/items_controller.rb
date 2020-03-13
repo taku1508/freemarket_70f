@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :get_payjp_info, only: [:confirm]
+
   def index
     @items = Item.all
   end
@@ -33,12 +35,31 @@ class ItemsController < ApplicationController
   end
 
   def confirm
+    item = Item.find(params[:id])
+    card = current_user.cards
+    # if params['payjp-token'].blank? #カードにデータが入っていないなら
+    #   redirect_to action: "edit", id: current_user.id
+    # else
+      charge = Payjp::Charge.create(
+        amount: item.price,
+        customer: card.customer_id,
+        currency: 'jpy',
+      )
+    # end
   end
 
   private
 
   def items_params
     params.require(:item).permit(:name,:description,:status,:shipping_charges,:area,:days,:price)
+  end
+
+  def get_payjp_info
+    if Rails.env == 'development'
+      Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
+    else
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_ACCESS_KEY]
+    end
   end
   
 end
