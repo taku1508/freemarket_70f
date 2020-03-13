@@ -5,7 +5,6 @@ class AddressesController < ApplicationController
 
   def create
     @address = Address.new(address_params)
-    binding.pry
     @address.save
     redirect_to root_path
   end

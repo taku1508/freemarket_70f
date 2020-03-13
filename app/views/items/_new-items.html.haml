@@ -21,6 +21,7 @@
               .t_text_drag_drop
                 %p ドラッグアンドドロップ
                 %p またはクリックしてファイルをアップロード
+
       .t_items
         .t_items__name
           .t_items_names
@@ -280,5 +281,11 @@
           -#   %input{type: "submit", value: "出品する",class: "t_bottun_form__display" }
           -# = form_tag('/items/new',method: :post) do
           -#   %input{type: "submit", value: "もどる",class: "t_bottun_form__back" }
+        .t_image
+          = f.fields_for :image do |image|
+            -# %data-index{image.index}
+            -# = image_tag "icon_camera.png", class: "t_icon_camera"
+            = image.file_field :image
+            = image.submit
   = render "items_footer"
 
