@@ -23,6 +23,11 @@ class ItemsController < ApplicationController
     # @item.save
   end
 
+  def  done
+    @product_purchaser= Product.find(params[:id])
+    @product_purchaser.update( buyer_id: current_user.id)
+  end
+
 
   def show
   end

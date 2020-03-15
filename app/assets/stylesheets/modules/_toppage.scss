@@ -278,7 +278,9 @@
       color: #3CCACE;
     }
     &__pict{
+      margin: 32px auto;
       display: flex;
+      // overflow: scroll;
       justify-content: center;
       &__img{
         width: 15%;
@@ -286,6 +288,25 @@
         background-color: white;
         &--size{
           width: 100%;
+        }
+        .items-box_photo__sold{
+          width: 0;
+          height: 0;
+          border-top: 60px solid #ea352d ;
+          border-right: 60px solid transparent;
+          border-bottom: 60px solid transparent;
+          border-left: 60px solid #ea352d ;
+          z-index:100;
+          position: relative;
+          top:-320px;
+          &__inner{
+            transform: rotate(-45deg);
+            font-size: 28px;
+            margin:-35px 0px 0px -55px;
+            color: #fff;
+            letter-spacing: 2px;
+            font-weight: 600;
+          }
         }
         &__texts{
           padding: 0 16px 16px 16px;
