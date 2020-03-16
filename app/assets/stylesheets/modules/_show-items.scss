@@ -135,6 +135,30 @@
             }
           }
         }
+        // 以下から購入するボタン
+        .i_optionMenu{
+          width: 700px;
+          margin: 0 auto;
+          .i_item-optionBtn{
+            margin: 24px 0 24px 0;
+            background: #fff;
+            padding: 8px 16px 8px 16px;
+            .i_item-editBtn{
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              .i_item-editBtn-buy{
+              color: #fff;
+              text-align: center;
+              font-size: 14px;
+              line-height: 48px;
+              display: block;
+              margin: 16px 0 16px 0;
+              text-decoration: none;
+              display: block;
+              }
+            }
+          }
+        }
         // 以下からコメントフォーム
         .i_commentBox{
           padding: 24px;

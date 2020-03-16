@@ -53,14 +53,21 @@ class CardsController < ApplicationController
       redirect_to action: "edit", id: current_user.id
       flash[:alert] = '購入にはクレジットカード登録が必要です'
     else
-      item = Item.find(params[:id])
+      @item = Item.find(params[:id])
       card = current_user.cards.first
       charge = Payjp::Charge.create(
-        amount: item.price,
+        amount: @item.price,
         customer: card.customer_id,
         currency: 'jpy',
       )
-      redirect_to controller: "users", action: 'show', id:current_user.id
+      # 購入後の画面切り替え（商品の更新）
+      if @item.update(soldout: 1, buyer_id: current_user.id)
+        flash[:alert] = '購入しました。'
+        redirect_to controller: "users", action: 'show', id:current_user.id
+      else
+        flash[:alert] = '購入に失敗しました。'
+        redirect_to controller: "users", action: 'show', id:current_user.id
+      end
     end
   end
 
