@@ -91,47 +91,47 @@
               様々な支払いに対応
             .k_main__topKeyFeatures__head__items__item__pict__detail
               お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります
-  -# .k_main__pickupContainer
-  -#   .k_main__pickupContainer__title
-  -#     ピックアップカテゴリー
-  -#   .k_main__pickupContainer__head
-  -#     =link_to "#" do
-  -#       新規投稿商品
-  -#   .k_main__pickupContainer__picts
-  -#     - @items.each do |item|
-  -#       .k_main__pickupContainer__picts__pict
-  -#         =link_to item_path(item.id) do
-  -#           .k_main__pickupContainer__picts__pict__img
-  -#             = image_tag item.images.first.image.url,size:"220x150"
-  -#             - if item.soldout == 1
-  -#               .items-box_photo__sold
-  -#                 .items-box_photo__sold__inner
-  -#                   SOLD
-  -#         .k_main__pickupContainer__pict__img__texts
-  -#           =item.name
-  -#           .k_main__pickupContainer__pict__img__texts--size
-  -#             =item.price
-  -# .k_main__pickupContainer
-  -#   .k_main__pickupContainer__title
-  -#     ピックアップブランド
-  -#   .k_main__pickupContainer__head
-  -#     =link_to "#" do
-  -#       アーカイバ
-  -#   .k_main__pickupContainer__picts
-  -#     - @items.each do |item|
-  -#       .k_main__pickupContainer__picts__pict
-  -#         =link_to item_path(item.id) do
-  -#           .k_main__pickupContainer__picts__pict__img
-  -#             =image_tag item.images.first.image.url,size:"220x150"
-  -#             - if item.soldout == 1
-  -#               .items-box_photo__sold
-  -#                 .items-box_photo__sold__inner
-  -#                   SOLD
-  -#         .k_main__pickupContainer__pict__img__texts
-  -#           =item.name
-  -#           .k_main__pickupContainer__pict__img__texts--size
-  -#             =item.price
-  -#   .k_main__pickupContainer--padding
+  .k_main__pickupContainer
+    .k_main__pickupContainer__title
+      ピックアップカテゴリー
+    .k_main__pickupContainer__head
+      =link_to "#" do
+        新規投稿商品
+    .k_main__pickupContainer__picts
+      - @items.each do |item|
+        .k_main__pickupContainer__picts__pict
+          =link_to item_path(item.id) do
+            .k_main__pickupContainer__picts__pict__img
+              = image_tag item.images.first.image.url,size:"220x150"
+              - if item.soldout == 1
+                .items-box_photo__sold
+                  .items-box_photo__sold__inner
+                    SOLD
+          .k_main__pickupContainer__pict__img__texts
+            =item.name
+            .k_main__pickupContainer__pict__img__texts--size
+              =item.price
+  .k_main__pickupContainer
+    .k_main__pickupContainer__title
+      ピックアップブランド
+    .k_main__pickupContainer__head
+      =link_to "#" do
+        アーカイバ
+    .k_main__pickupContainer__picts
+      - @items.each do |item|
+        .k_main__pickupContainer__picts__pict
+          =link_to item_path(item.id) do
+            .k_main__pickupContainer__picts__pict__img
+              =image_tag item.images.first.image.url,size:"220x150"
+              - if item.soldout == 1
+                .items-box_photo__sold
+                  .items-box_photo__sold__inner
+                    SOLD
+          .k_main__pickupContainer__pict__img__texts
+            =item.name
+            .k_main__pickupContainer__pict__img__texts--size
+              =item.price
+    .k_main__pickupContainer--padding
   .k_main__appBanner
     .k_main__appBanner__content
     .k_main__appBanner__title
