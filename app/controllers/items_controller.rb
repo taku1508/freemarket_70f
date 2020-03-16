@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
 
   def index
-    # @item = Item.all
+    # @items = Item.all
     @items = Item.order("created_at DESC")
+    @images = Image.all
   end
   
   def new
@@ -23,7 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def  done
-    @product_purchaser= Product.find(params[:id])
+    @product_purchaser= Item.find(params[:id])
     @product_purchaser.update( buyer_id: current_user.id)
   end
 
