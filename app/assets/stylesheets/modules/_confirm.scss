@@ -93,6 +93,26 @@
               color: royalblue;
             }
           }
+          //カード詳細の部分テンプレート
+          .h_ContentsInfo{
+            text-align: left;
+            &__title{
+              font-weight: bold;
+              font-size: 18px;
+              padding-bottom: 8px;
+            }
+            &__img{
+              &--size{
+                width: 70px;
+              }
+            }
+            &__number{
+              font-size: 15px;
+            }
+            &__date{
+              font-size: 15px;
+            }
+          }
         }
         &__btn{
           padding-top: 32px;
