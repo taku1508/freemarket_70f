@@ -1,7 +1,33 @@
 .i_footer
   %ul.i_contents
     .i_content
-      %h.i_content_head
+      %ul
+        %h2 
+          = link_to "FURIMAについて", "#" ,class: "i_content__head"
+        %li
+          = link_to "会社概要（運営会社）", "#" ,class: "i_content__list"
+        %li
+          = link_to "プライバシーポリシー", "#" ,class: "i_content__list"
+        %li
+          = link_to "FURIMA利用規約", "#" ,class: "i_content__list"
+        %li
+          = link_to "ポイントに関する特約", "#" ,class: "i_content__list"
+      %ul
+        %h2
+          = link_to "FURIMAについて", "#" ,class: "i_content__head"
+        %li
+          = link_to "カテゴリー一覧", "#" ,class: "i_content__list"
+        %li
+          = link_to "ブランド一覧", "#" ,class: "i_content__list"
+      %ul
+        %h2
+          = link_to "FURIMAについて", "#" ,class: "i_content__head"
+        %li
+          = link_to "FURIMAガイド", "#" ,class: "i_content__list"
+        %li
+          = link_to "FURIMAロゴ利用ガイドライン", "#" ,class: "i_content__list"
+        %li
+          = link_to "お知らせ", "#" ,class: "i_content__list"
     .i_footer_logo
       = link_to items_path do
         = image_tag "logo-white.png" ,size:"160x46"

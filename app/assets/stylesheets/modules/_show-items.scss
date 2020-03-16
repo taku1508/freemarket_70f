@@ -205,11 +205,30 @@
   .i_contents{
     max-width: 840px;
     margin: 0 auto;
-    display: flex;
-  }
-  .i_footer_logo{
-    max-width: 160px;
-    width: 100%;
-    margin: 0 auto;
+    .i_content{
+      max-width: 840px;
+      display: flex;
+      justify-content: space-around;
+      h2{
+        margin: 0 0 20px;
+      }
+      &__head{
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #fff;
+      }
+      &__list{
+        color: #fff;
+        font-size: 12px;
+        line-height: 32px;
+        text-decoration: none;
+      }
+    }
+    .i_footer_logo{
+      max-width: 160px;
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 }
