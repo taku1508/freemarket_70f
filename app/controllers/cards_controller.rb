@@ -49,9 +49,13 @@ class CardsController < ApplicationController
  
   def buy
     card = current_user.cards 
+    address = current_user.address
     if card.blank?
       redirect_to action: "edit", id: current_user.id
       flash[:alert] = '購入にはクレジットカード登録が必要です'
+    elsif address.blank?
+      redirect_to new_address_path, id: current_user.id
+      flash[:alert] = '購入には配送先住所の登録が必要です'
     else
       @item = Item.find(params[:id])
       card = current_user.cards.first
