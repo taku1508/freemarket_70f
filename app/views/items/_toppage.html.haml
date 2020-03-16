@@ -103,12 +103,11 @@
           =link_to item_path(item.id) do
             .k_main__pickupContainer__picts__pict__img
               = image_tag item.images.first.image.url,size:"220x150"
-              - if item.buyer_id.present?
+              - if item.soldout == 1
                 .items-box_photo__sold
                   .items-box_photo__sold__inner
                     SOLD
-        .k_main__pickupContainer__pict__img__texts
-          %a
+          .k_main__pickupContainer__pict__img__texts
             =item.name
             .k_main__pickupContainer__pict__img__texts--size
               =item.price
@@ -124,12 +123,11 @@
           =link_to item_path(item.id) do
             .k_main__pickupContainer__picts__pict__img
               =image_tag item.images.first.image.url,size:"220x150"
-              - if item.buyer_id.present?
+              - if item.soldout == 1
                 .items-box_photo__sold
                   .items-box_photo__sold__inner
                     SOLD
-        .k_main__pickupContainer__pict__img__texts
-          %a
+          .k_main__pickupContainer__pict__img__texts
             =item.name
             .k_main__pickupContainer__pict__img__texts--size
               =item.price
