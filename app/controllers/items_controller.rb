@@ -2,8 +2,9 @@ class ItemsController < ApplicationController
   before_action :get_payjp_info, only: [:confirm]
 
   def index
-    # @item = Item.all
+    # @items = Item.all
     @items = Item.order("created_at DESC")
+    @images = Image.all
   end
   
   def new
@@ -21,6 +22,11 @@ class ItemsController < ApplicationController
     else
       render :index
     end
+  end
+
+  def  done
+    @product_purchaser= Item.find(params[:id])
+    @product_purchaser.update( buyer_id: current_user.id)
   end
 
   def show
