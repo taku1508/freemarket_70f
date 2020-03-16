@@ -14,7 +14,5 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:name,:ancestry)
   end
 
-  def set
-  end
 end
 
