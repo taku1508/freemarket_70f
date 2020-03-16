@@ -13,11 +13,14 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(items_params)
+    # @category = Category.new
+    # @category = Category.all
+    # @item.category = category_id
     # @item.brand_id = @item.brand
-    @item.category_id = @item.name
+    # @item.category_id = 1
     binding.pry
     if @item.save
-      redirect_to root_path, notice: 'アイテムを作成しました。'
+      redirect_to item_path(params[:id]), notice: 'アイテムを作成しました。'
     else
       render :index
     end
@@ -25,7 +28,7 @@ class ItemsController < ApplicationController
 
   def  done
     @product_purchaser= Product.find(params[:id])
-    @product_purchaser.update( buyer_id: current_user.id)
+    @product_purchaser.update( user_id: current_user.id)
   end
 
 
@@ -52,7 +55,7 @@ class ItemsController < ApplicationController
   private
 
   def items_params
-    params.require(:item).permit(:name,:description,:status,:shipping_charges,:area,:days,:price,images_attributes: [:image, :id]).merge(user_id: current_user.id)
+    params.require(:item).permit(:nickname,:description,:status,:shipping_charges,:area,:days,:price,images_attributes: [:image, :id]).merge(user_id: current_user.id, category_id: 1)
   end
 
 end

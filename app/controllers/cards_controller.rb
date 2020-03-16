@@ -61,7 +61,7 @@ class CardsController < ApplicationController
         currency: 'jpy',
       )
       # 購入後の画面切り替え（商品の更新）
-      if @item.update(soldout: 1, buyer_id: current_user.id)
+      if @item.update(soldout: 1, user_id: current_user.id)
         flash[:alert] = '購入しました。'
         redirect_to controller: "users", action: 'show', id:current_user.id
       else
