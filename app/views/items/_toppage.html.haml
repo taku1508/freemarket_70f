@@ -103,11 +103,11 @@
         .k_main__pickupContainer__picts__pict
           =link_to item_path(item.id) do
             .k_main__pickupContainer__picts__pict__img
-              =image_tag item.images.first.src.url,size:"220x150"
-              - if product.purchaser_id.present? 
-                .items-box_photo__sold
-                  .items-box_photo__sold__inner
-                    SOLD
+              -# =image_tag item.images.first.src.url,size:"220x150"
+              -# - if product.purchaser_id.present? 
+              -#   .items-box_photo__sold
+              -#     .items-box_photo__sold__inner
+              -#       SOLD
         .k_main__pickupContainer__pict__img__texts
           %a
             =item.name
@@ -125,11 +125,11 @@
         .k_main__pickupContainer__picts__pict
           =link_to item_path(item.id) do
             .k_main__pickupContainer__picts__pict__img
-              =image_tag item.images.first.src.url,size:"220x150"
-              - if product.purchaser_id.present?
-                .items-box_photo__sold
-                  .items-box_photo__sold__inner
-                    SOLD
+              -# =image_tag item.images.first.src.url,size:"220x150"
+              -# - if product.purchaser_id.present?
+              -#   .items-box_photo__sold
+              -#     .items-box_photo__sold__inner
+              -#       SOLD
         .k_main__pickupContainer__pict__img__texts
           %a
             =item.name

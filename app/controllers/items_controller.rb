@@ -44,6 +44,9 @@ class ItemsController < ApplicationController
 
   def confirm
     @item = Item.find(params[:id])
+    if @item.soldout == 1
+      redirect_to item_path(@item.id)
+    end
   end
 
   private
@@ -51,6 +54,5 @@ class ItemsController < ApplicationController
   def items_params
     params.require(:item).permit(:name,:description,:status,:shipping_charges,:area,:days,:price,images_attributes: [:image, :id]).merge(user_id: current_user.id)
   end
-
 
 end
