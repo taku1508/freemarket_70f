@@ -18,17 +18,21 @@
             -#   = f.label :image do
             -#     = image_tag "icon_camera.png", class: "t_icon_camera"
             -#     = f.file_field :image,class: "t_icon_camera2"
+          
 
             .t_sell_uploader__form
               -# = f.label :image do
               -#   = image_tag "icon_camera.png", class: "t_icon_camera"
               -#   = f.file_field :image,class: "t_icon_camera2"
-              = f.fields_for :images do |image|
-                = image.file_field :image
+              .t_image_field
+                = f.fields_for :images do |image|
+                  .t_js-file_group{"data-index" => "#{image.index}"}
+                    = image.file_field :image, class: "js-file"
+                    %image{id:"preview",class: "t_preview"}
               .t_icon_camera
               .t_text_drag_drop
-                %p ドラッグアンドドロップ
-                %p またはクリックしてファイルをアップロード
+                -# %p ドラッグアンドドロップ
+                -# %p またはクリックしてファイルをアップロード
 
       .t_items
         .t_items__name
@@ -290,10 +294,12 @@
           -# = form_tag('/items/new',method: :post) do
           -#   %input{type: "submit", value: "もどる",class: "t_bottun_form__back" }
         .t_image
-          = f.fields_for :images do |image|
-            -# %data-index{image.index}
-            -# = image_tag "icon_camera.png", class: "t_icon_camera"
-            = image.file_field :image
-            = image.submit
+          -# = f.fields_for :images do |image|
+          -#   = image.file_field :image
+          -#   = image.submit
+          -# - @item.images.each_with_index do |image, i|
+          -#   = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
+            
+
   = render "items_footer"
 

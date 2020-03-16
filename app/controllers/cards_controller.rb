@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_action :get_payjp_info, only: [:new_create, :create, :delete, :show, :buy]
+  before_action :get_payjp_info, only: [:create, :delete, :show, :buy]
 
   def edit
   end
@@ -8,7 +8,7 @@ class CardsController < ApplicationController
     if params['payjp-token'].blank? #カードにデータが入っていないなら
       redirect_to action: "edit", id: current_user.id
     else
-      customer = Payjp::Customer.create(
+      customer = Payjp::Customer.create( #payjpAPIにクレジットカード情報を登録する記述
       email: current_user.email, 
       card: params['payjp-token'],
       metadata: {user_id: current_user.id} 
@@ -44,14 +44,18 @@ class CardsController < ApplicationController
 
   def confirmation
     card = current_user.cards 
-    redirect_to action: "show" if card.exists?
+    redirect_to action: "show"if card.exists?
   end
-
+ 
   def buy
     card = current_user.cards 
+    address = current_user.address
     if card.blank?
       redirect_to action: "edit", id: current_user.id
       flash[:alert] = '購入にはクレジットカード登録が必要です'
+    elsif address.blank?
+      redirect_to new_address_path, id: current_user.id
+      flash[:alert] = '購入には配送先住所の登録が必要です'
     else
       @item = Item.find(params[:id])
       card = current_user.cards.first
@@ -60,8 +64,10 @@ class CardsController < ApplicationController
         customer: card.customer_id,
         currency: 'jpy',
       )
-      # 購入後の画面切り替え（商品の更新）
-      if @item.update(soldout: 1, user_id: current_user.id)
+
+      
+      if @item.update(soldout: 1)
+
         flash[:alert] = '購入しました。'
         redirect_to controller: "users", action: 'show', id:current_user.id
       else

@@ -6,18 +6,22 @@
 #   movies = Movie.create(name: 'Star Wars' },name: 'Lord of the Rings' }])
 #   Character.creaname: 'Luke', movie: movies.first)
 
-# User.create!(
-#   [
-#     {
-#       email: 'test1@test.com',
-#       password: 'aaaaaa'
-#     },
-#     {
-#       email: 'test2@test.com',
-#       password: 'aaaaaa'
-#     },
-#   ]
-# )
+User.create!(
+  [
+    {
+      email: 'test1@test.com',
+      password: 'aaaaaa',
+      nickname: 'hhhhhh',
+      first_name: 'iu',
+      second_name: 'eo',
+      hurigana_first: 'iu',
+      hurigana_second: 'eo',
+      birthday_year: "1999",
+      birthday_month: "08",
+      birthday_day: "16"
+    }
+  ]
+)
 lady = Category.create(name: "レディース")
 
 lady_tops = lady.children.create(name: "トップス")
@@ -75,11 +79,11 @@ Item.create!(
     }
   ]
 )
-# Image.create!(
-#   [
-#     {
-#       image: File.open('./app/assets/images/food_spaghetti_neapolitan.png'),
-#       item_id: '1'
-#     }
-#   ]
-# )
+Image.create!(
+  [
+    {
+      image: File.open('./app/assets/images/food_spaghetti_neapolitan.png'),
+      item_id: '1'
+    }
+  ]
+)
