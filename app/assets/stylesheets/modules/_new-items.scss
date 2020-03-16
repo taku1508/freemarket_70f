@@ -46,7 +46,7 @@
             align-items: center;
             background-color: rgb(245, 245, 245);
             cursor: pointer;
-            display: flex;
+            // display: flex;
             width: 620px;
             height: 150px;
             flex-wrap: wrap;
@@ -59,17 +59,33 @@
             border-image: initial;
             transition: all 0.5s ease-out 0s;
               .t_image_field{
-                margin-right: 100px;
-                height: 100px;
-                width: 100px;
-                border: none;
+                height: 150px;
+                width: 620px;
+                  #previews{
+                    height: 150px;
+                    width: 620px;
+                    background-color: red;
+                    .t_aaa{
+                      margin-top: 8px;
+                      padding: 0 4px;
+                      height: 100px;
+                      width: 100px;
+                    }
+                  }
                 .t_js-file_group{
-                  height: 200px;
-                  width: 200px;
+                  // margin-top: 17px;
+                  .img{
+                    height: 200px;
+                    width: 200px;
+                  }
+                  .t_font_image{
+                    height: 300px;
+                    // display: none;
+                  }
                   .t_preview{
-                    height: 100px;
-                    width: 100px;
-                    border: none;
+                    display: none;
+                    height: 200px;
+                    width: 200px;
                   }
                 }
               }
