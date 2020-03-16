@@ -16,7 +16,6 @@ class ItemsController < ApplicationController
     @item = Item.new(items_params)
     # @item.brand_id = @item.brand
     @item.category_id = @item.name
-    binding.pry
     if @item.save
       redirect_to root_path, notice: 'アイテムを作成しました。'
     else
