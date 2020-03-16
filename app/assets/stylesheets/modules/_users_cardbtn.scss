@@ -34,7 +34,7 @@
             }
           }
           //詳細削除フォーム
-          &__info{
+          .h_ContentsInfo{
             text-align: left;
             &__title{
               font-weight: bold;
@@ -53,6 +53,7 @@
               font-size: 15px;
             }
           }
+          //詳細削除フォームからここまでは部分テンプレート
           &__btn{
             font-size: 20px;
             border-radius: 10px;
@@ -65,3 +66,4 @@
     }
   }
 }
+

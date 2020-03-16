@@ -8,23 +8,7 @@
       .t_credit_area
         = form_with(model:@address) do |f|
           .t_names
-            .t_names_form
-              .t_names_form__group1
-                .t_names_member
-                  .t_names_number
-                    お名前
-                  .t_names_hissu
-                    必須
-                =f.text_field :address_name, class: "t_names_input", placeholder: "例)山田"
-                -# =f.text_field :address_name, class: "t_names_input", placeholder: "例)彩"
-              .t_names_form__group2
-                .t_names_member
-                  .t_names_number
-                    お名前カナ
-                  .t_names_hissu
-                    必須
-                =f.text_field :address_hurigana, class: "t_names_input", placeholder: "例)ヤマダ"
-                -# =f.text_field :address_hurigana, class: "t_names_input", placeholder: "例)アヤ"  
+            .t_names_form  
               .t_names_form__group3
                 .t_names_member
                   .t_names_number
