@@ -19,10 +19,10 @@ $(function(){
   }
 
   // プレビュー用のimgタグを生成する関数
-  const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" image="${url}" width="100px" height="100px">`;
-    return html;
-  }
+  // const buildImg = (index, url)=> {
+  //   const html = `<img data-index="${index}" image="${url}" width="100px" height="100px">`;
+  //   return html;
+  // }
   
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
   lastIndex = $('.js-file_group:last').data('index');
