@@ -58,6 +58,21 @@
             border-color: rgb(204, 204, 204);
             border-image: initial;
             transition: all 0.5s ease-out 0s;
+              .t_image_field{
+                margin-right: 100px;
+                height: 100px;
+                width: 100px;
+                border: none;
+                .t_js-file_group{
+                  height: 200px;
+                  width: 200px;
+                  .t_preview{
+                    height: 100px;
+                    width: 100px;
+                    border: none;
+                  }
+                }
+              }
             .t_icon_camera{ //カメラiconの表示 未実装
               height: 24px;
               width: 24px;
