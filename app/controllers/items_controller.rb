@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :get_payjp_info, only: [:confirm]
 
   def index
     # @item = Item.all
@@ -22,12 +23,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def  done
-    @product_purchaser= Product.find(params[:id])
-    @product_purchaser.update( buyer_id: current_user.id)
-  end
-
-
   def show
     @item = Item.find(params[:id])
   end
@@ -42,6 +37,12 @@ class ItemsController < ApplicationController
   end
 
   def confirm
+    @card = current_user.cards.first
+    @user = current_user
+    if @card.present?
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
+    end
     @item = Item.find(params[:id])
     if @item.soldout == 1
       redirect_to item_path(@item.id)
@@ -52,6 +53,15 @@ class ItemsController < ApplicationController
 
   def items_params
     params.require(:item).permit(:name,:description,:status,:shipping_charges,:area,:days,:price,images_attributes: [:image]).merge(user_id: current_user.id)
+  end
+
+  # payjpをしようするためのメソッド
+  def get_payjp_info 
+    if Rails.env == 'development'
+      Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
+    else
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_ACCESS_KEY]
+    end
   end
 
 end

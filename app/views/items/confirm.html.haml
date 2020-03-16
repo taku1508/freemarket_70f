@@ -30,20 +30,27 @@
             ポイントを使用 (所持ポイント: P0)
           .h_foot__inner__method 
             支払方法
-            .h_foot__inner__method__form
-              = link_to "+登録してください", "#", class: "h_foot__inner__method__form__link"
-            .h_foot__inner__method__pay
-              クレジットカード情報表示
+            -if @card.nil?
+              .h_foot__inner__method__form
+                = link_to "+登録してください", confirmation_card_path(current_user.id), class: "h_foot__inner__method__form__link"
+            -else
+              .h_foot__inner__method__pay
+                = render "cards/show"
           .h_foot__inner__method 
             配送先
-            .h_foot__inner__method__form
-              = link_to "+登録してください", "#", class: "h_foot__inner__method__form__link"
-            .h_foot__inner__method__pay
-              〒583-0861
-              %br  
-              大阪府羽曳野市西浦４−２−20
-              %br  
-              羽岡 諒
+            -if @user.address.blank?
+              .h_foot__inner__method__form
+                = link_to "+登録してください", new_address_path, class: "h_foot__inner__method__form__link"
+            -else
+              .h_foot__inner__method__pay
+                〒
+                = @user.address.postal_code
+                %br  
+                = @user.address.municipalities
+                = @user.address.house_number
+                %br  
+                = @user.first_name
+                = @user.second_name
           .h_foot__inner__btn
             %form{action: buy_card_path(@item.id)}
               %input{type: "submit", value: "購入する", class: "h_foot__inner__btn__submit"}
