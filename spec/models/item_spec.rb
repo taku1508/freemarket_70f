@@ -43,7 +43,7 @@ describe Item do
   describe '#create' do
     it "is invalid without a shipping_charges" do
       item = Item.new(shipping_charges: "")
-     item.valid?
+      item.valid? 
      expect(item.errors[:shipping_charges]).to include("can't be blank")
     end
   end
