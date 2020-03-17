@@ -2,12 +2,12 @@ User.create!(
   [
     {
       email: 'test1@test.com',
-      password: 'aaaaaa',
+      password: 'aaaa1111',
       nickname: 'hhhhhh',
-      first_name: 'iu',
-      second_name: 'eo',
-      hurigana_first: 'iu',
-      hurigana_second: 'eo',
+      first_name: '田中',
+      second_name: '太郎',
+      hurigana_first: 'タナカ',
+      hurigana_second: 'タロウ',
       birthday_year: "1999",
       birthday_month: "08",
       birthday_day: "16"
@@ -59,7 +59,7 @@ lady_other.children.create([{name: "コスプレ"}, {name: "下着"}, {name: "�
 Item.create!(
   [
     {
-      name: 'taku',
+      nickname: 'taku',
       description: '25歳、独身、無職、大阪市内居住',
       status: '新品',
       shipping_charges: '無料',
