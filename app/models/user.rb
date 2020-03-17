@@ -32,7 +32,7 @@ class User < ApplicationRecord
   # validates :size, inclusion: { in: %w(small medium large) }
 
   # - パスワードは必須、7文字以上
-  validates :encrypted_password, presence:true, length: { minimum: 7 }, format: { with: VALID_PASSWORD_REGEX, message:'は英字と数字両方を含むパスワードを設定してください'}
+  validates :password, presence:true, length: { minimum: 7 }, format: { with: VALID_PASSWORD_REGEX, message:'は英字と数字両方を含むパスワードを設定してください'}
   # パスワードは確認用を含めて2回入力
   # validates :password_confirmation, presence: true, length: { in: 7..128 }, format: { with: VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
 
