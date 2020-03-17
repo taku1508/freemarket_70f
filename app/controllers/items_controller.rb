@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
     # @item.category = category_id
     # @item.brand_id = @item.brand
     # @item.category_id = 1
-    if @item.save
+    if @item.save(items_params)
       redirect_to item_path(params[:id]), notice: 'アイテムを作成しました。'
     else
       render :index
@@ -31,9 +31,15 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
+    # @item.images.new
   end
 
   def update
+    @item = Item.find(params[:id])
+    if @item.update(items_params)
+      redirect_to root_path
+    end
   end
 
   def destroy
