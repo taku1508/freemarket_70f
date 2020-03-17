@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+  before_action :current_user_blank?
   before_action :get_payjp_info, only: [:create, :delete, :show, :buy]
 
   def edit
@@ -28,8 +29,9 @@ class CardsController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id) #顧客情報の取得
       customer.delete
       card.delete
-    end
+    else
       redirect_to user_path(current_user)
+    end
   end
 
   def show
@@ -48,40 +50,43 @@ class CardsController < ApplicationController
   end
  
   def buy
-    if current_user.blank?
-      redirect_to root_path
+    card = current_user.cards 
+    address = current_user.address
+    @item = Item.find(params[:id])
+    if @item.soldout == 1
+      redirect_to item_path(@item.id)
+      flash[:alert] = '既に購入されています。'
+    elsif card.blank?
+      redirect_to action: "edit", id: current_user.id
+      flash[:alert] = '購入にはクレジットカード登録が必要です'
+    elsif address.blank?
+      redirect_to new_address_path, id: current_user.id
+      flash[:alert] = '購入には配送先住所の登録が必要です'
     else
-      card = current_user.cards 
-      address = current_user.address
-      @item = Item.find(params[:id])
-      if @item.soldout == 1
-        redirect_to item_path(@item.id)
-        flash[:alert] = '既に購入されています。'
-      elsif card.blank?
-        redirect_to action: "edit", id: current_user.id
-        flash[:alert] = '購入にはクレジットカード登録が必要です'
-      elsif address.blank?
-        redirect_to new_address_path, id: current_user.id
-        flash[:alert] = '購入には配送先住所の登録が必要です'
+      card = current_user.cards.first
+      charge = Payjp::Charge.create(
+        amount: @item.price,
+        customer: card.customer_id,
+        currency: 'jpy',
+      )
+      if @item.update(soldout: 1, buyer_id: current_user.id)
+        flash[:alert] = '購入しました。'
+        redirect_to controller: "users", action: 'show', id:current_user.id
       else
-        card = current_user.cards.first
-        charge = Payjp::Charge.create(
-          amount: @item.price,
-          customer: card.customer_id,
-          currency: 'jpy',
-        )
-        if @item.update(soldout: 1, buyer_id: current_user.id)
-          flash[:alert] = '購入しました。'
-          redirect_to controller: "users", action: 'show', id:current_user.id
-        else
-          flash[:alert] = '購入に失敗しました。'
-          redirect_to controller: "users", action: 'show', id:current_user.id
-        end
+        flash[:alert] = '購入に失敗しました。'
+        redirect_to controller: "users", action: 'show', id:current_user.id
       end
     end
   end
 
   private
+
+  def current_user_blank?
+    if current_user.blank?
+      redirect_to root_path
+      flash[:alert] = 'ログインを行なってください。'
+    end
+  end
 
   def get_payjp_info
     if Rails.env == 'development'
