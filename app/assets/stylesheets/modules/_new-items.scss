@@ -65,42 +65,32 @@
                     height: 150px;
                     width: 620px;
                     display: flex;
-                    background-color: red;
                     #img-file{
                       height: 100px;
                       width: 100px;
-                      background-color: purple;
                     }
-                    .item-num-0{
-                      width: 100%;
-                    }
-                    .item-num-1{
-                      width: 491px;
-                    }
-                    .item-num-2{
-                      width: 363px;
-                    }
-                    .item-num-3{
-                      width: 234px;
-                    }
-                    .item-num-4{
-                      width: 106px;
-                    }
-                    //下段のfile_field
-                    .item-num-5{
-                      width: 100%;
-                    }
-                    .item-num-6{
-                      width: 491px;
-                    }
-                    .item-num-7{
-                      width: 363px;
-                    }
-                    .item-num-8{
-                      width: 234px;
-                    }
-                    .item-num-9{
-                      width: 106px;
+                    #image-box__contatiner{
+                      height: 400px;
+                      width: 400px;
+                      .item-num-0{
+                        width: 100%;
+                      }
+                      .item-num-1{
+                        width: 491px;
+                      }
+                      .item-num-2{
+                        width: 363px;
+                      }
+                      .item-num-3{
+                        width: 234px;
+                      }
+                      .item-num-4{
+                        width: 106px;
+                      }
+                      //下段のfile_field
+                      .item-num-5{
+                        width: 100%;
+                      }                    
                     }
                     .t_aaa{
                       margin-top: 8px;
@@ -497,37 +487,6 @@
         width: 360px;
         height: 48px;
       }
-    }
-    .item-num-0{
-      width: 100%;
-    }
-    .item-num-1{
-      width: 491px;
-    }
-    .item-num-2{
-      width: 363px;
-    }
-    .item-num-3{
-      width: 234px;
-    }
-    .item-num-4{
-      width: 106px;
-    }
-    //下段のfile_field
-    .item-num-5{
-      width: 100%;
-    }
-    .item-num-6{
-      width: 491px;
-    }
-    .item-num-7{
-      width: 363px;
-    }
-    .item-num-8{
-      width: 234px;
-    }
-    .item-num-9{
-      width: 106px;
     }
   }
 }
