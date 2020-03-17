@@ -15,6 +15,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    # ユーザーがログインしていなければフロントへ
+    if current_user.blank?
+      redirect_to root_path
+      flash[:alert] = 'ログインを行なってください。'
+    end
   end
 
   def edit
