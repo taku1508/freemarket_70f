@@ -27,8 +27,7 @@ Rails.application.routes.draw do
       get 'confirmation'
       get 'buy'
     end
-  end 
-
+  end
   resources :addresses, only: [:new, :create]
   resources :categories, only: [:new, :create]
   resources :brands, only: [:new, :create]
