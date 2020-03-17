@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(items_params)
+    binding.pry
     # @category = Category.new
     # @category = Category.all
     # @item.category = category_id
@@ -77,7 +78,5 @@ class ItemsController < ApplicationController
     else
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_ACCESS_KEY]
     end
-
   end
-
 end
