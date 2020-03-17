@@ -5,8 +5,8 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   # accepts_nested_attributes_for :brands
   accepts_nested_attributes_for :images, allow_destroy: true
-  accepts_nested_attributes_for :category
-  
+  # accepts_nested_attributes_for :category
+
   validates :nickname, presence: true, length: { maximum: 6 }
   validates :description, presence: true
   validates :status, presence: true
@@ -14,4 +14,5 @@ class Item < ApplicationRecord
   validates :area, presence: true
   validates :days, presence: true
   validates :price, presence: true
+
 end

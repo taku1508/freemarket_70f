@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.new
   end
-
+  
   def create
     @item = Item.new(items_params)
     binding.pry
@@ -31,9 +31,16 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
+    # binding.pry
+    # @item.images.new
   end
 
   def update
+    @item = Item.find(params[:id])
+    if @item.update(items_params)
+      redirect_to root_path
+    end
   end
 
   def destroy
@@ -78,9 +85,6 @@ class ItemsController < ApplicationController
   def items_params
     params.require(:item).permit(:nickname,:description,:status,:shipping_charges,:area,:days,:price,:category_id,images_attributes: [:image,:id]).merge(user_id: current_user.id)
   end
-
-
-
 
   # payjpをしようするためのメソッド
   def get_payjp_info 
