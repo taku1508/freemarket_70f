@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
     # @item.category = category_id
     # @item.brand_id = @item.brand
     # @item.category_id = 1
-    if @item.save
+    if @item.save(items_params)
       redirect_to item_path(params[:id]), notice: 'アイテムを作成しました。'
     else
       render :index
@@ -64,7 +64,7 @@ class ItemsController < ApplicationController
   def items_params
 
 
-    params.require(:item).permit(:nickname,:description,:status,:shipping_charges,:area,:days,:price,images_attributes: [:image,:id]).merge(user_id: current_user.id, category_id: 1)
+    params.require(:item).permit(:nickname,:description,:status,:shipping_charges,:area,:days,:price,:category_id,images_attributes: [:image,:id]).merge(user_id: current_user.id)
 
   end
 
