@@ -37,19 +37,19 @@
                 %th カテゴリー
                 %td 
                   = link_to items_path do
-                    メンズ
-                  %br
-                  = link_to items_path do
-                    ジャケット/アウター
-                  %br
-                  = link_to items_path do
-                    ノーカラージャケット
-              %tr
-                %th ブランド
-                %td 
-              %tr
-                %th 商品のサイズ
-                %td 
+                    =@item.category.name
+                  -# %br
+                  -# = link_to items_path do
+                  -#   ジャケット/アウター
+                  -# %br
+                  -# = link_to items_path do
+                  -#   ノーカラージャケット
+              -# %tr
+              -#   %th ブランド
+              -#   %td 
+              -# %tr
+                -# %th 商品のサイズ
+                -# %td 
               %tr
                 %th 商品の状態
                 %td 
@@ -81,7 +81,10 @@
         .i_optionMenu
           .i_item-optionBtn
             .i_item-editBtn
-              -if @item.soldout == 0
+              -if current_user.id == @item.user_id
+                = link_to "編集", edit_item_path(@item),class:"i_item-editBtn-buy" 
+                = link_to "削除", item_path(@item),class:"i_item-deleteBtn",method: :delete, data:{ confirm: '本当に削除しますか?'}
+              -elsif @item.soldout == 0
                 = link_to "購入", confirm_item_path(@item),class:"i_item-editBtn-buy" 
               -elsif @item.soldout == 1
                 .i_item-editBtn-soldout SoldOut

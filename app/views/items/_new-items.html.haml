@@ -1,7 +1,7 @@
 = render "items_header"
 .t_all
   .t_form_action
-    = form_with(model:[@brand,@category,@image,@item]) do |f|
+    = form_with(model:[@brand,@image,@item]) do |f|
       .t_display
         .t_display__formgroup 
           .t_display_name
@@ -89,7 +89,7 @@
                 必須
             .t_items_name__items
               .t_form_style2
-                = f.select :name,
+                = f.select :category_id,
                   [["レディース","0"],
                   ["レディース","1"],
                   ["トップス","2"],
