@@ -14,12 +14,9 @@
                   カード番号
                 .t_cards_hissu
                   必須
-              -# = form_for()
               = form_tag('/items/new',method: :post) do
                 %input{type: "input",class: "t_cards_input",placeholder: "半角数字のみ"}
               = image_tag("card-1.gif",class: "t_icon_card")
-              -# .t_cards_input_error
-              -#   必須項目です。
             .t_cards_form__group2
               .t_cards_member
                 .t_cards_limit
@@ -67,8 +64,6 @@
                   必須
               = form_tag('/items/new',method: :post) do
                 %input{type: "input",class:"t_cards_member_form",placeholder: "カード背面4桁もしくは3桁の番号"}
-              -# .t_cards_input_error
-              -#   必須項目です。
             .t_cards_form__group4
               = form_tag('/items/new',method: :post) do
                 %input{type: "submit", value: "追加する",class: "t_add_bottun" }

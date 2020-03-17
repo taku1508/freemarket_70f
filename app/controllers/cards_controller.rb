@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
-  before_action :get_payjp_info, only: [:new_create, :create, :delete, :show]
+  before_action :current_user_blank?
+  before_action :get_payjp_info, only: [:create, :delete, :show, :buy]
 
   def edit
   end
@@ -8,7 +9,7 @@ class CardsController < ApplicationController
     if params['payjp-token'].blank? #カードにデータが入っていないなら
       redirect_to action: "edit", id: current_user.id
     else
-      customer = Payjp::Customer.create(
+      customer = Payjp::Customer.create( #payjpAPIにクレジットカード情報を登録する記述
       email: current_user.email, 
       card: params['payjp-token'],
       metadata: {user_id: current_user.id} 
@@ -28,8 +29,9 @@ class CardsController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id) #顧客情報の取得
       customer.delete
       card.delete
-    end
+    else
       redirect_to user_path(current_user)
+    end
   end
 
   def show
@@ -44,11 +46,48 @@ class CardsController < ApplicationController
 
   def confirmation
     card = current_user.cards 
-    redirect_to action: "show" if card.exists?
+    redirect_to action: "show"if card.exists?
+  end
+ 
+  def buy
+    card = current_user.cards 
+    address = current_user.address
+    @item = Item.find(params[:id])
+    if @item.soldout == 1
+      redirect_to item_path(@item.id)
+      flash[:alert] = '既に購入されています。'
+    elsif card.blank?
+      redirect_to action: "edit", id: current_user.id
+      flash[:alert] = '購入にはクレジットカード登録が必要です'
+    elsif address.blank?
+      redirect_to new_address_path, id: current_user.id
+      flash[:alert] = '購入には配送先住所の登録が必要です'
+    else
+      card = current_user.cards.first
+      charge = Payjp::Charge.create(
+        amount: @item.price,
+        customer: card.customer_id,
+        currency: 'jpy',
+      )
+      if @item.update(soldout: 1)
+        flash[:alert] = '購入しました。'
+        redirect_to controller: "users", action: 'show', id:current_user.id
+      else
+        flash[:alert] = '購入に失敗しました。'
+        redirect_to controller: "users", action: 'show', id:current_user.id
+      end
+    end
   end
 
   private
-
+# ユーザーがログインしていなければフロントへ
+  def current_user_blank?
+    if current_user.blank?
+      redirect_to root_path
+      flash[:alert] = 'ログインを行なってください。'
+    end
+  end
+# PAYJPを使用できるように
   def get_payjp_info
     if Rails.env == 'development'
       Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]

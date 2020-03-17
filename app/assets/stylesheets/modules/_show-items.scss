@@ -9,7 +9,6 @@
     justify-content: center;
     align-items: center;
     .i_content{
-      height: 1768px;
       width: 700px;
       margin: 0 auto;
       &__top{
@@ -135,6 +134,42 @@
             }
           }
         }
+        // 以下から購入するボタン
+        .i_optionMenu{
+          width: 700px;
+          margin: 0 auto;
+          .i_item-optionBtn{
+            margin: 24px 0 24px 0;
+            background: #fff;
+            padding: 8px 16px 8px 16px;
+            .i_item-editBtn{
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              .i_item-editBtn-buy{
+              color: #fff;
+              text-align: center;
+              font-size: 14px;
+              line-height: 48px;
+              display: block;
+              margin: 16px 0 16px 0;
+              text-decoration: none;
+              display: block;
+              }
+              .i_item-editBtn-soldout{
+                color: #fff;
+                text-align: center;
+                font-size: 24px;
+                line-height: 48px;
+                display: block;
+                margin: 16px 0 16px 0;
+                text-decoration: none;
+                display: block;
+                font-weight: bold;
+                cursor:not-allowed;
+              }
+            }
+          }
+        }
         // 以下からコメントフォーム
         .i_commentBox{
           padding: 24px;
@@ -205,11 +240,30 @@
   .i_contents{
     max-width: 840px;
     margin: 0 auto;
-    display: flex;
-  }
-  .i_footer_logo{
-    max-width: 160px;
-    width: 100%;
-    margin: 0 auto;
+    .i_content{
+      max-width: 840px;
+      display: flex;
+      justify-content: space-around;
+      h2{
+        margin: 0 0 20px;
+      }
+      &__head{
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #fff;
+      }
+      &__list{
+        color: #fff;
+        font-size: 12px;
+        line-height: 32px;
+        text-decoration: none;
+      }
+    }
+    .i_footer_logo{
+      max-width: 160px;
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 }

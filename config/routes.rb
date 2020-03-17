@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'users/index'
   root 'items#index'
   resources :items do
-    collection do
+    member do
       get 'confirm'
     end
   end
@@ -25,9 +25,9 @@ Rails.application.routes.draw do
     end
     member do
       get 'confirmation'
+      get 'buy'
     end
-  end 
-
+  end
   resources :addresses, only: [:new, :create]
   resources :categories, only: [:new, :create]
   resources :brands, only: [:new, :create]
