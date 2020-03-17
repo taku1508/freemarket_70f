@@ -35,7 +35,7 @@ class User < ApplicationRecord
   # - パスワードは必須、7文字以上
   validates :password, presence:true, length: { minimum: 7 }, format: { with: VALID_PASSWORD_REGEX, message:'は英字と数字両方を含むパスワードを設定してください'}
   # パスワードは確認用を含めて2回入力
-  # validates :password_confirmation, presence: true, length: { in: 7..128 }, format: { with: VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
+  validates :password_confirmation, presence: true, length: { in: 7..128 }, format: { with: VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
 
   # <本人確認情報：5項目>
   # - ユーザー本名が、名字と名前でそれぞれ必須
@@ -54,6 +54,7 @@ class User < ApplicationRecord
   def birthday
     "#{BirthYyyy.find(self.birth_yyyy_id).year}/#{BirthMm.find(self.birth_mm_id).month}/#{BirthDd.find(self.birth_dd_id).day}"
   end
+  
 
   # ＜商品送付先住所情報：6項目必須、2項目任意＞
   # 出品機能作成時に後ほど設定の為一旦保留
@@ -84,5 +85,5 @@ class User < ApplicationRecord
   # /^\d{11}$/
   # record.errors[:name] << '電話番号は0から始まる必要があります'
 
-
 end
+
