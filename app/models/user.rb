@@ -29,23 +29,26 @@ class User < ApplicationRecord
   # メールアドレスは一意
   validates :email, presence: true, uniqueness:true, length: { maximum:255 }, format: { with: VALID_EMAIL_REGEX, message: 'のフォーマットが不適切です'}
 
-  validates :size, inclusion: { in: %w(small medium large) }
+  # validates :size, inclusion: { in: %w(small medium large) }
 
   # - パスワードは必須、7文字以上
   validates :encrypted_password, presence:true, length: { minimum: 7 }, format: { with: VALID_PASSWORD_REGEX, message:'は英字と数字両方を含むパスワードを設定してください'}
   # パスワードは確認用を含めて2回入力
-  validates :password_confirmation, presence: true, length: { in: 7..128 }, format: { with: VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
+  # validates :password_confirmation, presence: true, length: { in: 7..128 }, format: { with: VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
 
   # <本人確認情報：5項目>
   # - ユーザー本名が、名字と名前でそれぞれ必須
-  validates :user_real_name, :first_name, :second_name, presence: true
   # - ユーザー本名は全角で(漢字、ひらがな、カタカナ）入力
-  validates :user_real_name, presence: true, format: { with: VALID_KANJI_KANA_KATAKANA_REGEX, message:'は全角で入力してください'}
+  validates  :first_name,presence: true ,format: { with: VALID_KANJI_KANA_KATAKANA_REGEX, message:'は全角で入力してください'}
+  validates  :second_name,presence: true ,format: { with: VALID_KANJI_KANA_KATAKANA_REGEX, message:'は全角で入力してください'}
+
   # - ユーザー本名のふりがなが、名字と名前でそれぞれ必須
-  validates :hurigana_first, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
+  validates :hurigana_first, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はふりがなで入力して下さい'}
   validates :hurigana_second, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
   # - ユーザー本名のふりがなが、全角で必須
-  validates :user_real_name, presence: true, format: { with: VALID_KANA_FUll_WIDTH, message:'は全角で入力してください'}
+  validates :hurigana_first, presence: true, format: { with: VALID_KANA_FUll_WIDTH, message:'は全角で入力してください'}
+  validates :hurigana_second, presence: true, format: { with: VALID_KANA_FUll_WIDTH, message:'は全角で入力してください'}
+
   # - 生年月日が必須
   def birthday
     "#{BirthYyyy.find(self.birth_yyyy_id).year}/#{BirthMm.find(self.birth_mm_id).month}/#{BirthDd.find(self.birth_dd_id).day}"
