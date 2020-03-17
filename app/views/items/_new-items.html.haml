@@ -10,7 +10,7 @@
             .t_display_name__hissu
               必須
           .t_display_names
-            最大10枚までアップロードできます
+            最大5枚までアップロードできます
           .t_sell_uploader
             -# = f.file_field :image,class: "t_icon_camera"
             -# .t_sell_uploader__form
@@ -38,9 +38,9 @@
                 //-------------------------------------------
                 #previews
                   = f.fields_for :images do |i|
-                    .item-num-0#image-box__container
+                    .item-num-0{id: "image-box__container"}
                       = i.file_field :image, tipe: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
-                      %label{for: "img-file"}
+                      %label{for: "img-file"}      
                         %i.fas.fa-camera
                         -# = image.label :image do
                         -#   = image_tag "icon_camera.png", class: "t_icon_camera"

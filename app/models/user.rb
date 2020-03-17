@@ -10,6 +10,7 @@ class User < ApplicationRecord
   # belongs_to :address, optional: true
   has_one :address
 
+
   # バリデーション設定
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d!@#\$%\^\&*\)\(+=._-]{7,128}\z/i
