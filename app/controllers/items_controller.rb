@@ -1,10 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :get_payjp_info, only: [:confirm]
 
   def index
-    # @items = Item.all
+    @item = Item.all
     @items = Item.order("created_at DESC")
-    @images = Image.all
   end
   
   def new
@@ -19,7 +17,7 @@ class ItemsController < ApplicationController
     # @category = Category.all
     # @item.category = category_id
     # @item.brand_id = @item.brand
-
+    # @item.category_id = 1
     binding.pry
     if @item.save
       redirect_to item_path(params[:id]), notice: 'アイテムを作成しました。'
@@ -27,6 +25,7 @@ class ItemsController < ApplicationController
       render :index
     end
   end
+
 
   def show
     @item = Item.find(params[:id])
@@ -42,6 +41,7 @@ class ItemsController < ApplicationController
   end
 
   def confirm
+
     if current_user.blank?
       redirect_to root_path
       flash[:alert] = 'ログインを行なってください。'
@@ -56,6 +56,7 @@ class ItemsController < ApplicationController
       if @item.soldout == 1
         redirect_to item_path(@item.id)
       end
+
     end
   end
 
