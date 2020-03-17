@@ -42,15 +42,20 @@ class ItemsController < ApplicationController
   end
 
   def confirm
-    @card = current_user.cards.first
-    @user = current_user
-    if @card.present?
-      customer = Payjp::Customer.retrieve(@card.customer_id)
-      @default_card_information = customer.cards.retrieve(@card.card_id)
-    end
-    @item = Item.find(params[:id])
-    if @item.soldout == 1
-      redirect_to item_path(@item.id)
+    if current_user.blank?
+      redirect_to root_path
+      flash[:alert] = 'ログインを行なってください。'
+    else
+      @card = current_user.cards.first
+      @user = current_user
+      if @card.present?
+        customer = Payjp::Customer.retrieve(@card.customer_id)
+        @default_card_information = customer.cards.retrieve(@card.card_id)
+      end
+      @item = Item.find(params[:id])
+      if @item.soldout == 1
+        redirect_to item_path(@item.id)
+      end
     end
   end
 
