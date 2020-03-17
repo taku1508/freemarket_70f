@@ -24,14 +24,28 @@
               -#   = f.file_field :image,class: "t_icon_camera2"
 
               .t_image_field
+                -# #previews
+                -#   - if @item.persisted?
+                -#     - @item.image.each_with_index do |image, i|
+                -#       = image_tag image.src.url, data: { index: i }, width: "100", height: '100',class: "aaa"
+                -# = f.fields_for :images do |image|
+                -#   .t_js-file_group{"data-index" => "#{image.index}"}
+                -#     .t_sell                    
+                -#       = image.label :image do
+                -#         = image_tag "icon_camera.png", class: "t_icon_camera"
+                -#         = image.file_field :image, class: "js-file"
+                -#         %image{id:"preview",class: "t_preview"}
+                //-------------------------------------------
                 #previews
-                  - if @item.persisted?
-                    - @item.images.each_with_index do |image, i|
-                      = image_tag image.src.url, data: { index: i }, width: "100", height: '100',class: "aaa"
-                = f.fields_for :images do |image|
-                  .t_js-file_group{"data-index" => "#{image.index}"}
-                    = image.file_field :image, class: "js-file"
-                    %image{id:"preview",class: "t_preview"}
+                  = f.fields_for :images do |i|
+                    .item-num-0#image-box__container
+                      = i.file_field :image, tipe: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+                      %label{for: "img-file"}
+                        %i.fas.fa-camera
+                        -# = image.label :image do
+                        -#   = image_tag "icon_camera.png", class: "t_icon_camera"
+                        -#   = image.file_field :image, class: "js-file"
+                        -#   %image{id:"preview",class: "t_preview"}
 
 
                     
@@ -304,13 +318,38 @@
           -#   %input{type: "submit", value: "出品する",class: "t_bottun_form__display" }
           -# = form_tag('/items/new',method: :post) do
           -#   %input{type: "submit", value: "もどる",class: "t_bottun_form__back" }
-        .t_image
-          -# = f.fields_for :images do |image|
-          -#   = image.file_field :image
-          -#   = image.submit
-          -# - @item.images.each_with_index do |image, i|
-          -#   = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
-            
+        -# .main
+        -#   %section.main__block
+        -#     = form_with model:@item, local:true do |f|
+        -#       %h2.sell__block__head
+        -#         商品の情報を入力
+        -#       .sell__block__form
+        -#         .sell__block__form__upload
+        -#           %h3.sell__block__form__upload__head
+        -#             出品画像
+        -#             %span.require 必須
+        -#           %p 最大10枚までアップロードできます
+        -#           #image-box-1
+        -#             .item-num-0#image-box__container
+        -#               = f.fields_for :images do |i|
+        -#                 .input-area
+        -#                   = i.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
+        -#                   %label{for: "img-file"}
+        -#                     %i.fas.fa-camera
+
+        -#         .sell__block__form__name
+        -#           .form-group__name
+        -#             %label
+        -#               商品名
+        -#               %span.require 必須
+        -#             %div
+        -#               = f.text_field :name, placeholder:"商品名（必須 40文字まで)",class: "form__group__name"
+
+        -#         .sell__block__form__btn
+        -#           %div
+        -#             = f.submit "出品する",class: "btn-default__btn-red"
+          
+          
 
   = render "items_footer"
 

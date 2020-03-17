@@ -64,7 +64,44 @@
                   #previews{
                     height: 150px;
                     width: 620px;
+                    display: flex;
                     background-color: red;
+                    #img-file{
+                      height: 100px;
+                      width: 100px;
+                      background-color: purple;
+                    }
+                    .item-num-0{
+                      width: 100%;
+                    }
+                    .item-num-1{
+                      width: 491px;
+                    }
+                    .item-num-2{
+                      width: 363px;
+                    }
+                    .item-num-3{
+                      width: 234px;
+                    }
+                    .item-num-4{
+                      width: 106px;
+                    }
+                    //下段のfile_field
+                    .item-num-5{
+                      width: 100%;
+                    }
+                    .item-num-6{
+                      width: 491px;
+                    }
+                    .item-num-7{
+                      width: 363px;
+                    }
+                    .item-num-8{
+                      width: 234px;
+                    }
+                    .item-num-9{
+                      width: 106px;
+                    }
                     .t_aaa{
                       margin-top: 8px;
                       padding: 0 4px;
@@ -74,13 +111,28 @@
                   }
                 .t_js-file_group{
                   // margin-top: 17px;
+                  .t_sell{
+                    height: 100px;
+                    width: 100px;
+                    .t_icon_camera{ //カメラiconの表示 未実装
+                      height: 24px;
+                      width: 24px;
+                      fill: rgb(34, 34, 34);
+                      margin-bottom: 8px;
+                      cursor: copy;
+                      background-color: red;
+                    }
+                    .js-file{
+                      display: none;
+                    }
+                  }
                   .img{
                     height: 200px;
                     width: 200px;
                   }
                   .t_font_image{
                     height: 300px;
-                    // display: none;
+                    display: none;
                   }
                   .t_preview{
                     display: none;
@@ -89,16 +141,16 @@
                   }
                 }
               }
-            .t_icon_camera{ //カメラiconの表示 未実装
-              height: 24px;
-              width: 24px;
-              fill: rgb(34, 34, 34);
-              margin-bottom: 8px;
-              cursor: copy;
-            }
-            .t_icon_camera2{
-              display: none;
-            }
+            // .t_icon_camera{ //カメラiconの表示 未実装
+            //   height: 24px;
+            //   width: 24px;
+            //   fill: rgb(34, 34, 34);
+            //   margin-bottom: 8px;
+            //   cursor: copy;
+            // }
+            // .t_icon_camera2{
+            //   display: none;
+            // }
             .t_text_drag_drop{  //フォーム内表記情報
               color: #333333;
               font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
@@ -446,8 +498,36 @@
         height: 48px;
       }
     }
-    .t_image{
-      height: 100px;
+    .item-num-0{
+      width: 100%;
+    }
+    .item-num-1{
+      width: 491px;
+    }
+    .item-num-2{
+      width: 363px;
+    }
+    .item-num-3{
+      width: 234px;
+    }
+    .item-num-4{
+      width: 106px;
+    }
+    //下段のfile_field
+    .item-num-5{
+      width: 100%;
+    }
+    .item-num-6{
+      width: 491px;
+    }
+    .item-num-7{
+      width: 363px;
+    }
+    .item-num-8{
+      width: 234px;
+    }
+    .item-num-9{
+      width: 106px;
     }
   }
 }
