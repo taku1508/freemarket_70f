@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :current_user_blank?, only: [:show, :logout]
   def index
     @users = User.all
   end
@@ -15,11 +15,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    # ユーザーがログインしていなければフロントへ
-    if current_user.blank?
-      redirect_to root_path
-      flash[:alert] = 'ログインを行なってください。'
-    end
   end
 
   def edit
@@ -44,6 +39,13 @@ class UsersController < ApplicationController
   end
 
   private
+  # ユーザーがログインしていなければフロントへ
+  def current_user_blank?
+    if current_user.blank?
+      redirect_to root_path
+      flash[:alert] = 'ログインを行なってください。'
+    end
+  end
 
   def users_params
     params.require(:user).permit(:nickname,:first_name,:second_name,:email,:password,:hurigana_first,:hurigana_second,:birthday,:phone_number)
