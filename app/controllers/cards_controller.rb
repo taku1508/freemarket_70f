@@ -48,29 +48,35 @@ class CardsController < ApplicationController
   end
  
   def buy
-    card = current_user.cards 
-    address = current_user.address
-    if card.blank?
-      redirect_to action: "edit", id: current_user.id
-      flash[:alert] = '購入にはクレジットカード登録が必要です'
-    elsif address.blank?
-      redirect_to new_address_path, id: current_user.id
-      flash[:alert] = '購入には配送先住所の登録が必要です'
+    if current_user.blank?
+      redirect_to root_path
     else
+      card = current_user.cards 
+      address = current_user.address
       @item = Item.find(params[:id])
-      card = current_user.cards.first
-      charge = Payjp::Charge.create(
-        amount: @item.price,
-        customer: card.customer_id,
-        currency: 'jpy',
-      )
-      
-      if @item.update(soldout: 1, buyer_id: current_user.id)
-        flash[:alert] = '購入しました。'
-        redirect_to controller: "users", action: 'show', id:current_user.id
+      if @item.soldout == 1
+        redirect_to item_path(@item.id)
+        flash[:alert] = '既に購入されています。'
+      elsif card.blank?
+        redirect_to action: "edit", id: current_user.id
+        flash[:alert] = '購入にはクレジットカード登録が必要です'
+      elsif address.blank?
+        redirect_to new_address_path, id: current_user.id
+        flash[:alert] = '購入には配送先住所の登録が必要です'
       else
-        flash[:alert] = '購入に失敗しました。'
-        redirect_to controller: "users", action: 'show', id:current_user.id
+        card = current_user.cards.first
+        charge = Payjp::Charge.create(
+          amount: @item.price,
+          customer: card.customer_id,
+          currency: 'jpy',
+        )
+        if @item.update(soldout: 1, buyer_id: current_user.id)
+          flash[:alert] = '購入しました。'
+          redirect_to controller: "users", action: 'show', id:current_user.id
+        else
+          flash[:alert] = '購入に失敗しました。'
+          redirect_to controller: "users", action: 'show', id:current_user.id
+        end
       end
     end
   end
