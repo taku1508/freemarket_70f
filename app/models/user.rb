@@ -10,54 +10,54 @@ class User < ApplicationRecord
   # belongs_to :address, optional: true
   has_one :address
 
-  # バリデーション設定
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  VALID_PASSWORD_REGEX = /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d!@#\$%\^\&*\)\(+=._-]{7,128}\z/i
-  VALID_KANJI_KANA_KATAKANA_REGEX = /\A[ぁ-んァ-ン一-龥]/
-  VALID_KANJI_REGEX = /\A[一-龥]+\z/
-  # ふりがな
-  VALID_KANA_REGEX = /\A([ァ-ン]|ー)+\z/
-  # 全角ふりがな
-  VALID_KANA_FUll_WIDTH = /\A^[ぁ-んァ-ヶー一-龠]+$\z/
-  VALID_KATAKANA_REGEX = /\A[\p{katakana}\p{blank}ー－]+\z/
-  VALID_PHONE_REGEX = /\A\d{10}$|^\d{11}\z/
-  VALID_POSTAL_CODE = /\A\d{3}-\d{4}\z/i
+  # # バリデーション設定
+  # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  # VALID_PASSWORD_REGEX = /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d!@#\$%\^\&*\)\(+=._-]{7,128}\z/i
+  # VALID_KANJI_KANA_KATAKANA_REGEX = /\A[ぁ-んァ-ン一-龥]/
+  # VALID_KANJI_REGEX = /\A[一-龥]+\z/
+  # # ふりがな
+  # VALID_KANA_REGEX = /\A([ァ-ン]|ー)+\z/
+  # # 全角ふりがな
+  # VALID_KANA_FUll_WIDTH = /\A^[ぁ-んァ-ヶー一-龠]+$\z/
+  # VALID_KATAKANA_REGEX = /\A[\p{katakana}\p{blank}ー－]+\z/
+  # VALID_PHONE_REGEX = /\A\d{10}$|^\d{11}\z/
+  # VALID_POSTAL_CODE = /\A\d{3}-\d{4}\z/i
 
-  # ＜ユーザー情報：6項目＞
-  # ニックネームが必須
-  validates :nickname, presence: true, length: {maximum:50}
-  # メールアドレスは一意
-  validates :email, presence: true, uniqueness:true, length: { maximum:255 }, format: { with: VALID_EMAIL_REGEX, message: 'のフォーマットが不適切です'}
+  # # ＜ユーザー情報：6項目＞
+  # # ニックネームが必須
+  # validates :nickname, presence: true, length: {maximum:50}
+  # # メールアドレスは一意
+  # validates :email, presence: true, uniqueness:true, length: { maximum:255 }, format: { with: VALID_EMAIL_REGEX, message: 'のフォーマットが不適切です'}
 
-  validates :size, inclusion: { in: %w(small medium large) }
+  # validates :size, inclusion: { in: %w(small medium large) }
 
-  # - パスワードは必須、7文字以上
-  validates :encrypted_password, presence:true, length: { minimum: 7 }, format: { with: VALID_PASSWORD_REGEX, message:'は英字と数字両方を含むパスワードを設定してください'}
-  # パスワードは確認用を含めて2回入力
-  validates :password_confirmation, presence: true, length: { in: 7..128 }, format: { with: VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
+  # # - パスワードは必須、7文字以上
+  # validates :encrypted_password, presence:true, length: { minimum: 7 }, format: { with: VALID_PASSWORD_REGEX, message:'は英字と数字両方を含むパスワードを設定してください'}
+  # # パスワードは確認用を含めて2回入力
+  # validates :password_confirmation, presence: true, length: { in: 7..128 }, format: { with: VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
 
-  # <本人確認情報：5項目>
-  # - ユーザー本名が、名字と名前でそれぞれ必須
-  validates :user_real_name, :first_name, :second_name, presence: true
-  # - ユーザー本名は全角で(漢字、ひらがな、カタカナ）入力
-  validates :user_real_name, presence: true, format: { with: VALID_KANJI_KANA_KATAKANA_REGEX, message:'は全角で入力してください'}
-  # - ユーザー本名のふりがなが、名字と名前でそれぞれ必須
-  validates :first_name_kana, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
-  validates :second_name_kana, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
-  # - ユーザー本名のふりがなが、全角で必須
-  validates :user_real_name, presence: true, format: { with: VALID_KANA_FUll_WIDTH, message:'は全角で入力してください'}
-  # - 生年月日が必須
-  def birthday
-    "#{BirthYyyy.find(self.birth_yyyy_id).year}/#{BirthMm.find(self.birth_mm_id).month}/#{BirthDd.find(self.birth_dd_id).day}"
-  end
+  # # <本人確認情報：5項目>
+  # # - ユーザー本名が、名字と名前でそれぞれ必須
+  # validates :user_real_name, :first_name, :second_name, presence: true
+  # # - ユーザー本名は全角で(漢字、ひらがな、カタカナ）入力
+  # validates :user_real_name, presence: true, format: { with: VALID_KANJI_KANA_KATAKANA_REGEX, message:'は全角で入力してください'}
+  # # - ユーザー本名のふりがなが、名字と名前でそれぞれ必須
+  # validates :first_name_kana, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
+  # validates :second_name_kana, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
+  # # - ユーザー本名のふりがなが、全角で必須
+  # validates :user_real_name, presence: true, format: { with: VALID_KANA_FUll_WIDTH, message:'は全角で入力してください'}
+  # # - 生年月日が必須
+  # def birthday
+  #   "#{BirthYyyy.find(self.birth_yyyy_id).year}/#{BirthMm.find(self.birth_mm_id).month}/#{BirthDd.find(self.birth_dd_id).day}"
+  # end
 
-  # ＜商品送付先住所情報：6項目必須、2項目任意＞
-  # - 郵便番号が必須
-  validates :postaladdress, presence: true, format: { with: VALID_POSTAL_CODE, message: '郵便番号を入力してください'}
-  # - 都道府県が必須
-  validates :Prefectures, presence: true
-  # - 市区町村が必須
-  validates :Municipality, presence: true
+  # # ＜商品送付先住所情報：6項目必須、2項目任意＞
+  # # - 郵便番号が必須
+  # validates :postaladdress, presence: true, format: { with: VALID_POSTAL_CODE, message: '郵便番号を入力してください'}
+  # # - 都道府県が必須
+  # validates :Prefectures, presence: true
+  # # - 市区町村が必須
+  # validates :Municipality, presence: true
 
 
   # - 送付先氏名が必要、名字と名前でそれぞれ必須
