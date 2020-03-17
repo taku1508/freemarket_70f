@@ -13,7 +13,6 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(items_params)
-    binding.pry
     # @category = Category.new
     # @category = Category.all
     # @item.category = category_id
