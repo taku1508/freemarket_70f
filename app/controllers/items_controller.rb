@@ -32,6 +32,7 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    # binding.pry
     # @item.images.new
   end
 
