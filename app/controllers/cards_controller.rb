@@ -64,8 +64,10 @@ class CardsController < ApplicationController
         customer: card.customer_id,
         currency: 'jpy',
       )
+
       
       if @item.update(soldout: 1)
+
         flash[:alert] = '購入しました。'
         redirect_to controller: "users", action: 'show', id:current_user.id
       else

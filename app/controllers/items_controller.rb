@@ -15,10 +15,14 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(items_params)
+    # @category = Category.new
+    # @category = Category.all
+    # @item.category = category_id
     # @item.brand_id = @item.brand
-    @item.category_id = @item.name
+
+    binding.pry
     if @item.save
-      redirect_to root_path, notice: 'アイテムを作成しました。'
+      redirect_to item_path(params[:id]), notice: 'アイテムを作成しました。'
     else
       render :index
     end
@@ -53,7 +57,8 @@ class ItemsController < ApplicationController
   private
 
   def items_params
-    params.require(:item).permit(:name,:description,:status,:shipping_charges,:area,:days,:price,images_attributes: [:image]).merge(user_id: current_user.id)
+
+    params.require(:item).permit(:nickname,:description,:status,:shipping_charges,:area,:days,:price,images_attributes: [:image,:id]).merge(user_id: current_user.id, category_id: 1)
   end
 
   # payjpをしようするためのメソッド
@@ -63,6 +68,7 @@ class ItemsController < ApplicationController
     else
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_ACCESS_KEY]
     end
+
   end
 
 end
