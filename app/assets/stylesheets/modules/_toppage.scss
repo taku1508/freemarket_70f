@@ -278,7 +278,8 @@
       color: #3CCACE;
     }
     &__picts{
-      margin: 32px auto;
+      margin: 0 auto;
+      padding-bottom: 30px;
       display: flex;
       // overflow: scroll;
       justify-content: center;
@@ -310,9 +311,6 @@
         }
         &__texts{
           padding: 0 16px 16px 16px;
-          p{
-            text-align: left;
-          }
           &--size{
             text-align: left;
             font-size: 10px;
@@ -324,7 +322,7 @@
       }
     }
     &--padding{
-      height: 80px;
+      height: 30px;
       width: 100Vw;
     }
   }
