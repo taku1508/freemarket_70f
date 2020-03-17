@@ -10,9 +10,10 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.new
   end
-
+  
   def create
     @item = Item.new(items_params)
+    binding.pry
     # @category = Category.new
     # @category = Category.all
     # @item.category = category_id
@@ -64,7 +65,7 @@ class ItemsController < ApplicationController
   def items_params
 
 
-    params.require(:item).permit(:nickname,:description,:status,:shipping_charges,:area,:days,:price,images_attributes: [:image,:id]).merge(user_id: current_user.id,category_id: 1)
+    params.require(:item).permit(:nickname,:description,:status,:shipping_charges,:area,:days,:price,:category_id,images_attributes: [:image,:id]).merge(user_id: current_user.id)
 
   end
 
