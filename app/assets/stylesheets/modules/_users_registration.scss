@@ -47,6 +47,27 @@
             font-size: 14px;
           }
         }
+        .t_names_form_password2{
+          @include user_password;
+          .t_password_error{
+            font-size: 14px;
+            margin-top: 8px;
+            height: 21px;
+            color: red;
+          }
+          .t_password_view{
+            font-size: 14px;
+            margin-top: 8px;
+            height: 21px;
+            color: #888888;
+          }
+          .t_password_check{
+            margin-top: 16px;
+          }
+          .t_pass{
+            font-size: 14px;
+          }
+        }
         .t_user{
           font-size: 16px;
           font-weight: bold;
@@ -189,4 +210,165 @@
       border-radius: 2px;
     }
   }
+  .t_credit2{
+    margin: 0 auto;
+    font-weight: 700;
+    color: #333;
+    height: 50px;
+    width: 700px;
+    background: #fff;
+    font-size: 24px;
+    padding: 8px 24px;
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    text-align: center;
+  }
+  .t_credit_area2{
+    margin: 0 auto;
+    margin-top: 2px;
+    width: 700px;
+    background-color: #fff;
+    .t_names{
+      width: 700px;
+      height: 700px;
+      // background-color: #fff;
+      padding: 40px 40px 64px;
+      .t_names_form{
+        margin: 0 auto;
+        height: 407px;
+        width: 343px;
+        &__group1{
+          height: 130px;
+          width: 343px;
+          .t_names_member{
+          display: flex;
+          height: 19px;              
+            .t_names_number{
+              width: 70px;
+              height: 14px;
+              @include font_style
+            }
+            .t_names_hissu{
+              margin-left: 8px;
+              width: 32px;
+              height: 19px;
+              @include hissu;
+            }
+          }
+          .t_names_input{
+            padding-left: 12px;
+            margin-top: 8px;
+            width: 343px;
+            height: 48px;
+          }
+          .t_names_input_error{
+            color: red;
+            font-size: 16px;
+            margin-top: 8px;
+            font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+          }
+        } 
+        &__group2{
+        height: 130px;
+        width: 343px;
+        margin-top: 32px;
+        .t_names_member{
+        display: flex;
+        height: 19px;              
+          .t_names_number{
+            width: 70px;
+            height: 14px;
+            @include font_style
+          }
+          .t_names_hissu{
+            margin-left: 8px;
+            width: 32px;
+            height: 19px;
+            @include hissu;
+          }
+        }
+        .t_names_input{
+          padding-left: 12px;
+          margin-top: 8px;
+          width: 343px;
+          height: 48px;
+        }
+        .t_names_input_error{
+          color: red;
+          font-size: 16px;
+          margin-top: 8px;
+          font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        }
+      }
+      &__group3{
+        @include deliber-group;
+      } 
+      &__group4{
+        height: 70px;
+        width: 343px;
+        margin-top: 32px;
+        .t_names_member{
+        display: flex;
+        height: 19px;              
+          .t_names_number{
+            width: 70px;
+            height: 14px;
+            @include font_style
+          }
+          .t_names_hissu{
+            margin-left: 8px;
+            width: 32px;
+            height: 19px;
+            @include hissu;
+          }
+        }
+        .t_delivery_form{
+          margin-top: 8px;
+          padding: 0 56px 0 16px;
+          height: 48px;
+          width: 343px;
+          color: #222;
+          background-color: #ffffff;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          line-height: 1;
+        }
+        .t_names_input_error{
+          color: red;
+          font-size: 16px;
+          margin-top: 8px;
+          font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        }
+      }
+      &__group5{
+        @include deliber-group;
+      }
+      &__group6{
+        @include deliber-group;
+      }
+      &__group7{
+        @include deliber-group2;
+      }
+      &__group8{
+        @include deliber-group2;
+      }
+      .t_btn{
+        margin-top: 32px;
+        height: 50px;
+        width: 343px;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .t_add_bottun{
+          width: 343px;
+          height: 50px;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
 }

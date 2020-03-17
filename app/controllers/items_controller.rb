@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-
+  before_action :set_item, only: [:show,:destroy]
   def index
     @item = Item.all
     @items = Item.order("created_at DESC")
@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(items_params)
+    binding.pry
     # @category = Category.new
     # @category = Category.all
     # @item.category = category_id
@@ -27,7 +28,6 @@ class ItemsController < ApplicationController
 
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def edit
@@ -44,6 +44,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @item.destroy
   end
 
   def confirm
@@ -68,11 +69,21 @@ class ItemsController < ApplicationController
 
   private
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+  # # payjpをしようするためのメソッド
+  # def get_payjp_info 
+  #   if Rails.env == 'development'
+  #     Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
+  #   else
+  #     Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_ACCESS_KEY]
+  #   end
+  # end
+
   def items_params
-
-
     params.require(:item).permit(:nickname,:description,:status,:shipping_charges,:area,:days,:price,:category_id,images_attributes: [:image,:id]).merge(user_id: current_user.id)
-
   end
 
   # payjpをしようするためのメソッド
@@ -82,7 +93,6 @@ class ItemsController < ApplicationController
     else
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_ACCESS_KEY]
     end
-
   end
 
 end
