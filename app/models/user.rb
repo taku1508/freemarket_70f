@@ -42,8 +42,8 @@ class User < ApplicationRecord
   # - ユーザー本名は全角で(漢字、ひらがな、カタカナ）入力
   validates :user_real_name, presence: true, format: { with: VALID_KANJI_KANA_KATAKANA_REGEX, message:'は全角で入力してください'}
   # - ユーザー本名のふりがなが、名字と名前でそれぞれ必須
-  validates :first_name_kana, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
-  validates :second_name_kana, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
+  validates :hurigana_first, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
+  validates :hurigana_second, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
   # - ユーザー本名のふりがなが、全角で必須
   validates :user_real_name, presence: true, format: { with: VALID_KANA_FUll_WIDTH, message:'は全角で入力してください'}
   # - 生年月日が必須
@@ -52,14 +52,14 @@ class User < ApplicationRecord
   end
 
   # ＜商品送付先住所情報：6項目必須、2項目任意＞
+  # 出品機能作成時に後ほど設定の為一旦保留
   # - 郵便番号が必須
-  validates :postaladdress, presence: true, format: { with: VALID_POSTAL_CODE, message: '郵便番号を入力してください'}
+  # validates :postaladdress, presence: true, format: { with: VALID_POSTAL_CODE, message: '郵便番号を入力してください'}
   # - 都道府県が必須
-  validates :Prefectures, presence: true
+  # validates :Prefectures, presence: true
   # - 市区町村が必須
-  validates :Municipality, presence: true
-
-
+  # validates :Municipality, presence: true
+  
   # - 送付先氏名が必要、名字と名前でそれぞれ必須
   # validates :Destination_name, presence: true
   # validates :first_name_kana, presence: true,format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
@@ -68,11 +68,8 @@ class User < ApplicationRecord
   # - メールアドレスは@とドメインを含む必要がある
   # /^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/
 
-
   # - 送付先氏名のふりがなが、名字と名前でそれぞれ必須
   # validates :validates :Destination name, presence: true,
-
-
 
   # - 番地が必須
   # validates :address, presence: true,
