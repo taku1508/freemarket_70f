@@ -80,14 +80,14 @@ class CardsController < ApplicationController
   end
 
   private
-
+# ユーザーがログインしていなければフロントへ
   def current_user_blank?
     if current_user.blank?
       redirect_to root_path
       flash[:alert] = 'ログインを行なってください。'
     end
   end
-
+# PAYJPを使用できるように
   def get_payjp_info
     if Rails.env == 'development'
       Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
