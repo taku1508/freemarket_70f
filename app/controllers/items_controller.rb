@@ -18,7 +18,6 @@ class ItemsController < ApplicationController
     # @item.category = category_id
     # @item.brand_id = @item.brand
     # @item.category_id = 1
-    binding.pry
     if @item.save
       redirect_to item_path(params[:id]), notice: 'アイテムを作成しました。'
     else
