@@ -13,14 +13,9 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(items_params)
-    binding.pry
-    # @category = Category.new
-    # @category = Category.all
-    # @item.category = category_id
-    # @item.brand_id = @item.brand
-    # @item.category_id = 1
     if @item.save(items_params)
       redirect_to item_path(params[:id]), notice: 'アイテムを作成しました。'
+      # redirect_to :index, notice: 'アイテムを作成しました。'
     else
       render :index
     end
@@ -83,7 +78,7 @@ class ItemsController < ApplicationController
   # end
 
   def items_params
-    params.require(:item).permit(:nickname,:description,:status,:shipping_charges,:area,:days,:price,:category_id,images_attributes: [:image,:id]).merge(user_id: current_user.id)
+    params.require(:item).permit(:nickname,:description,:status,:shipping_charges,:area,:days,:price,:category_id,images_attributes: [:image,:id,:_destroy]).merge(user_id: current_user.id)
   end
 
   # payjpをしようするためのメソッド

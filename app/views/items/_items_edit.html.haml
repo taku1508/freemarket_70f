@@ -19,9 +19,10 @@
                     - @item.images.each_with_index do |img, i|
                       = image_tag img.image.to_s, id:"img-file"
                       .item-image__operetion--delete 削除
+                      -# .item-image__operetion--edit 編集
                       .item-num-0{id: "image-box__container"}
                         = image.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
-                        %label{for: "img-file"}      
+                        %label{for: "img-file"}
                           %i.fas.fa-camera
               .t_icon_camera
               .t_text_drag_drop
