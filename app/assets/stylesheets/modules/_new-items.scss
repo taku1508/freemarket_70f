@@ -59,10 +59,151 @@
                   #previews{
                     height: 150px;
                     width: 620px;
-                    display: flex;
-                    #img-file{
+                    display: flex;                    
+                    // #img-file{
+                    //   height: 300px;
+                    //   width: 300px;                      
+                    // }--------------------------
+                    label{
+                      width: 300px;
                       height: 100px;
-                      width: 100px;
+                    }
+                    // .item-num-0{
+                    //   margin: 0 3px;
+                    //   width: 620px;
+                    //   height: 150px;
+                    //   display: flex;
+                    //   justify-content: center;
+                    //   align-items: center;                      
+                    //     label{
+                    //       height: 150px;
+                    //       width: 620px;
+                    //       height: 150px;
+                    //       display: flex;
+                    //       justify-content: center;
+                    //       align-items: center;
+                    //       .t_input-file{
+                    //         text-align: center;
+                    //         line-height: 150px;                           
+                    //         width: 100%;
+                    //         height: 100%;
+                    //       }    
+                    //     }                       
+                    // }
+                    .item-num-0{
+                      margin: 0 3px;
+                      width: 620px;
+                      height: 150px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      label{
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: whitesmoke;
+                        font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+                        .t_input-file{
+                          text-align: center;
+                            line-height: 150px;                           
+                            width: 100%;
+                            height: 100%;
+                        }    
+                      }                 
+                    }
+                    .item-num-1{
+                      margin: 0 3px;
+                      width: 620px;
+                      height: 150px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      label{
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: whitesmoke;
+                        font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+                        .t_input-file{
+                          text-align: center;
+                            line-height: 150px;                           
+                            width: 100%;
+                            height: 100%;
+                        }    
+                      }                 
+                    }
+                    .item-num-2{
+                      margin: 0 3px;
+                      width: 620px;
+                      height: 150px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      label{
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: whitesmoke;
+                        font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+                        .t_input-file{
+                          text-align: center;
+                            line-height: 150px;                           
+                            width: 100%;
+                            height: 100%;
+                        }    
+                      }                 
+                    }
+                    .item-num-3{
+                      margin: 0 3px;
+                      width: 620px;
+                      height: 150px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      label{
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: whitesmoke;
+                        font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+                        .t_input-file{
+                          text-align: center;
+                            line-height: 150px;                           
+                            width: 100%;
+                            height: 100%;
+                        }    
+                      }                 
+                    }
+                    .item-num-4{
+                      margin: 0 3px;
+                      width: 620px;
+                      height: 150px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      label{
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: whitesmoke;
+                        font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+                        .t_input-file{
+                          text-align: center;
+                            line-height: 150px;                           
+                            width: 100%;
+                            height: 100%;
+                        }    
+                      }                 
                     }
                     #image-box__contatiner{
                       height: 400px;
