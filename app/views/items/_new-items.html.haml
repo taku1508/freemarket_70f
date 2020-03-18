@@ -11,54 +11,17 @@
               必須
           .t_display_names
             最大5枚までアップロードできます
-          .t_sell_uploader
-            -# = f.file_field :image,class: "t_icon_camera"
-            -# .t_sell_uploader__form
-            -#   = f.label :image do
-            -#     = image_tag "icon_camera.png", class: "t_icon_camera"
-            -#     = f.file_field :image,class: "t_icon_camera2"
-
-            .t_sell_uploader__form
-              -# = f.label :image do
-              -#   = image_tag "icon_camera.png", class: "t_icon_camera"
-              -#   = f.file_field :image,class: "t_icon_camera2"
-
-              .t_image_field
-                -# #previews
-                -#   - if @item.persisted?
-                -#     - @item.image.each_with_index do |image, i|
-                -#       = image_tag image.src.url, data: { index: i }, width: "100", height: '100',class: "aaa"
-                -# = f.fields_for :images do |image|
-                -#   .t_js-file_group{"data-index" => "#{image.index}"}
-                -#     .t_sell                    
-                -#       = image.label :image do
-                -#         = image_tag "icon_camera.png", class: "t_icon_camera"
-                -#         = image.file_field :image, class: "js-file"
-                -#         %image{id:"preview",class: "t_preview"}
-                //-------------------------------------------
+          .t_sell_uploader          
+            .t_sell_uploader__form            
+              .t_image_field            
                 #previews
                   = f.fields_for :images do |i|
                     .item-num-0{id: "image-box__container"}
                       = i.file_field :image, tipe: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
                       %label{for: "img-file"}      
-                        %i.fas.fa-camera
-                        -# = image.label :image do
-                        -#   = image_tag "icon_camera.png", class: "t_icon_camera"
-                        -#   = image.file_field :image, class: "js-file"
-                        -#   %image{id:"preview",class: "t_preview"}
-
-
-                    
-                -# = f.fields_for :images do |image|
-                -#   .t_js-file_group{"data-index" => "#{image.index}"}
-                -#     = image.file_field :image, class: "js-file" ,accept: "image/*",multiple:"multiple",onchange:"previw_file(this.id)"
-                -#     %image{id:"preview",class: "t_preview"}
-
+                        %i.fas.fa-camera                      
               .t_icon_camera
-              .t_text_drag_drop
-                -# %p ドラッグアンドドロップ
-                -# %p またはクリックしてファイルをアップロード
-
+              .t_text_drag_drop              
       .t_items
         .t_items__name
           .t_items_names
@@ -75,8 +38,6 @@
             .t_explanation_hissu
               必須
           = f.text_area :description,class: "t_input_text_field2",placeholder:"商品の説明（必須 1,000文字以内)"
-          -# = form_tag('/items/new',method: :post) do
-          -#   %textarea(name="description" rows="7" class="t_input_text_field2" placeholder = "商品の説明（必須 1,000文字以内）")
       .t_three 
         .t_three__details
           商品の詳細
@@ -101,9 +62,7 @@
                   ブランド
                 .t_brand_group__ninni
                   任意
-              .t_brand_style
-                -# = f.fields_for :brands do |brand|
-                -# = f.fields_for :brands do |brand|
+              .t_brand_style            
                 = f.text_field :brand,class: "t_input_field",placeholder:"例) シャネル"
               .t_status
                 .t_status_group
@@ -112,7 +71,6 @@
                   .t_status_group__hissu
                     必須
                 .t_status_style
-                  -# = form_with model: @item do |f|
                   =f.select :status,
                     [["選択してください"],
                     ["新品,未使用"],
@@ -120,17 +78,7 @@
                     ["目立った汚れなし"],
                     ["傷や汚れあり"],
                     ["未使用に近い"],
-                    ["全体的に状態が悪い"]],{},{class: "t_status_select_form"}
-
-                  -# = form_tag('/items/new',method: :post) do
-                  -#   %select(name="example" class="t_status_select_form")
-                  -#     %option 選択してください
-                  -#     %option 新品,未使用
-                  -#     %option 未使用に近い
-                  -#     %option 目立った汚れなし
-                  -#     %option やや傷や汚れあり
-                  -#     %option 傷や汚れあり
-                  -#     %option 全体的に状態が悪い
+                    ["全体的に状態が悪い"]],{},{class: "t_status_select_form"}              
       .t_four
         .t_four__delivery
           配送について
@@ -141,17 +89,10 @@
             必須
         .t_items_name__items
           .t_form_style_delivery
-            -# = form_with model: @item do |f|
             = f.select :shipping_charges,
               [["選択してください"],
               ["送料込み(出品者負担)"],
-              ["着払い(購入者負担)"]],{},{class: "t_delivery_form"}
-            
-            -# = form_tag('/items/new',method: :post) do  
-            -#   %select(name="example" class="t_delivery_form")
-            -#     %option 選択してください
-            -#     %option 送料込み(出品者負担)
-            -#     %option 着払い(購入者負担)
+              ["着払い(購入者負担)"]],{},{class: "t_delivery_form"}          
         .t_area_group
           .t_area_group__area
             配送元の地域
@@ -159,7 +100,6 @@
             必須
         .t_items_name__items
           .t_form_style_delivery
-            -# = form_with model: @item do |f|
             = f.select :area,
               [["選択してください"],
               ["北海道"],
@@ -209,77 +149,7 @@
               ["宮崎県"],
               ["鹿児島県"],
               ["沖縄県"],
-              ["未定"]],{},{class: "t_delivery_form"}
-            -# = form_tag('/items/new',method: :post) do
-            -#   %select(name="example" class="t_delivery_form")
-            -#     %option 選択して下さい
-            -#     %option 北海道
-            -#     %option 青森県
-            -#     %option 岩手県
-            -#     %option 宮城県
-            -#     %option 秋田県
-            -#     %option 山形県
-            -#     %option 福島県
-            -#     %option 茨城県
-            -#     %option 栃木県
-            -#     %option 群馬県
-            -#     %option 埼玉県
-            -#     %option 千葉県
-            -#     %option 東京都
-            -#     %option 神奈川県
-            -#     %option 新潟県
-            -#     %option 富山県
-            -#     %option 石川県
-            -#     %option 福井県
-            -#     %option 山梨県
-            -#     %option 長野県
-            -#     %option 岐阜県
-            -#     %option 静岡県
-            -#     %option 愛知県
-            -#     %option 三重県
-            -#     %option 滋賀県
-            -#     %option 京都府
-            -#     %option 大阪府
-            -#     %option 兵庫県
-            -#     %option 奈良県
-            -#     %option 和歌山県
-            -#     %option 鳥取県
-            -#     %option 島根県
-            -#     %option 岡山県
-            -#     %option 広島県
-            -#     %option 山口県
-            -#     %option 徳島県
-            -#     %option 香川県
-            -#     %option 愛媛県
-            -#     %option 高知県
-            -#     %option 福岡県
-            -#     %option 佐賀県
-            -#     %option 長崎県
-            -#     %option 熊本県
-            -#     %option 大分県
-            -#     %option 宮崎県
-            -#     %option 鹿児島県
-            -#     %option 沖縄県
-            -#     %option 未定
-        .t_days_group
-          .t_days_group__days
-            発送までの日数
-          .t_delivery_group__hissu
-            必須
-        .t_items_name__items
-          .t_form_style_delivery
-            -# = form_with model: @item do |f|
-            = f.select :days,
-              [["選択してください"],
-              ["1〜2日で発送"],
-              ["2〜3日で発送"],
-              ["4〜7日で発送"]],{},{class: "t_delivery_form"}                            
-            -# = form_tag('/items/new',method: :post) do
-            -#   %select(name="example" class="t_delivery_form")
-            -#     %option 選択してください
-            -#     %option 1〜2日で発送
-            -#     %option 2〜3日で発送
-            -#     %option 4〜7日で発送
+              ["未定"]],{},{class: "t_delivery_form"}        
       .t_five
         .t_five__price
           価格（¥300〜9,999,999）
@@ -291,12 +161,10 @@
               必須
           .t_yen
             ¥
-          .t_number_form
-            -# = form_with model: @brand do |f|
+          .t_number_form            
             = f.number_field :price ,class: "t_number_form", style: "text-align: right"
-            -# = form_tag('/items/new',method: :post) do
-            -#   %input{type: "number",class: "t_number_form",style:"text-align: right"}
         .t_form_error_number
+        -# 以下一旦保留のためコメントアウト
         -# .t_tesuuryou     エラーメッセージ
         -#   .t_tesuuryou__ten
         -#     販売手数料 (10%)
@@ -308,47 +176,11 @@
         -#   .t_rieki__count
         -#     a
         .t_bottun_form
-          -# = form_with model: @item do |f|
           = f.submit class: "t_bottun_form__display", style: "t_bottun_form__display",value: "出品する"
-          -# = form_with model: @item do |f|
           = f.submit class: "t_bottun_form__back",value: "もどる"
-
           -# = form_tag('/items/new',method: :post) do
           -#   %input{type: "submit", value: "出品する",class: "t_bottun_form__display" }
           -# = form_tag('/items/new',method: :post) do
           -#   %input{type: "submit", value: "もどる",class: "t_bottun_form__back" }
-        -# .main
-        -#   %section.main__block
-        -#     = form_with model:@item, local:true do |f|
-        -#       %h2.sell__block__head
-        -#         商品の情報を入力
-        -#       .sell__block__form
-        -#         .sell__block__form__upload
-        -#           %h3.sell__block__form__upload__head
-        -#             出品画像
-        -#             %span.require 必須
-        -#           %p 最大10枚までアップロードできます
-        -#           #image-box-1
-        -#             .item-num-0#image-box__container
-        -#               = f.fields_for :images do |i|
-        -#                 .input-area
-        -#                   = i.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
-        -#                   %label{for: "img-file"}
-        -#                     %i.fas.fa-camera
-
-        -#         .sell__block__form__name
-        -#           .form-group__name
-        -#             %label
-        -#               商品名
-        -#               %span.require 必須
-        -#             %div
-        -#               = f.text_field :name, placeholder:"商品名（必須 40文字まで)",class: "form__group__name"
-
-        -#         .sell__block__form__btn
-        -#           %div
-        -#             = f.submit "出品する",class: "btn-default__btn-red"
-          
-          
-
   = render "items_footer"
 

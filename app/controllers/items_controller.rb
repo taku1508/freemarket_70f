@@ -24,11 +24,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(items_params)
       redirect_to root_path
     end
@@ -45,7 +43,6 @@ class ItemsController < ApplicationController
       flash[:alert] = 'ログインを行なってください。'
     else
       @card = current_user.cards.first
-      @user = current_user
       if @card.present?
         customer = Payjp::Customer.retrieve(@card.customer_id)
         @default_card_information = customer.cards.retrieve(@card.card_id)
@@ -54,7 +51,6 @@ class ItemsController < ApplicationController
       if @item.soldout == 1
         redirect_to item_path(@item.id)
       end
-
     end
   end
 
