@@ -18,32 +18,14 @@ $(function(){
 
       var num = $('.item-image').length + 1 + i
       fileReader.readAsDataURL(file);
-       //画像が10枚になったら超えたらドロップボックスを削除する
+       //画像が5枚になったら超えたらドロップボックスを削除する
       if (num == 5){
         $('#image-box__container').css('display', 'none')   
       }
       //読み込みが完了すると、srcにfileのURLを格納
       fileReader.onloadend = function() {
         var src = fileReader.result
-        var html= `<div class='item-image' data-image="${file.name}">
-                    <div class=' item-image__content'>
-                      <div class='item-image__content--icon'>
-                         <img src=${src} width="124" height="123" > 
-                      </div>
-                    </div>
-                    <div class='item-image__operetion'>
-                      <div class='item-image__operetion--delete'>削除</div>
-                    </div>
-                  </div>`
-        //  var html= `<div class='item-num-0'>
-        //               <div id='img-file' data-image="${file.name}">                                                                   
-        //                 <img src=${src} width="124" height="123" > 
-        //                   <div class='item-image__operetion--delete'>削除</div>
-        //                 </div>
-        //             </div>`
-
-        // var html= `<div class='item-num-0'>
-        //             <div class='item-image' data-image="${file.name}">
+        // var html= `<div class='item-image' data-image="${file.name}">
         //             <div class=' item-image__content'>
         //               <div class='item-image__content--icon'>
         //                  <img src=${src} width="124" height="123" > 
@@ -53,6 +35,25 @@ $(function(){
         //               <div class='item-image__operetion--delete'>削除</div>
         //             </div>
         //           </div>`
+
+        //  var html= `<div class='item-num-0'>
+        //               <div id='img-file' data-image="${file.name}">                                                                   
+        //                 <img src=${src} width="124" height="123" > 
+        //                   <div class='item-image__operetion--delete'>削除</div>
+        //                 </div>
+        //             </div>`
+
+        var html= `<div class='img-file'>
+                    <div class='item-image' data-image="${file.name}">
+                    <div class=' item-image__content'>
+                      <div class='item-image__content--icon'>
+                         <img src=${src} width="124" height="123" > 
+                      </div>
+                    </div>
+                    <div class='item-image__operetion'>
+                      <div class='item-image__operetion--delete'>削除</div>
+                    </div>
+                  </div>`
         //image_box__container要素の前にhtmlを差し込む
         $('#image-box__container').before(html);
       };

@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(items_params)
+    binding.pry
     if @item.save(items_params)
       redirect_to item_path(params[:id]), notice: 'アイテムを作成しました。'
       # redirect_to :index, notice: 'アイテムを作成しました。'
@@ -27,8 +28,6 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    # binding.pry
-    # @item.images.new
   end
 
   def update
