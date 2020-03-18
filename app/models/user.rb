@@ -12,7 +12,6 @@ class User < ApplicationRecord
 
 
   # バリデーション設定
-
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d!@#\$%\^\&*\)\(+=._-]{7,128}\z/i
   VALID_KANJI_KANA_KATAKANA_REGEX = /\A[ぁ-んァ-ン一-龥]/
@@ -73,25 +72,25 @@ class User < ApplicationRecord
   # - 市区町村が必須
   # validates :Municipality, presence: true
   
-#   # - 送付先氏名が必要、名字と名前でそれぞれ必須
-#   # validates :Destination_name, presence: true
-#   # validates :first_name_kana, presence: true,format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
-#   # validates :second_name_kana, presence: true,format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
+  # - 送付先氏名が必要、名字と名前でそれぞれ必須
+  # validates :Destination_name, presence: true
+  # validates :first_name_kana, presence: true,format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
+  # validates :second_name_kana, presence: true,format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
 
-#   # - メールアドレスは@とドメインを含む必要がある
-#   # /^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/
+  # - メールアドレスは@とドメインを含む必要がある
+  # /^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/
 
-#   # - 送付先氏名のふりがなが、名字と名前でそれぞれ必須
-#   # validates :validates :Destination name, presence: true,
+  # - 送付先氏名のふりがなが、名字と名前でそれぞれ必須
+  # validates :validates :Destination name, presence: true,
 
-#   # - 番地が必須
-#   # validates :address, presence: true,
+  # - 番地が必須
+  # validates :address, presence: true,
 
-#   # - マンション名やビル名、そしてその部屋番号は任意の為記載不要
+  # - マンション名やビル名、そしてその部屋番号は任意の為記載不要
 
-#   # - お届け先の電話番号は任意
-#   # /^\d{11}$/
-#   # record.errors[:name] << '電話番号は0から始まる必要があります'
+  # - お届け先の電話番号は任意
+  # /^\d{11}$/
+  # record.errors[:name] << '電話番号は0から始まる必要があります'
 
-# end
+end
 
