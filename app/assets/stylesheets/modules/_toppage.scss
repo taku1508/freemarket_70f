@@ -277,8 +277,11 @@
       font-weight: bold;
       color: #3CCACE;
     }
-    &__pict{
+    &__picts{
+      margin: 0 auto;
+      padding-bottom: 30px;
       display: flex;
+      // overflow: scroll;
       justify-content: center;
       &__img{
         width: 15%;
@@ -287,11 +290,27 @@
         &--size{
           width: 100%;
         }
+        .items-box_photo__sold{
+          width: 0;
+          height: 0;
+          border-top: 60px solid #ea352d ;
+          border-right: 60px solid transparent;
+          border-bottom: 60px solid transparent;
+          border-left: 60px solid #ea352d ;
+          z-index:100;
+          position: relative;
+          top:-320px;
+          &__inner{
+            transform: rotate(-45deg);
+            font-size: 28px;
+            margin:-35px 0px 0px -55px;
+            color: #fff;
+            letter-spacing: 2px;
+            font-weight: 600;
+          }
+        }
         &__texts{
           padding: 0 16px 16px 16px;
-          p{
-            text-align: left;
-          }
           &--size{
             text-align: left;
             font-size: 10px;
@@ -303,7 +322,7 @@
       }
     }
     &--padding{
-      height: 80px;
+      height: 30px;
       width: 100Vw;
     }
   }

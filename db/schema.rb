@@ -13,15 +13,15 @@
 ActiveRecord::Schema.define(version: 2020_03_11_123041) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "address_name", null: false
-    t.string "address_hurigana", null: false
     t.integer "postal_code", null: false
     t.string "prefectures", null: false
     t.string "municipalities", null: false
     t.string "house_number", null: false
     t.string "room_number"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -56,13 +56,14 @@ ActiveRecord::Schema.define(version: 2020_03_11_123041) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "nickname", null: false
     t.string "description", null: false
     t.string "status", null: false
     t.string "shipping_charges", null: false
     t.string "area", null: false
     t.string "days", null: false
     t.integer "price", null: false
+    t.integer "soldout", default: 0
     t.bigint "user_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
@@ -92,6 +93,7 @@ ActiveRecord::Schema.define(version: 2020_03_11_123041) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "categories"

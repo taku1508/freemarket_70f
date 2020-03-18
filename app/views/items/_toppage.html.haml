@@ -97,78 +97,46 @@
     .k_main__pickupContainer__head
       =link_to "#" do
         新規投稿商品
-    .k_main__pickupContainer__pict
+    .k_main__pickupContainer__picts
       - @items.each do |item|
-        .k_main__pickupContainer__pict
+        .k_main__pickupContainer__picts__pict
           =link_to item_path(item.id) do
-            .k_main__pickupContainer__pict__img
-              =image_tag "food_spaghetti_carbonara.png", class: "k_main__pickupContainer__pict__img--size"
-        .k_main__pickupContainer__pict__img__texts
-          %p
-            product3
-          %p
-            3000円
-          %p
-            .k_main__pickupContainer__pict__img__texts--size
-              (税込)
-      .k_main__pickupContainer__pict__img
-        =image_tag "food_spaghetti_neapolitan.png", class: "k_main__pickupContainer__pict__img--size"
-        .k_main__pickupContainer__pict__img__texts
-          %p
-            product2
-          %p
-            2000円
-          %p
-            .k_main__pickupContainer__pict__img__texts--size
-              (税込)
-      .k_main__pickupContainer__pict__img
-        =image_tag "food_spaghetti_tarako.png", class: "k_main__pickupContainer__pict__img--size"
-        .k_main__pickupContainer__pict__img__texts
-          %p
-            product1
-          %p
-            1000円
-          %p
-            .k_main__pickupContainer__pict__img__texts--size
-              (税込)
+
+            
+          -# 必要な機能だがデプロイにてエラーが出るため、一旦コメントアウト
+            -# .k_main__pickupContainer__picts__pict__img
+              -# = image_tag item.images.first.image.url,size:"220x150"
+              -# - if item.soldout == 1
+              -#   .items-box_photo__sold
+              -#     .items-box_photo__sold__inner
+              -#       SOLD
+          -# .k_main__pickupContainer__pict__img__texts
+            -# =item.nickname
+            -# .k_main__pickupContainer__pict__img__texts--size
+            -#   =item.price
+
   .k_main__pickupContainer
     .k_main__pickupContainer__title
       ピックアップブランド
     .k_main__pickupContainer__head
       =link_to "#" do
         アーカイバ
-    .k_main__pickupContainer__pict
-      .k_main__pickupContainer__pict__img
-        =image_tag "food_spaghetti_carbonara.png", class: "k_main__pickupContainer__pict__img--size"
-        .k_main__pickupContainer__pict__img__texts
-          %p
-            product3
-          %p
-            3000円
-          %p
-            .k_main__pickupContainer__pict__img__texts--size
-              (税込)
-      .k_main__pickupContainer__pict__img
-        =image_tag "food_spaghetti_neapolitan.png", class: "k_main__pickupContainer__pict__img--size"
-        .k_main__pickupContainer__pict__img__texts
-          %p
-            product2
-          %p
-            2000円
-          %p
-            .k_main__pickupContainer__pict__img__texts--size
-              (税込)
-      .k_main__pickupContainer__pict__img
-        =image_tag "food_spaghetti_tarako.png", class: "k_main__pickupContainer__pict__img--size"
-        .k_main__pickupContainer__pict__img__texts
-          %p
-            product1
-          %p
-            1000円
-          %p
-            .k_main__pickupContainer__pict__img__texts--size
-              (税込)
-    .k_main__pickupContainer--padding
+    .k_main__pickupContainer__picts
+      - @items.each do |item|
+        .k_main__pickupContainer__picts__pict
+          =link_to item_path(item.id) do
+    -# 必要な機能だがデプロイにてエラーが出るため、一旦コメントアウト
+            -# .k_main__pickupContainer__picts__pict__img
+              -# =image_tag item.images.first.image.url,size:"220x150"
+              -# - if item.soldout == 1
+              -#   .items-box_photo__sold
+              -#     .items-box_photo__sold__inner
+              -#       SOLD
+          -# .k_main__pickupContainer__pict__img__texts
+            -# =item.nickname
+            -# .k_main__pickupContainer__pict__img__texts--size
+            -#   =item.price
+    -# .k_main__pickupContainer--padding
 
   .k_main__appBanner
     .k_main__appBanner__content
@@ -184,4 +152,3 @@
     .k_main__btn__icon
       = image_tag "icon_camera.png",size:"54x54"
 = render 'items_toppage_footer'
-

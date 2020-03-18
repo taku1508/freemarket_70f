@@ -1,23 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create(name: 'Star Wars' },name: 'Lord of the Rings' }])
-#   Character.creaname: 'Luke', movie: movies.first)
-
-# User.create!(
-#   [
-#     {
-#       email: 'test1@test.com',
-#       password: 'aaaaaa'
-#     },
-#     {
-#       email: 'test2@test.com',
-#       password: 'aaaaaa'
-#     },
-#   ]
-# )
+User.create!(
+  [
+    {
+      email: 'test1@test.com',
+      password: 'aaaa1111',
+      nickname: 'hhhhhh',
+      first_name: '田中',
+      second_name: '太郎',
+      hurigana_first: 'タナカ',
+      hurigana_second: 'タロウ',
+      birthday_year: "1999",
+      birthday_month: "08",
+      birthday_day: "16"
+    }
+  ]
+)
 lady = Category.create(name: "レディース")
 
 lady_tops = lady.children.create(name: "トップス")
@@ -63,7 +59,7 @@ lady_other.children.create([{name: "コスプレ"}, {name: "下着"}, {name: "�
 Item.create!(
   [
     {
-      name: 'taku',
+      nickname: 'taku',
       description: '25歳、独身、無職、大阪市内居住',
       status: '新品',
       shipping_charges: '無料',
@@ -75,11 +71,11 @@ Item.create!(
     }
   ]
 )
-# Image.create!(
-#   [
-#     {
-#       image: File.open('./app/assets/images/food_spaghetti_neapolitan.png'),
-#       item_id: '1'
-#     }
-#   ]
-# )
+Image.create!(
+  [
+    {
+      image: File.open('./app/assets/images/food_spaghetti_neapolitan.png'),
+      item_id: '1'
+    }
+  ]
+)

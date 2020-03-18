@@ -6,17 +6,7 @@
       .h_right__contents
         %h2.h_right__contents__head 支払い方法
         .h_right__contents__main 
-          .h_right__contents__main__info
-            .h_right__contents__main__info__title
-              クレジットカード情報
-            .h_right__contents__main__info__img
-              = link_to image_tag("Visa.png", class: "h_right__contents__main__info__img--size"), "#"
-            .h_right__contents__main__info__number
-              = "**** **** **** " + @default_card_information.last4
-            .h_right__contents__main__info__date
-              - exp_month = @default_card_information.exp_month.to_s
-              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-              = exp_month + " / " + exp_year
+          = render "show"
           = form_tag(delete_cards_path, method: :post, id: 'charge-form', name: "inputForm") do
             %input{ type: "hidden", name: "card_id", value: "" }
               %button.h_right__contents__main__btn 削除する
