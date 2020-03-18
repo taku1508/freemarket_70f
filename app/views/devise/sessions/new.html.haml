@@ -20,7 +20,11 @@
         = f.label :email
         %br/
         = f.email_field :email, autofocus: true, autocomplete: "email"
-        
+      
+      -# %input#user_email.user-field{:autocomplete => "email", :name => "user[email]", :placeholder => "メールアドレス", :type => "email", :value => ""}/
+
+
+
 
       .field_password
         = f.label :password
@@ -33,9 +37,6 @@
       .filed_login 
         = f.submit "ログイン" ,class: "m_google-btn"
       
-   
-
 .m_footer
 =render "items/items_footer"
-
 
