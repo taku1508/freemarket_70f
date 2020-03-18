@@ -40,7 +40,6 @@ class ItemsController < ApplicationController
   end
 
   def confirm
-
     if current_user.blank?
       redirect_to root_path
       flash[:alert] = 'ログインを行なってください。'
