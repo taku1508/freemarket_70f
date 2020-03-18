@@ -207,7 +207,7 @@ $(function(){
                       </div>
                     </div>
                     <div class='item-image__operetion'>
-                      <div class='item-image__operetion--delete'>削除</div>
+                      <div class='item-image__operetion--delete'>削除</div>                      
                     </div>
                   </div>`
         //image_box__container要素の前にhtmlを差し込む
@@ -247,4 +247,20 @@ $(function(){
     $('#image-box__container').show()
     $('#image-box__container').attr('class', `item-num-${num}`)
   })
+
+  // file_fieldのnameに動的なindexをつける為の配列
+  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
+  // 既に使われているindexを除外
+  lastIndex = $('.js-file_group:last').data('index');
+  fileIndex.splice(0, lastIndex);
+  $('.hidden-destroy').hide();
+
+  $('.t_image_field').on('click', '.js-remove', function() {
+    const targetIndex = $(this).parent().data('index')
+    // 該当indexを振られているチェックボックスを取得する
+    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    // もしチェックボックスが存在すればチェックを入れる
+    if (hiddenCheck) hiddenCheck.prop('checked', true);
+  });
+
 });

@@ -60,36 +60,31 @@
                     height: 150px;
                     width: 620px;
                     display: flex;                    
-                    // #img-file{
-                    //   height: 300px;
-                    //   width: 300px;                      
-                    // }--------------------------
+                    .img-file{
+                      width: 124px;
+                      height: 123px;                      
+                      .item-image{
+                        height: 124px;
+                        width: 123px;                        
+                        .item-image__operetion{
+                          height: 124px;
+                          width: 123px;                          
+                          .item-image__operetion--delete{
+                            text-align: center;
+                            height: 124px;
+                            width: 123px;
+                          }
+                        }
+                        .item-image__content{
+                          width: 124px;
+                          height: 123px;
+                        }
+                      }
+                    }
                     label{
                       width: 300px;
                       height: 100px;
-                    }
-                    // .item-num-0{
-                    //   margin: 0 3px;
-                    //   width: 620px;
-                    //   height: 150px;
-                    //   display: flex;
-                    //   justify-content: center;
-                    //   align-items: center;                      
-                    //     label{
-                    //       height: 150px;
-                    //       width: 620px;
-                    //       height: 150px;
-                    //       display: flex;
-                    //       justify-content: center;
-                    //       align-items: center;
-                    //       .t_input-file{
-                    //         text-align: center;
-                    //         line-height: 150px;                           
-                    //         width: 100%;
-                    //         height: 100%;
-                    //       }    
-                    //     }                       
-                    // }
+                    }                   
                     .item-num-0{
                       margin: 0 3px;
                       width: 620px;
@@ -205,29 +200,29 @@
                         }    
                       }                 
                     }
-                    #image-box__contatiner{
-                      height: 400px;
-                      width: 400px;
-                      .item-num-0{
-                        width: 100%;
-                      }
-                      .item-num-1{
-                        width: 491px;
-                      }
-                      .item-num-2{
-                        width: 363px;
-                      }
-                      .item-num-3{
-                        width: 234px;
-                      }
-                      .item-num-4{
-                        width: 106px;
-                      }
-                      //下段のfile_field
-                      .item-num-5{
-                        width: 100%;
-                      }                    
-                    }
+                    // #image-box__contatiner{
+                    //   height: 400px;
+                    //   width: 400px;
+                    //   .item-num-0{
+                    //     width: 100%;
+                    //   }
+                    //   .item-num-1{
+                    //     width: 491px;
+                    //   }
+                    //   .item-num-2{
+                    //     width: 363px;
+                    //   }
+                    //   .item-num-3{
+                    //     width: 234px;
+                    //   }
+                    //   .item-num-4{
+                    //     width: 106px;
+                    //   }
+                    //   //下段のfile_field
+                    //   .item-num-5{
+                    //     width: 100%;
+                    //   }                    
+                    // }
                     .t_aaa{
                       margin-top: 8px;
                       padding: 0 4px;
@@ -265,17 +260,7 @@
                     width: 200px;
                   }
                 }
-              }
-            // .t_icon_camera{ //カメラiconの表示 未実装
-            //   height: 24px;
-            //   width: 24px;
-            //   fill: rgb(34, 34, 34);
-            //   margin-bottom: 8px;
-            //   cursor: copy;
-            // }
-            // .t_icon_camera2{
-            //   display: none;
-            // }
+              }            
             .t_text_drag_drop{  //フォーム内表記情報
               color: #333333;
               font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
