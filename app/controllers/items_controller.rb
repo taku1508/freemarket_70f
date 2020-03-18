@@ -12,10 +12,10 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(items_params)
-
     if @item.save(items_params)
-      redirect_to item_path(params[:id]), notice: 'アイテムを作成しました。'
+      # redirect_to item_path(params[:id]), notice: 'アイテムを作成しました。'
       # redirect_to :index, notice: 'アイテムを作成しました。'
+      redirect_to("http://localhost:3000/")
     else
       render :index
     end
