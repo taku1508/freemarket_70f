@@ -48,7 +48,7 @@ class CardsController < ApplicationController
     card = current_user.cards 
     redirect_to action: "show"if card.exists?
   end
- 
+
   def buy
     card = current_user.cards 
     address = current_user.address
@@ -80,6 +80,11 @@ class CardsController < ApplicationController
   end
 
   private
+
+
+  def get_payjp_info
+    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_ACCESS_KEY]
+  end
 # ユーザーがログインしていなければフロントへ
   def current_user_blank?
     if current_user.blank?
@@ -88,12 +93,12 @@ class CardsController < ApplicationController
     end
   end
 # PAYJPを使用できるように
-  def get_payjp_info
-    if Rails.env == 'development'
-      Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
-    else
-      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_ACCESS_KEY]
-    end
-  end
+  # def get_payjp_info
+  #   if Rails.env == 'development'
+  #     Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
+  #   else
+  #     Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_ACCESS_KEY]
+  #   end
+  # end
 
 end
