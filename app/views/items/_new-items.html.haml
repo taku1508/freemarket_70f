@@ -1,7 +1,7 @@
 = render "items_header"
 .t_all
   .t_form_action  
-    = form_with(model:[@brand,@image,@item]) do |f|
+    = form_with(model:[@image,@item]) do |f|
       .t_display
         .t_display__formgroup 
           .t_display_name
@@ -67,17 +67,7 @@
                   ["レディース","2"],
                   ["トップス","3"],
                   ["ジャケット/アウター","4"],
-                  ["パンツ","5"]],{},{class: "t_category_form"}
-            .t_brand
-              .t_brand_group
-                .t_brand_group__brand
-                  ブランド
-                .t_brand_group__ninni
-                  任意
-
-              .t_brand_style            
-
-                = f.text_field :brand,class: "t_input_field",placeholder:"例) シャネル"
+                  ["パンツ","5"]],{},{class: "t_category_form"}            
               .t_status
                 .t_status_group
                   .t_status_group__status
