@@ -12,5 +12,4 @@ class Item < ApplicationRecord
   validates :area, presence: true
   validates :days, presence: true
   validates :price, presence: true
-
 end
