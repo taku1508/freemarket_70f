@@ -5,11 +5,6 @@ class ImagesController < ApplicationController
 
   def create
     @image = Image.new(images_params)
-    # if @hoge.save
-    #   redirect_to :action => "index"
-    # else
-    #   render :action => "new"
-    # end
   end
 
   def images_params

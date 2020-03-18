@@ -1,3 +1,4 @@
+//以下開発に必要となる可能性があり、保留のため一旦コメントアウトしている。
 // $(function(){
 //   $('.t_number_form').on('input',function(){
 //     var aaa = $(this).val();
