@@ -17,7 +17,8 @@ class User < ApplicationRecord
   VALID_KANJI_KANA_KATAKANA_REGEX = /\A[ぁ-んァ-ン一-龥]/
   VALID_KANJI_REGEX = /\A[一-龥]+\z/
   # ふりがな
-  VALID_KANA_REGEX = /\A([ァ-ン]|ー)+\z/
+  VALID_KANA_REGEX = /\A[ぁ-んー－]+\z/
+
   # 全角ふりがな
   VALID_KANA_FUll_WIDTH = /\A^[ぁ-んァ-ヶー一-龠]+$\z/
   VALID_KATAKANA_REGEX = /\A[\p{katakana}\p{blank}ー－]+\z/
@@ -44,8 +45,8 @@ class User < ApplicationRecord
   validates  :second_name,presence: true ,format: { with: VALID_KANJI_KANA_KATAKANA_REGEX, message:'は全角で入力してください'}
 
   # - ユーザー本名のふりがなが、名字と名前でそれぞれ必須
-  validates :hurigana_first, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はふりがなで入力して下さい'}
-  validates :hurigana_second, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
+  validates :hurigana_first, presence: true, length: { maximum: 35 }, format: { with: VALID_KANA_REGEX, message: 'はふりがなで入力して下さい'}
+  validates :hurigana_second, presence: true, length: { maximum: 35 }, format: { with: VALID_KANA_REGEX, message: 'はカタカナで入力して下さい'}
   # - ユーザー本名のふりがなが、全角で必須
   validates :hurigana_first, presence: true, format: { with: VALID_KANA_FUll_WIDTH, message:'は全角で入力してください'}
   validates :hurigana_second, presence: true, format: { with: VALID_KANA_FUll_WIDTH, message:'は全角で入力してください'}
@@ -54,7 +55,13 @@ class User < ApplicationRecord
   def birthday
     "#{BirthYyyy.find(self.birth_yyyy_id).year}/#{BirthMm.find(self.birth_mm_id).month}/#{BirthDd.find(self.birth_dd_id).day}"
   end
+  # 生年月日、各カテゴリーごと設定
+  # validates :birthday_year, presence: true,
+  # validates :birthday_month, presence: true,
+  # validates :birthday_day, presence: true,
   
+
+
 
   # ＜商品送付先住所情報：6項目必須、2項目任意＞
   # 出品機能作成時に後ほど設定の為一旦保留

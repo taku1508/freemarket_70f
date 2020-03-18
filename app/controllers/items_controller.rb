@@ -27,9 +27,16 @@ class ItemsController < ApplicationController
   def edit
   end
 
+  # def update
+  #   if @item.update(items_params)
+  #     redirect_to root_path
+  #   end
+  # end
   def update
-    if @item.update(items_params)
+    if @item.update(item_params)
       redirect_to root_path
+    else
+      render :edit
     end
   end
 
@@ -40,7 +47,6 @@ class ItemsController < ApplicationController
   end
 
   def confirm
-
     if current_user.blank?
       redirect_to root_path
       flash[:alert] = 'ログインを行なってください。'

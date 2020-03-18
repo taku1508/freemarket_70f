@@ -64,11 +64,16 @@
         .t_names_form__group2
           .t_names_member
             .t_names_number
-              お名前カナ
+              お名前かな
             .t_names_hissu
               必須
-          =f.text_field :hurigana_first, class: "t_names_input", placeholder: "例)ヤマダ"
-          =f.text_field :hurigana_second, class: "t_names_input", placeholder: "例)アヤ"
+          =f.text_field :hurigana_first, class: "t_names_input", placeholder: "例)やまだ"
+          =f.text_field :hurigana_second, class: "t_names_input", placeholder: "例)あや"
+          -# = form_with(model:@users) do |f|
+          -#   %input{type: "input",class: "t_names_input",placeholder: "例)やまだ"}
+          -# = form_with(model:@users) do |f|
+          -#   %input{type: "input",class: "t_names_input",placeholder: "例)あや"}
+
         .t_cards_form__group2
           .t_cards_member
             .t_cards_limit
