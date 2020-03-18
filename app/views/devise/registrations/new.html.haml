@@ -26,12 +26,14 @@
             .t_names_hissu
               必須
           =f.text_field :password, class: "t_names_input", placeholder: "英数字両方を含むパスワードを入力して下さい。"
+          -# = form_with(model:@users) do |f|
+          -#   %input{type: "input",class: "t_names_input",placeholder: "7文字以上の半角英数字"}
             -# .t_password_error エラーメッセージ
             -#   パスワードを入力して下さい 
-            .t_password_view
-              ※ 英字と数字の両方を含めて設定してください
-            %input{type: "checkbox",class:"t_password_check"}
-              %label{class: "t_pass"} パスワードを表示する
+            -# .t_password_view
+            -#   ※ 英字と数字の両方を含めて設定してください
+            -# %input{type: "checkbox",class:"t_password_check"}
+            -#   %label{class: "t_pass"} パスワードを表示する
         .t_names_form_password2
           .t_names_member
             .t_names_number
@@ -39,12 +41,14 @@
             .t_names_hissu
               必須
           =f.text_field :password, class: "t_names_input", placeholder: "パスワードを再入力して下さい。"
+          -# = form_with(model:@users) do |f|
+          -#   %input{type: "input",class: "t_names_input",placeholder: "7文字以上の半角英数字"}
             -# .t_password_error エラーメッセージ
             -#   パスワードを入力して下さい 
-            .t_password_view
-              ※ 英字と数字の両方を含めて設定してください
-            %input{type: "checkbox",class:"t_password_check"}
-              %label{class: "t_pass"} パスワードを表示する
+            -# .t_password_view
+            -#   ※ 英字と数字の両方を含めて設定してください
+            -# %input{type: "checkbox",class:"t_password_check"}
+            -#   %label{class: "t_pass"} パスワードを表示する
         .t_user
           本人確認
         .t_confirm_user
