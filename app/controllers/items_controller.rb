@@ -7,15 +7,14 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new
-    @item.images.new
+    @item.images.new 
   end
   
   def create
     @item = Item.new(items_params)
     if @item.save(items_params)
-      # redirect_to item_path(params[:id]), notice: 'アイテムを作成しました。'
-      # redirect_to :index, notice: 'アイテムを作成しました。'
-      redirect_to("http://localhost:3000/")
+      redirect_to new_item_path
+      flash[:alert] = "アイテムを出品しました。"
     else
       render :index
     end
@@ -37,6 +36,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     redirect_to root_path
+    flash[:alert] = '削除しました。'
   end
 
   def confirm
