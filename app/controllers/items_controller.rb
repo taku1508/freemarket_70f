@@ -1,26 +1,21 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show,:destroy]
+  before_action :set_item, only: [:show,:destroy, :edit, :update]
   def index
     @item = Item.all
     @items = Item.order("created_at DESC")
   end
   
   def new
-    # @item.brands.new
     @item = Item.new
     @item.images.new
   end
   
   def create
     @item = Item.new(items_params)
-    binding.pry
-    # @category = Category.new
-    # @category = Category.all
-    # @item.category = category_id
-    # @item.brand_id = @item.brand
-    # @item.category_id = 1
     if @item.save(items_params)
-      redirect_to item_path(params[:id]), notice: 'アイテムを作成しました。'
+      # redirect_to item_path(params[:id]), notice: 'アイテムを作成しました。'
+      # redirect_to :index, notice: 'アイテムを作成しました。'
+      redirect_to("http://localhost:3000/")
     else
       render :index
     end
@@ -31,13 +26,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
-    # binding.pry
-    # @item.images.new
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(items_params)
       redirect_to root_path
     end
@@ -45,16 +36,15 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
+    redirect_to root_path
   end
 
   def confirm
-
     if current_user.blank?
       redirect_to root_path
       flash[:alert] = 'ログインを行なってください。'
     else
       @card = current_user.cards.first
-      @user = current_user
       if @card.present?
         customer = Payjp::Customer.retrieve(@card.customer_id)
         @default_card_information = customer.cards.retrieve(@card.card_id)
@@ -63,7 +53,6 @@ class ItemsController < ApplicationController
       if @item.soldout == 1
         redirect_to item_path(@item.id)
       end
-
     end
   end
 
@@ -73,20 +62,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  # # payjpをしようするためのメソッド
-  # def get_payjp_info 
-  #   if Rails.env == 'development'
-  #     Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
-  #   else
-  #     Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_ACCESS_KEY]
-  #   end
-  # end
-
   def items_params
-    params.require(:item).permit(:nickname,:description,:status,:shipping_charges,:area,:days,:price,:category_id,images_attributes: [:image,:id]).merge(user_id: current_user.id)
+    params.require(:item).permit(:nickname,:description,:status,:shipping_charges,:area,:days,:price,:category_id,images_attributes: [:image,:id,:_destroy]).merge(user_id: current_user.id)
   end
 
-  # payjpをしようするためのメソッド
+  # payjpを使用するためのメソッド
   def get_payjp_info 
     if Rails.env == 'development'
       Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]

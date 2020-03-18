@@ -14,7 +14,7 @@
       .k_head__inner__bottom__links
 
         - if user_signed_in?
-          = current_user.nickname
+          = link_to current_user.nickname,"users/show", class: "k_head__inner__bottom__links"
           = link_to "ログアウト(仮)",destroy_user_session_path, method: "delete"
         - else
           = link_to "ログイン","/users/sign_in"
