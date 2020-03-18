@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show,:destroy]
+  before_action :set_item, only: [:show,:destroy, :edit, :update]
   def index
     @item = Item.all
     @items = Item.order("created_at DESC")
@@ -13,7 +13,6 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(items_params)
-    binding.pry
     # @category = Category.new
     # @category = Category.all
     # @item.category = category_id
