@@ -19,7 +19,7 @@
                   = f.fields_for :images do |i|
                     .item-num-0{id: "image-box__container"}
                       = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
-                      %label{for: "img-file"}      
+                      %label{for: "img-file"}
                         %span{class: "t_input-file"} ファイルを選択
                         -# %i.fas.fa-camera
                         -# = image.label :image do

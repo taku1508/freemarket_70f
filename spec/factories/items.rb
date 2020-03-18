@@ -1,7 +1,7 @@
 FactoryBot.define do
 
   factory :item do
-    name              {"abe"}
+    nickname              {"abe"}
     description       {"aaa"}
     status              {"aaaa"}
     shipping_charges {"aaa"}
