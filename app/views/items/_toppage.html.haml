@@ -103,7 +103,7 @@
           =link_to item_path(item.id) do
 
             
-          -# 必要な機能だがデプロイにてエラーが出るため、一旦コメントアウト
+
             -# .k_main__pickupContainer__picts__pict__img
               -# = image_tag item.images.first.image.url,size:"220x150"
               -# - if item.soldout == 1
@@ -125,7 +125,7 @@
       - @items.each do |item|
         .k_main__pickupContainer__picts__pict
           =link_to item_path(item.id) do
-    -# 必要な機能だがデプロイにてエラーが出るため、一旦コメントアウト
+
             -# .k_main__pickupContainer__picts__pict__img
               -# =image_tag item.images.first.image.url,size:"220x150"
               -# - if item.soldout == 1
