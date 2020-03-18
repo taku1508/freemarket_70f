@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   end
 
   private
-  ユーザーがログインしていなければフロントへ
+  # ユーザーがログインしていなければフロントへ
   def current_user_blank?
     if current_user.blank?
       redirect_to root_path
