@@ -11,6 +11,7 @@
               必須
           .t_display_names
             最大5枚までアップロードできます
+
           .t_sell_uploader
             .t_sell_uploader__form              
               .t_image_field                
@@ -47,6 +48,7 @@
               商品の説明
             .t_explanation_hissu
               必須
+
           = f.text_area :description,class: "t_input_text_field2",placeholder:"商品の説明（必須 1,000文字以内)"              
       .t_three 
         .t_three__details
@@ -72,7 +74,9 @@
                   ブランド
                 .t_brand_group__ninni
                   任意
-              .t_brand_style
+
+              .t_brand_style            
+
                 = f.text_field :brand,class: "t_input_field",placeholder:"例) シャネル"
               .t_status
                 .t_status_group
@@ -89,6 +93,7 @@
                     ["傷や汚れあり"],
                     ["未使用に近い"],
                     ["全体的に状態が悪い"]],{},{class: "t_status_select_form"}
+
       .t_four
         .t_four__delivery
           配送について
@@ -103,6 +108,7 @@
               [["選択してください"],
               ["送料込み(出品者負担)"],
               ["着払い(購入者負担)"]],{},{class: "t_delivery_form"}       
+
         .t_area_group
           .t_area_group__area
             配送元の地域

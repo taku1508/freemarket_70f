@@ -1,10 +1,6 @@
 .t_all{         
-  // height: 2000px;
   background-color: rgb(245, 245, 245);
-  // display: flex;
-  // justify-content: center;
   .t_form_action{       //全ての要素の親要素
-    // height: 2000px;
     margin: 0 auto;
     width: 700px;
     .t_display{           // 出品画像の投稿フォーム全体
@@ -46,7 +42,6 @@
             align-items: center;
             background-color: rgb(245, 245, 245);
             cursor: pointer;
-            // display: flex;
             width: 620px;
             height: 150px;
             flex-wrap: wrap;
@@ -241,7 +236,6 @@
                     }
                   }
                 .t_js-file_group{
-                  // margin-top: 17px;
                   .t_sell{
                     height: 100px;
                     width: 100px;

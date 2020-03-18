@@ -11,7 +11,7 @@
         .h_top__icon
           = image_tag 'member_photo_noimage_thumb.png', class: 'h_top__icon--size'
           .h_top__icon__name
-            羽岡諒
+            = current_user.nickname
           .h_top__icon__list
             %p
               評価
