@@ -19,10 +19,11 @@
                     .aaa
                       = image_tag image.image.url, data: { index: i }, width: "124", height: '123', id: i
                       .delete{id: i} 削除
+                      -# .t_input-file{id: i}
                       = f.fields_for :image do |i|
                         .aaa
-                          = i.file_field :image, type: 'file',value:"", style: "display:none", id:"img-file"
-                          %label{for: "img-file"}
+                          = i.file_field :image, type: 'file',value:"", style: "display:none", id:"img-files"
+                          %label{for: "img-files"}
                             %span{class: "t_input-file"} 編集
                     -# - if @item.persisted?
                     -#   .img-file{"data-index" => "#{@item.images.count}"}

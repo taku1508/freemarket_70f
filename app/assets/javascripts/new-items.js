@@ -199,7 +199,7 @@ $(function(){
         //                 </div>
         //             </div>`
 
-        var html= `<div class='img-file'>
+        var html= `<div item-image="${num} class='img-file'>
                     <div class='item-image' data-image="${file.name}">
                     <div class=' item-image__content'>
                       <div class='item-image__content--icon'>
