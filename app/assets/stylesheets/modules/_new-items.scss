@@ -78,6 +78,9 @@
                         .item-image__content{
                           width: 124px;
                           height: 123px;
+                          .item-image__content--icon{
+                            display: flex;                                                   
+                          }
                         }
                       }
                     }

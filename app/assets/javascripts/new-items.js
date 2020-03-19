@@ -212,11 +212,25 @@ $(function(){
                   </div>`
         //image_box__container要素の前にhtmlを差し込む
         $('#image-box__container').before(html);
+        return html;
       };
       //image-box__containerのクラスを変更し、CSSでドロップボックスの大きさを変えてやる。
       $('#image-box__container').attr('class', `item-num-${num}`)
     });
   });
+
+  // プレビュー用のimgタグを生成する関数
+  const buildImg = (index, url)=> {
+    const html = `<img data-index="${index}" image="${url}" width="100px" height="100px">`;  
+    var t_index = $('image').index(this);  
+    return html;
+  }
+  // file_fieldのnameに動的なindexをつける為の配列
+  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
+  // 既に使われているindexを除外
+  lastIndex = $('.img-file:last').data('index');
+  fileIndex.splice(0, lastIndex);
+
   //削除ボタンをクリックすると発火するイベント
   $(document).on("click", '.item-image__operetion--delete', function(){
     //削除を押されたプレビュー要素を取得
@@ -247,20 +261,4 @@ $(function(){
     $('#image-box__container').show()
     $('#image-box__container').attr('class', `item-num-${num}`)
   })
-
-  // file_fieldのnameに動的なindexをつける為の配列
-  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-  // 既に使われているindexを除外
-  lastIndex = $('.js-file_group:last').data('index');
-  fileIndex.splice(0, lastIndex);
-  $('.hidden-destroy').hide();
-
-  $('.t_image_field').on('click', '.js-remove', function() {
-    const targetIndex = $(this).parent().data('index')
-    // 該当indexを振られているチェックボックスを取得する
-    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
-    // もしチェックボックスが存在すればチェックを入れる
-    if (hiddenCheck) hiddenCheck.prop('checked', true);
-  });
-
 });
