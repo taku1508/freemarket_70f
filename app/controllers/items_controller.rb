@@ -12,11 +12,10 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(items_params)
-    if @item.save(items_params)
-      redirect_to new_item_path
+    if @item.images[0].save
       flash[:alert] = "アイテムを出品しました。"
     else
-      render :index
+      render root_path
     end
   end
 

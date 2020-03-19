@@ -12,15 +12,12 @@
           = image_tag 'member_photo_noimage_thumb.png', class: 'h_top__icon--size'
           .h_top__icon__name
             = current_user.nickname
-          .h_top__icon__list
-            %p
-              評価
-            .h_top__icon__list__quantity
-              ０
-            %p
-              出品数
-            .h_top__icon__list__quantity
-              ０
+      .h_items
+        - current_user.items.each do |item|
+          = image_tag item.images[0].image.to_s, height: "100", width: "100"
+          = link_to item.nickname,item_path(item.id)
+          
+
 
   = render "items/items_toppage_footer"
 
