@@ -16,8 +16,22 @@
               .t_image_field
                 #previews
                   - @item.images.each_with_index do |image, i|
-                    = image_tag image.image.url, data: { index: i }, width: "124", height: '123', id: i
-                    .delete{id: i} 削除
+                    .aaa
+                      = image_tag image.image.url, data: { index: i }, width: "124", height: '123', id: i
+                      .delete{id: i} 削除
+                      = f.fields_for :image do |i|
+                        .aaa
+                          = i.file_field :image, type: 'file',value:"", style: "display:none", id:"img-file"
+                          %label{for: "img-file"}
+                            %span{class: "t_input-file"} 編集
+                    -# - if @item.persisted?
+                    -#   .img-file{"data-index" => "#{@item.images.count}"}
+                    -#     = file_field_tag :image, name: "product[images_attributes][#{@item.images.count}][image]", class: 'js-file'
+                  -# = f.fields_for :images do |i|
+                  -#   .item-num-0{id: "image-box__container"}
+                  -#     = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+                  -#     %label{for: "img-file"}
+                  -#       %span{class: "t_input-file"} 編集
       .t_items
         .t_items__name
           .t_items_names
