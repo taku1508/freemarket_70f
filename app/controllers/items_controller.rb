@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(items_params)
-    if @item.images[0].save
+    if @item.save(items_params)
       flash[:alert] = "アイテムを出品しました。"
     else
       render root_path
