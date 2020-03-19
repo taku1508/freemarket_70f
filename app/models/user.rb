@@ -93,5 +93,5 @@ class User < ApplicationRecord
 #   # /^\d{11}$/
 #   # record.errors[:name] << '電話番号は0から始まる必要があります'
 
-# end
+end
 
