@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show,:destroy, :edit, :update]
   def index
     @item = Item.all
-    @items = Item.order("created_at DESC")
+    @items = Item.order("created_at DESC").limit(3)
+    @random = Item.order("RAND()").limit(3)
   end
   
   def new
@@ -13,10 +14,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(items_params)
     if @item.save(items_params)
-      redirect_to new_item_path
       flash[:alert] = "アイテムを出品しました。"
     else
-      render :index
+      render root_path
     end
   end
 
