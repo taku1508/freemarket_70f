@@ -46,8 +46,8 @@ class User < ApplicationRecord
   validates  :second_name,presence: true ,format: { with: VALID_KANJI_KANA_KATAKANA_REGEX, message:'は全角で入力してください'}
 
   # - ユーザー本名のふりがなが、名字と名前でそれぞれ必須
-  validates :hurigana_first, presence: true, length: { maximum: 35 }, format: { with: VALID_KANA_REGEX, message: 'はふりがなで入力して下さい'}
-  validates :hurigana_second, presence: true, length: { maximum: 35 }, format: { with: VALID_KANA_REGEX, message: 'はカタカナで入力して下さい'}
+  validates :hurigana_first, presence: true, length: { maximum: 35 }, format: { with: VALID_KANA_REGEX, message: 'はひらがなで入力して下さい'}
+  validates :hurigana_second, presence: true, length: { maximum: 35 }, format: { with: VALID_KANA_REGEX, message: 'はひらがなで入力して下さい'}
   # - ユーザー本名のふりがなが、全角で必須
   validates :hurigana_first, presence: true, format: { with: VALID_KANA_FUll_WIDTH, message:'は全角で入力してください'}
   validates :hurigana_second, presence: true, format: { with: VALID_KANA_FUll_WIDTH, message:'は全角で入力してください'}
@@ -93,5 +93,5 @@ class User < ApplicationRecord
 #   # /^\d{11}$/
 #   # record.errors[:name] << '電話番号は0から始まる必要があります'
 
-# end
+end
 
