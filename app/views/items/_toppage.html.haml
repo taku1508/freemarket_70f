@@ -97,24 +97,24 @@
     .k_main__pickupContainer__head
       =link_to "#" do
         新規投稿商品
-    -# .k_main__pickupContainer__picts
-    -#   - @items.each do |item|
-    -#     - if item.images[0].present?
-    -#       = link_to item_path(item.id) do
-    -#         .k_picts_img
-    -#           = image_tag item.images[0].image.url, class:"k_picts_img__size"
-    -#         .k_picts_text
-    -#           .k_picts_text__item
-    -#             = item.nickname
-    -#           .k_picts_text__item
-    -#             = item.price
-    -#             円
-    -#           .k_picts_text__tax
-    -#             (税込)
-    -#         - if item.soldout == 1
-    -#           .items-box_photo__sold
-    -#             .items-box_photo__sold__inner
-    -#               SOLD
+    .k_main__pickupContainer__picts
+      - @items.each do |item|
+        - if item.images[0].present?
+          = link_to item_path(item.id) do
+            .k_picts_img
+              = image_tag item.images[0].image.url, class:"k_picts_img__size"
+            .k_picts_text
+              .k_picts_text__item
+                = item.nickname
+              .k_picts_text__item
+                = item.price
+                円
+              .k_picts_text__tax
+                (税込)
+            - if item.soldout == 1
+              .items-box_photo__sold
+                .items-box_photo__sold__inner
+                  SOLD
 
   .k_main__pickupContainer
     .k_main__pickupContainer__title
@@ -122,24 +122,24 @@
     .k_main__pickupContainer__head
       =link_to "#" do
         アーカイバ
-    -# .k_main__pickupContainer__picts
-    -#   - @random.each do |item|
-    -#     - if item.images[0].present?
-    -#       = link_to item_path(item.id) do
-    -#         .k_picts_img
-    -#           = image_tag item.images[0].image.url, class:"k_picts_img__size"
-    -#         .k_picts_text
-    -#           .k_picts_text__item
-    -#             = item.nickname
-    -#           .k_picts_text__item
-    -#             = item.price
-    -#             円
-    -#           .k_picts_text__tax
-    -#             (税込)
-    -#         - if item.soldout == 1
-    -#           .items-box_photo__sold
-    -#             .items-box_photo__sold__inner
-    -#               SOLD
+    .k_main__pickupContainer__picts
+      - @random.each do |item|
+        - if item.images[0].present?
+          = link_to item_path(item.id) do
+            .k_picts_img
+              = image_tag item.images[0].image.url, class:"k_picts_img__size"
+            .k_picts_text
+              .k_picts_text__item
+                = item.nickname
+              .k_picts_text__item
+                = item.price
+                円
+              .k_picts_text__tax
+                (税込)
+            - if item.soldout == 1
+              .items-box_photo__sold
+                .items-box_photo__sold__inner
+                  SOLD
 
   .k_main__appBanner
     .k_main__appBanner__content
