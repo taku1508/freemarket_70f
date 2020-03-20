@@ -25,6 +25,9 @@ $(function(){
       //読み込みが完了すると、srcにfileのURLを格納
       fileReader.onloadend = function() {
         var src = fileReader.result
+
+        //開発環境差分の為置いています。
+        //----------------------------------------------------------------------------
         // var html= `<div class='item-image' data-image="${file.name}">
         //             <div class=' item-image__content'>
         //               <div class='item-image__content--icon'>
@@ -42,6 +45,8 @@ $(function(){
         //                   <div class='item-image__operetion--delete'>削除</div>
         //                 </div>
         //             </div>`
+
+        //------------------------------------------------------------------------------------
 
         var html= `<div class='img-file'>
                     <div class='item-image' data-image="${file.name}">

@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
 
 
   def create
-    @item = Item.new(items_params)
+    @item = Item.new(items_params)    
     if @item.save(items_params)
       redirect_to  items_path(@item.id), notice: 'アイテムを出品しました。'
     else
@@ -79,7 +79,7 @@ class ItemsController < ApplicationController
   end
 
   def items_params
-    params.require(:item).permit(:nickname,:description,:status,:shipping_charges,:area,:days,:price,:category_id,images_attributes: [:image,:id,:_destroy]).merge(user_id: current_user.id)
+    params.require(:item).permit(:prefecture_id,:nickname,:description,:status,:shipping_charges,:area,:days,:price,:category_id,images_attributes: [:image,:id,:_destroy]).merge(user_id: current_user.id)
   end
 
   # payjpを使用するためのメソッド
