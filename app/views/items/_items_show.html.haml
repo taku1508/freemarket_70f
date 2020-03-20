@@ -1,111 +1,111 @@
--# .i_main
--#   .i_mainscreen
--#     .i_content
--#       .i_content__top
--#         -# 以下から商品の詳細
--#         .i_item
--#           .i_item__name
--#             =@item.nickname
--#           .i_item__body
--#             .gazou
--#               - @item.images.each_with_index do |image, i|
--#                 .gazou_1
--#                   = image_tag image.image.url, data: { index: i }, width: "560",id: i
--#                   -# .gazou_mini
--#                   -#   .gazou_mini1
--#                   -#     = image_tag "food_spaghetti_carbonara.png" ,size:"75x75"
--#                   -#   .gazou_mini2
--#                   -#     = image_tag "food_spaghetti_carbonara.png" ,size:"75x75"
--#                   -#   .gazou_mini3
--#                   -#     = image_tag "food_spaghetti_carbonara.png" ,size:"75x75"
--#           .i_item__price
--#             %span 
--#               ¥
--#               =@item.price
--#             .i_item__price-detail
--#               %span (税込)
--#               %span 送料込み
--#           .i_itemDetail
--#             = @item.description
--#           -# 以下から表の作成
--#           .i_table
--#             %table
--#               %tr
--#                 %th 出品者
--#                 %td 
--#                   = current_user.nickname
--#               %tr
--#                 %th カテゴリー
--#                 %td 
--#                   = link_to items_path do
--#                     =@item.category.name
--#               %tr
--#                 %th 商品の状態
--#                 %td 
--#                   =@item.status
--#               %tr
--#                 %th 配送料の負担
--#                 %td 着払い（購入者負担）
--#               %tr
--#                 %th 配送元の地域
--#                 %td 
--#                   = link_to items_path do
--#                     =@item.area
--#               %tr
--#                 %th 発送日の目安
--#                 %td 
--#                   =@item.days
--#           -# 以下からオプションボタン
--#           .i_option
--#             %ul
--#               %li.i_option__btn
--#                 %i.fas.fa-star
--#                 お気に入り０
--#             %ul.i_option__fav
--#               %li.i_option__fav__btn
--#                 = link_to items_path do
--#                   %i.fa.fa-flag
--#                     不適切な商品の通報
--#         -# 以下から購入するボタン
--#         .i_optionMenu
--#           .i_item-optionBtn
--#             .i_item-editBtn
--#               -if current_user.id == @item.user_id
--#                 = link_to "編集", edit_item_path(@item),class:"i_item-editBtn-buy" 
--#                 = link_to "削除", item_path(@item),class:"i_item-deleteBtn",method: :delete, data:{ confirm: '本当に削除しますか?'}
--#               -elsif @item.soldout == 0
--#                 = link_to "購入", confirm_item_path(@item),class:"i_item-editBtn-buy" 
--#               -elsif @item.soldout == 1
--#                 .i_item-editBtn-soldout SoldOut
--#           -# 以下からコメントフォーム
--#         .i_commentBox
--#           %ul.i_commentContents
--#             = form_tag('/items/show',method: :post)do
--#               %textarea(name="commentarea" rows="5" class="i_input_comment_area")
--#               %p.i_noticeMsg
--#                 相手のことを考え丁寧なコメントコメントを心がけましょう。
--#                 %br
--#                 不快な言葉遣いなどは利用制限や退会処分となることがあります。
--#               %button(name="button" type="submit" class="i_commentBtn")
--#                 %i.fas.fa-comment 
--#                 コメントする
--#           -# 以下からリンク
--#       %ul.i_main__links
--#         %li
--#           = link_to items_path do
--#             %i.fa.fa-angle-left
--#             %span
--#             前の商品
--#         %li
--#           = link_to items_path do
--#             %span
--#               後の商品
--#             %i.fa.fa-angle-right
--#       .i_main__relateditem
--#         = link_to items_path do
--#           メンズをもっと見る
--#     -# 以下からフッター
--# = render "items/items_toppage_footer"
+.i_main
+  .i_mainscreen
+    .i_content
+      .i_content__top
+        -# 以下から商品の詳細
+        .i_item
+          .i_item__name
+            =@item.nickname
+          .i_item__body
+            .gazou
+              - @item.images.each_with_index do |image, i|
+                .gazou_1
+                  = image_tag image.image.url, data: { index: i }, width: "560",id: i
+                  -# .gazou_mini
+                  -#   .gazou_mini1
+                  -#     = image_tag "food_spaghetti_carbonara.png" ,size:"75x75"
+                  -#   .gazou_mini2
+                  -#     = image_tag "food_spaghetti_carbonara.png" ,size:"75x75"
+                  -#   .gazou_mini3
+                  -#     = image_tag "food_spaghetti_carbonara.png" ,size:"75x75"
+          .i_item__price
+            %span 
+              ¥
+              =@item.price
+            .i_item__price-detail
+              %span (税込)
+              %span 送料込み
+          .i_itemDetail
+            = @item.description
+          -# 以下から表の作成
+          .i_table
+            %table
+              %tr
+                %th 出品者
+                %td 
+                  = current_user.nickname
+              %tr
+                %th カテゴリー
+                %td 
+                  = link_to items_path do
+                    =@item.category.name
+              %tr
+                %th 商品の状態
+                %td 
+                  =@item.status
+              %tr
+                %th 配送料の負担
+                %td 着払い（購入者負担）
+              %tr
+                %th 配送元の地域
+                %td 
+                  = link_to items_path do
+                    =@item.area
+              %tr
+                %th 発送日の目安
+                %td 
+                  =@item.days
+          -# 以下からオプションボタン
+          .i_option
+            %ul
+              %li.i_option__btn
+                %i.fas.fa-star
+                お気に入り０
+            %ul.i_option__fav
+              %li.i_option__fav__btn
+                = link_to items_path do
+                  %i.fa.fa-flag
+                    不適切な商品の通報
+        -# 以下から購入するボタン
+        .i_optionMenu
+          .i_item-optionBtn
+            .i_item-editBtn
+              -if current_user.id == @item.user_id
+                = link_to "編集", edit_item_path(@item),class:"i_item-editBtn-buy" 
+                = link_to "削除", item_path(@item),class:"i_item-deleteBtn",method: :delete, data:{ confirm: '本当に削除しますか?'}
+              -elsif @item.soldout == 0
+                = link_to "購入", confirm_item_path(@item),class:"i_item-editBtn-buy" 
+              -elsif @item.soldout == 1
+                .i_item-editBtn-soldout SoldOut
+          -# 以下からコメントフォーム
+        .i_commentBox
+          %ul.i_commentContents
+            = form_tag('/items/show',method: :post)do
+              %textarea(name="commentarea" rows="5" class="i_input_comment_area")
+              %p.i_noticeMsg
+                相手のことを考え丁寧なコメントコメントを心がけましょう。
+                %br
+                不快な言葉遣いなどは利用制限や退会処分となることがあります。
+              %button(name="button" type="submit" class="i_commentBtn")
+                %i.fas.fa-comment 
+                コメントする
+          -# 以下からリンク
+      %ul.i_main__links
+        %li
+          = link_to items_path do
+            %i.fa.fa-angle-left
+            %span
+            前の商品
+        %li
+          = link_to items_path do
+            %span
+              後の商品
+            %i.fa.fa-angle-right
+      .i_main__relateditem
+        = link_to items_path do
+          メンズをもっと見る
+    -# 以下からフッター
+= render "items/items_toppage_footer"
 
 
 
