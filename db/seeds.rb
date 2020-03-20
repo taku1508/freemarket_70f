@@ -75,7 +75,7 @@ Image.create!(
   [
     {
       image: File.open('app/assets/images/food_spaghetti_neapolitan.png'),
-      item_id: '1'
+      item_id: '1',
     }
   ]
 )
