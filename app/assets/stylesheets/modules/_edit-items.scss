@@ -3,17 +3,17 @@
   .t_form_action{       //全ての要素の親要素
     margin: 0 auto;
     width: 700px;
-    .t_display{           // 出品画像の投稿フォーム全体
+    .t_display1{           // 出品画像の投稿フォーム全体
       margin-bottom: 1px;             
-      padding: 40px;
+      padding: 20px 0;
       display: flex;
       justify-content: center;
-      height: 300px;
       background-color: white;
       &__formgroup{
+        margin: 10px 30px 0px 0px;
         height: 255px;
         width: 620px;
-        .t_display_name{  // 出品名
+        .t_display1_name{  // 出品名
           height: 19px;
           display: flex;
           align-items: center;
@@ -24,26 +24,28 @@
               @include hissu;
             }
         }
-        .t_display_names{   // 複数の出品名
+        .t_display1_names{   // 複数の出品名
           color: #000000;
           margin-top: 16px;
           font-size: 14px;
           line-height: 1.4em;            
           font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
         }
-        .t_sell_uploader{ // 出品画像の投稿フォーム
+        .t_sell_uploader_edit{ // 出品画像の投稿フォーム
           height: 158px;
           width: 620px;
           margin-top: 8px;
-          padding: 0px 4px;
-          &__form{              
+          margin-right: 10px;
+          padding: 0px 8px;
+          &__form{  
+            margin-right: 10px;                          
             align-content: center;
             -webkit-box-align: center;
             align-items: center;
             background-color: rgb(245, 245, 245);
             cursor: pointer;
-            width: 620px;
-            height: 150px;
+            width: 650px;
+            height: 175px;
             flex-wrap: wrap;
             -webkit-box-pack: center;
             justify-content: center;
@@ -81,11 +83,7 @@
                           }
                         }
                       }
-                    }
-                    label{
-                      width: 300px;
-                      height: 100px;
-                    }                   
+                    }                                  
                     .item-num-0{
                       margin: 0 3px;
                       width: 620px;
@@ -200,35 +198,57 @@
                             height: 100%;
                         }    
                       }                 
-                    }
-                    // #image-box__contatiner{
-                    //   height: 400px;
-                    //   width: 400px;
-                    //   .item-num-0{
-                    //     width: 100%;
-                    //   }
-                    //   .item-num-1{
-                    //     width: 491px;
-                    //   }
-                    //   .item-num-2{
-                    //     width: 363px;
-                    //   }
-                    //   .item-num-3{
-                    //     width: 234px;
-                    //   }
-                    //   .item-num-4{
-                    //     width: 106px;
-                    //   }
-                    //   //下段のfile_field
-                    //   .item-num-5{
-                    //     width: 100%;
-                    //   }                    
-                    // }
-                    .t_aaa{
-                      margin-top: 8px;
-                      padding: 0 4px;
-                      height: 100px;
-                      width: 100px;
+                    }                  
+                    .aaa{
+                      margin: 0 3px;
+                      height: 175px;
+                      width: 124px;
+                      .t_edit_delite_bottun{
+                        margin-left: 20px;
+                        // background-color: pink;
+                        width: 100px;
+                        display: flex;
+                        justify-content: space-between;
+                        .delete{
+                        position: relative;
+                        display: inline-block;
+                        text-decoration: none;
+                        color: #FFF;
+                        background: #fd9535;/*色*/
+                        border-radius: 4px;/*角の丸み*/
+                        box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+                        border: solid 2px #d27d00;/*線色*/
+                        }
+                        .t_input-file{
+                        }
+                        .bbb{
+                          // height: 30px;
+                          // margin-right: 13px;
+                          // position: relative;
+                          // display: inline-block;
+                          // text-decoration: none;
+                          // color: #FFF;
+                          // background: #fd9535;/*色*/
+                          // border-radius: 4px;/*角の丸み*/
+                          // box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+                          // border: solid 2px#d27d00;/*線色*/ 
+                          #img0{
+                            @include bottun-style;
+                          }
+                          #img1{
+                            @include bottun-style;
+                          }
+                          #img2{
+                            @include bottun-style;
+                          }                          
+                          #img3{
+                            @include bottun-style;
+                          }
+                          #img4{                          
+                            @include bottun-style;
+                          }                         
+                        }
+                      }
                     }
                   }
                 .t_js-file_group{

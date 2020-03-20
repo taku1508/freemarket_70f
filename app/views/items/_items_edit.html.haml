@@ -2,37 +2,30 @@
 .t_all
   .t_form_action
     = form_with(model:[@item]) do |f|
-      .t_display
-        .t_display__formgroup 
-          .t_display_name
-            .t_display_name__junle
+      .t_display1
+        .t_display1__formgroup 
+          .t_display1_name
+            .t_display1_name__junle
               出品画像
-            .t_display_name__hissu
+            .t_display1_name__hissu
               必須
-          .t_display_names
+          .t_display1_names
             最大5枚までアップロードできます
-          .t_sell_uploader
-            .t_sell_uploader__form
+          .t_sell_uploader_edit
+            .t_sell_uploader_edit__form
               .t_image_field
                 #previews
                   - @item.images.each_with_index do |image, i|                    
                     .aaa
-                      = image_tag image.image.url, data: { index: i }, width: "124", height: '123', id: i
-                      .delete{id: i} 削除
-                      .t_input-file{id: i}
-                      = f.fields_for :image do |img|
-                        .bbb
-                          = img.file_field :image, type: 'file',name: "item[images_attributes][#{i}][image]",value:"", style: "display:none", id:"img-files",class: "js-file"
-                          %label{for: "img-files", id:"img#{i}"}
-                            %span{class: "t_input-file"} 編集
-                    -# - if @item.persisted?
-                    -#   .img-file{"data-index" => "#{@item.images.count}"}
-                    -#     = file_field_tag :image, name: "product[images_attributes][#{@item.images.count}][image]", class: 'js-file'
-                  -# = f.fields_for :images do |i|
-                  -#   .item-num-0{id: "image-box__container"}
-                  -#     = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
-                  -#     %label{for: "img-file"}
-                  -#       %span{class: "t_input-file"} 編集
+                      = image_tag image.image.url, data: { index: i },width: "124", height: '123', id: i
+                      .t_edit_delite_bottun
+                        .delete{id: i} 削除
+                        .t_input-file{id: i}
+                        = f.fields_for :image do |img|
+                          .bbb
+                            = img.file_field :image, type: 'file',name: "item[images_attributes][#{i}][image]",value:"", style: "display:none", id:"img-files",class: "js-file"
+                            %label{for: "img-files", id:"img#{i}"}
+                              %span{class: "t_input-file"} 編集   
       .t_items
         .t_items__name
           .t_items_names

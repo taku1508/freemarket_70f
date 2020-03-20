@@ -125,6 +125,6 @@
             = f.number_field :price ,class: "t_number_form", style: "text-align: right"          
         .t_bottun_form
           = f.button "出品する",class: "t_bottun_form__display", style: "t_bottun_form__display"       
-          = f.button "もどる",class: "t_bottun_form__back"
+          = f.button "もどる",class: "t_bottun_form__back", onclick: "history.back()"
   = render "items_footer"
 

@@ -49,41 +49,41 @@
 //   });
 
   //削除ボタンをクリックすると発火するイベント
-  $('#previews').on('click', '#0.delete', function() {
-    $(this).remove();
-    $('#0').remove();
-    $('.aaa1').remove();
-    $('.aaa2').remove();
-  });
+  // $('#previews').on('click', '#0.delete', function() {
+  //   $(this).remove();
+  //   $('#0').remove();
+  //   $('.aaa1').remove();
+  //   $('.aaa2').remove();
+  // });
 
-  $('#previews').on('click', '#1.delete', function() {
-    $(this).remove();
-    $('#1').remove();   
-    $('.aaa3').remove();
-    $('.aaa4').remove();
-  });
+  // $('#previews').on('click', '#1.delete', function() {
+  //   $(this).remove();
+  //   $('#1').remove();   
+  //   $('.aaa3').remove();
+  //   $('.aaa4').remove();
+  // });
 
 
-  $('#previews').on('click', '#2.delete', function() {
-    $(this).remove();
-    $('#2').remove();
-    $('.aaa5').remove();
-    $('.aaa6').remove();
-  });
+  // $('#previews').on('click', '#2.delete', function() {
+  //   $(this).remove();
+  //   $('#2').remove();
+  //   $('.aaa5').remove();
+  //   $('.aaa6').remove();
+  // });
 
-  $('#previews').on('click', '#3.delete', function() {
-    $(this).remove();
-    $('#3').remove();
-    $('.aaa7').remove();
-    $('.aaa8').remove();
-  });
+  // $('#previews').on('click', '#3.delete', function() {
+  //   $(this).remove();
+  //   $('#3').remove();
+  //   $('.aaa7').remove();
+  //   $('.aaa8').remove();
+  // });
 
-  $('#previews').on('click', '#4.delete', function() {
-    $(this).remove();
-    $('#4').remove();
-    $('.aaa9').remove();
-    $('.aaa10').remove();
-  });
+  // $('#previews').on('click', '#4.delete', function() {
+  //   $(this).remove();
+  //   $('#4').remove();
+  //   $('.aaa9').remove();
+  //   $('.aaa10').remove();
+  // });
 
 // //編集要素の削除機能
   
@@ -148,7 +148,7 @@ $(function(){
   })
 
   $('#previews').on('change', '.js-file', function(e) {
-    const targetIndex = $(this).parent().parent().parent().find(Index).data('index');
+    const targetIndex = $('.aaa').parent().find(Index).data('index');
     console.log(targetIndex);
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];

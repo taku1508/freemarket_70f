@@ -1,0 +1,11 @@
+@mixin bottun-style{
+  margin-right: 13px;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #FFF;
+  background: #fd9535;/*色*/
+  border-radius: 4px;/*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  border: solid 2px#d27d00;/*線色*/ 
+}
