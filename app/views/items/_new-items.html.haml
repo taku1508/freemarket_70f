@@ -1,7 +1,7 @@
 = render "items_header"
 .t_all
   .t_form_action  
-    = form_with(model:[@item]) do |f|
+    = form_with model: @item, local: true do |f|
       .t_display
         .t_display__formgroup 
           .t_display_name
@@ -62,7 +62,7 @@
                 必須
             .t_items_name__items
               .t_form_style2
-                = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                = f.collection_select :category_id, @category_parent, :id, :name, include_blank: "---", class: 'listing-select-wrapper__box--select', id: 'parent_category'
                 -# = f.select :category_id,
                   -# [["レディース","1"],
                   -# ["レディース","2"],

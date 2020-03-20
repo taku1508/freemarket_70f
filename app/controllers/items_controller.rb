@@ -9,10 +9,10 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
-    @category_parent_array = ["---"]
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
+    # @category_parent_array = ["---"]
+    @category_parent = Category.where(ancestry: nil)
+      # @category_parent_array << parent.name
+    # end
   
     def get_category_children
       #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
