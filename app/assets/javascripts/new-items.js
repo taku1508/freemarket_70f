@@ -151,7 +151,6 @@
 //   });
 // });
 
-//-----------------------------------------
 
 
 $(function(){
@@ -203,7 +202,7 @@ $(function(){
                     <div class='item-image' data-image="${file.name}">
                     <div class=' item-image__content'>
                       <div class='item-image__content--icon'>
-                         <img src=${src} width="124" height="123" > 
+                          <img src=${src} width="124" height="123" > 
                       </div>
                     </div>
                     <div class='item-image__operetion'>
@@ -212,11 +211,79 @@ $(function(){
                   </div>`
         //image_box__container要素の前にhtmlを差し込む
         $('#image-box__container').before(html);
+        return html;
       };
       //image-box__containerのクラスを変更し、CSSでドロップボックスの大きさを変えてやる。
       $('#image-box__container').attr('class', `item-num-${num}`)
     });
   });
+})
+
+$(function(){
+  //DataTransferオブジェクトで、データを格納する箱を作る
+  var dataBox = new DataTransfer();
+  //querySelectorでfile_fieldを取得
+  var file_field = document.querySelector('input[type=file]')
+  //fileが選択された時に発火するイベント
+  $('#img-file').change(function(){
+    //選択したfileのオブジェクトをpropで取得
+    var files = $('input[type="file"]').prop('files')[0];
+    $.each(this.files, function(i, file){
+      //FileReaderのreadAsDataURLで指定したFileオブジェクトを読み込む
+      var fileReader = new FileReader();
+
+      //DataTransferオブジェクトに対して、fileを追加
+      dataBox.items.add(file)
+      //DataTransferオブジェクトに入ったfile一覧をfile_fieldの中に代入
+      file_field.files = dataBox.files
+
+      var num = $('.item-image').length + 1 + i
+      fileReader.readAsDataURL(file);
+       //画像が5枚になったら超えたらドロップボックスを削除する
+      if (num == 5){
+        $('#image-box__container').css('display', 'none')   
+      }
+      //読み込みが完了すると、srcにfileのURLを格納
+      fileReader.onloadend = function() {
+        var src = fileReader.result
+        // var html= `<div class='item-image' data-image="${file.name}">
+        //             <div class=' item-image__content'>
+        //               <div class='item-image__content--icon'>
+        //                  <img src=${src} width="124" height="123" > 
+        //               </div>
+        //             </div>
+        //             <div class='item-image__operetion'>
+        //               <div class='item-image__operetion--delete'>削除</div>
+        //             </div>
+        //           </div>`
+
+        //  var html= `<div class='item-num-0'>
+        //               <div id='img-file' data-image="${file.name}">                                                                   
+        //                 <img src=${src} width="124" height="123" > 
+        //                   <div class='item-image__operetion--delete'>削除</div>
+        //                 </div>
+        //             </div>`
+
+        var html= `<div item-image="${num} class='img-file'>
+                    <div class='item-image' data-image="${file.name}">
+                    <div class=' item-image__content'>
+                      <div class='item-image__content--icon'>
+                        <img src=${src} width="124" height="123" > 
+                      </div>
+                    </div>
+                    <div class='item-image__operetion'>
+                      <div class='item-image__operetion--delete'>削除</div>                      
+                    </div>
+                  </div>`
+        //image_box__container要素の前にhtmlを差し込む
+        $('#image-box__container').before(html);
+        return html;
+      };
+      //image-box__containerのクラスを変更し、CSSでドロップボックスの大きさを変えてやる。
+      $('#image-box__container').attr('class', `item-num-${num}`)
+    });
+  });
+
   //削除ボタンをクリックすると発火するイベント
   $(document).on("click", '.item-image__operetion--delete', function(){
     //削除を押されたプレビュー要素を取得
@@ -246,21 +313,5 @@ $(function(){
     var num = $('.item-image').length
     $('#image-box__container').show()
     $('#image-box__container').attr('class', `item-num-${num}`)
-  })
-
-  // file_fieldのnameに動的なindexをつける為の配列
-  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-  // 既に使われているindexを除外
-  lastIndex = $('.js-file_group:last').data('index');
-  fileIndex.splice(0, lastIndex);
-  $('.hidden-destroy').hide();
-
-  $('.t_image_field').on('click', '.js-remove', function() {
-    const targetIndex = $(this).parent().data('index')
-    // 該当indexを振られているチェックボックスを取得する
-    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
-    // もしチェックボックスが存在すればチェックを入れる
-    if (hiddenCheck) hiddenCheck.prop('checked', true);
   });
-
-});
+})

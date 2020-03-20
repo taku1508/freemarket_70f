@@ -57,17 +57,18 @@
           .t_category_group
             .t_category_name_group
               .t_category_name_group__category
-                カテゴリー
+                = f.label 'カテゴリー', class: 'listing-default__label'
               .t_category_name_group__hissu
                 必須
             .t_items_name__items
               .t_form_style2
-                = f.select :category_id,
-                  [["レディース","1"],
-                  ["レディース","2"],
-                  ["トップス","3"],
-                  ["ジャケット/アウター","4"],
-                  ["パンツ","5"]],{},{class: "t_category_form"}            
+                = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                -# = f.select :category_id,
+                  -# [["レディース","1"],
+                  -# ["レディース","2"],
+                  -# ["トップス","3"],
+                  -# ["ジャケット/アウター","4"],
+                  -# ["パンツ","5"]],{},{class: "t_category_form"}            
               .t_status
                 .t_status_group
                   .t_status_group__status

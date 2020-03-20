@@ -6,8 +6,8 @@ User.create!(
       nickname: 'hhhhhh',
       first_name: '田中',
       second_name: '太郎',
-      hurigana_first: 'タナカ',
-      hurigana_second: 'タロウ',
+      hurigana_first: 'たなか',
+      hurigana_second: 'たろう',
       birthday_year: "1999",
       birthday_month: "08",
       birthday_day: "16"
@@ -74,8 +74,8 @@ Item.create!(
 Image.create!(
   [
     {
-      image: File.open('./app/assets/images/food_spaghetti_neapolitan.png'),
-      item_id: '1'
+      image: File.open('app/assets/images/food_spaghetti_neapolitan.png'),
+      item_id: '1',
     }
   ]
 )

@@ -56,9 +56,10 @@
         padding-bottom: 5px;
       }
     }
-  
-  
+    
+    
     .h_right{
+      overflow: scroll;
       width: 700px;
       height: 100vh;
       background-color: #f8f8f8;;
@@ -82,15 +83,19 @@
             font-weight: bold;
             margin-top: 8px;
           }
-          &__list{
-            font-size: 14px;
-            display: flex;
-            margin-top: 8px;
-            &__quantity{
-              font-weight: bold;
-              padding: 0 10px 0 5px;
-            }
-          }
+        }
+      }
+      .h_items{
+        width: 700px;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        .h_items_img{
+          margin: 10px 10px 0 10px;
+        }
+        .h_items_name{
+          text-decoration: none;
+          color: black;
         }
       }
     }
