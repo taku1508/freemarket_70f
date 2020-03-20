@@ -16,6 +16,8 @@ User.create!(
 )
 
 lady = Category.create(name: "レディース")
+mens = Category.create(name: "メンズ")
+kids = Category.create(name: "キッズ")
 
 lady_tops = lady.children.create(name: "トップス")
 lady_jacket = lady.children.create(name: "ジャケット/アウター")
@@ -57,7 +59,7 @@ lady_suit.children.create([{name: "スカートスーツ上下"}, {name: "パン
 lady_maternity.children.create([{name: "トップス"}, {name: "アウター"}, {name: "インナー"},{name: "その他"}])
 lady_other.children.create([{name: "コスプレ"}, {name: "下着"}, {name: "その他"}])
 
-mens = Category.create(name: "メンズ")
+
 
 mens_tops = mens.children.create(name: "トップス")
 mens_jacket = mens.children.create(name: "ジャケット/アウター")
@@ -99,7 +101,7 @@ mens_suit.children.create([{name: "スカートスーツ上下"}, {name: "パン
 mens_maternity.children.create([{name: "トップス"}, {name: "アウター"}, {name: "インナー"},{name: "その他"}])
 mens_other.children.create([{name: "コスプレ"}, {name: "下着"}, {name: "その他"}])
 
-kids = Category.create(name: "キッズ")
+
 
 kids_tops = kids.children.create(name: "トップス")
 kids_jacket = kids.children.create(name: "ジャケット/アウター")
