@@ -11,13 +11,6 @@
               - @item.images.each_with_index do |image, i|
                 .gazou_1
                   = image_tag image.image.url, data: { index: i }, width: "560",id: i
-                -#   .gazou_mini
-                -#     .gazou_mini1
-                -#       = image_tag "food_spaghetti_carbonara.png" ,size:"75x75"
-                -#     .gazou_mini2
-                -#       = image_tag "food_spaghetti_carbonara.png" ,size:"75x75"
-                -#     .gazou_mini3
-                -#       = image_tag "food_spaghetti_carbonara.png" ,size:"75x75"
           .i_item__price
             %span 
               ¥
