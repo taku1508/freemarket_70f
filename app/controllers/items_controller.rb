@@ -13,9 +13,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(items_params)
     if @item.save(items_params)
-      redirect_to new_item_path
-      flash[:alert] = "アイテムを出品しました。"
+      redirect_to  items_path(@item.id), notice: 'アイテムを出品しました。'
     else
+      flash.now[:alert] = 'アイテムの出品に失敗しました。'
       render :index
     end
   end
@@ -27,16 +27,9 @@ class ItemsController < ApplicationController
   def edit
   end
 
-  # def update
-  #   if @item.update(items_params)
-  #     redirect_to root_path
-  #   end
-  # end
   def update
     if @item.update(item_params)
       redirect_to root_path
-    else
-      render :edit
     end
   end
 
