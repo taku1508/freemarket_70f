@@ -20,17 +20,7 @@
                     .item-num-0{id: "image-box__container"}
                       = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
                       %label{for: "img-file"}
-                        %span{class: "t_input-file"} ファイルを選択
-                        -# %i.fas.fa-camera
-                        -# = image.label :image do
-                        -#   = image_tag "icon_camera.png", class: "t_icon_camera"
-                        -#   = image.file_field :image, class: "js-file"
-                        -#   %image{id:"preview",class: "t_preview"}
-                -# = f.fields_for :images do |image|
-                -#   .t_js-file_group{"data-index" => "#{image.index}"}
-                -#     = image.file_field :image, class: "js-file" ,accept: "image/*",multiple:"multiple",onchange:"previw_file(this.id)"
-                -#     %image{id:"preview",class: "t_preview"}
-
+                        %span{class: "t_input-file"} ファイルを選択                       
               .t_icon_camera
               .t_text_drag_drop
       .t_items
@@ -181,18 +171,7 @@
           .t_yen
             ¥
           .t_number_form
-            = f.number_field :price ,class: "t_number_form", style: "text-align: right"
-        -# .t_form_error_number
-        -# .t_tesuuryou     エラーメッセージ
-        -#   .t_tesuuryou__ten
-        -#     販売手数料 (10%)
-        -#   .t_tesuuryou__count
-        -#     a
-        -# .t_rieki
-        -#   .t_rieki__sum
-        -#     販売利益
-        -#   .t_rieki__count
-        -#     a
+            = f.number_field :price ,class: "t_number_form", style: "text-align: right"  
         .t_bottun_form
           = f.submit class: "t_bottun_form__display", style: "t_bottun_form__display",value: "出品する"        
           = f.submit class: "t_bottun_form__back",value: "もどる"
