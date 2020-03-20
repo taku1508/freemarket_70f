@@ -1,178 +1,178 @@
--# = render "items_header"
--# .t_all
--#   .t_form_action  
--#     = form_with(model:[@image,@item]) do |f|
--#       .t_display
--#         .t_display__formgroup 
--#           .t_display_name
--#             .t_display_name__junle
--#               出品画像
--#             .t_display_name__hissu
--#               必須
--#           .t_display_names
--#             最大5枚までアップロードできます
+= render "items_header"
+.t_all
+  .t_form_action  
+    = form_with(model:[@image,@item]) do |f|
+      .t_display
+        .t_display__formgroup 
+          .t_display_name
+            .t_display_name__junle
+              出品画像
+            .t_display_name__hissu
+              必須
+          .t_display_names
+            最大5枚までアップロードできます
 
--#           .t_sell_uploader
--#             .t_sell_uploader__form              
--#               .t_image_field                
--#                 #previews
--#                   = f.fields_for :images do |i|
--#                     .item-num-0{id: "image-box__container"}
--#                       = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
--#                       %label{for: "img-file"}
--#                         %span{class: "t_input-file"} ファイルを選択                       
--#               .t_icon_camera
--#               .t_text_drag_drop
--#       .t_items
--#         .t_items__name
--#           .t_items_names
--#             .t_items_names__items
--#               商品名
--#             .t_items_names__hissu
--#               必須
--#           .t_form_style
--#             = f.text_field :nickname,class: "t_input_text_field",placeholder:"40文字まで"
--#         .t_items_explanation
--#           .t_items_explanation__form
--#             .t_explanation_items
--#               商品の説明
--#             .t_explanation_hissu
--#               必須
+          .t_sell_uploader
+            .t_sell_uploader__form              
+              .t_image_field                
+                #previews
+                  = f.fields_for :images do |i|
+                    .item-num-0{id: "image-box__container"}
+                      = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+                      %label{for: "img-file"}
+                        %span{class: "t_input-file"} ファイルを選択                       
+              .t_icon_camera
+              .t_text_drag_drop
+      .t_items
+        .t_items__name
+          .t_items_names
+            .t_items_names__items
+              商品名
+            .t_items_names__hissu
+              必須
+          .t_form_style
+            = f.text_field :nickname,class: "t_input_text_field",placeholder:"40文字まで"
+        .t_items_explanation
+          .t_items_explanation__form
+            .t_explanation_items
+              商品の説明
+            .t_explanation_hissu
+              必須
 
--#           = f.text_area :description,class: "t_input_text_field2",placeholder:"商品の説明（必須 1,000文字以内)"              
--#       .t_three 
--#         .t_three__details
--#           商品の詳細
--#         .t_category
--#           .t_category_group
--#             .t_category_name_group
--#               .t_category_name_group__category
--#                 カテゴリー
--#               .t_category_name_group__hissu
--#                 必須
--#             .t_items_name__items
--#               .t_form_style2
--#                 = f.select :category_id,
--#                   [["レディース","1"],
--#                   ["レディース","2"],
--#                   ["トップス","3"],
--#                   ["ジャケット/アウター","4"],
--#                   ["パンツ","5"]],{},{class: "t_category_form"}            
--#               .t_status
--#                 .t_status_group
--#                   .t_status_group__status
--#                     商品の状態
--#                   .t_status_group__hissu
--#                     必須
--#                 .t_status_style
--#                   =f.select :status,
--#                     [["選択してください"],
--#                     ["新品,未使用"],
--#                     ["未使用に近い"],
--#                     ["目立った汚れなし"],
--#                     ["傷や汚れあり"],
--#                     ["未使用に近い"],
--#                     ["全体的に状態が悪い"]],{},{class: "t_status_select_form"}
+          = f.text_area :description,class: "t_input_text_field2",placeholder:"商品の説明（必須 1,000文字以内)"              
+      .t_three 
+        .t_three__details
+          商品の詳細
+        .t_category
+          .t_category_group
+            .t_category_name_group
+              .t_category_name_group__category
+                カテゴリー
+              .t_category_name_group__hissu
+                必須
+            .t_items_name__items
+              .t_form_style2
+                = f.select :category_id,
+                  [["レディース","1"],
+                  ["レディース","2"],
+                  ["トップス","3"],
+                  ["ジャケット/アウター","4"],
+                  ["パンツ","5"]],{},{class: "t_category_form"}            
+              .t_status
+                .t_status_group
+                  .t_status_group__status
+                    商品の状態
+                  .t_status_group__hissu
+                    必須
+                .t_status_style
+                  =f.select :status,
+                    [["選択してください"],
+                    ["新品,未使用"],
+                    ["未使用に近い"],
+                    ["目立った汚れなし"],
+                    ["傷や汚れあり"],
+                    ["未使用に近い"],
+                    ["全体的に状態が悪い"]],{},{class: "t_status_select_form"}
 
--#       .t_four
--#         .t_four__delivery
--#           配送について
--#         .t_delivery_group
--#           .t_delivery_group__delivery
--#             配送料の負担
--#           .t_delivery_group__hissu
--#             必須
--#         .t_items_name__items
--#           .t_form_style_delivery
--#             = f.select :shipping_charges,
--#               [["選択してください"],
--#               ["送料込み(出品者負担)"],
--#               ["着払い(購入者負担)"]],{},{class: "t_delivery_form"}       
+      .t_four
+        .t_four__delivery
+          配送について
+        .t_delivery_group
+          .t_delivery_group__delivery
+            配送料の負担
+          .t_delivery_group__hissu
+            必須
+        .t_items_name__items
+          .t_form_style_delivery
+            = f.select :shipping_charges,
+              [["選択してください"],
+              ["送料込み(出品者負担)"],
+              ["着払い(購入者負担)"]],{},{class: "t_delivery_form"}       
 
--#         .t_area_group
--#           .t_area_group__area
--#             配送元の地域
--#           .t_delivery_group__hissu
--#             必須
--#         .t_items_name__items
--#           .t_form_style_delivery
--#             = f.select :area,
--#               [["選択してください"],
--#               ["北海道"],
--#               ["青森県"],
--#               ["岩手県"],
--#               ["宮城県"],
--#               ["秋田県"],
--#               ["山形県"],
--#               ["福島県"],
--#               ["茨城県"],
--#               ["栃木県"],
--#               ["群馬県"],
--#               ["埼玉県"],
--#               ["千葉県"],
--#               ["神奈川県"], 
--#               ["新潟県"],
--#               ["富山県"],
--#               ["石川県"],
--#               ["福井県"],
--#               ["長野県"],
--#               ["山梨県"],
--#               ["岐阜県"],
--#               ["静岡県"],
--#               ["愛知県"],
--#               ["三重県"],
--#               ["滋賀県"],
--#               ["京都府"],
--#               ["大阪府"],
--#               ["兵庫県"],
--#               ["奈良県"],
--#               ["和歌山県"], 
--#               ["鳥取県"],
--#               ["島根県"],
--#               ["岡山県"],
--#               ["広島県"],
--#               ["山口県"],
--#               ["徳島県"],
--#               ["香川県"],
--#               ["愛媛県"],
--#               ["高知県"],
--#               ["福岡県"],
--#               ["佐賀県"],
--#               ["長崎県"],
--#               ["熊本県"],
--#               ["大分県"],
--#               ["宮崎"],
--#               ["宮崎県"],
--#               ["鹿児島県"],
--#               ["沖縄県"],
--#               ["未定"]],{},{class: "t_delivery_form"}
--#         .t_days_group
--#           .t_days_group__days
--#             発送までの日数
--#           .t_delivery_group__hissu
--#             必須
--#         .t_items_name__items
--#           .t_form_style_delivery
--#             = f.select :days,
--#               [["選択してください"],
--#               ["1〜2日で発送"],
--#               ["2〜3日で発送"],
--#               ["4〜7日で発送"]],{},{class: "t_delivery_form"}                            
--#       .t_five
--#         .t_five__price
--#           価格（¥300〜9,999,999）
--#         .t_five__selling_price
--#           .t_selling_price_group
--#             .t_selling_price_group__price
--#               販売価格
--#             .t_selling_price_group__hissu
--#               必須
--#           .t_yen
--#             ¥
--#           .t_number_form
--#             = f.number_field :price ,class: "t_number_form", style: "text-align: right"  
--#         .t_bottun_form
--#           = f.submit class: "t_bottun_form__display", style: "t_bottun_form__display",value: "出品する"        
--#           = f.submit class: "t_bottun_form__back",value: "もどる"
--#   = render "items_footer"
+        .t_area_group
+          .t_area_group__area
+            配送元の地域
+          .t_delivery_group__hissu
+            必須
+        .t_items_name__items
+          .t_form_style_delivery
+            = f.select :area,
+              [["選択してください"],
+              ["北海道"],
+              ["青森県"],
+              ["岩手県"],
+              ["宮城県"],
+              ["秋田県"],
+              ["山形県"],
+              ["福島県"],
+              ["茨城県"],
+              ["栃木県"],
+              ["群馬県"],
+              ["埼玉県"],
+              ["千葉県"],
+              ["神奈川県"], 
+              ["新潟県"],
+              ["富山県"],
+              ["石川県"],
+              ["福井県"],
+              ["長野県"],
+              ["山梨県"],
+              ["岐阜県"],
+              ["静岡県"],
+              ["愛知県"],
+              ["三重県"],
+              ["滋賀県"],
+              ["京都府"],
+              ["大阪府"],
+              ["兵庫県"],
+              ["奈良県"],
+              ["和歌山県"], 
+              ["鳥取県"],
+              ["島根県"],
+              ["岡山県"],
+              ["広島県"],
+              ["山口県"],
+              ["徳島県"],
+              ["香川県"],
+              ["愛媛県"],
+              ["高知県"],
+              ["福岡県"],
+              ["佐賀県"],
+              ["長崎県"],
+              ["熊本県"],
+              ["大分県"],
+              ["宮崎"],
+              ["宮崎県"],
+              ["鹿児島県"],
+              ["沖縄県"],
+              ["未定"]],{},{class: "t_delivery_form"}
+        .t_days_group
+          .t_days_group__days
+            発送までの日数
+          .t_delivery_group__hissu
+            必須
+        .t_items_name__items
+          .t_form_style_delivery
+            = f.select :days,
+              [["選択してください"],
+              ["1〜2日で発送"],
+              ["2〜3日で発送"],
+              ["4〜7日で発送"]],{},{class: "t_delivery_form"}                            
+      .t_five
+        .t_five__price
+          価格（¥300〜9,999,999）
+        .t_five__selling_price
+          .t_selling_price_group
+            .t_selling_price_group__price
+              販売価格
+            .t_selling_price_group__hissu
+              必須
+          .t_yen
+            ¥
+          .t_number_form
+            = f.number_field :price ,class: "t_number_form", style: "text-align: right"  
+        .t_bottun_form
+          = f.submit class: "t_bottun_form__display", style: "t_bottun_form__display",value: "出品する"        
+          = f.submit class: "t_bottun_form__back",value: "もどる"
+  = render "items_footer"
 
