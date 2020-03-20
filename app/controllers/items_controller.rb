@@ -31,7 +31,6 @@ class ItemsController < ApplicationController
     @item = Item.new(items_params)    
     if @item.save(items_params)
       redirect_to  items_path(@item.id), notice: 'アイテムを出品しました。'
-      binding.pry
     else
       flash.now[:alert] = 'アイテムの出品に失敗しました。'
       render :index
