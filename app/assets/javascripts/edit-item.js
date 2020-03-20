@@ -128,28 +128,22 @@ $(function(){
 
   $('#img0').on('click', function(e){
     Index = "#0";
-    console.log(Index);
   })
   $('#img1').on('click', function(e){
     Index = "#1";
-    console.log(Index);
   })
   $('#img2').on('click', function(e){
     Index = "#2";
-    console.log(Index);
   })
   $('#img3').on('click', function(e){
     Index = "#3";
-    console.log(Index);
   })
   $('#img4').on('click', function(e){
     Index = "#4";
-    console.log(Index);
   })
 
   $('#previews').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().parent().parent().find(Index).data('index');
-    console.log(targetIndex);
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
