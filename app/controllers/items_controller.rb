@@ -30,9 +30,11 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(items_params)
     if @item.save(items_params)
-      flash[:alert] = "アイテムを出品しました。"
+
+      redirect_to  items_path(@item.id), notice: 'アイテムを出品しました。'
     else
-      render root_path
+      flash.now[:alert] = 'アイテムの出品に失敗しました。'
+      render :index
     end
   end
 
@@ -46,8 +48,6 @@ class ItemsController < ApplicationController
   def update
     if @item.update(item_params)
       redirect_to root_path
-    else
-      render :edit
     end
   end
 
