@@ -48,55 +48,55 @@
 //     });
 //   });
 
-//   //削除ボタンをクリックすると発火するイベント
-//   $('#previews').on('click', '#0.delete', function() {
-//     $(this).remove();
-//     $('#0').remove();
-//     $('.aaa1').remove();
-//     $('.aaa2').remove();
-//   });
+  //削除ボタンをクリックすると発火するイベント
+  $('#previews').on('click', '#0.delete', function() {
+    $(this).remove();
+    $('#0').remove();
+    $('.aaa1').remove();
+    $('.aaa2').remove();
+  });
 
-//   $('#previews').on('click', '#1.delete', function() {
-//     $(this).remove();
-//     $('#1').remove();   
-//     $('.aaa3').remove();
-//     $('.aaa4').remove();
-//   });
+  $('#previews').on('click', '#1.delete', function() {
+    $(this).remove();
+    $('#1').remove();   
+    $('.aaa3').remove();
+    $('.aaa4').remove();
+  });
 
 
-//   $('#previews').on('click', '#2.delete', function() {
-//     $(this).remove();
-//     $('#2').remove();
-//     $('.aaa5').remove();
-//     $('.aaa6').remove();
-//   });
+  $('#previews').on('click', '#2.delete', function() {
+    $(this).remove();
+    $('#2').remove();
+    $('.aaa5').remove();
+    $('.aaa6').remove();
+  });
 
-//   $('#previews').on('click', '#3.delete', function() {
-//     $(this).remove();
-//     $('#3').remove();
-//     $('.aaa7').remove();
-//     $('.aaa8').remove();
-//   });
+  $('#previews').on('click', '#3.delete', function() {
+    $(this).remove();
+    $('#3').remove();
+    $('.aaa7').remove();
+    $('.aaa8').remove();
+  });
 
-//   $('#previews').on('click', '#4.delete', function() {
-//     $(this).remove();
-//     $('#4').remove();
-//     $('.aaa9').remove();
-//     $('.aaa10').remove();
-//   });
+  $('#previews').on('click', '#4.delete', function() {
+    $(this).remove();
+    $('#4').remove();
+    $('.aaa9').remove();
+    $('.aaa10').remove();
+  });
 
 // //編集要素の削除機能
   
 
-//   //img-fileにID番号を付与
-//     $('.aaa').each(function(index, element) {
-//       $(element).attr('class','aaa' + (index + 1).toString().padStart(1, '0'));
-//       });
+  // //img-fileにID番号を付与
+  //   $('.aaa').each(function(index, element) {
+  //     $(element).attr('class','aaa' + (index + 1).toString().padStart(1, '0'));
+  //     });
 
-//   // $('#previews').on('click', '#4.delete', function() {
-//   //   $(this).remove();
-//   //   $('img').remove();
-//   // });
+  //   $('#previews').on('click', '#4.delete', function() {
+  //     $(this).remove();
+  //     $('img').remove();
+  //   });
 // }); 
 
 // ---------------------------------------------------------------------------
@@ -181,8 +181,49 @@ $(function(){
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
 
-    //img-fileにID番号を付与
-    $('.aaa').each(function(index, element) {
-      $(element).attr('class','aaa' + (index + 1).toString().padStart(1, '0'));
-      });
+  // //img-fileにID番号を付与
+  // $('.aaa').each(function(index, element) {
+  //   $(element).attr('class','aaa' + (index + 1).toString().padStart(1, '0'));
+  //   });
+
+    $('#previews').on('click', '#0.delete', function() {
+      $(this).remove();
+      $('#0').remove();
+      $('#img0').remove();
+      $('.aaa1').remove();
+      $('.aaa2').remove();
+    });
+  
+    $('#previews').on('click', '#1.delete', function() {
+      $(this).remove();
+      $('#1').remove();   
+      $('#img1').remove();
+      $('.aaa3').remove();
+      $('.aaa4').remove();
+    });
+  
+  
+    $('#previews').on('click', '#2.delete', function() {
+      $(this).remove();
+      $('#2').remove();
+      $('#img2').remove();
+      $('.aaa5').remove();
+      $('.aaa6').remove();
+    });
+  
+    $('#previews').on('click', '#3.delete', function() {
+      $(this).remove();
+      $('#3').remove();
+      $('#img3').remove();
+      $('.aaa7').remove();
+      $('.aaa8').remove();
+    });
+  
+    $('#previews').on('click', '#4.delete', function() {
+      $(this).remove();
+      $('#4').remove();
+      $('#img4').remove();
+      $('.aaa9').remove();
+      $('.aaa10').remove();
+    });
 });
