@@ -20,10 +20,10 @@
                       = image_tag image.image.url, data: { index: i }, width: "124", height: '123', id: i
                       .delete{id: i} 削除
                       .t_input-file{id: i}
-                      = f.fields_for :image do |i|
-                        .aaa
-                          = i.file_field :image, type: 'file',data: {index: image},name: "item[images_attributes][#{@item.images.count}][image]",value:"", style: "display:none", id:"img-files",class: "js-file"
-                          %label{for: "img-files"}
+                      = f.fields_for :image do |img|
+                        .bbb
+                          = img.file_field :image, type: 'file',name: "item[images_attributes][#{i}][image]",value:"", style: "display:none", id:"img-files",class: "js-file"
+                          %label{for: "img-files", id:"img#{i}"}
                             %span{class: "t_input-file"} 編集
                     -# - if @item.persisted?
                     -#   .img-file{"data-index" => "#{@item.images.count}"}

@@ -126,19 +126,41 @@ $(function(){
 
   $('.hidden-destroy').hide();
 
-  $('.aaa').on('change', '.js-file', function(e) {
-    const targetIndex = $('.aaa1').parent().find('#3').data('index');
+  $('#img0').on('click', function(e){
+    Index = "#0";
+    console.log(Index);
+  })
+  $('#img1').on('click', function(e){
+    Index = "#1";
+    console.log(Index);
+  })
+  $('#img2').on('click', function(e){
+    Index = "#2";
+    console.log(Index);
+  })
+  $('#img3').on('click', function(e){
+    Index = "#3";
+    console.log(Index);
+  })
+  $('#img4').on('click', function(e){
+    Index = "#4";
+    console.log(Index);
+  })
+
+  $('#previews').on('change', '.js-file', function(e) {
+    const targetIndex = $(this).parent().parent().parent().find(Index).data('index');
+    console.log(targetIndex);
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
-
+    
     // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {  // 新規画像追加の処理
-      $('.aaa3').append(buildImg(targetIndex, blobUrl));
+      $('.bbb').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
-      $('.aaa3').append(buildFileField(fileIndex[0]));
+      $('.bbb').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
