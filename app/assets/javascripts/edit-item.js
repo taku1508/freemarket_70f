@@ -27,16 +27,16 @@
 //                      style: "display: none"><br>                  
 //                  </div>`
 
-        //  var html= `<div class='img-file'>
-        //               <div id='img-file' data-image="${file.name}">                                                                   
-        //                 <img src=${src} width="124" height="123" >                           
-        //                   <div class= 'aaa'>                                                    
-        //                     <input class = "img-files" type="file"'
-        //                     name="item[images_attributes][${num}][image]>                          
-        //                     </div>
-        //                   </div>
-        //                 </div>
-        //             </div>`
+//          var html= `<div class='img-file'>
+//                       <div id='img-file' data-image="${file.name}">                                                                   
+//                         <img src=${src} width="124" height="123" >                           
+//                           <div class= 'aaa'>                                                    
+//                             <input class = "img-files" type="file"'
+//                             name="item[images_attributes][${num}][image]>                          
+//                             </div>
+//                           </div>
+//                         </div>
+//                     </div>`
 //         //image_box__container要素の前にhtmlを差し込む
 //         $('#0').replaceWith(html);
 //         // $('.aaa3').replaceWith(html);
@@ -99,7 +99,7 @@
 //   // });
 // }); 
 
-//---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
 
 // 画像用のinputを生成する関数
 $(function(){
@@ -110,10 +110,11 @@ $(function(){
                     id="product_images_attributes_${num}_src"><br>
                     <div class="js-remove">削除</div>
                   </div>`   
+    return html;
   }
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
-    const html = `<img data-index="1" src="${url}" width="124px" height="123px">`;
+    const html = `<img data-index="${index}" src="${url}" width="124px" height="123px">`;
     return html;
   }
 
@@ -125,19 +126,19 @@ $(function(){
 
   $('.hidden-destroy').hide();
 
-  $('#previews').on('change', '.js-file', function(e) {
-    const targetIndex = $('#previews').parent().find('.aaa3').data('index');
+  $('.aaa').on('change', '.js-file', function(e) {
+    const targetIndex = $('.aaa1').parent().find('#3').data('index');
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
 
     // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
-      img.setAttribute('image', blobUrl);
+      img.setAttribute('src', blobUrl);
     } else {  // 新規画像追加の処理
-      $('#0').replaceWith(buildImg(targetIndex, blobUrl));
+      $('.aaa3').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
-      $('.aaa').append(buildFileField(fileIndex[0]));
+      $('.aaa3').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
@@ -157,4 +158,9 @@ $(function(){
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
+
+    //img-fileにID番号を付与
+    $('.aaa').each(function(index, element) {
+      $(element).attr('class','aaa' + (index + 1).toString().padStart(1, '0'));
+      });
 });
