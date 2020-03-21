@@ -1,53 +1,3 @@
-// $(function(){
-//   //DataTransferオブジェクトで、データを格納する箱を作る
-//   var dataBox = new DataTransfer();
-//   //querySelectorでfile_fieldを取得
-//   var file_field = document.querySelector('input[type=file]')
-//   //fileが選択された時に発火するイベント
-//   $('#img-files').change(function(){
-//     //選択したfileのオブジェクトをpropで取得
-//     var files = $('input[type="file"]').prop('files')[0];
-//     $.each(this.files, function(i, file){
-//       //FileReaderのreadAsDataURLで指定したFileオブジェクトを読み込む
-//       var fileReader = new FileReader();
-
-//       //DataTransferオブジェクトに対して、fileを追加
-//       dataBox.items.add(file)
-//       //DataTransferオブジェクトに入ったfile一覧をfile_fieldの中に代入
-//       file_field.files = dataBox.files
-//       var num = $('.item-image').length + 1 + i
-//       fileReader.readAsDataURL(file);
-//       //読み込みが完了すると、srcにfileのURLを格納
-//       fileReader.onloadend = function() {
-//         var src = fileReader.result
-//       //inputを生成する関数
-//       var html= `<div data-index="${num}" class="img-file">                                                                                          
-//                    <input class = "img-files" type="file"'
-//                      name="item[images_attributes][${num}][image]"
-//                      style: "display: none"><br>                  
-//                  </div>`
-
-//          var html= `<div class='img-file'>
-//                       <div id='img-file' data-image="${file.name}">                                                                   
-//                         <img src=${src} width="124" height="123" >                           
-//                           <div class= 'aaa'>                                                    
-//                             <input class = "img-files" type="file"'
-//                             name="item[images_attributes][${num}][image]>                          
-//                             </div>
-//                           </div>
-//                         </div>
-//                     </div>`
-//         //image_box__container要素の前にhtmlを差し込む
-//         $('#0').replaceWith(html);
-//         // $('.aaa3').replaceWith(html);
-//         // $('.aaa5').replaceWith(html);
-//         // $('.aaa7').replaceWith(html);
-//         // $('.aaa9').replaceWith(html);
-//         return html;        
-//       };    
-//     });
-//   });
-
   //削除ボタンをクリックすると発火するイベント
   $('#previews').on('click', '#0.delete', function() {
     $(this).remove();
@@ -85,19 +35,6 @@
     $('.aaa10').remove();
   });
 
-// //編集要素の削除機能
-  
-
-  // //img-fileにID番号を付与
-  //   $('.aaa').each(function(index, element) {
-  //     $(element).attr('class','aaa' + (index + 1).toString().padStart(1, '0'));
-  //     });
-
-  //   $('#previews').on('click', '#4.delete', function() {
-  //     $(this).remove();
-  //     $('img').remove();
-  //   });
-// }); 
 
 // ---------------------------------------------------------------------------
 
@@ -126,30 +63,11 @@ $(function(){
 
   $('.hidden-destroy').hide();
 
-  $('#img0').on('click', function(e){
-    Index = "#0";
-    console.log(Index);
-  })
-  $('#img1').on('click', function(e){
-    Index = "#1";
-    console.log(Index);
-  })
-  $('#img2').on('click', function(e){
-    Index = "#2";
-    console.log(Index);
-  })
-  $('#img3').on('click', function(e){
-    Index = "#3";
-    console.log(Index);
-  })
-  $('#img4').on('click', function(e){
-    Index = "#4";
-    console.log(Index);
-  })
+
 
   $('#previews').on('change', '.js-file', function(e) {
-    const targetIndex = $(this).parent().parent().parent().find(Index).data('index');
-    console.log(targetIndex);
+    const targetIndex = $(this).data('index');
+    console.log(this);
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
