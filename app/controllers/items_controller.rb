@@ -4,25 +4,30 @@ class ItemsController < ApplicationController
     @item = Item.all
     @items = Item.order("created_at DESC").limit(3)
     @random = Item.order("RAND()").limit(3)
+    @categories = Category.all
+    @present = Category.where(ancestry: nil)
   end
   
   def new
     @item = Item.new
     @item.images.new
-    @category_parent = Category.where(ancestry: nil)
-  
-    def get_category_children
-      #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-      @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+    @category = Category.roots
+    @category_parent_array = ["指定なし"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
     end
-
-    def get_category_grandchildren
-      #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
-      @category_grandchildren = Category.find("#{params[:child_id]}").children
-    end
-
+    @item.images.build
   end
 
+  def get_category_children
+    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def get_category_grandchildren
+    #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
 
   def create
     @item = Item.new(items_params)

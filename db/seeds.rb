@@ -1,23 +1,21 @@
-User.create!(
-  [
-    {
-      email: 'test1@test.com',
-      password: 'aaaa1111',
-      nickname: 'hhhhhh',
-      first_name: '田中',
-      second_name: '太郎',
-      hurigana_first: 'たなか',
-      hurigana_second: 'たろう',
-      birthday_year: "1999",
-      birthday_month: "08",
-      birthday_day: "16"
-    }
-  ]
-)
+# User.create!(
+#   [
+#     {
+#       email: 'test1@test.com',
+#       password: 'aaaa1111',
+#       nickname: 'hhhhhh',
+#       first_name: '田中',
+#       second_name: '太郎',
+#       hurigana_first: 'たなか',
+#       hurigana_second: 'たろう',
+#       birthday_year: "1999",
+#       birthday_month: "08",
+#       birthday_day: "16"
+#     }
+#   ]
+# )
 
 lady = Category.create(name: "レディース")
-mens = Category.create(name: "メンズ")
-kids = Category.create(name: "キッズ")
 
 lady_tops = lady.children.create(name: "トップス")
 lady_jacket = lady.children.create(name: "ジャケット/アウター")
@@ -60,7 +58,7 @@ lady_maternity.children.create([{name: "トップス"}, {name: "アウター"}, 
 lady_other.children.create([{name: "コスプレ"}, {name: "下着"}, {name: "その他"}])
 
 
-
+mens = Category.create(name: "メンズ")
 mens_tops = mens.children.create(name: "トップス")
 mens_jacket = mens.children.create(name: "ジャケット/アウター")
 mens_pants = mens.children.create(name: "パンツ")
@@ -102,7 +100,7 @@ mens_maternity.children.create([{name: "トップス"}, {name: "アウター"}, 
 mens_other.children.create([{name: "コスプレ"}, {name: "下着"}, {name: "その他"}])
 
 
-
+kids = Category.create(name: "キッズ")
 kids_tops = kids.children.create(name: "トップス")
 kids_jacket = kids.children.create(name: "ジャケット/アウター")
 kids_pants = kids.children.create(name: "パンツ")

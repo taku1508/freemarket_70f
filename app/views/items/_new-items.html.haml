@@ -11,7 +11,6 @@
               必須
           .t_display_names
             最大5枚までアップロードできます
-
           .t_sell_uploader
             .t_sell_uploader__form              
               .t_image_field                
@@ -52,13 +51,13 @@
                 必須
             .t_items_name__items
               .t_form_style2
-                = f.collection_select :category_id, @category_parent, :id, :name, include_blank: "---", class: 'listing-select-wrapper__box--select', id: 'parent_category'
+                = f.collection_select :category_id, @category, :id, :name, include_blank: "---", class: 'listing-select-wrapper__box--select', id: 'category'
                 -# = f.select :category_id,
                   -# [["レディース","1"],
                   -# ["レディース","2"],
                   -# ["トップス","3"],
                   -# ["ジャケット/アウター","4"],
-                  -# ["パンツ","5"]],{},{class: "t_category_form"}            
+                  -# ["パンツ","5"]],{},{class: "t_category_form"}
               .t_status
                 .t_status_group
                   .t_status_group__status
