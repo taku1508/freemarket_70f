@@ -65,7 +65,7 @@ $(function(){
 
 
 
-  $('#previews').on('change', '.js-file', function(e) {
+  $('#previews_edit').on('change', '.js-file', function(e) {
     const targetIndex = $(this).data('index');
     console.log(this);
     // ファイルのブラウザ上でのURLを取得する
@@ -99,10 +99,10 @@ $(function(){
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
 
-  // //img-fileにID番号を付与
-  // $('.aaa').each(function(index, element) {
-  //   $(element).attr('class','aaa' + (index + 1).toString().padStart(1, '0'));
-  //   });
+  //img-fileにID番号を付与
+  $('.aaa').each(function(index, element) {
+    $(element).attr('class','aaa' + (index + 1).toString().padStart(1, '0'));
+  });
 
     $('#previews').on('click', '#0.delete', function() {
       $(this).remove();

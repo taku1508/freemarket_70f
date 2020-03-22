@@ -42,7 +42,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    binding.pry
     if @item.update(items_params)
       redirect_to root_path
     else
