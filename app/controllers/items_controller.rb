@@ -29,8 +29,7 @@ class ItemsController < ApplicationController
     if @item.save(items_params)
       redirect_to  items_path(@item.id), notice: 'アイテムを出品しました。'
     else
-      flash.now[:alert] = 'アイテムの出品に失敗しました。'
-      render :index
+      redirect_to root_path, alert: 'アイテムの出品に失敗しました。'
     end
   end
 
