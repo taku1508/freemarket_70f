@@ -14,18 +14,21 @@
           .t_sell_uploader
             .t_sell_uploader__form
               .t_image_field
-                %ul#previews_edit
+                #previews_edit
+                  -# - @item.images.each_with_index do |image, i|                    
+                  -#   %li.aaa
+                  -#     = image_tag image.image.url, data: { index: i }, width: "124", height: '123', id: i
                   - k = 0
-                  - @item.images.each_with_index do |image, i|                    
-                    %li.aaa
-                      = image_tag image.image.url, data: { index: i }, width: "124", height: '123', id: i
                   = f.fields_for :images do |img|
-                    %li.bbb
-                      = img.file_field :image, type: 'file',value:"", data: { index: k }, style: "display:none",class: "js-file"
-                      %label{for: "item_images_attributes_#{k}_image"}
-                        %span{class: "t_input-file"} 編集
-                      .delete{id: k} 削除
-                      .t_input-file{id: k ,style: "display:none"}
+                    %ul.bbb
+                      %li
+                        = image_tag @item.images[k].image.url,data: { index: k }, width: "124", height: '123', id: k
+                      %li
+                        = img.file_field :image, type: 'file',value:"", data: { index: k }, style: "display:none",class: "js-file"
+                        %label{for: "item_images_attributes_#{k}_image"}
+                          %span{class: "t_input-file"} 編集
+                        .delete{id: k} 削除
+                        .t_input-file{id: k ,style: "display:none"}
                     - k += 1
                     -# - if @item.persisted?
                     -#   .img-file{"data-index" => "#{@item.images.count}"}
