@@ -1,5 +1,5 @@
 $(function(){
-  //DataTransferオブジェクトで、データを格納する箱を作る
+ //DataTransferオブジェクトで、データを格納する箱を作る
   var dataBox = new DataTransfer();
   //querySelectorでfile_fieldを取得
   var file_field = document.querySelector('input[type=file]')
@@ -20,9 +20,8 @@ $(function(){
       fileReader.readAsDataURL(file);
        //画像が5枚になったら超えたらドロップボックスを削除する
       if (num == 5){
-        $('#image-box__container').css('display', 'none')   
+        $('#image-box__container').css('display', 'none')
       }
-      //読み込みが完了すると、srcにfileのURLを格納
       fileReader.onloadend = function() {
         var src = fileReader.result
         var html= `<div class='img-file'>
