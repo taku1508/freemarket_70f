@@ -60,48 +60,33 @@ $(function(){
   });
 
   //img-fileにID番号を付与
-  $('.aaa').each(function(index, element) {
-    $(element).attr('class','aaa' + (index + 1).toString().padStart(1, '0'));
+  $('.bbb').each(function(index, element) {
+    $(element).attr('class','bbb' + (index + 1).toString().padStart(1, '0'));
   });
 
     $('#previews_edit').on('click', '#0.delete', function() {
       $(this).remove();
-      $('#0').remove();
-      $('#img0').remove();
-      $('.aaa1').remove();
-      $('.aaa2').remove();
+      $('.bbb1').remove();
     });
   
-    $('#previews').on('click', '#1.delete', function() {
+    $('#previews_edit').on('click', '#1.delete', function() {
       $(this).remove();
-      $('#1').remove();   
-      $('#img1').remove();
-      $('.aaa3').remove();
-      $('.aaa4').remove();
+      $('.bbb2').remove();
     });
   
   
-    $('#previews').on('click', '#2.delete', function() {
+    $('#previews_edit').on('click', '#2.delete', function() {
       $(this).remove();
-      $('#2').remove();
-      $('#img2').remove();
-      $('.aaa5').remove();
-      $('.aaa6').remove();
+      $('.bbb3').remove();
     });
   
-    $('#previews').on('click', '#3.delete', function() {
+    $('#previews_edit').on('click', '#3.delete', function() {
       $(this).remove();
-      $('#3').remove();
-      $('#img3').remove();
-      $('.aaa7').remove();
-      $('.aaa8').remove();
+      $('.bbb4').remove();
     });
   
-    $('#previews').on('click', '#4.delete', function() {
+    $('#previews_edit').on('click', '#4.delete', function() {
       $(this).remove();
-      $('#4').remove();
-      $('#img4').remove();
-      $('.aaa9').remove();
-      $('.aaa10').remove();
+      $('.bbb5').remove();
     });
 });

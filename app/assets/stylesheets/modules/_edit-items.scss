@@ -61,8 +61,10 @@
                     width: 620px;
                     display: flex;
                     flex-wrap: wrap;
-                    .bbb{
-                    }
+                      .botton_edit{
+                        display: flex;
+                        justify-content: space-around;
+                      }
                     .img-file{                      
                       .item-image{
                         height: 124px;

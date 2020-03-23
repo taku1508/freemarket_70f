@@ -23,7 +23,7 @@
                     %ul.bbb
                       %li
                         = image_tag @item.images[k].image.url,data: { index: k }, width: "124", height: '123', id: k
-                      %li
+                      %li.botton_edit
                         = img.file_field :image, type: 'file',value:"", data: { index: k }, style: "display:none",class: "js-file"
                         %label{for: "item_images_attributes_#{k}_image"}
                           %span{class: "t_input-file"} 編集
