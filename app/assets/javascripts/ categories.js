@@ -7,13 +7,12 @@ $(function(){
   // 子カテゴリーの表示作成
   function appendChidrenBox(insertHTML){
     var childSelectHtml = '';
-    childSelectHtml = `<div class='listing-select-wrapper__added' id= 'children_wrapper'>
+    childSelectHtml = `<div class='.t_category-select' id= 'children_wrapper'>
                         <div class='listing-select-wrapper__box'>
                           <select class="listing-select-wrapper__box--select" id="child_category" name="category_id">
-                            <option value="---" data-category="---">---</option>
+                            <option value="---" data-category="---">選択してください</option>
                             ${insertHTML}
                           <select>
-                          <i class='fas fa-chevron-down listing-select-wrapper__box--arrow-down'></i>
                         </div>
                       </div>`;
     $('.listing-product-detail__category').append(childSelectHtml);
@@ -24,10 +23,9 @@ $(function(){
     grandchildSelectHtml = `<div class='listing-select-wrapper__added' id= 'grandchildren_wrapper'>
                               <div class='listing-select-wrapper__box'>
                                 <select class="listing-select-wrapper__box--select" id="grandchild_category" name="category_id">
-                                  <option value="---" data-category="---">---</option>
+                                  <option value="---" data-category="---">選択してください</option>
                                   ${insertHTML}
                                 </select>
-                                <i class='fas fa-chevron-down listing-select-wrapper__box--arrow-down'></i>
                               </div>
                             </div>`;
     $('.listing-product-detail__category').append(grandchildSelectHtml);
@@ -43,7 +41,6 @@ $(function(){
         dataType: 'json'
       })
       .done(function(children){
-        console.log(children)
         $('#children_wrapper').remove(); //親が変更された時、子以下を削除するする
         $('#grandchildren_wrapper').remove();
         $('#size_wrapper').remove();

@@ -50,14 +50,9 @@
               .t_category_name_group__hissu
                 必須
             .t_items_name__items
-              .t_form_style2
-                = f.collection_select :category_id, @category, :id, :name, include_blank: "---", class: 'listing-select-wrapper__box--select', id: 'category'
-                -# = f.select :category_id,
-                  -# [["レディース","1"],
-                  -# ["レディース","2"],
-                  -# ["トップス","3"],
-                  -# ["ジャケット/アウター","4"],
-                  -# ["パンツ","5"]],{},{class: "t_category_form"}
+              .t_category-select
+                = f.collection_select :category_id, @category, :id, :name, include_blank: "選択してください", class: 'listing-select-wrapper__box--select', id: 'category'
+                .listing-product-detail__category
               .t_status
                 .t_status_group
                   .t_status_group__status
