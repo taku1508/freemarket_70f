@@ -11,18 +11,13 @@ class Item < ApplicationRecord
   validates :shipping_charges, presence: true
   validates :area, presence: true
   validates :days, presence: true
+  accepts_nested_attributes_for :images, allow_destroy: true
   validates :price, presence: true
-  accepts_nested_attributes_for :images, reject_if: :reject_images,allow_destroy: true
 
   # def reject_images(attributes)
-  #   exists = attributes[:id].present?    
-  #   attributes.merge!(_destroy: 1) if exists
+  #   exists = attributes[:id].present?
+  #   empty = attributes[:image].blank?
+  #   attributes.merge!(_destroy: 1) if exists && empty
+  #   !exists && empty
   # end
-
-  def reject_images(attributes)
-    exists = attributes[:id].present?
-    empty = attributes[:image].blank?
-    attributes.merge!(_destroy: 1) if exists && empty
-    !exists && empty
-  end
 end
