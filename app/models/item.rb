@@ -14,10 +14,4 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
   validates :price, presence: true
 
-  # def reject_images(attributes)
-  #   exists = attributes[:id].present?
-  #   empty = attributes[:image].blank?
-  #   attributes.merge!(_destroy: 1) if exists && empty
-  #   !exists && empty
-  # end
 end
