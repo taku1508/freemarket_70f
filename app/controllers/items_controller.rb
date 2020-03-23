@@ -82,7 +82,7 @@ class ItemsController < ApplicationController
   end
 
   def items_params
-    params.require(:item).permit(:nickname,:description,:status,:shipping_charges,:area,:days,:price,:category_id,images_attributes: [:image,:id,:_destroy]).merge(user_id: current_user.id)
+    params.require(:item).permit(:nickname,:description,:category_id, :status,:shipping_charges,:area,:days,:price,images_attributes: [:image,:id,:_destroy]).merge(user_id: current_user.id)
   end
 
   # payjpを使用するためのメソッド

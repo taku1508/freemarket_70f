@@ -368,7 +368,8 @@
           .t_items_name__items{
             margin-top: 16px;
             font-family: $font-style;
-            .t_form_style2{
+            // ↓ここを編集する。（カテゴリーの表示）
+            .t_category-select{
               margin-top: 16px;
               font-family: $font-style;
               .t_category_form{

@@ -1,19 +1,19 @@
-# User.create!(
-#   [
-#     {
-#       email: 'test1@test.com',
-#       password: 'aaaa1111',
-#       nickname: 'hhhhhh',
-#       first_name: '田中',
-#       second_name: '太郎',
-#       hurigana_first: 'たなか',
-#       hurigana_second: 'たろう',
-#       birthday_year: "1999",
-#       birthday_month: "08",
-#       birthday_day: "16"
-#     }
-#   ]
-# )
+User.create!(
+  [
+    {
+      email: 'test1@test.com',
+      password: 'aaaa1111',
+      nickname: 'hhhhhh',
+      first_name: '田中',
+      second_name: '太郎',
+      hurigana_first: 'たなか',
+      hurigana_second: 'たろう',
+      birthday_year: "1999",
+      birthday_month: "08",
+      birthday_day: "16"
+    }
+  ]
+)
 
 lady = Category.create(name: "レディース")
 
