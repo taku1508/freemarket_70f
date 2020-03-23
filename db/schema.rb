@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2020_03_11_123041) do
     t.string "days", null: false
     t.integer "price", null: false
     t.integer "soldout", default: 0
+    t.integer "prefecture_id"
     t.bigint "user_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false

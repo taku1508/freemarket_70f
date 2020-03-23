@@ -14,25 +14,26 @@
           .t_sell_uploader
             .t_sell_uploader__form
               .t_image_field
-                #previews
-                  - @item.images.each_with_index do |image, i|                    
-                    .aaa
-                      = image_tag image.image.url, data: { index: i }, width: "124", height: '123', id: i
-                      .delete{id: i} 削除
-                      -# .t_input-file{id: i}
-                      = f.fields_for :image do |i|
-                        .aaa
-                          = i.file_field :image, type: 'file',name: "item[images_attributes][#{@item.images.count}][image]",value:"", style: "display:none", id:"img-files",class: "js-file"
-                          %label{for: "img-files"}
-                            %span{class: "t_input-file"} 編集
-                    -# - if @item.persisted?
-                    -#   .img-file{"data-index" => "#{@item.images.count}"}
-                    -#     = file_field_tag :image, name: "product[images_attributes][#{@item.images.count}][image]", class: 'js-file'
-                  -# = f.fields_for :images do |i|
-                  -#   .item-num-0{id: "image-box__container"}
-                  -#     = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
-                  -#     %label{for: "img-file"}
-                  -#       %span{class: "t_input-file"} 編集
+                #previews_edit             
+                  -# = f.fields_for :images do |img|
+                    -# %ul.item-num-0{id: "image-box__container"}
+                    -#   = img.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+                    -#   %label{for: "img-file"}
+                    -#     %span{class: "t_input-file"} ファイルを選択
+                  - k = 0
+                  = f.fields_for :images do |img|
+                    %ul.bbb
+                      %li
+                        = image_tag @item.images[k].image.url,data: { index: k }, width: "124", height: '123', id: k, class: "js-file_group"
+                      %li.botton_edit
+                        = img.file_field :image, type: 'file',value:"", data: { index: k }, style: "display:none",class: "js-file"
+                        %label{for: "item_images_attributes_#{k}_image"}
+                          %span{class: "t_input-file"} 編集
+                        .delete{id: k, data:{index: k}} 削除
+                        .t_input-file{id: k ,style: "display:none"}
+                      - if @item.persisted?
+                        = img.check_box :_destroy, data:{ index: img.index }, class: 'hidden-destroy'
+                    - k += 1
       .t_items
         .t_items__name
           .t_items_names
@@ -178,6 +179,7 @@
         .t_form_error_number
         .t_bottun_form
           = f.submit class: "t_bottun_form__display", style: "t_bottun_form__display",value: "出品する"
-          = f.submit class: "t_bottun_form__back",value: "もどる"
+          .t_bottun_form__back
+            = link_to "もどる", "/items", class: "t_bottun_form__back"
   = render "items_footer"
 
