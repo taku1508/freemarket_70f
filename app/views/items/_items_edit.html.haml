@@ -61,13 +61,9 @@
               .t_category_name_group__hissu
                 必須
             .t_items_name__items
-              .t_form_style2
-                = f.select :category_id,
-                  [["レディース","0"],
-                  ["レディース","1"],
-                  ["トップス","2"],
-                  ["ジャケット/アウター","3"],
-                  ["パンツ","4"]],{},{class: "t_category_form"}
+              .t_category-select
+                = f.collection_select :category_id, @category, :id, :name, class: "t_category-select1"
+                  .listing-product-detail__category
               .t_status
                 .t_status_group
                   .t_status_group__status
