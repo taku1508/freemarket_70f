@@ -27,7 +27,6 @@ $(function(){
 
   $('#previews_edit').on('change', '.js-file', function(e) {
     const targetIndex = $(this).data('index');
-    console.log(this);
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
@@ -45,8 +44,8 @@ $(function(){
     }
   });
 
-  $('#image-box').on('click', '.js-remove', function() {
-    const targetIndex = $(this).parent().data('index');
+  $('#previews_edit').on('click', '.delete', function() {
+    const targetIndex = $(this).data('index');
     // 該当indexを振られているチェックボックスを取得する
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     // もしチェックボックスが存在すればチェックを入れる
@@ -59,36 +58,42 @@ $(function(){
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
 
-  //img-fileにID番号を付与
-  $('.bbb').each(function(index, element) {
-    $(element).attr('class','bbb' + (index + 1).toString().padStart(1, '0'));
-  });
 
-    $('#previews_edit').on('click', '#0.delete', function() {
-      $(this).remove();
-      $('.bbb1').remove();
-    });
+  // //img-fileにID番号を付与
+  // $('.bbb').each(function(index, element) {
+  //   $(element).attr('class','bbb' + (index + 1).toString().padStart(1, '0'));
+  // });
+
+  //   $('#previews_edit').on('click', '#0.delete', function() {
+  //     $(this).remove();
+  //     $('.bbb1').remove();
+  //     $('#item_images_attributes_0_id').remove();
+  //   });
   
-    $('#previews_edit').on('click', '#1.delete', function() {
-      $(this).remove();
-      $('.bbb2').remove();
-    });
+  //   $('#previews_edit').on('click', '#1.delete', function() {
+  //     $(this).remove();
+  //     $('.bbb2').remove();
+  //     $('#item_images_attributes_1_id').remove();
+  //   });
   
   
-    $('#previews_edit').on('click', '#2.delete', function() {
-      $(this).remove();
-      $('.bbb3').remove();
-    });
+  //   $('#previews_edit').on('click', '#2.delete', function() {
+  //     $(this).remove();
+  //     $('.bbb3').remove();
+  //     $('#item_images_attributes_2_id').remove();
+  //   });
   
-    $('#previews_edit').on('click', '#3.delete', function() {
-      $(this).remove();
-      $('.bbb4').remove();
-    });
+  //   $('#previews_edit').on('click', '#3.delete', function() {
+  //     $(this).remove();
+  //     $('.bbb4').remove();
+  //     $('#item_images_attributes_3_id').remove();
+  //   });
   
-    $('#previews_edit').on('click', '#4.delete', function() {
-      $(this).remove();
-      $('.bbb5').remove();
-    });
+  //   $('#previews_edit').on('click', '#4.delete', function() {
+  //     $(this).remove();
+  //     $('.bbb5').remove();
+  //     $('#item_images_attributes_4_id').remove();
+    // });
 });
 
 
