@@ -4,7 +4,7 @@
     会員情報入力
   .t_credit_area
     .t_single_content
-      = form_with(model:@user) do |f|
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .t_names_form__group
           .t_names_member
             .t_names_number
@@ -18,14 +18,15 @@
               メールアドレス
             .t_names_hissu
               必須
-          =f.text_field :email, class: "t_names_input", placeholder: "例)PC・携帯どちらでも可"
+          = f.email_field :email, autofocus: true, class: "m_login-input-text__mail",placeholder: "メールアドレス"
+          
         .t_names_form_password
           .t_names_member
             .t_names_number
               パスワード
             .t_names_hissu
               必須
-          =f.text_field :password, class: "t_names_input", placeholder: "英数字両方を含むパスワードを入力して下さい。"
+          = f.password_field :password, class: "m_login-input-text__passward",placeholder: "パスワード"
           -# = form_with(model:@users) do |f|
           -#   %input{type: "input",class: "t_names_input",placeholder: "7文字以上の半角英数字"}
             -# .t_password_error エラーメッセージ
@@ -40,7 +41,9 @@
               確認用パスワード
             .t_names_hissu
               必須
-          =f.text_field :password, class: "t_names_input", placeholder: "パスワードを再入力して下さい。"
+          = f.password_field :password, class: "m_login-input-text__passward",placeholder: "パスワードを再入力してください"
+          
+
           -# = form_with(model:@users) do |f|
           -#   %input{type: "input",class: "t_names_input",placeholder: "7文字以上の半角英数字"}
             -# .t_password_error エラーメッセージ
@@ -49,6 +52,8 @@
             -#   ※ 英字と数字の両方を含めて設定してください
             -# %input{type: "checkbox",class:"t_password_check"}
             -#   %label{class: "t_pass"} パスワードを表示する
+          
+          
         .t_user
           本人確認
         .t_confirm_user
@@ -143,7 +148,8 @@
           「完了」のボタンを押すことにより,
           %span(class = "t_kiyaku") 利用規約
           に同意したものとみなします。
-        = f.submit(value: "完了",class: "t_btn")
+        = f.submit "完了" ,class: "m_google-btn"
+
   .t_credit2
     発送・お届け先変更
   .t_credit_area2
@@ -237,4 +243,3 @@
             =f.text_field :room_number, class: "t_names_input", placeholder: "例)柳ビル103"
           .t_btn
             = f.submit(value: "変更する",class: "t_add_bottun")
-=render "items/items_footer"
