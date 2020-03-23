@@ -37,11 +37,11 @@
                 %th カテゴリー
                 %td 
                   = link_to items_path do
-                    =@item.category.name
+                    = @item.category.root.name
                     %p/
-                    =@item.category.name
+                    = @item.category.parent.name
                     %p/
-                    =@item.category.name
+                    = @item.category.name
               %tr
                 %th 商品の状態
                 %td 

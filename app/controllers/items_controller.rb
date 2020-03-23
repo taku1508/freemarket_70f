@@ -31,6 +31,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(items_params)
+
     if @item.save(items_params)
       redirect_to  items_path(@item.id), notice: 'アイテムを出品しました。'
     else
@@ -41,6 +42,7 @@ class ItemsController < ApplicationController
 
 
   def show
+    @item = Item.find(params[:id])
   end
 
   def edit

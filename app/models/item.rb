@@ -4,8 +4,7 @@ class Item < ApplicationRecord
   belongs_to :category, optional: true
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
-
-  validates :nickname, presence: true, length: { maximum: 6 }
+  validates :nickname, presence: true
   validates :description, presence: true
   validates :status, presence: true
   validates :shipping_charges, presence: true
