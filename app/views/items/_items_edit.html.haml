@@ -1,7 +1,7 @@
 = render "items_header"
 .t_all
   .t_form_action
-    = form_with(model:[@item]) do |f|
+    = form_with model: @item, local: true do |f|
       .t_display
         .t_display__formgroup 
           .t_display_name
@@ -176,7 +176,7 @@
             = f.number_field :price ,class: "t_number_form", style: "text-align: right"
         .t_form_error_number
         .t_bottun_form
-          = f.submit class: "t_bottun_form__display", style: "t_bottun_form__display",value: "出品する"
+          = f.button "編集する",class: "t_bottun_form__display", style: "t_bottun_form__display"
           .t_bottun_form__back
             = link_to "もどる", "/items", class: "t_bottun_form__back"
   = render "items_footer"

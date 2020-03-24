@@ -47,9 +47,9 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(items_params)
-      redirect_to root_path
+      redirect_to root_path , notice: 'アイテムの情報を編集しました。'
     else
-      render :edit
+      render :edit, alert: 'アイテムの情報の編集に失敗しました。'
     end
   end
 
