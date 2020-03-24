@@ -397,6 +397,7 @@ Item.create!(
       user_id: '1',
       category_id: '1'
     }
+    
   ]
 )
 Image.create!(
