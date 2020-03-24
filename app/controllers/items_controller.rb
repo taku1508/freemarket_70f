@@ -34,8 +34,7 @@ class ItemsController < ApplicationController
     if @item.save(items_params)
       redirect_to  items_path(@item.id), notice: 'アイテムを出品しました。'
     else
-      flash.now[:alert] = 'アイテムの出品に失敗しました。'
-      render :index
+      redirect_to root_path, alert: 'アイテムの出品に失敗しました。'
     end
   end
 
@@ -47,8 +46,10 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if @item.update(item_params)
+    if @item.update(items_params)
       redirect_to root_path
+    else
+      render :edit
     end
   end
 
@@ -82,7 +83,9 @@ class ItemsController < ApplicationController
   end
 
   def items_params
+
     params.require(:item).permit(:nickname,:description,:category_id, :status,:shipping_charges,:area,:days,:price,images_attributes: [:image,:id,:_destroy]).merge(user_id: current_user.id)
+
   end
 
   # payjpを使用するためのメソッド
