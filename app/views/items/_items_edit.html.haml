@@ -14,24 +14,23 @@
           .t_sell_uploader
             .t_sell_uploader__form
               .t_image_field
-
                 #previews_edit                      
                   .t_edit_input                             
                     = f.fields_for :images do |img|                    
-                      %ul.bbb
+                      %ul.bbb{data:{index: img.index}}
                         %li
                           = image_tag img.object.image.url,data: { index: img.index }, width: "124", height: '123', id: img.index, class: "js-file_group"
                         %li.botton_edit                      
                           = img.file_field :image, type: 'file',value:"", data: { index: img.index },style: "display:none" ,class: "js-file"
-                          %label{for: "item_images_attributes_#{img.index}_image"}
+                          %label.t_bbb_edit{for: "item_images_attributes_#{img.index}_image"}
                             %span{class: "t_input-file"} 編集
                           .delete{id: img.index, data:{index: img.index}} 削除                      
                           .t_input-file{id: img.index ,style: "display:none"}
                         - if @item.persisted?
                           = img.check_box :_destroy, data:{ index: img.index }, class: 'hidden-destroy'
-                    %label{for: "item_images_attributes_#{@item.images.count}_image"}
+                    %label.t_input_edit{for: "item_images_attributes_#{@item.images.count}_image"}
                       %span{class: "t_input-file_edit"}  ファイルを選択
-                      = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", id: "item_images_attributes_#{@item.images.count}_image",class: "img_count",style:"display:none"                  
+                      = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", id: "item_images_attributes_#{@item.images.count}_image",class: "img_count",style:"display:none"
       .t_items
         .t_items__name
           .t_items_names
