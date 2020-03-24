@@ -1,19 +1,43 @@
-# User.create!(
-#   [
-#     {
-#       email: 'test1@test.com',
-#       password: 'aaaa1111',
-#       nickname: 'hhhhh',
-#       first_name: '田中',
-#       second_name: '太郎',
-#       hurigana_first: 'たなか',
-#       hurigana_second: 'たろう',
-#       birthday_year: "1994",
-#       birthday_month: "08",
-#       birthday_day: "15"
-#     }
-#   ]
-# )
+User.create!(
+  [
+    {
+      email: 'test1@test.com',
+      password: 'aaaa1111',
+      nickname: 'hhhhh',
+      first_name: '田中',
+      second_name: '太郎',
+      hurigana_first: 'たなか',
+      hurigana_second: 'たろう',
+      birthday_year: "1994",
+      birthday_month: "08",
+      birthday_day: "15"
+    },
+    {
+      email: 'test2@test.com',
+      password: 'aaaa2222',
+      nickname: '井本です',
+      first_name: '井本',
+      second_name: '樹',
+      hurigana_first: 'いもと',
+      hurigana_second: 'たつき',
+      birthday_year: "1995",
+      birthday_month: "08",
+      birthday_day: "15"
+    },
+    {
+      email: 'test3@test.com',
+      password: 'aaaa3333',
+      nickname: 'RYO',
+      first_name: '羽岡',
+      second_name: '涼',
+      hurigana_first: 'はおか',
+      hurigana_second: 'りょう',
+      birthday_year: "1995",
+      birthday_month: "08",
+      birthday_day: "16"
+    }
+  ]
+)
 # レディース
 lady = Category.create(name: "レディース")
 lady_tops = lady.children.create(name: "トップス")
@@ -130,9 +154,9 @@ hobbys = Category.create(name: "おもちゃ・ホビー・グッズ")
 hobbys_tops = hobbys.children.create(name: "おもちゃ")
 hobbys_jacket = hobbys.children.create(name: "ホビー")
 hobbys_pants = hobbys.children.create(name: "グッズ")
-hobbys_tops.children.create([{name: "Tシャツ/カットソー（半袖/袖なし）"}])
-hobbys_jacket.children.create([{name: "テーラードジャケット"},{name: "その他"}])
-hobbys_pants.children.create([{name: "デニム/ジーンズ"},{name: "ハーフパンツ"}])
+hobbys_tops.children.create([{name: "アンディーのおもちゃ"}])
+hobbys_jacket.children.create([{name: "ホビーホビー"},{name: "その他"}])
+hobbys_pants.children.create([{name: "アニメ"},{name: "ディズニー"}])
 
 
 
@@ -141,9 +165,9 @@ cosmes = Category.create(name: "コスメ・香水・美容")
 cosmes_tops = cosmes.children.create(name: "コスメ")
 cosmes_jacket = cosmes.children.create(name: "香水")
 cosmes_pants = cosmes.children.create(name: "美容")
-cosmes_tops.children.create([{name: "Tシャツ/カットソー（半袖/袖なし）"},{name: "ポロシャツ"}])
-cosmes_jacket.children.create([{name: "テーラードジャケット"},{name: "その他"}])
-cosmes_pants.children.create([{name: "デニム/ジーンズ"},{name: "ハーフパンツ"}])
+cosmes_tops.children.create([{name: "コスメセット"},{name: "単品"}])
+cosmes_jacket.children.create([{name: "シャネル"},{name: "ディオール"}])
+cosmes_pants.children.create([{name: "美容液１"},{name: "美容液２"}])
 
 
 
@@ -152,9 +176,9 @@ smartphone = Category.create(name: "家電・スマホ・カメラ")
 smartphone_tops = smartphone.children.create(name: "家電")
 smartphone_jacket = smartphone.children.create(name: "スマホ")
 smartphone_pants = smartphone.children.create(name: "カメラ")
-smartphone_tops.children.create([{name: "Tシャツ/カットソー（半袖/袖なし）"},{name: "ポロシャツ"}])
-smartphone_jacket.children.create([{name: "テーラードジャケット"}, {name: "その他"}])
-smartphone_pants.children.create([{name: "デニム/ジーンズ"}, {name: "ハーフパンツ"}])
+smartphone_tops.children.create([{name: "掃除機"},{name: "洗濯機"}])
+smartphone_jacket.children.create([{name: "iphone"}, {name: "シャープ"}])
+smartphone_pants.children.create([{name: "一眼レフ"}, {name: "ミラーレス"}])
 
 
 # スポーツ・レジャー
@@ -162,23 +186,18 @@ sport = Category.create(name: "スポーツ・レジャー")
 sport_tops = sport.children.create(name: "野球")
 sport_jacket = sport.children.create(name: "サッカー")
 sport_pants = sport.children.create(name: "テニス")
-sport_tops.children.create([{name: "Tシャツ/カットソー（半袖/袖なし）"},{name: "ポロシャツ"}])
-sport_jacket.children.create([{name: "テーラードジャケット"}, {name: "ノーカラージャケット"},{name: "その他"}])
-sport_pants.children.create([{name: "デニム/ジーンズ"}, {name: "ショートパンツ"},{name: "ハーフパンツ"}])
+sport_tops.children.create([{name: "ワールドシリーズ"},{name: "国内シリーズ"}])
+sport_jacket.children.create([{name: "ワールドカップ"}, {name: "J1"},{name: "J2"}])
+sport_pants.children.create([{name: "ワールドシリーズ"}, {name: "硬式"},{name: "軟式"}])
 
 # チケット
 ticket = Category.create(name: "チケット")
 ticket_tops = ticket.children.create(name: "アイドル")
 ticket_jacket = ticket.children.create(name: "劇団四季")
 ticket_pants = ticket.children.create(name: "ミュージシャン")
-ticket_tops.children.create([{name: "シャツ/ブラウス(半袖/袖なし)"},{name: "ポロシャツ"}])
-ticket_jacket.children.create([{name: "テーラードジャケット"},{name: "その他"}])
-ticket_pants.children.create([{name: "デニム/ジーンズ"},{name: "ハーフパンツ"}])
-
-
-
-
-
+ticket_tops.children.create([{name: "男性アイドル"},{name: "女性アイドル"}])
+ticket_jacket.children.create([{name: "東京公演"},{name: "大阪公演"}])
+ticket_pants.children.create([{name: "グループ"},{name: "ソロ"}])
 
 
 Item.create!(
@@ -192,15 +211,30 @@ Item.create!(
       days: '2日以内',
       price: '50000',
       user_id: '1',
-      category_id: '1'
-    }
+      category_id: '139'
+    },
+    {
+      nickname: 'iphone11pro',
+      description: 'スペースシルバー',
+      status: '新品',
+      shipping_charges: '無料',
+      area: '大阪府',
+      days: '2日以内',
+      price: '130000',
+      user_id: '1',
+      category_id: '264'
+    },
   ]
 )
 Image.create!(
   [
     {
-      image: File.open('app/assets/images/image100.jpg'),
+      image: File.open('app/assets/images/image101.jpg'),
       item_id: '1',
-    }
+    },
+    {
+      image: File.open('app/assets/images/image102.jpg'),
+      item_id: '2',
+    },
   ]
 )
