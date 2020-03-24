@@ -10,12 +10,14 @@ class UsersController < ApplicationController
   end
 
   def create
+
     @user = User.new(users_params)
     if @user.save
       redirect_to  users_path(@user.id), notice: '新規会員登録完了しました。'
     else
       redirect_to root_path, alert: '新規会員登録に失敗しました。'
     end
+
   end
 
   def show

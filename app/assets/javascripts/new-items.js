@@ -17,6 +17,7 @@ $(function(){
       file_field.files = dataBox.files
 
       var num = $('.item-image').length + 1 + i
+      console.log(num)
       fileReader.readAsDataURL(file);
        //画像が5枚になったら超えたらドロップボックスを削除する
       if (num == 5){
@@ -70,7 +71,7 @@ $(function(){
             //image-box__containerクラスをもつdivタグのクラスを削除のたびに変更
             var num = $('.item-image').length
             $('#image-box__container').show()
-            $('#image-box__container').attr('class', `item-num-${num}`)
+            $('#image-box__container').attr('class', `item-num-${num}`)            
         });
     });
   });

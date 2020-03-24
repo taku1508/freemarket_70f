@@ -23,13 +23,17 @@ $(function(){
 
   $('.hidden-destroy').hide();
 
-
-
+  var num = $('.img_count').length + 1
+      //画像が5枚になったら超えたらドロップボックスを削除する
+    if (num == 5){
+      $('.img_count').css('display', 'none')
+    }
   $('#previews_edit').on('change', '.js-file', function(e) {
     const targetIndex = $(this).data('index');
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
+    console.log(file)
     
     // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
@@ -56,46 +60,63 @@ $(function(){
 
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
+  });   
+   // //img-fileにID番号を付与
+  $('.bbb').each(function(index, element) {
+    $(element).attr('class','bbb' + (index + 1).toString().padStart(1, '0'));
   });
 
 
-  // //img-fileにID番号を付与
-  // $('.bbb').each(function(index, element) {
-  //   $(element).attr('class','bbb' + (index + 1).toString().padStart(1, '0'));
-  // });
-
-  //   $('#previews_edit').on('click', '#0.delete', function() {
-  //     $(this).remove();
-  //     $('.bbb1').remove();
-  //     $('#item_images_attributes_0_id').remove();
-  //   });
-  
-  //   $('#previews_edit').on('click', '#1.delete', function() {
-  //     $(this).remove();
-  //     $('.bbb2').remove();
-  //     $('#item_images_attributes_1_id').remove();
-  //   });
-  
-  
-  //   $('#previews_edit').on('click', '#2.delete', function() {
-  //     $(this).remove();
-  //     $('.bbb3').remove();
-  //     $('#item_images_attributes_2_id').remove();
-  //   });
-  
-  //   $('#previews_edit').on('click', '#3.delete', function() {
-  //     $(this).remove();
-  //     $('.bbb4').remove();
-  //     $('#item_images_attributes_3_id').remove();
-  //   });
-  
-  //   $('#previews_edit').on('click', '#4.delete', function() {
-  //     $(this).remove();
-  //     $('.bbb5').remove();
-  //     $('#item_images_attributes_4_id').remove();
-    // });
+     
+  //--------------------------------------------------------プレビュー機能
+  $(function(){
+    //DataTransferオブジェクトで、データを格納する箱を作る
+     var dataBox = new DataTransfer();
+     //querySelectorでfile_fieldを取得
+     var file_field = document.querySelector('input[type=file]')
+     //fileが選択された時に発火するイベント
+     $('.img_count').change(function(){
+       console.log(this)       
+       //選択したfileのオブジェクトをpropで取得
+       var files = $('input[type="file"]').prop('files')[0];
+       $.each(this.files, function(i, file){
+         //FileReaderのreadAsDataURLで指定したFileオブジェクトを読み込む
+         var fileReader = new FileReader();
+   
+         //DataTransferオブジェクトに対して、fileを追加
+         dataBox.items.add(file)
+         //DataTransferオブジェクトに入ったfile一覧をfile_fieldの中に代入
+         file_field.files = dataBox.files
+   
+         var number = $('.js-file_group').length + 1 + i
+          console.log(number)
+         fileReader.readAsDataURL(file);
+          //画像が5枚になったら超えたらドロップボックスを削除する
+         if (number == 5){
+           $('.t_input_edit').css('display', 'none')
+         }
+         fileReader.onloadend = function() {
+           var src = fileReader.result          
+          num = $('.js-file_group:last').data("index");
+          
+            var html= `<ul class='bbb${num+2}'>
+                        <li>
+                          <img data-index="${num+1}" width="124" height="123" id="${num+1}" class="js-file_group" src="${src}">
+                        </li>
+                        <li class='botton_edit'>
+                          <input type="file" value="" data-index="${num+1}" style="display:none" class="js-file" name="item[images_attributes][${num+1}][image]", id="item_images_attributes_${num+1}_image">                  
+                          <label class="t_bbb_edit" for="item_images_attributes_${num+1}_image">
+                            <span class="t_input-file">編集</span>
+                          </label>
+                        <div class="delete" data-index="${num+1}" id="${num+1}">削除</div>
+                        <div class="t_input-file" id="${num+1}" style="display:none"></div>
+                        </li>                        
+                      </ul>`                               
+           //image_box__container要素の前にhtmlを差し込む
+           $('.t_input_edit').before(html);                                
+           return html;                  
+         };        
+       });
+     });
+   })
 });
-
-
-
-  
