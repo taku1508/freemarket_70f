@@ -2,7 +2,6 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   
-
   def new
     @user = User.new
   end
@@ -28,7 +27,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   private
-
   def users_params
     params.require(:user).permit(:nickname,:first_name,:second_name,:email,:password,:hurigana_first,:hurigana_second,:phone_number,:birthday_year,:birthday_month,:birthday_day)
   end
