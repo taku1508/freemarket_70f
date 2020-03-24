@@ -3,7 +3,7 @@ User.create!(
     {
       email: 'test1@test.com',
       password: 'aaaa1111',
-      nickname: '田中です',
+      nickname: 'hhhhh',
       first_name: '田中',
       second_name: '太郎',
       hurigana_first: 'たなか',
@@ -11,18 +11,6 @@ User.create!(
       birthday_year: "1994",
       birthday_month: "08",
       birthday_day: "15"
-    }
-    {
-      email: 'test2@test.com',
-      password: 'bbbb2222',
-      nickname: '羽岡',
-      first_name: '羽岡',
-      second_name: '涼',
-      hurigana_first: 'はおか',
-      hurigana_second: 'りょう',
-      birthday_year: "1995",
-      birthday_month: "08",
-      birthday_day: "16"
     }
   ]
 )
@@ -166,29 +154,14 @@ Item.create!(
       price: '50000',
       user_id: '1',
       category_id: '1'
-    },
-    {
-      nickname: 'iPhone 11 Pro',
-      description: 'スペースグレー',
-      status: '新品',
-      shipping_charges: '無料',
-      area: '大阪府',
-      days: '2日以内',
-      price: '130000',
-      user_id: '1',
-      category_id: '2'
     }
   ]
 )
 Image.create!(
   [
     {
-      image: File.open('app/assets/images/image101.jpg'),
+      image: File.open('app/assets/images/image100.jpg'),
       item_id: '1',
-    },
-    {
-      image: File.open('app/assets/images/image102.jpg','image103.jpg'),
-      item_id: '2',
     }
   ]
 )
