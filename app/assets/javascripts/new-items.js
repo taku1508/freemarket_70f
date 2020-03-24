@@ -14,7 +14,7 @@ $(function(){
       //DataTransferオブジェクトに対して、fileを追加
       dataBox.items.add(file)
       //DataTransferオブジェクトに入ったfile一覧をfile_fieldの中に代入
-      file_field.files = dataBox.files
+      // file_field.files = dataBox.files
 
       var num = $('.item-image').length + 1 + i
       console.log(num)

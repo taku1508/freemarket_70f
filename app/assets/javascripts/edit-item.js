@@ -24,10 +24,10 @@ $(function(){
   $('.hidden-destroy').hide();
 
   var num = $('.img_count').length + 1
-      //画像が5枚になったら超えたらドロップボックスを削除する
-    if (num == 5){
-      $('.img_count').css('display', 'none')
-    }
+  //画像が5枚になったら超えたらドロップボックスを削除する
+  if (num == 5){
+    $('.img_count').css('display', 'none')
+  }
   $('#previews_edit').on('change', '.js-file', function(e) {
     const targetIndex = $(this).data('index');
     // ファイルのブラウザ上でのURLを取得する
@@ -87,6 +87,7 @@ $(function(){
          dataBox.items.add(file)
          //DataTransferオブジェクトに入ったfile一覧をfile_fieldの中に代入
          file_field.files = dataBox.files
+        //  file_field.files = dataBox.files
    
          var number = $('.js-file_group').length + 1 + i
           console.log(number)
