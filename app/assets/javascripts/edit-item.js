@@ -28,8 +28,6 @@ $(function(){
     if (num == 5){
       $('.img_count').css('display', 'none')
     }
-
-
   $('#previews_edit').on('change', '.js-file', function(e) {
     const targetIndex = $(this).data('index');
     // ファイルのブラウザ上でのURLを取得する
@@ -90,11 +88,12 @@ $(function(){
          //DataTransferオブジェクトに入ったfile一覧をfile_fieldの中に代入
          file_field.files = dataBox.files
    
-         var num = $('.bbb').length + 1 + i
+         var number = $('.js-file_group').length + 1 + i
+          console.log(number)
          fileReader.readAsDataURL(file);
           //画像が5枚になったら超えたらドロップボックスを削除する
-         if (num == 5){
-           $('.bbb').css('display', 'none')
+         if (number == 5){
+           $('.t_input_edit').css('display', 'none')
          }
          fileReader.onloadend = function() {
            var src = fileReader.result          
@@ -105,20 +104,18 @@ $(function(){
                           <img data-index="${num+1}" width="124" height="123" id="${num+1}" class="js-file_group" src="${src}">
                         </li>
                         <li class='botton_edit'>
-                          <input type="file" value="" data-index="${num+1}" style="display:none" class="js-file" name="item[images_attributes][${num+1}][image]">                  
-                          <label for="item_images_attributes_${num+1}_image">
+                          <input type="file" value="" data-index="${num+1}" style="display:none" class="js-file" name="item[images_attributes][${num+1}][image]", id="item_images_attributes_${num+1}_image">                  
+                          <label class="t_bbb_edit" for="item_images_attributes_${num+1}_image">
                             <span class="t_input-file">編集</span>
                           </label>
                         <div class="delete" data-index="${num+1}" id="${num+1}">削除</div>
                         <div class="t_input-file" id="${num+1}" style="display:none"></div>
                         </li>                        
-                      </ul>`                   
+                      </ul>`                               
            //image_box__container要素の前にhtmlを差し込む
-           $('.t_input_edit').before(html);
-           return html;
-         };
-         //image-box__containerのクラスを変更し、CSSでドロップボックスの大きさを変えてやる。
-        //  $('.bbb').attr('class', `item-num-${num}`)
+           $('.t_input_edit').before(html);                                
+           return html;                  
+         };        
        });
      });
    })
