@@ -4,7 +4,7 @@
     会員情報入力
   .t_credit_area
     .t_single_content
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = form_with model: @user, local: true do |f|
         .t_names_form__group
           .t_names_member
             .t_names_number
@@ -12,7 +12,7 @@
             .t_names_hissu
               必須
           =f.text_field :nickname, class: "t_names_input", placeholder: "例)メルカリ太郎"
-        .t_names_form__group
+        .t_names_form__group_mail
           .t_names_member
             .t_names_number
               メールアドレス
@@ -148,7 +148,10 @@
           「完了」のボタンを押すことにより,
           %span(class = "t_kiyaku") 利用規約
           に同意したものとみなします。
-        = f.submit "完了" ,class: "m_google-btn"
+        = f.button "完了" ,class: "m_google-btn"
+
+
+
 
   .t_credit2
     発送・お届け先変更

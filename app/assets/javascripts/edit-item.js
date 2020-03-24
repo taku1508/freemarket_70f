@@ -23,11 +23,6 @@ $(function(){
 
   $('.hidden-destroy').hide();
 
-  var num = $('.img_count').length + 1
-  //画像が5枚になったら超えたらドロップボックスを削除する
-  if (num == 5){
-    $('.img_count').css('display', 'none')
-  }
   $('#previews_edit').on('change', '.js-file', function(e) {
     const targetIndex = $(this).data('index');
     // ファイルのブラウザ上でのURLを取得する
@@ -48,6 +43,8 @@ $(function(){
     }
   });
 
+    
+  
   $('#previews_edit').on('click', '.delete', function() {
     const targetIndex = $(this).data('index');
     // 該当indexを振られているチェックボックスを取得する
@@ -65,9 +62,6 @@ $(function(){
   $('.bbb').each(function(index, element) {
     $(element).attr('class','bbb' + (index + 1).toString().padStart(1, '0'));
   });
-
-
-     
   //--------------------------------------------------------プレビュー機能
   $(function(){
     //DataTransferオブジェクトで、データを格納する箱を作る
@@ -94,8 +88,14 @@ $(function(){
          fileReader.readAsDataURL(file);
           //画像が5枚になったら超えたらドロップボックスを削除する
          if (number == 5){
-           $('.t_input_edit').css('display', 'none')
-         }
+           $('.t_input_edit').css('display', 'none')   
+           $('#previews_edit').on('click','.delete',function(){
+            $('.t_input_edit').css('display','block')
+            $('.t_input_edit').css('justify-content','center')
+            $('.t_input_edit').css('align-items','center')
+            $('.t_input_edit').css('display','flex')        
+          }) 
+        }                                   
          fileReader.onloadend = function() {
            var src = fileReader.result          
           num = $('.js-file_group:last').data("index");
@@ -112,7 +112,7 @@ $(function(){
                         <div class="delete" data-index="${num+1}" id="${num+1}">削除</div>
                         <div class="t_input-file" id="${num+1}" style="display:none"></div>
                         </li>                        
-                      </ul>`                               
+                      </ul>`                                   
            //image_box__container要素の前にhtmlを差し込む
            $('.t_input_edit').before(html);                                
            return html;                  

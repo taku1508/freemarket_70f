@@ -15,4 +15,5 @@ class Item < ApplicationRecord
   # accepts_nested_attributes_for :images, allow_destroy: true
   validates :price, presence: true
   accepts_nested_attributes_for :images,allow_destroy: true
+  validates :images, presence: true
 end
