@@ -223,7 +223,7 @@ Item.create!(
       price: '130000',
       user_id: '1',
       category_id: '264'
-    },
+    }
   ]
 )
 Image.create!(
@@ -235,6 +235,6 @@ Image.create!(
     {
       image: File.open('app/assets/images/image102.jpg'),
       item_id: '2',
-    },
+    }
   ]
 )
