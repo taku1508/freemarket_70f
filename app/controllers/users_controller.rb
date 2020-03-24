@@ -10,8 +10,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(users_params)
-    redirect_to root_path
+    @user = User.new(users_params)
+    if @user.save
+      redirect_to  users_path(@user.id), notice: '新規会員登録完了しました。'
+    else
+      redirect_to root_path, alert: '新規会員登録に失敗しました。'
+    end
   end
 
   def show
@@ -50,5 +54,4 @@ class UsersController < ApplicationController
   def users_params
     params.require(:user).permit(:nickname,:first_name,:second_name,:email,:password,:hurigana_first,:hurigana_second,:birthday,:phone_number)
   end
-
 end
