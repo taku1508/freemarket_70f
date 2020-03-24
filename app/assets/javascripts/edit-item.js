@@ -105,8 +105,8 @@ $(function(){
                           <img data-index="${num+1}" width="124" height="123" id="${num+1}" class="js-file_group" src="${src}">
                         </li>
                         <li class='botton_edit'>
-                          <input type="file" value="" data-index="${num+1}" style="display:none" class="js-file" name="item[images_attributes][${num+1}][image]">                  
-                          <label for="item_images_attributes_${num+1}_image">
+                          <input type="file" value="" data-index="${num+1}" style="display:none" class="js-file" name="item[images_attributes][${num+1}][image]", id="item_images_attributes_${num+1}_image">                  
+                          <label class="t_bbb_edit" for="item_images_attributes_${num+1}_image">
                             <span class="t_input-file">編集</span>
                           </label>
                         <div class="delete" data-index="${num+1}" id="${num+1}">削除</div>
