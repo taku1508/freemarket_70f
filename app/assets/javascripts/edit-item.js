@@ -32,7 +32,6 @@ $(function(){
 
   $('#previews_edit').on('change', '.js-file', function(e) {
     const targetIndex = $(this).data('index');
-    console.log(this);
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
@@ -63,39 +62,5 @@ $(function(){
 
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
-  });
-
-  //img-fileにID番号を付与
-  $('.bbb').each(function(index, element) {
-    $(element).attr('class','bbb' + (index + 1).toString().padStart(1, '0'));
-  });
-
-    // $('#previews_edit').on('click', '#0.delete', function() {
-    //   $(this).remove();
-    //   $('.bbb1').remove();
-    // });
-  
-    // $('#previews_edit').on('click', '#1.delete', function() {
-    //   $(this).remove();
-    //   $('.bbb2').remove();
-    // });
-  
-  
-    // $('#previews_edit').on('click', '#2.delete', function() {
-    //   $(this).remove();
-    //   $('.bbb3').remove();
-    // });
-  
-    // $('#previews_edit').on('click', '#3.delete', function() {
-    //   $(this).remove();
-    //   $('.bbb4').remove();
-    // });
-  
-    // $('#previews_edit').on('click', '#4.delete', function() {
-    //   $(this).remove();
-    //   $('.bbb5').remove();
-    // });
-    //------------------------------------------------
-    //プレビュー表示
-    
+  });    
 });

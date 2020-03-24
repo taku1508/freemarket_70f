@@ -8,9 +8,12 @@
             =@item.nickname
           .i_item__body
             .gazou
-              - @item.images.each_with_index do |image, i|
-                .gazou_1
-                  = image_tag image.image.url, data: { index: i }, width: "560",id: i
+              .gazou_1
+                = image_tag @item.images[0].image.url, width: "560"
+                .gazou_mini
+                  - @item.images.each_with_index do |image, i|
+                    .gazou_mini1
+                    = image_tag image.image.url, data: { index: i },size:"75x75"
           .i_item__price
             %span 
               ¥
@@ -31,7 +34,11 @@
                 %th カテゴリー
                 %td 
                   = link_to items_path do
-                    =@item.category.name
+                    = @item.category.root.name
+                    %p/
+                    = @item.category.parent.name
+                    %p/
+                    = @item.category.name
               %tr
                 %th 商品の状態
                 %td 

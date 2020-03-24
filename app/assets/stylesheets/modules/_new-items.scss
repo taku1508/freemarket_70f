@@ -273,7 +273,6 @@
   }  
     .t_items{               //商品名の投稿フォーム全体
       margin-bottom: 1px;
-      height: 416ps;
       padding: 40px;
       background-color: white;
       &__name{        //商品名登録フォーム
@@ -338,7 +337,6 @@
     }
     .t_three{   //商品詳細フォームの全体
       margin-bottom: 1px;
-      height: 350px;
       padding: 40px;
       background-color: white;
       &__details{   //商品詳細表記
@@ -364,7 +362,7 @@
           .t_items_name__items{
             margin-top: 16px;
             font-family: $font-style;
-            .t_form_style2{
+            .t_category-select{
               margin-top: 16px;
               font-family: $font-style;
               .t_category_form{
@@ -380,6 +378,20 @@
                 line-height: 1;
               }
             }
+          }
+          #item_category_id{
+            width: 620px;
+            height: 48px;
+            margin-bottom: 15px;
+          }
+          #child_category{
+            width: 620px;
+            height: 48px;
+            margin-bottom: 15px;
+          }
+          #grandchild_category{
+            width: 620px;
+            height: 48px;
           }
         }
         .t_brand{       //ブランド入力フォーム
@@ -442,7 +454,6 @@
     }
   .t_four{    //配送入力フォームの全体
     margin-bottom: 1px;
-    height: 444px;
     padding: 40px;
     background-color: white;
     &__delivery{
@@ -603,6 +614,7 @@
         border-radius: 4px;
         width: 360px;
         height: 48px;
+        text-decoration: none;
       }
     }
   }

@@ -14,6 +14,7 @@
           .t_sell_uploader
             .t_sell_uploader__form
               .t_image_field
+
                 #previews_edit                      
                   .t_edit_input                             
                     = f.fields_for :images do |img|                    
@@ -58,13 +59,9 @@
               .t_category_name_group__hissu
                 必須
             .t_items_name__items
-              .t_form_style2
-                = f.select :category_id,
-                  [["レディース","0"],
-                  ["レディース","1"],
-                  ["トップス","2"],
-                  ["ジャケット/アウター","3"],
-                  ["パンツ","4"]],{},{class: "t_category_form"}
+              .t_category-select
+                = f.collection_select :category_id, @category, :id, :name, class: "t_category-select1"
+                  .listing-product-detail__category
               .t_status
                 .t_status_group
                   .t_status_group__status
@@ -180,6 +177,7 @@
         .t_form_error_number
         .t_bottun_form
           = f.submit class: "t_bottun_form__display", style: "t_bottun_form__display",value: "出品する"
-          = f.submit class: "t_bottun_form__back",value: "もどる"
+          .t_bottun_form__back
+            = link_to "もどる", "/items", class: "t_bottun_form__back"
   = render "items_footer"
 

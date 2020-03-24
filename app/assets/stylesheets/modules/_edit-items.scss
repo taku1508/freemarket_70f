@@ -355,13 +355,14 @@
     }
     .t_three{   //商品詳細フォームの全体
       margin-bottom: 1px;
-      height: 350px;
+      height: 450px;
       padding: 40px;
       background-color: white;
       &__details{   //商品詳細表記
         @include font_grey;
       }
       .t_category{
+
         .t_category_group{    //カテゴリーフォームの全体
           height: 83px;
           margin-top: 32px;
@@ -381,20 +382,24 @@
           .t_items_name__items{
             margin-top: 16px;
             font-family: $font-style;
-            .t_form_style2{
+            .t_category-select{
               margin-top: 16px;
               font-family: $font-style;
-              .t_category_form{
-                margin: 0;
-                padding: 0 56px 0 16px;
-                height: 48px;
-                width: 620px;
-                color: #222;
-                background-color: #ffffff;
-                font-size: 16px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                line-height: 1;
+              background-color: white;
+              .t_category-select1{
+                background-color: white;
+                .t_category_form{
+                  margin: 0;
+                  padding: 0 56px 0 16px;
+                  height: 48px;
+                  width: 620px;
+                  color: #222;
+                  background-color: white;
+                  font-size: 16px;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  line-height: 1;
+                }
               }
             }
           }

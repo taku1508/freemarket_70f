@@ -2,7 +2,7 @@
   .k_head__inner
     .k_head__inner__top
       .k_head__inner__top__logo
-        =image_tag "logo.png",class:"k_head__inner__top__logo--size"
+        =link_to image_tag("logo.png",class: "k_head__inner__top__logo--size"), root_path
       %input{type: "text-area",placeholder:"キーワードから探す",class: "k_head__inner__top__searchbox"}
       %form{action: "#"}
         %input{type: "submit", name: "submit", value: "", class: "k_head__inner__top__submit"}

@@ -3,7 +3,7 @@
 
 .m_single-container
   .m_login-no-account
-    .m_login-no-account__p  をお持ちでない方はこちら
+    .m_login-no-account__p  アカウントをお持ちでない方はこちら
     =link_to "新規会員登録", "/users/sign_up",class: "m_login"
 
   -#  FacebookとGoogleでログイン
@@ -19,15 +19,11 @@
   -# メールアドレス入力箇所    
   .m_login-form-inner2
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .field_email
-        -# = f.label :email
-        -# %br/
+      .field_email      
         = f.email_field :email, autofocus: true, class: "m_login-input-text__mail",placeholder: "メールアドレス"
 
       -# パスワード入力箇所
       .field_password
-        -# = f.label :password
-        -# %br/
         = f.password_field :password, class: "m_login-input-text__passward",placeholder: "パスワード"
 
       -# ロボットではありません  
