@@ -16,10 +16,11 @@
               .t_image_field                
                 #previews
                   = f.fields_for :images do |i|
-                    .item-num-0{id: "image-box__container"}
-                      = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
-                      %label{for: "img-file"}
-                        %span{class: "t_input-file"} ファイルを選択
+                    - if i.index == 0
+                      .item-num-0{id: "image-box__container"}
+                        = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+                        %label{for: "img-file"}
+                          %span{class: "t_input-file"} ファイルを選択
               .t_icon_camera
               .t_text_drag_drop
       .t_items
