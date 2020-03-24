@@ -61,10 +61,25 @@
                     width: 620px;
                     display: flex;
                     flex-wrap: wrap;
+                    .t_edit_input{
+                      height: 100%;
+                      width: 100%;
+                      display: flex;
                       .botton_edit{
                         display: flex;
                         justify-content: space-around;
-                      }
+                      } 
+                      label{
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .t_input-file_edit{
+                          text-align: center;                          
+                        }  
+                      }  
+                    }                    
                     .img-file{                      
                       .item-image{
                         height: 124px;
@@ -243,10 +258,7 @@
                       margin-bottom: 8px;
                       cursor: copy;
                       background-color: red;
-                    }
-                    .js-file{
-                      display: none;
-                    }
+                    }                   
                   }
                   .img{
                     height: 200px;

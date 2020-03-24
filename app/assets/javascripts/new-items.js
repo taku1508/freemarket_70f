@@ -70,7 +70,7 @@ $(function(){
             //image-box__containerクラスをもつdivタグのクラスを削除のたびに変更
             var num = $('.item-image').length
             $('#image-box__container').show()
-            $('#image-box__container').attr('class', `item-num-${num}`)
+            $('#image-box__container').attr('class', `item-num-${num}`)            
         });
     });
   });

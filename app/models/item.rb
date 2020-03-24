@@ -14,4 +14,5 @@ class Item < ApplicationRecord
   validates :days, presence: true
   accepts_nested_attributes_for :images, allow_destroy: true
   validates :price, presence: true
+  accepts_nested_attributes_for :images,allow_destroy: true
 end

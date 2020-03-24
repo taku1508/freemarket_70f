@@ -23,6 +23,11 @@ $(function(){
 
   $('.hidden-destroy').hide();
 
+  var num = $('.img_count').length + 1
+      //画像が5枚になったら超えたらドロップボックスを削除する
+    if (num == 5){
+      $('.img_count').css('display', 'none')
+    }
 
 
   $('#previews_edit').on('change', '.js-file', function(e) {
@@ -30,6 +35,7 @@ $(function(){
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
+    console.log(file)
     
     // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
@@ -56,46 +62,5 @@ $(function(){
 
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
-  });
-
-
-  // //img-fileにID番号を付与
-  // $('.bbb').each(function(index, element) {
-  //   $(element).attr('class','bbb' + (index + 1).toString().padStart(1, '0'));
-  // });
-
-  //   $('#previews_edit').on('click', '#0.delete', function() {
-  //     $(this).remove();
-  //     $('.bbb1').remove();
-  //     $('#item_images_attributes_0_id').remove();
-  //   });
-  
-  //   $('#previews_edit').on('click', '#1.delete', function() {
-  //     $(this).remove();
-  //     $('.bbb2').remove();
-  //     $('#item_images_attributes_1_id').remove();
-  //   });
-  
-  
-  //   $('#previews_edit').on('click', '#2.delete', function() {
-  //     $(this).remove();
-  //     $('.bbb3').remove();
-  //     $('#item_images_attributes_2_id').remove();
-  //   });
-  
-  //   $('#previews_edit').on('click', '#3.delete', function() {
-  //     $(this).remove();
-  //     $('.bbb4').remove();
-  //     $('#item_images_attributes_3_id').remove();
-  //   });
-  
-  //   $('#previews_edit').on('click', '#4.delete', function() {
-  //     $(this).remove();
-  //     $('.bbb5').remove();
-  //     $('#item_images_attributes_4_id').remove();
-    // });
+  });    
 });
-
-
-
-  
