@@ -9,10 +9,8 @@
   -#  FacebookとGoogleでログイン
   .m_login-form-inner
     .m_heder__login-accout__facebook
-      
       %input.m_login-btn__facebook{style: "", type: "button", value: "Facebookでログイン"}/
     .m_heder__login-account__google
-      
       %input.m_login-btn__google{style: "", type: "button", value: "Googleでログイン"}/
 
   // FacebookとGoogle以外でログイン
@@ -21,18 +19,14 @@
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .field_email      
         = f.email_field :email, autofocus: true, class: "m_login-input-text__mail",placeholder: "メールアドレス"
-
       -# パスワード入力箇所
       .field_password
         = f.password_field :password, class: "m_login-input-text__passward",placeholder: "パスワード"
-
       -# ロボットではありません  
       .m_form-group
-      %iframe{frameborder: "0", height: "78", name: "a-roi58y47yv0h", role: "presentation", sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", scrolling: "no", src: "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=v1QHzzN92WdopzN_oD7bUO2P&size=normal&cb=fcl0ye5zkdlc", width: "304"}
-      
+      %iframe{frameborder: "0", height: "78", name: "a-roi58y47yv0h", role: "presentation", sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", scrolling: "no", src: "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=v1QHzzN92WdopzN_oD7bUO2P&size=normal&cb=fcl0ye5zkdlc", width: "304"}   
       .filed_login 
         = f.submit "ログイン" ,class: "m_google-btn"
-      
 .m_footer
 =render "items/items_footer"
 
