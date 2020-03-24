@@ -23,6 +23,11 @@ $(function(){
 
   $('.hidden-destroy').hide();
 
+  var num = $('.img_count').length + 1
+      //画像が5枚になったら超えたらドロップボックスを削除する
+    if (num == 5){
+      $('.img_count').css('display', 'none')
+    }
 
 
   $('#previews_edit').on('change', '.js-file', function(e) {
@@ -31,6 +36,7 @@ $(function(){
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
+    console.log(file)
     
     // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
@@ -45,8 +51,8 @@ $(function(){
     }
   });
 
-  $('#image-box').on('click', '.js-remove', function() {
-    const targetIndex = $(this).parent().data('index');
+  $('#previews_edit').on('click', '.delete', function() {
+    const targetIndex = $(this).data('index');
     // 該当indexを振られているチェックボックスを取得する
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     // もしチェックボックスが存在すればチェックを入れる
@@ -64,33 +70,32 @@ $(function(){
     $(element).attr('class','bbb' + (index + 1).toString().padStart(1, '0'));
   });
 
-    $('#previews_edit').on('click', '#0.delete', function() {
-      $(this).remove();
-      $('.bbb1').remove();
-    });
+    // $('#previews_edit').on('click', '#0.delete', function() {
+    //   $(this).remove();
+    //   $('.bbb1').remove();
+    // });
   
-    $('#previews_edit').on('click', '#1.delete', function() {
-      $(this).remove();
-      $('.bbb2').remove();
-    });
+    // $('#previews_edit').on('click', '#1.delete', function() {
+    //   $(this).remove();
+    //   $('.bbb2').remove();
+    // });
   
   
-    $('#previews_edit').on('click', '#2.delete', function() {
-      $(this).remove();
-      $('.bbb3').remove();
-    });
+    // $('#previews_edit').on('click', '#2.delete', function() {
+    //   $(this).remove();
+    //   $('.bbb3').remove();
+    // });
   
-    $('#previews_edit').on('click', '#3.delete', function() {
-      $(this).remove();
-      $('.bbb4').remove();
-    });
+    // $('#previews_edit').on('click', '#3.delete', function() {
+    //   $(this).remove();
+    //   $('.bbb4').remove();
+    // });
   
-    $('#previews_edit').on('click', '#4.delete', function() {
-      $(this).remove();
-      $('.bbb5').remove();
-    });
+    // $('#previews_edit').on('click', '#4.delete', function() {
+    //   $(this).remove();
+    //   $('.bbb5').remove();
+    // });
+    //------------------------------------------------
+    //プレビュー表示
+    
 });
-
-
-
-  

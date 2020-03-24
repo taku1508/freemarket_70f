@@ -12,7 +12,7 @@ class Item < ApplicationRecord
   validates :area, presence: true
   validates :days, presence: true
   validates :price, presence: true
-  accepts_nested_attributes_for :images, reject_if: :reject_images,allow_destroy: true
+  accepts_nested_attributes_for :images,allow_destroy: true
 
   # def reject_images(attributes)
   #   exists = attributes[:id].present?    
