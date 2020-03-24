@@ -17,7 +17,7 @@
                 #previews_edit                      
                   .t_edit_input                             
                     = f.fields_for :images do |img|                    
-                      %ul.bbb{data:{index: img.index},id: "ccc"}
+                      %ul.bbb{data:{index: img.index}}
                         %li
                           = image_tag img.object.image.url,data: { index: img.index }, width: "124", height: '123', id: img.index, class: "js-file_group"
                         %li.botton_edit                      
