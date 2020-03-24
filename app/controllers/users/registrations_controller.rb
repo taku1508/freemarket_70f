@@ -9,8 +9,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     @user = User.new(users_params)
-    if @user.save(users_params)
-      session[:user_id] = @user.id 
+    if @user.save
+      bypass_sign_in(@user)
       flash[:notice] = "新規会員登録しました."
       redirect_to root_path
       # redirect_to  root_path(@user.id), notice: '新規会員登録完了しました。'
