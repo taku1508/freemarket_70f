@@ -11,31 +11,31 @@ User.create!(
       birthday_year: "1994",
       birthday_month: "08",
       birthday_day: "15"
-    },
-    {
-      email: 'test2@test.com',
-      password: 'aaaa2222',
-      nickname: '井本です',
-      first_name: '井本',
-      second_name: '樹',
-      hurigana_first: 'いもと',
-      hurigana_second: 'たつき',
-      birthday_year: "1995",
-      birthday_month: "08",
-      birthday_day: "15"
-    },
-    {
-      email: 'test3@test.com',
-      password: 'aaaa3333',
-      nickname: 'RYO',
-      first_name: '羽岡',
-      second_name: '涼',
-      hurigana_first: 'はおか',
-      hurigana_second: 'りょう',
-      birthday_year: "1995",
-      birthday_month: "08",
-      birthday_day: "16"
     }
+    # {
+    #   email: 'test2@test.com',
+    #   password: 'aaaa2222',
+    #   nickname: '井本です',
+    #   first_name: '井本',
+    #   second_name: '樹',
+    #   hurigana_first: 'いもと',
+    #   hurigana_second: 'たつき',
+    #   birthday_year: "1995",
+    #   birthday_month: "08",
+    #   birthday_day: "15"
+    # },
+    # {
+    #   email: 'test3@test.com',
+    #   password: 'aaaa3333',
+    #   nickname: 'RYO',
+    #   first_name: '羽岡',
+    #   second_name: '涼',
+    #   hurigana_first: 'はおか',
+    #   hurigana_second: 'りょう',
+    #   birthday_year: "1995",
+    #   birthday_month: "08",
+    #   birthday_day: "16"
+    # }
   ]
 )
 # レディース
