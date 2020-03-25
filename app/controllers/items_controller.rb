@@ -43,7 +43,23 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category = Category.roots
+    @category_parent_array = ["指定なし"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
   end
+  
+  def get_category_children
+    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+    @category_children = Category.find(params[:parent_name]).children
+  end
+
+  def get_category_grandchildren
+    #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
+    @category_grandchildren = Category.find(params[:child_id]).children
+  end
+
 
   def update
     if @item.update(items_params)
@@ -83,7 +99,7 @@ class ItemsController < ApplicationController
   end
 
   def items_params
-
+# ここを編集する
     params.require(:item).permit(:nickname,:description,:category_id, :status,:shipping_charges,:area,:days,:price,images_attributes: [:image,:id,:_destroy]).merge(user_id: current_user.id)
 
   end

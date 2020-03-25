@@ -14,17 +14,17 @@
           .t_sell_uploader
             .t_sell_uploader__form
               .t_image_field
-                #previews_edit                      
-                  .t_edit_input                             
-                    = f.fields_for :images do |img|                    
+                #previews_edit
+                  .t_edit_input
+                    = f.fields_for :images do |img|
                       %ul.bbb{data:{index: img.index}}
                         %li
                           = image_tag img.object.image.url,data: { index: img.index }, width: "124", height: '123', id: img.index, class: "js-file_group"
-                        %li.botton_edit                      
+                        %li.botton_edit
                           = img.file_field :image, type: 'file',value:"", data: { index: img.index },style: "display:none" ,class: "js-file"
                           %label.t_bbb_edit{for: "item_images_attributes_#{img.index}_image"}
                             %span{class: "t_input-file"} 編集
-                          .delete{id: img.index, data:{index: img.index}} 削除                      
+                          .delete{id: img.index, data:{index: img.index}} 削除
                           .t_input-file{id: img.index ,style: "display:none"}
                         - if @item.persisted?
                           = img.check_box :_destroy, data:{ index: img.index }, class: 'hidden-destroy'
@@ -55,13 +55,13 @@
           .t_category_group
             .t_category_name_group
               .t_category_name_group__category
-                カテゴリー
+                = f.label 'カテゴリー', class: 'listing-default__label'
               .t_category_name_group__hissu
                 必須
             .t_items_name__items
               .t_category-select
-                -# = f.collection_select :category_id, @category, :id, :name, class: "t_category-select1"
-                  .listing-product-detail__category
+                = f.collection_select :category_id, Category.roots, :id, :name, id: 'category'
+                .listing-product-detail__category
               .t_status
                 .t_status_group
                   .t_status_group__status
@@ -179,5 +179,4 @@
           = f.submit class: "t_bottun_form__display", style: "t_bottun_form__display",value: "出品する"
           .t_bottun_form__back
             = link_to "もどる", "/items", class: "t_bottun_form__back"
-  = render "items_footer"
-
+= render "items_footer"
