@@ -18,11 +18,9 @@
     margin: 2px auto 0;
     padding: 30px 40px 64px;
     width: 700px;
-    height: 1500px;
     background-color: #fff;
       .t_single_content{
         width: 343px;
-        height: 1500px;
         margin: 0 auto;
         .t_names_form__group{
           @include user_registration
@@ -259,8 +257,7 @@
     background-color: #fff;
     .t_names{
       width: 343px;
-      height: 700px;
-      padding: 40px 40px 64px;
+      height: 500px;
       .t_names_form{
         margin: 0 auto;
         height: 407px;

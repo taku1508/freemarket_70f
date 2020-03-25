@@ -15,6 +15,12 @@ $(function(){
     return html;
   }
 
+  //お試し
+  // const buildInput = (num)=> {
+  //   const html = `<input type="file" name="item[images_attributes][${num+2}][image]" value="" data-index="1" class="img_count" id="file2">`
+  //   return html;
+  // }
+
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
   // 既に使われているindexを除外
@@ -28,7 +34,6 @@ $(function(){
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
-    console.log(file)
     
     // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
@@ -62,38 +67,55 @@ $(function(){
   $('.bbb').each(function(index, element) {
     $(element).attr('class','bbb' + (index + 1).toString().padStart(1, '0'));
   });
+
+
+
   //--------------------------------------------------------プレビュー機能
   $(function(){
-    //DataTransferオブジェクトで、データを格納する箱を作る
-     var dataBox = new DataTransfer();
-     //querySelectorでfile_fieldを取得
-     var file_field = document.querySelector('input[type=file]')
-     //fileが選択された時に発火するイベント
-     $('.img_count').change(function(){
-       console.log(this)       
+    $('.t_input-file_edit').on("click", function (){
+      let file_field = $(`.img_count`).last();
+      file_field.trigger("click");
+    });
+    
+    $(document).on('change', '.img_count', function() { 
+      console.log("ok")    
+      //DataTransferオブジェクトで、データを格納する箱を作る(ドラッグ&ドロップ)
+       var dataBox = new DataTransfer();
+       //querySelectorでfile_fieldを取得
+       var file_field = document.querySelector(".img_count")
+       console.log(file_field);
+       //fileが選択された時に発火するイベント
        //選択したfileのオブジェクトをpropで取得
        var files = $('input[type="file"]').prop('files')[0];
        $.each(this.files, function(i, file){
          //FileReaderのreadAsDataURLで指定したFileオブジェクトを読み込む
          var fileReader = new FileReader();
-   
+         
          //DataTransferオブジェクトに対して、fileを追加
          dataBox.items.add(file)
          //DataTransferオブジェクトに入ったfile一覧をfile_fieldの中に代入
-         file_field.files = dataBox.files
         //  file_field.files = dataBox.files
+        //  console.log(dataBox);
    
          var number = $('.js-file_group').length + 1 + i
-          console.log(number)
          fileReader.readAsDataURL(file);
+         console.log(fileReader);
+         number = $('.js-file_group:last').data("index");
+
+         //お試し
+        //  console.log(buildInput(number));
+        //  $('.img_count').remove();
+        //  $('.t_input-file_edit').remove();
+        //  $('.h_input_edit').append(buildInput(number));
+
           //画像が5枚になったら超えたらドロップボックスを削除する
          if (number == 5){
-           $('.t_input_edit').css('display', 'none')   
-           $('#previews_edit').on('click','.delete',function(){
+            $('.t_input_edit').css('display', 'none')   
+            $('#previews_edit').on('click','.delete',function(){
             $('.t_input_edit').css('display','block')
             $('.t_input_edit').css('justify-content','center')
             $('.t_input_edit').css('align-items','center')
-            $('.t_input_edit').css('display','flex')        
+            $('.t_input_edit').css('display','flex')
           }) 
         }                                   
          fileReader.onloadend = function() {
@@ -111,12 +133,16 @@ $(function(){
                           </label>
                         <div class="delete" data-index="${num+1}" id="${num+1}">削除</div>
                         <div class="t_input-file" id="${num+1}" style="display:none"></div>
-                        </li>                        
-                      </ul>`                                   
+                        </li> 
+                      </ul>
+                      <input type="file" name="item[images_attributes][${num+2}][image]" style="display:none" class="img_count" id="file${num+2}">
+                      `
+                                                         
            //image_box__container要素の前にhtmlを差し込む
-           $('.t_input_edit').before(html);                                
+           $('.t_input-file_edit ').before(html);
+                                           
            return html;                  
-         };        
+         };                
        });
      });
    })
