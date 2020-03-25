@@ -13,18 +13,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
       bypass_sign_in(@user)
       flash[:notice] = "新規会員登録しました."
       redirect_to root_path
-      # redirect_to  root_path(@user.id), notice: '新規会員登録完了しました。'
     else
       redirect_to root_path, alert: '新規会員登録に失敗しました。'
-    end
-    # unless @user.valid?
-    #   flash.now[:alert] = @user.errors.full_messages
-    #   render :new and return
-    # end
-    # session["devise.regist_data"] = {user: @user.attributes}
-    # session["devise.regist_data"][:user]["password"] = params[:user][:password]
-    # @address = @user.build_address
-    # render :new_address
+    end   
   end
   private
   def users_params
