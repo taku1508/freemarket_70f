@@ -43,7 +43,7 @@
             background-color: rgb(245, 245, 245);
             cursor: pointer;
             width: 620px;
-            height: 150px;
+            height: 170px;
             flex-wrap: wrap;
             -webkit-box-pack: center;
             justify-content: center;
@@ -77,8 +77,39 @@
                         align-items: center;
                         .t_input-file_edit{
                           text-align: center;                          
-                        }  
+                        }
                       }  
+                      #t_input_type{                        
+                        .botton_edit{                          
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          .t_bbb_edit{
+                            width: 42px;
+                            .t_input-file{
+                              margin-right: 5px;
+                              position: relative;
+                              display: inline-block;
+                              text-decoration: none;
+                              color: orange;
+                              background: white;
+                              border-radius: 4px;/*角の丸み*/
+                              box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+                              border: solid 1px orange;/*線色*/
+                            }
+                          }
+                          .delete{
+                            position: relative;
+                            display: inline-block;
+                            text-decoration: none;
+                            color: orange;
+                            background: white;
+                            border-radius: 4px;/*角の丸み*/
+                            box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+                            border: solid 1px orange;/*線色*/
+                          }
+                        }
+                      }
                     }                    
                     .img-file{                      
                       .item-image{
