@@ -140,7 +140,6 @@
                 [31]],{},{class:"t_pulldown_group__menu"}
               %span(class = "t_span2")  日    
         .t_credit_area2
-          aaa
           = f.fields_for :addresses do |m|
             .t_names
               .t_names_form  
@@ -150,7 +149,7 @@
                       郵便番号
                     .t_names_hissu
                       必須
-                  = m.text_field :postal_code
+                  = m.text_field :postal_code,class: "t_names_input",placeholder: "例)123-456"
                 .t_names_form__group4
                   .t_names_member
                     .t_names_number
