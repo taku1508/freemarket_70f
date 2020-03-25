@@ -9,7 +9,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     @user = User.new(users_params)
-    binding.pry
     if @user.save
       bypass_sign_in(@user)
       flash[:notice] = "新規会員登録しました."
@@ -27,12 +26,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # @address = @user.build_address
     # render :new_address
   end
-
   private
   def users_params
     params.require(:user).permit(:nickname,:first_name,:second_name,:email,:password,
-                                 :hurigana_first,:hurigana_second,:phone_number,
-                                 :birthday_year,:birthday_month,:birthday_day,
-                                 addresses_attributes: [:postal_code, :prefectures,:municipalities,:house_number,:room_number,:user_id])
+                                  :hurigana_first,:hurigana_second,:phone_number,
+                                  :birthday_year,:birthday_month,:birthday_day,
+                                  addresses_attributes: [:postal_code, :prefectures,:municipalities,:house_number,:room_number,:user_id])
   end
 end
