@@ -49,7 +49,7 @@ class ItemsController < ApplicationController
       @category_parent_array << parent.name
     end
   end
-  
+
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
     @category_children = Category.find(params[:parent_name]).children
@@ -101,7 +101,6 @@ class ItemsController < ApplicationController
   def items_params
 # ここを編集する
     params.require(:item).permit(:nickname,:description,:category_id, :status,:shipping_charges,:area,:days,:price,images_attributes: [:image,:id,:_destroy]).merge(user_id: current_user.id)
-
   end
 
   # payjpを使用するためのメソッド

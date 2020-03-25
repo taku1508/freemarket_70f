@@ -51,7 +51,7 @@ class CardsController < ApplicationController
 
   def buy
     card = current_user.cards 
-    address = current_user.address
+    # address = current_user.address
     @item = Item.find(params[:id])
     if @item.soldout == 1
       redirect_to item_path(@item.id)
@@ -59,9 +59,9 @@ class CardsController < ApplicationController
     elsif card.blank?
       redirect_to action: "edit", id: current_user.id
       flash[:alert] = '購入にはクレジットカード登録が必要です'
-    elsif address.blank?
-      redirect_to new_address_path, id: current_user.id
-      flash[:alert] = '購入には配送先住所の登録が必要です'
+    # elsif address.blank?
+    #   redirect_to new_address_path, id: current_user.id
+    #   flash[:alert] = '購入には配送先住所の登録が必要です'
     else
       card = current_user.cards.first
       charge = Payjp::Charge.create(
