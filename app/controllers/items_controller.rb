@@ -42,13 +42,13 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  # def edit
-  #   @category = Category.roots
-  #   @category_parent_array = ["指定なし"]
-  #   Category.where(ancestry: nil).each do |parent|
-  #     @category_parent_array << parent.name
-  #   end
-  # end
+  def edit
+    @category = Category.roots
+    @category_parent_array = ["指定なし"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+  end
   
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
@@ -61,13 +61,13 @@ class ItemsController < ApplicationController
   end
 
 
-  # def update
-  #   if @item.update(items_params)
-  #     redirect_to root_path , notice: 'アイテムの情報を編集しました。'
-  #   else
-  #     render :edit, alert: 'アイテムの情報の編集に失敗しました。'
-  #   end
-  # end
+  def update
+    if @item.update(items_params)
+      redirect_to root_path , notice: 'アイテムの情報を編集しました。'
+    else
+      render :edit, alert: 'アイテムの情報の編集に失敗しました。'
+    end
+  end
 
   def destroy
     @item.destroy
