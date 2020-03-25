@@ -81,6 +81,7 @@ $(function(){
          dataBox.items.add(file)
          //DataTransferオブジェクトに入ったfile一覧をfile_fieldの中に代入
          file_field.files = dataBox.files
+        //  file_field.files = dataBox.files
    
          var number = $('.js-file_group').length + 1 + i
           console.log(number)
