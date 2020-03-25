@@ -9,7 +9,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     @user = User.new(users_params)
-    binding.pry
     if @user.save
       bypass_sign_in(@user)
       flash[:notice] = "新規会員登録しました."
