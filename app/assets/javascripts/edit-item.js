@@ -15,12 +15,6 @@ $(function(){
     return html;
   }
 
-  //お試し
-  // const buildInput = (num)=> {
-  //   const html = `<input type="file" name="item[images_attributes][${num+2}][image]" value="" data-index="1" class="img_count" id="file2">`
-  //   return html;
-  // }
-
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
   // 既に使われているindexを除外
@@ -77,13 +71,11 @@ $(function(){
       file_field.trigger("click");
     });
     
-    $(document).on('change', '.img_count', function() { 
-      console.log("ok")    
+    $(document).on('change', '.img_count', function() {    
       //DataTransferオブジェクトで、データを格納する箱を作る(ドラッグ&ドロップ)
        var dataBox = new DataTransfer();
        //querySelectorでfile_fieldを取得
        var file_field = document.querySelector(".img_count")
-       console.log(file_field);
        //fileが選択された時に発火するイベント
        //選択したfileのオブジェクトをpropで取得
        var files = $('input[type="file"]').prop('files')[0];
@@ -94,28 +86,20 @@ $(function(){
          //DataTransferオブジェクトに対して、fileを追加
          dataBox.items.add(file)
          //DataTransferオブジェクトに入ったfile一覧をfile_fieldの中に代入
-        //  file_field.files = dataBox.files
-        //  console.log(dataBox);
+         file_field.files = dataBox.files
+
    
          var number = $('.js-file_group').length + 1 + i
          fileReader.readAsDataURL(file);
-         console.log(fileReader);
-         number = $('.js-file_group:last').data("index");
-
-         //お試し
-        //  console.log(buildInput(number));
-        //  $('.img_count').remove();
-        //  $('.t_input-file_edit').remove();
-        //  $('.h_input_edit').append(buildInput(number));
 
           //画像が5枚になったら超えたらドロップボックスを削除する
          if (number == 5){
-            $('.t_input_edit').css('display', 'none')   
+            $('.t_input-file_edit').css('display', 'none')   
             $('#previews_edit').on('click','.delete',function(){
-            $('.t_input_edit').css('display','block')
-            $('.t_input_edit').css('justify-content','center')
-            $('.t_input_edit').css('align-items','center')
-            $('.t_input_edit').css('display','flex')
+            $('.t_input-file_edit').css('display','block')
+            $('.t_input-file_edit').css('justify-content','center')
+            $('.t_input-file_edit').css('align-items','center')
+            $('.t_input-file_edit').css('display','flex')
           }) 
         }                                   
          fileReader.onloadend = function() {
@@ -137,10 +121,8 @@ $(function(){
                       </ul>
                       <input type="file" name="item[images_attributes][${num+2}][image]" style="display:none" class="img_count" id="file${num+2}">
                       `
-                                                         
            //image_box__container要素の前にhtmlを差し込む
            $('.t_input-file_edit ').before(html);
-                                           
            return html;                  
          };                
        });

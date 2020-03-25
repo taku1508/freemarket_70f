@@ -31,12 +31,8 @@
                     - if @item.images.count < 5
                       = file_field_tag :image, type: 'file',name: "item[images_attributes][#{@item.images.count}][image]",style: "display:none" ,class: "img_count",id: "file#{@item.images.count}"
                     - if @item.images.count < 5
-                      -# %label.t_input_edit{for:"file#{@item.images.count}"}
-                      -# %span{class: "t_input-file_edit"}  ファイルを選択
-                      .t_input-file_edit 
-                        ファイルを選択
-                        -# = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", id: "file#{@item.images.count}",class: "img_count",style:"display:none"
-                        -# %input{typename: "item[images_attributes][#{@item.images.count}][image]"class: "img_count"}
+                      %label.t_input-file_edit 
+                        %span ファイルを選択
 
       .t_items
         .t_items__name
