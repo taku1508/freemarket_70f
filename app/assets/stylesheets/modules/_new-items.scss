@@ -65,12 +65,23 @@
                         height: 124px;
                         width: 123px;                        
                         .item-image__operetion{
-                          height: 124px;
-                          width: 123px;                          
+                          height: 60px;
+                          width: 123px;       
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
                           .item-image__operetion--delete{
-                            text-align: center;
-                            height: 124px;
-                            width: 123px;
+                            text-align: center;                          
+                            background-color: red;
+                            margin-right: 5px;
+                            position: relative;
+                            display: inline-block;
+                            text-decoration: none;
+                            color: orange;
+                            background: white;
+                            border-radius: 4px;/*角の丸み*/
+                            box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+                            border: solid 1px orange;/*線色*/
                           }
                         }
                         .item-image__content{
