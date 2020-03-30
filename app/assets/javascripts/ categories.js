@@ -4,7 +4,9 @@ $(function(){
     var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
-  // 子カテゴリーの表示作成
+
+  // 子カテゴリーの表示作成 IDと名前は大事 (なぜかはわからない）
+  )
   function appendChidrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = `<div class='.t_category-select' id= 'children_wrapper'>
@@ -74,6 +76,7 @@ $(function(){
       .done(function(grandchildren){
         if (grandchildren.length != 0) {
           $('#grandchildren_wrapper').remove(); //子が変更された時、孫以下を削除するする
+          // 削除は持ってるけどIDは引継ぎませんってこと
           $('#size_wrapper').remove();
           $('#brand_wrapper').remove();
           var insertHTML = '';

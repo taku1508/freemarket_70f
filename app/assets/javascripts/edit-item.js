@@ -121,6 +121,8 @@ $(function(){
                       </ul>
                       <input type="file" name="item[images_attributes][${num+2}][image]" style="display:none" class="img_count" id="file${num+2}">
                       `
+                      // リテラル
+                      
            //image_box__container要素の前にhtmlを差し込む
            $('.t_input-file_edit ').before(html);
            return html;                  
