@@ -12,6 +12,7 @@ class Item < ApplicationRecord
   validates :shipping_charges, presence: true
   validates :area, presence: true
   validates :days, presence: true
+  validates :category, presence: true
   # accepts_nested_attributes_for :images, allow_destroy: true
   validates :price, presence: true
   accepts_nested_attributes_for :images,allow_destroy: true
