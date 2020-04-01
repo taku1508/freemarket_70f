@@ -38,7 +38,7 @@
     # }
 #   ]
 # )
-choice = Category.create(name: "選択してください")
+choice = Category.create(name: "選択してください　最後まで選択必須！")
 # レディース
 lady = Category.create(name: "レディース")
 lady_tops = lady.children.create(name: "トップス")
