@@ -88,6 +88,10 @@ class ItemsController < ApplicationController
       @item = Item.find(params[:id])
       if @item.soldout == 1
         redirect_to item_path(@item.id)
+        flash[:alert] = '既に購入されています'
+      elsif current_user.id == @item.user_id
+        redirect_to item_path(@item.id)
+        flash[:alert] = '出品者の為、購入できません'
       end
     end
   end
