@@ -29,7 +29,7 @@
               %tr
                 %th 出品者
                 %td 
-                  = @item.nickname
+                  = @item.user.nickname
               %tr
                 %th カテゴリー
                 %td 
@@ -70,13 +70,13 @@
         .i_optionMenu
           .i_item-optionBtn
             .i_item-editBtn
-              -if current_user.id == @item.user_id
+              -if @item.soldout == 1
+                .i_item-editBtn-soldout SoldOut
+              -elsif current_user.id == @item.user_id
                 = link_to "編集", edit_item_path(@item),class:"i_item-editBtn-buy" 
                 = link_to "削除", item_path(@item),class:"i_item-deleteBtn",method: :delete, data:{ confirm: '本当に削除しますか?'}
               -elsif @item.soldout == 0
                 = link_to "購入", confirm_item_path(@item),class:"i_item-editBtn-buy" 
-              -elsif @item.soldout == 1
-                .i_item-editBtn-soldout SoldOut
           -# 以下からコメントフォーム
         .i_commentBox
           %ul.i_commentContents
