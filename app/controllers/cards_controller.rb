@@ -59,9 +59,9 @@ class CardsController < ApplicationController
     elsif card.blank?
       redirect_to action: "edit", id: current_user.id
       flash[:alert] = '購入にはクレジットカード登録が必要です'
-    # elsif address.blank?
-    #   redirect_to new_address_path, id: current_user.id
-    #   flash[:alert] = '購入には配送先住所の登録が必要です'
+    elsif current_user.id == @item.user_id
+      redirect_to item_path(@item.id)
+      flash[:alert] = '出品者の為、購入できません'
     else
       card = current_user.cards.first
       charge = Payjp::Charge.create(
