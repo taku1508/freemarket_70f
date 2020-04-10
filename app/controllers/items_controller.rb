@@ -43,10 +43,14 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    if @item == current_user
     @category = Category.roots
     @category_parent_array = ["指定なし"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
+    end
+    else
+      redirect_to root_path , notice: '自身の出品ではないため編集できません'
     end
   end
 
