@@ -9,14 +9,19 @@ class ItemsController < ApplicationController
   end
   
   def new
-    @item = Item.new
-    @item.images.new
-    @category = Category.roots
-    @category_parent_array = ["指定なし"]
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
+    if current_user.blank?
+    redirect_to root_path
+    flash[:alert] = 'ログインを行なってください。'
+    else
+      @item = Item.new
+      @item.images.new
+      @category = Category.roots
+      @category_parent_array = ["指定なし"]
+      Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent.name
+      end
+      @item.images.build
     end
-    @item.images.build
   end
 
   def get_category_children
@@ -39,14 +44,23 @@ class ItemsController < ApplicationController
   end
 
   def show
+    if current_user.blank?
+      redirect_to root_path
+      flash[:alert] = 'ログインを行なってください。'
+    else
     @item = Item.find(params[:id])
+    end
   end
 
   def edit
+    if @item.user.id == current_user.id
     @category = Category.roots
     @category_parent_array = ["指定なし"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
+    end
+    else
+      redirect_to root_path , notice: '自身の出品ではないため編集できません'
     end
   end
 
@@ -70,9 +84,13 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    if @item.user.id == current_user.id
     @item.destroy
     redirect_to root_path
-    flash[:alert] = '削除しました。'
+    flash[:alert] = '削除しました。'    
+    else
+      redirect_to root_path , notice: '自身の出品ではないため削除できません'
+    end
   end
 
   def confirm

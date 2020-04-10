@@ -191,6 +191,7 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     kgio (2.11.3)
+    libv8 (7.3.492.27.1-x86_64-darwin-19)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -211,6 +212,8 @@ GEM
     mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
+    mini_racer (0.2.9)
+      libv8 (>= 6.9.411)
     minitest (5.14.0)
     minitest-reporters (1.1.14)
       ansi
@@ -400,6 +403,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   mini_magick
+  mini_racer
   minitest (= 5.14.0)
   minitest-reporters (= 1.1.14)
   mysql2 (>= 0.4.4, < 0.6.0)
