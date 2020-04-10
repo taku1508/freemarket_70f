@@ -45,10 +45,9 @@ class ItemsController < ApplicationController
 
   def show
     if current_user.blank?
-      redirect_to root_path
-      flash[:alert] = 'ログインを行なってください。'
+      @user = 0
     else
-    @item = Item.find(params[:id])
+      @item = Item.find(params[:id])
     end
   end
 
