@@ -74,9 +74,13 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    if @item.user.id == current_user.id
     @item.destroy
     redirect_to root_path
-    flash[:alert] = '削除しました。'
+    flash[:alert] = '削除しました。'    
+    else
+      redirect_to root_path , notice: '自身の出品ではないため削除できません'
+    end
   end
 
   def confirm
