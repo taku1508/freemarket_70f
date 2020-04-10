@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    if @item == current_user
+    if @item.user.id == current_user.id
     @category = Category.roots
     @category_parent_array = ["指定なし"]
     Category.where(ancestry: nil).each do |parent|
