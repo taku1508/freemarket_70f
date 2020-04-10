@@ -12,18 +12,6 @@ User.create!(
         birthday_month: "08",
         birthday_day: "15"
         }
-        # {
-        # email: 'test2@test.com',
-        # password: 'aaaa2222',
-        # nickname: '井本です',
-        # first_name: '井本',
-        # second_name: '樹',
-        # hurigana_first: 'いもと',
-        # hurigana_second: 'たつき',
-        # birthday_year: "1995",
-        # birthday_month: "08",
-        # birthday_day: "15"
-        # }
     ]
 )
 
