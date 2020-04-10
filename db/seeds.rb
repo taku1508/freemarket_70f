@@ -11,7 +11,7 @@ User.create!(
         birthday_year: "1994",
         birthday_month: "08",
         birthday_day: "15"
-        }
+        },
     ]
 )
 
