@@ -1,43 +1,31 @@
-# User.create!(
-#   [
-#     {
-#       email: 'test1@test.com',
-#       password: 'aaaa1111',
-#       nickname: 'hhhhh',
-#       first_name: '田中',
-#       second_name: '太郎',
-#       hurigana_first: 'たなか',
-#       hurigana_second: 'たろう',
-#       birthday_year: "1994",
-#       birthday_month: "08",
-#       birthday_day: "15"
-#     }
-    # {
-    #   email: 'test2@test.com',
-    #   password: 'aaaa2222',
-    #   nickname: '井本です',
-    #   first_name: '井本',
-    #   second_name: '樹',
-    #   hurigana_first: 'いもと',
-    #   hurigana_second: 'たつき',
-    #   birthday_year: "1995",
-    #   birthday_month: "08",
-    #   birthday_day: "15"
-    # },
-    # {
-    #   email: 'test3@test.com',
-    #   password: 'aaaa3333',
-    #   nickname: 'RYO',
-    #   first_name: '羽岡',
-    #   second_name: '涼',
-    #   hurigana_first: 'はおか',
-    #   hurigana_second: 'りょう',
-    #   birthday_year: "1995",
-    #   birthday_month: "08",
-    #   birthday_day: "16"
-    # }
-#   ]
-# )
+User.create!(
+    [
+        {
+        email: 'test1@test.com',
+        password: 'aaaa1111',
+        nickname: 'hhhhh',
+        first_name: '田中',
+        second_name: '太郎',
+        hurigana_first: 'たなか',
+        hurigana_second: 'たろう',
+        birthday_year: "1994",
+        birthday_month: "08",
+        birthday_day: "15"
+        },
+        {
+        email: 'test2@test.com',
+        password: 'aaaa2222',
+        nickname: '井本です',
+        first_name: '井本',
+        second_name: '樹',
+        hurigana_first: 'いもと',
+        hurigana_second: 'たつき',
+        birthday_year: "1995",
+        birthday_month: "08",
+        birthday_day: "15"
+        }
+    ]
+)
 choice = Category.create(name: "選択してください　最後まで選択必須！")
 # レディース
 lady = Category.create(name: "レディース")
@@ -201,41 +189,41 @@ ticket_jacket.children.create([{name: "東京公演"},{name: "大阪公演"}])
 ticket_pants.children.create([{name: "グループ"},{name: "ソロ"}])
 
 
-# Item.create!(
-#   [
-#     # {
-#     #   nickname: 'Apple Watch Series 5',
-#     #   description: '40mmシルバーアルミニウムケースとホワイトスポーツバンド',
-#     #   status: '新品',
-#     #   shipping_charges: '無料',
-#     #   area: '大阪府',
-#     #   days: '2日以内',
-#     #   price: '50000',
-#     #   user_id: '1',
-#     #   category_id: '139'
-#     # }
-#     # {
-#     #   nickname: 'iphone11pro',
-#     #   description: 'スペースシルバー',
-#     #   status: '新品',
-#     #   shipping_charges: '無料',
-#     #   area: '大阪府',
-#     #   days: '2日以内',
-#     #   price: '130000',
-#     #   user_id: '1',
-#     #   category_id: '264'
-#     # }
-#   ]
-# )
-# Image.create!(
-#   [
-#     # {
-#     #   image: File.open('app/assets/images/image101.jpg'),
-#     #   item_id: '1',
-#     # }
-#     # {
-#     #   image: File.open('app/assets/images/image102.jpg'),
-#     #   item_id: '2',
-#     # }
-#   ]
-# )
+Item.create!(
+    [
+        {
+        nickname: '時計',
+        description: '40mmシルバーアルミニウムケースとホワイトスポーツバンド',
+        status: '新品',
+        shipping_charges: '無料',
+        area: '大阪府',
+        days: '2日以内',
+        price: '50000',
+        user_id: '1',
+        category_id: '139'
+        },
+        {
+        nickname: 'スマホ',
+        description: 'スペースシルバー',
+        status: '新品',
+        shipping_charges: '無料',
+        area: '大阪府',
+        days: '2日以内',
+        price: '130000',
+        user_id: '1',
+        category_id: '264'
+        }
+    ]
+)
+Image.create!(
+    [
+        {
+        image: File.open('app/assets/images/image101.jpg'),
+        item_id: '1',
+        }
+        {
+        image: File.open('app/assets/images/image102.jpg'),
+        item_id: '2',
+        }
+    ]
+)
