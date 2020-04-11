@@ -178,41 +178,42 @@ ticket_jacket.children.create([{name: "東京公演"},{name: "大阪公演"}])
 ticket_pants.children.create([{name: "グループ"},{name: "ソロ"}])
 
 
-# Item.create!(
-#     [
-#         {
-#             nickname: '時計',
-#             description: '40mmシルバーアルミニウムケースとホワイトスポーツバンド',
-#             status: '新品',
-#             shipping_charges: '無料',
-#             area: '大阪府',
-#             days: '2日以内',
-#             price: '50000',
-#             user_id: '1',
-#             category_id: '139'
-#         },
-#         {
-#             nickname: 'スマホ',
-#             description: 'スペースシルバー',
-#             status: '新品',
-#             shipping_charges: '無料',
-#             area: '大阪府',
-#             days: '2日以内',
-#             price: '130000',
-#             user_id: '1',
-#             category_id: '264'
-#         }
-#     ]
-# )
-# Image.create!(
-#     [
-#         {
-#         image: File.open('app/assets/images/image101.jpg'),
-#         item_id: '1',
-#         }
-#         {
-#         image: File.open('app/assets/images/image102.jpg'),
-#         item_id: '2',
-#         }
-#     ]
-# )
+Item.create!(
+  [
+    {
+      nickname: 'スマホ',
+      description: 'スペースシルバー',
+      status: '新品',
+      shipping_charges: '無料',
+      area: '大阪府',
+      days: '2日以内',
+      price: 130000,
+      prefecture_id:"",
+      user_id: 1,
+      category_id: 264
+    },
+    {
+      nickname: 'パーカー',
+      description: 'パーカーです',
+      price: 1000,
+      area: "北海道",
+      shipping_days: 1,
+      purchase_id: '',
+      brand_id: 1,
+      user_id: 1,
+      category_id: 33,
+    },
+  ]
+)
+Image.create!(
+  [
+    {
+      image: File.open('app/assets/images/image101.jpg'),
+      item_id: 1,
+    },
+    {
+      image: File.open('app/assets/images/image102.jpg'),
+      item_id: 1,
+    },
+  ]
+)
