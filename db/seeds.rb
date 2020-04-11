@@ -1,19 +1,19 @@
-# User.create!(
-#     [
-#         {
-#         email: 'test1@test.com',
-#         password: 'aaaa1111',
-#         nickname: 'hhhhh',
-#         first_name: '田中',
-#         second_name: '太郎',
-#         hurigana_first: 'たなか',
-#         hurigana_second: 'たろう',
-#         birthday_year: "1994",
-#         birthday_month: "08",
-#         birthday_day: "15"
-#         },
-#     ]
-# )
+User.create!(
+  [
+    {
+      email: 'test1@test.com',
+      password: 'aaaa1111',
+      nickname: 'hhhhh',
+      first_name: '田中',
+      second_name: '太郎',
+      hurigana_first: 'たなか',
+      hurigana_second: 'たろう',
+      birthday_year: "1994",
+      birthday_month: "08",
+      birthday_day: "15"
+    },
+  ]
+)
 
 choice = Category.create(name: "選択してください　最後まで選択必須！")
 # レディース
