@@ -3,7 +3,7 @@ User.create!(
     {
       email: 'test1@test.com',
       password: 'aaaa1111',
-      nickname: 'hhhhh',
+      nickname: 'test1',
       first_name: '田中',
       second_name: '太郎',
       hurigana_first: 'たなか',
@@ -12,8 +12,21 @@ User.create!(
       birthday_month: "08",
       birthday_day: "15"
     },
+    {
+      email: 'test2@test.com',
+      password: 'aaaa1111',
+      nickname: 'test2',
+      first_name: '山田',
+      second_name: '太郎',
+      hurigana_first: 'やまだ',
+      hurigana_second: 'たろう',
+      birthday_year: "1995",
+      birthday_month: "08",
+      birthday_day: "15"
+    },
   ]
 )
+
 
 choice = Category.create(name: "選択してください　最後まで選択必須！")
 # レディース
@@ -193,15 +206,41 @@ Item.create!(
       category_id: 264
     },
     {
-      nickname: 'パーカー',
-      description: 'パーカーです',
-      price: 1000,
-      area: "北海道",
-      shipping_days: 1,
-      purchase_id: '',
-      brand_id: 1,
-      user_id: 1,
-      category_id: 33,
+      nickname: '時計',
+      description: 'スペースシルバー',
+      status: '新品',
+      shipping_charges: '無料',
+      area: '大阪府',
+      days: '2日以内',
+      price: 50000,
+      prefecture_id:"",
+      user_id: 2,
+      soldout: 1,
+      category_id: 264
+    },
+    {
+      nickname: 'ワンピース',
+      description: '白色',
+      status: '新品',
+      shipping_charges: '無料',
+      area: '大阪府',
+      days: '2日以内',
+      price: 10000,
+      prefecture_id:"",
+      user_id: 2,
+      category_id: 100
+    },
+    {
+      nickname: 'サングラス',
+      description: '黒色',
+      status: '新品',
+      shipping_charges: '無料',
+      area: '大阪府',
+      days: '2日以内',
+      price: 30000,
+      prefecture_id:"",
+      user_id: 2,
+      category_id: 150
     },
   ]
 )
@@ -213,7 +252,15 @@ Image.create!(
     },
     {
       image: File.open('app/assets/images/image102.jpg'),
-      item_id: 1,
+      item_id: 2,
+    },
+    {
+      image: File.open('app/assets/images/image-16.jpg'),
+      item_id: 3,
+    },
+    {
+      image: File.open('app/assets/images/image-20.jpg'),
+      item_id: 4,
     },
   ]
 )
