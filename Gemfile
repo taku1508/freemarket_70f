@@ -91,3 +91,4 @@ gem 'factory_bot_rails'
 gem 'fog-aws'
 gem 'active_hash'
 gem 'mini_racer', platforms: :ruby
+
