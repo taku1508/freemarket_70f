@@ -36,21 +36,6 @@
             -else
               .h_foot__inner__method__pay
                 = render "cards/show"
-          -# .h_foot__inner__method 
-          -#   配送先
-          -#   -if current_user.address.blank?
-          -#     .h_foot__inner__method__form
-          -#       = link_to "+登録してください", new_address_path, class: "h_foot__inner__method__form__link"
-          -#   -else
-          -#     .h_foot__inner__method__pay
-          -#       〒
-          -#       = current_user.address.postal_code
-          -#       %br  
-          -#       = current_user.address.municipalities
-          -#       = current_user.address.house_number
-          -#       %br  
-                -# = current_user.first_name
-                -# = current_user.second_name
           .h_foot__inner__btn
             %form{action: buy_card_path(@item.id)}
               %input{type: "submit", value: "購入する", class: "h_foot__inner__btn__submit"}

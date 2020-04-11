@@ -15,7 +15,7 @@
 
         - if user_signed_in?
           = link_to current_user.nickname,"users/show", class: "k_head__inner__bottom__links"
-          = link_to "ログアウト(仮)",destroy_user_session_path, method: "delete"
+          = link_to "ログアウト",destroy_user_session_path, method: "delete"
         - else
           = link_to "ログイン","/users/sign_in"
           = link_to "新規会員登録","/users/signup", class: "k_head__inner__bottom__links__newBtn"

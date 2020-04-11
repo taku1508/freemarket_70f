@@ -80,7 +80,6 @@
             必須
         .t_items_name__items
           .t_form_style_delivery
-            -# = f.collection_select :shipping_charges, Prefecture.all, :area, :area,{},{class: "t_delivery_form"} 
             = f.select :shipping_charges,
               [["選択してください"],
               ["送料込み(出品者負担)"],
@@ -123,6 +122,5 @@
           = f.button "出品する",class: "t_bottun_form__display", style: "t_bottun_form__display" 
           .t_bottun_form__back
             = link_to "もどる", "/items", class: "t_bottun_form__back"      
-          -# = f.button "もどる",class: "t_bottun_form__back"
   = render "items_footer"
 
