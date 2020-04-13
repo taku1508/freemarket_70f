@@ -52,14 +52,19 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    if @item.user.id == current_user.id
-    @category = Category.roots
-    @category_parent_array = ["指定なし"]
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
+    if current_user.blank?
+      redirect_to root_path
+      flash[:alert] = 'ログインを行なってください。'
     else
-      redirect_to root_path , notice: '自身の出品ではないため編集できません'
+      if @item.user.id == current_user.id
+      @category = Category.roots
+      @category_parent_array = ["指定なし"]
+      Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent.name
+      end
+      else
+        redirect_to root_path , notice: '自身の出品ではないため編集できません'
+      end
     end
   end
 
