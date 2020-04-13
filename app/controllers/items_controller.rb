@@ -75,10 +75,15 @@ class ItemsController < ApplicationController
 
 
   def update
-    if @item.update(items_params)
-      redirect_to root_path , notice: 'アイテムの情報を編集しました。'
+    id = params[:item][:category_id].to_i
+    if id >= 22 && 92 >= id || id >= 106 && 154 >= id || id >= 162 && 185 >= id || id >= 193 && 217 >= id || id >= 223 && 239 >= id || id >= 244 && 248 >= id || id >= 253 && 258 >= id || id >= 263 && 268 >= id || id >= 273 && 280 >= id || id >= 285 && 290 >= id
+      if @item.update(items_params)
+        redirect_to root_path , notice: 'アイテムの情報を編集しました。'
+      else
+        render :edit, alert: 'アイテムの情報の編集に失敗しました。'
+      end
     else
-      render :edit, alert: 'アイテムの情報の編集に失敗しました。'
+      redirect_to edit_item_path(@item.id) , alert: 'カテゴリーの選択を行なってください。'
     end
   end
 
