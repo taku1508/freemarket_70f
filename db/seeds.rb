@@ -231,13 +231,49 @@ Item.create!(
       category_id: 100
     },
     {
-      nickname: 'サングラス',
-      description: '黒色',
+      nickname: 'シャーペン',
+      description: '普通のシャーペン',
+      status: '新品',
+      shipping_charges: '無料',
+      area: '大阪府',
+      days: '2日以内',
+      price: 600,
+      prefecture_id:"",
+      user_id: 2,
+      category_id: 150
+    },
+    {
+      nickname: 'ノート',
+      description: '普通のノート',
       status: '新品',
       shipping_charges: '無料',
       area: '大阪府',
       days: '2日以内',
       price: 30000,
+      prefecture_id:"",
+      user_id: 2,
+      category_id: 150
+    },
+    {
+      nickname: '片栗粉',
+      description: '普通の片栗粉',
+      status: '新品',
+      shipping_charges: '無料',
+      area: '大阪府',
+      days: '2日以内',
+      price: 300,
+      prefecture_id:"",
+      user_id: 2,
+      category_id: 150
+    },
+    {
+      nickname: '',
+      description: '普通の片栗粉',
+      status: '新品',
+      shipping_charges: '無料',
+      area: '大阪府',
+      days: '2日以内',
+      price: 300,
       prefecture_id:"",
       user_id: 2,
       category_id: 150
@@ -261,6 +297,30 @@ Image.create!(
     {
       image: File.open('app/assets/images/image-20.jpg'),
       item_id: 4,
+    },
+    {
+      image: File.open('app/assets/images/image-20.jpg'),
+      item_id: 5,
+    },
+    {
+      image: File.open('app/assets/images/image-20.jpg'),
+      item_id: 6,
+    },
+    {
+      image: File.open('app/assets/images/image-20.jpg'),
+      item_id: 7,
+    },
+    {
+      image: File.open('app/assets/images/image-20.jpg'),
+      item_id: 8,
+    },
+    {
+      image: File.open('app/assets/images/image-20.jpg'),
+      item_id: 9,
+    },
+    {
+      image: File.open('app/assets/images/image-20.jpg'),
+      item_id: 10,
     },
   ]
 )
