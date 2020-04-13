@@ -276,6 +276,7 @@ Item.create!(
       price: 1500,
       prefecture_id:"",
       user_id: 2,
+      soldout: 1,
       category_id: 150
     },
     {
@@ -300,6 +301,7 @@ Item.create!(
       price: 15000,
       prefecture_id:"",
       user_id: 2,
+      soldout: 1,
       category_id: 150
     },
     {
@@ -336,6 +338,7 @@ Item.create!(
       price: 20000,
       prefecture_id:"",
       user_id: 2,
+      soldout: 1,
       category_id: 150
     },
     {
@@ -360,6 +363,7 @@ Item.create!(
       price: 30000,
       prefecture_id:"",
       user_id: 2,
+      soldout: 1,
       category_id: 150
     },
     {
@@ -372,6 +376,7 @@ Item.create!(
       price: 2000,
       prefecture_id:"",
       user_id: 2,
+      soldout: 1,
       category_id: 150
     },
     {
@@ -432,6 +437,7 @@ Item.create!(
       price: 16000,
       prefecture_id:"",
       user_id: 2,
+      soldout: 1,
       category_id: 150
     },
     {
